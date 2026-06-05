@@ -7,7 +7,7 @@
       "namespace": "android_app",
       "package_name": "io.github.craftlogapp.craftlog",
       "sha256_cert_fingerprints": [
-        "HIER_DEINEN_SHA256_FINGERPRINT_AUS_DER_GOOGLE_PLAY_CONSOLE_EINFUEGEN"
+        "HIER_SHA256_EINTRAGEN"
       ]
     }
   }
