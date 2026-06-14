@@ -30,78 +30,216 @@
     }
     code { background: #3A3528; padding: 1px 6px; border-radius: 5px; }
     footer { margin-top: 48px; color: #847B66; font-size: 0.85rem; }
+
+    /* Sprachumschalter */
+    .lang-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .lang-btn {
+      background: #2A271E;
+      border: 1px solid #3A3528;
+      color: #A89F88;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lang-btn:hover { color: #EDE7D9; }
+    .lang-btn.active {
+      background: #E0B45C;
+      border-color: #E0B45C;
+      color: #1C1A14;
+    }
+    [data-lang] { display: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Konto und Daten löschen</h1>
-    <p class="sub">App: <strong>CraftLog</strong> (com.craftlog.app)</p>
-
-    <p>
-      Diese Seite erklärt, wie du dein CraftLog-Konto und alle damit verbundenen
-      Daten dauerhaft löschen kannst.
-    </p>
-
-    <h2>Variante 1 – Direkt in der App (empfohlen)</h2>
-    <p>Wenn du die App installiert und bist eingeloggt bist:</p>
-    <ol>
-      <li>Öffne CraftLog und melde dich an.</li>
-      <li>Gehe zu <strong>Einstellungen → Konto</strong>.</li>
-      <li>Tippe auf <strong>„Konto löschen"</strong> und bestätige.</li>
-    </ol>
-    <div class="box">
-      Das Konto und alle zugehörigen Cloud-Daten werden dabei
-      <strong>sofort und unwiderruflich</strong> gelöscht.
+    <div class="lang-switch">
+      <button type="button" class="lang-btn" data-set="de">DE</button>
+      <button type="button" class="lang-btn" data-set="en">EN</button>
     </div>
 
-    <h2>Variante 2 – Per E-Mail anfordern</h2>
-    <p>
-      Wenn du keinen Zugriff mehr auf die App hast, schreib uns einfach eine
-      kurze E-Mail an:
-    </p>
-    <div class="box">
-      <strong>
-        <a href="mailto:alexpfalz.installateurpfalz@gmail.com?subject=CraftLog%20Konto%20l%C3%B6schen">
-          alexpfalz.installateurpfalz@gmail.com
-        </a>
-      </strong><br />
-      Betreff: <code>CraftLog Konto löschen</code><br />
-      Bitte sende die Anfrage von der E-Mail-Adresse, mit der du dich
-      registriert hast (bzw. nenne uns deine Google-Login-Adresse).
+    <!-- Deutsch -->
+    <div data-lang="de">
+      <h1>Konto und Daten löschen</h1>
+      <p class="sub">App: <strong>CraftLog</strong> (com.craftlog.app)</p>
+
+      <p>
+        Diese Seite erklärt, wie du dein CraftLog-Konto und alle damit verbundenen
+        Daten dauerhaft löschen kannst.
+      </p>
+
+      <h2>Variante 1 – Direkt in der App (empfohlen)</h2>
+      <p>Wenn du die App installiert hast und eingeloggt bist:</p>
+      <ol>
+        <li>Öffne CraftLog und melde dich an.</li>
+        <li>Gehe zu <strong>Einstellungen → Konto</strong>.</li>
+        <li>Tippe auf <strong>„Konto löschen"</strong> und bestätige.</li>
+      </ol>
+      <div class="box">
+        Das Konto und alle zugehörigen Cloud-Daten werden dabei
+        <strong>sofort und unwiderruflich</strong> gelöscht.
+      </div>
+
+      <h2>Variante 2 – Per E-Mail anfordern</h2>
+      <p>
+        Wenn du keinen Zugriff mehr auf die App hast, schreib uns einfach eine
+        kurze E-Mail an:
+      </p>
+      <div class="box">
+        <strong>
+          <a href="mailto:alexpfalz.installateurpfalz@gmail.com?subject=CraftLog%20Konto%20l%C3%B6schen">
+            alexpfalz.installateurpfalz@gmail.com
+          </a>
+        </strong><br />
+        Betreff: <code>CraftLog Konto löschen</code><br />
+        Bitte sende die Anfrage von der E-Mail-Adresse, mit der du dich
+        registriert hast (bzw. nenne uns deine Google-Login-Adresse).
+      </div>
+      <p>Wir bearbeiten die Anfrage innerhalb von <strong>30 Tagen</strong>.</p>
+
+      <h2>Nur einzelne Daten löschen (ohne Kontolöschung)</h2>
+      <p>
+        Du kannst auch einzelne Inhalte entfernen, ohne dein ganzes Konto zu
+        löschen:
+      </p>
+      <ul>
+        <li>
+          In der App: Öffne ein Projekt bzw. einen Eintrag und tippe auf
+          <strong>„Löschen"</strong>. Der Inhalt wird sofort aus der Cloud entfernt.
+        </li>
+        <li>
+          Per E-Mail: Schreib uns an die oben genannte Adresse und nenne, welche
+          Daten gelöscht werden sollen.
+        </li>
+      </ul>
+
+      <h2>Welche Daten werden gelöscht?</h2>
+      <ul>
+        <li>Dein Benutzerkonto (E-Mail-Adresse bzw. Google-Login).</li>
+        <li>Alle von dir erstellten Projekte, Einträge, Notizen und Bilder.</li>
+        <li>Alle in der Cloud gespeicherten Inhalte deines Kontos.</li>
+      </ul>
+      <p>
+        Es werden <strong>keine</strong> Daten zurückbehalten. Eine Wiederherstellung
+        nach der Löschung ist nicht möglich.
+      </p>
+
+      <footer>
+        Verantwortlich: Alexander Pfalz · Kontakt:
+        <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>
+      </footer>
     </div>
-    <p>Wir bearbeiten die Anfrage innerhalb von <strong>30 Tagen</strong>.</p>
 
-    <h2>Nur einzelne Daten löschen (ohne Kontolöschung)</h2>
-    <p>
-      Du kannst auch einzelne Inhalte entfernen, ohne dein ganzes Konto zu
-      löschen:
-    </p>
-    <ul>
-      <li>
-        In der App: Öffne ein Projekt bzw. einen Eintrag und tippe auf
-        <strong>„Löschen"</strong>. Der Inhalt wird sofort aus der Cloud entfernt.
-      </li>
-      <li>
-        Per E-Mail: Schreib uns an die oben genannte Adresse und nenne, welche
-        Daten gelöscht werden sollen.
-      </li>
-    </ul>
+    <!-- English -->
+    <div data-lang="en">
+      <h1>Delete account and data</h1>
+      <p class="sub">App: <strong>CraftLog</strong> (com.craftlog.app)</p>
 
-    <h2>Welche Daten werden gelöscht?</h2>
-    <ul>
-      <li>Dein Benutzerkonto (E-Mail-Adresse bzw. Google-Login).</li>
-      <li>Alle von dir erstellten Projekte, Einträge, Notizen und Bilder.</li>
-      <li>Alle in der Cloud gespeicherten Inhalte deines Kontos.</li>
-    </ul>
-    <p>
-      Es werden <strong>keine</strong> Daten zurückbehalten. Eine Wiederherstellung
-      nach der Löschung ist nicht möglich.
-    </p>
+      <p>
+        This page explains how to permanently delete your CraftLog account and all
+        associated data.
+      </p>
 
-    <footer>
-      Verantwortlich: Alexander Pfalz · Kontakt:
-      <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>
-    </footer>
+      <h2>Option 1 – Directly in the app (recommended)</h2>
+      <p>If you have the app installed and are signed in:</p>
+      <ol>
+        <li>Open CraftLog and sign in.</li>
+        <li>Go to <strong>Settings → Account</strong>.</li>
+        <li>Tap <strong>“Delete account"</strong> and confirm.</li>
+      </ol>
+      <div class="box">
+        Your account and all associated cloud data are deleted
+        <strong>immediately and irreversibly</strong>.
+      </div>
+
+      <h2>Option 2 – Request by email</h2>
+      <p>
+        If you no longer have access to the app, simply send us a short email to:
+      </p>
+      <div class="box">
+        <strong>
+          <a href="mailto:alexpfalz.installateurpfalz@gmail.com?subject=CraftLog%20Delete%20Account">
+            alexpfalz.installateurpfalz@gmail.com
+          </a>
+        </strong><br />
+        Subject: <code>CraftLog Delete Account</code><br />
+        Please send the request from the email address you registered with
+        (or tell us your Google sign-in address).
+      </div>
+      <p>We process the request within <strong>30 days</strong>.</p>
+
+      <h2>Delete individual data only (without deleting the account)</h2>
+      <p>
+        You can also remove individual content without deleting your entire account:
+      </p>
+      <ul>
+        <li>
+          In the app: Open a project or entry and tap
+          <strong>“Delete"</strong>. The content is removed from the cloud immediately.
+        </li>
+        <li>
+          By email: Write to the address above and tell us which data should be
+          deleted.
+        </li>
+      </ul>
+
+      <h2>Which data is deleted?</h2>
+      <ul>
+        <li>Your user account (email address or Google sign-in).</li>
+        <li>All projects, entries, notes and images you created.</li>
+        <li>All content of your account stored in the cloud.</li>
+      </ul>
+      <p>
+        <strong>No</strong> data is retained. Recovery after deletion is not possible.
+      </p>
+
+      <footer>
+        Controller: Alexander Pfalz · Contact:
+        <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>
+      </footer>
+    </div>
   </div>
+
+  <script>
+    (function () {
+      var KEY = 'craftlog_lang';
+      var TITLES = {
+        de: 'CraftLog – Konto und Daten löschen',
+        en: 'CraftLog – Delete account and data'
+      };
+      function apply(lang) {
+        if (lang !== 'de' && lang !== 'en') lang = 'en';
+        document.documentElement.lang = lang;
+        document.title = TITLES[lang];
+        var blocks = document.querySelectorAll('[data-lang]');
+        for (var i = 0; i < blocks.length; i++) {
+          blocks[i].style.display = blocks[i].getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+        var btns = document.querySelectorAll('.lang-btn');
+        for (var j = 0; j < btns.length; j++) {
+          btns[j].classList.toggle('active', btns[j].getAttribute('data-set') === lang);
+        }
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var initial = saved || ((navigator.language || navigator.userLanguage || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en');
+      apply(initial);
+      var btns = document.querySelectorAll('.lang-btn');
+      for (var k = 0; k < btns.length; k++) {
+        btns[k].addEventListener('click', function () {
+          var lang = this.getAttribute('data-set');
+          try { localStorage.setItem(KEY, lang); } catch (e) {}
+          apply(lang);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
