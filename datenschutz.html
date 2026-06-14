@@ -34,137 +34,334 @@
     }
     code { background: #3A3528; padding: 1px 6px; border-radius: 5px; }
     footer { margin-top: 48px; color: #847B66; font-size: 0.85rem; }
+
+    /* Sprachumschalter */
+    .lang-switch {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .lang-btn {
+      background: #2A271E;
+      border: 1px solid #3A3528;
+      color: #A89F88;
+      border-radius: 8px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lang-btn:hover { color: #EDE7D9; }
+    .lang-btn.active {
+      background: #E0B45C;
+      border-color: #E0B45C;
+      color: #1C1A14;
+    }
+    [data-lang] { display: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Datenschutzerklärung</h1>
-    <p class="sub">App: <strong>CraftLog</strong> (com.craftlog.app) · Stand: Juni 2026</p>
-
-    <p>
-      Diese Datenschutzerklärung informiert dich darüber, welche personenbezogenen
-      Daten bei der Nutzung der App CraftLog verarbeitet werden, zu welchem Zweck
-      und welche Rechte dir zustehen.
-    </p>
-
-    <h2>1. Verantwortlicher</h2>
-    <div class="box">
-      Alexander Pfalz<br />
-      Hofsatz 29<br />
-      7082 Donnerskirchen<br />
-      Burgenland, Österreich<br />
-      E-Mail:
-      <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>
+    <div class="lang-switch">
+      <button type="button" class="lang-btn" data-set="de">DE</button>
+      <button type="button" class="lang-btn" data-set="en">EN</button>
     </div>
 
-    <h2>2. Grundsatz: lokale Nutzung möglich</h2>
-    <p>
-      CraftLog kann vollständig <strong>ohne Konto</strong> genutzt werden. In
-      diesem Fall werden alle Daten (Projekte, Schritte, Material, Kosten, Zeiten,
-      Fotos) <strong>ausschließlich lokal auf deinem Gerät</strong> gespeichert und
-      nicht an uns oder Dritte übertragen.
-    </p>
-    <p>
-      Erst wenn du dich für die optionale <strong>Cloud-Synchronisierung</strong>
-      anmeldest, werden Daten zu unserem Dienstleister übertragen (siehe Punkt 4).
-    </p>
+    <!-- Deutsch -->
+    <div data-lang="de">
+      <h1>Datenschutzerklärung</h1>
+      <p class="sub">App: <strong>CraftLog</strong> (com.craftlog.app) · Stand: Juni 2026</p>
 
-    <h2>3. Welche Daten werden verarbeitet?</h2>
-    <table>
-      <tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
-      <tr>
-        <td>E-Mail-Adresse, Name (bei Google-Login), Nutzer-ID</td>
-        <td>Konto erstellen und anmelden</td>
-        <td>Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
-      </tr>
-      <tr>
-        <td>Projektinhalte: Titel, Beschreibungen, Schritte, Material, Kosten, Zeiten, Erinnerungen</td>
-        <td>Bereitstellung der App-Funktion und geräteübergreifende Synchronisierung</td>
-        <td>Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
-      </tr>
-      <tr>
-        <td>Kaufhistorie / Abo-Status, Geräte-Identifier</td>
-        <td>Abwicklung und Verwaltung von In-App-Abonnements</td>
-        <td>Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
-      </tr>
-    </table>
-    <p>
-      <strong>Fotos</strong> bleiben auf deinem Gerät gespeichert und werden
-      <strong>nicht</strong> in die Cloud übertragen. Es werden <strong>keine</strong>
-      Standortdaten erhoben, es findet <strong>kein Tracking</strong> und
-      <strong>keine Werbung</strong> statt. Es werden keine Werbe-IDs verarbeitet.
-    </p>
+      <p>
+        Diese Datenschutzerklärung informiert dich darüber, welche personenbezogenen
+        Daten bei der Nutzung der App CraftLog verarbeitet werden, zu welchem Zweck
+        und welche Rechte dir zustehen.
+      </p>
 
-    <h2>4. Eingesetzte Dienste (Auftragsverarbeiter)</h2>
-    <p>
-      Wir geben deine Daten nicht zu eigenen Zwecken an Dritte weiter. Zur
-      Bereitstellung der App nutzen wir folgende Dienstleister, die Daten nur in
-      unserem Auftrag verarbeiten:
-    </p>
-    <h3>Supabase (Authentifizierung &amp; Cloud-Datenbank)</h3>
-    <p>
-      Speichert dein Konto und deine synchronisierten Projektdaten. Anbieter:
-      Supabase, Inc. Eine Übertragung in Drittländer (u. a. USA) kann erfolgen;
-      diese ist durch geeignete Garantien (EU-Standardvertragsklauseln) abgesichert.
-    </p>
-    <h3>RevenueCat (Abo-Verwaltung)</h3>
-    <p>
-      Verwaltet In-App-Abonnements und verarbeitet dazu deine Nutzer-ID, einen
-      Geräte-Identifier und den Kaufstatus. Anbieter: RevenueCat, Inc. (USA).
-      Die eigentliche Zahlung erfolgt ausschließlich über Google Play – wir und
-      RevenueCat erhalten <strong>keine</strong> Zahlungsdaten wie Kartennummern.
-    </p>
-    <h3>Google Sign-In</h3>
-    <p>
-      Wenn du dich mit Google anmeldest, verarbeitet Google die Anmeldedaten.
-      Anbieter: Google Ireland Ltd. Die Nutzung ist freiwillig; alternativ kannst
-      du dich per E-Mail registrieren.
-    </p>
-    <h3>Google Play</h3>
-    <p>
-      Vertrieb der App und Abwicklung der Zahlungen. Es gelten zusätzlich die
-      Datenschutzbestimmungen von Google.
-    </p>
+      <h2>1. Verantwortlicher</h2>
+      <div class="box">
+        Alexander Pfalz<br />
+        Hofsatz 29<br />
+        7082 Donnerskirchen<br />
+        Burgenland, Österreich<br />
+        E-Mail:
+        <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>
+      </div>
 
-    <h2>5. Speicherdauer</h2>
-    <p>
-      Konto- und Projektdaten werden gespeichert, solange dein Konto besteht. Bei
-      Löschung des Kontos werden alle zugehörigen Cloud-Daten gelöscht. Lokale
-      Daten verbleiben auf deinem Gerät, bis du sie dort entfernst oder die App
-      deinstallierst.
-    </p>
+      <h2>2. Grundsatz: lokale Nutzung möglich</h2>
+      <p>
+        CraftLog kann vollständig <strong>ohne Konto</strong> genutzt werden. In
+        diesem Fall werden alle Daten (Projekte, Schritte, Material, Kosten, Zeiten,
+        Fotos) <strong>ausschließlich lokal auf deinem Gerät</strong> gespeichert und
+        nicht an uns oder Dritte übertragen.
+      </p>
+      <p>
+        Erst wenn du dich für die optionale <strong>Cloud-Synchronisierung</strong>
+        anmeldest, werden Daten zu unserem Dienstleister übertragen (siehe Punkt 4).
+      </p>
 
-    <h2>6. Deine Rechte</h2>
-    <p>Dir stehen nach der DSGVO folgende Rechte zu:</p>
-    <ul>
-      <li>Auskunft über die zu dir gespeicherten Daten (Art. 15)</li>
-      <li>Berichtigung unrichtiger Daten (Art. 16)</li>
-      <li>Löschung (Art. 17)</li>
-      <li>Einschränkung der Verarbeitung (Art. 18)</li>
-      <li>Datenübertragbarkeit (Art. 20)</li>
-      <li>Widerspruch gegen die Verarbeitung (Art. 21)</li>
-      <li>Beschwerde bei einer Datenschutz-Aufsichtsbehörde (Art. 77)</li>
-    </ul>
+      <h2>3. Welche Daten werden verarbeitet?</h2>
+      <table>
+        <tr><th>Daten</th><th>Zweck</th><th>Rechtsgrundlage</th></tr>
+        <tr>
+          <td>E-Mail-Adresse, Name (bei Google-Login), Nutzer-ID</td>
+          <td>Konto erstellen und anmelden</td>
+          <td>Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
+        </tr>
+        <tr>
+          <td>Projektinhalte: Titel, Beschreibungen, Schritte, Material, Kosten, Zeiten, Erinnerungen</td>
+          <td>Bereitstellung der App-Funktion und geräteübergreifende Synchronisierung</td>
+          <td>Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
+        </tr>
+        <tr>
+          <td>Kaufhistorie / Abo-Status, Geräte-Identifier</td>
+          <td>Abwicklung und Verwaltung von In-App-Abonnements</td>
+          <td>Art. 6 Abs. 1 lit. b DSGVO (Vertrag)</td>
+        </tr>
+      </table>
+      <p>
+        <strong>Fotos</strong> bleiben auf deinem Gerät gespeichert und werden
+        <strong>nicht</strong> in die Cloud übertragen. Es werden <strong>keine</strong>
+        Standortdaten erhoben, es findet <strong>kein Tracking</strong> und
+        <strong>keine Werbung</strong> statt. Es werden keine Werbe-IDs verarbeitet.
+      </p>
 
-    <h2>7. Konto und Daten löschen</h2>
-    <div class="box">
-      Du kannst dein Konto und alle zugehörigen Daten jederzeit löschen – direkt in
-      der App unter <strong>Einstellungen → Konto → „Konto löschen"</strong> oder
-      per Anfrage. Eine ausführliche Anleitung findest du hier:<br />
-      <a href="https://craftlogapp.github.io/account-loeschen.html">
-        https://craftlogapp.github.io/account-loeschen.html
-      </a>
+      <h2>4. Eingesetzte Dienste (Auftragsverarbeiter)</h2>
+      <p>
+        Wir geben deine Daten nicht zu eigenen Zwecken an Dritte weiter. Zur
+        Bereitstellung der App nutzen wir folgende Dienstleister, die Daten nur in
+        unserem Auftrag verarbeiten:
+      </p>
+      <h3>Supabase (Authentifizierung &amp; Cloud-Datenbank)</h3>
+      <p>
+        Speichert dein Konto und deine synchronisierten Projektdaten. Anbieter:
+        Supabase, Inc. Eine Übertragung in Drittländer (u. a. USA) kann erfolgen;
+        diese ist durch geeignete Garantien (EU-Standardvertragsklauseln) abgesichert.
+      </p>
+      <h3>RevenueCat (Abo-Verwaltung)</h3>
+      <p>
+        Verwaltet In-App-Abonnements und verarbeitet dazu deine Nutzer-ID, einen
+        Geräte-Identifier und den Kaufstatus. Anbieter: RevenueCat, Inc. (USA).
+        Die eigentliche Zahlung erfolgt ausschließlich über Google Play – wir und
+        RevenueCat erhalten <strong>keine</strong> Zahlungsdaten wie Kartennummern.
+      </p>
+      <h3>Google Sign-In</h3>
+      <p>
+        Wenn du dich mit Google anmeldest, verarbeitet Google die Anmeldedaten.
+        Anbieter: Google Ireland Ltd. Die Nutzung ist freiwillig; alternativ kannst
+        du dich per E-Mail registrieren.
+      </p>
+      <h3>Google Play</h3>
+      <p>
+        Vertrieb der App und Abwicklung der Zahlungen. Es gelten zusätzlich die
+        Datenschutzbestimmungen von Google.
+      </p>
+
+      <h2>5. Speicherdauer</h2>
+      <p>
+        Konto- und Projektdaten werden gespeichert, solange dein Konto besteht. Bei
+        Löschung des Kontos werden alle zugehörigen Cloud-Daten gelöscht. Lokale
+        Daten verbleiben auf deinem Gerät, bis du sie dort entfernst oder die App
+        deinstallierst.
+      </p>
+
+      <h2>6. Deine Rechte</h2>
+      <p>Dir stehen nach der DSGVO folgende Rechte zu:</p>
+      <ul>
+        <li>Auskunft über die zu dir gespeicherten Daten (Art. 15)</li>
+        <li>Berichtigung unrichtiger Daten (Art. 16)</li>
+        <li>Löschung (Art. 17)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18)</li>
+        <li>Datenübertragbarkeit (Art. 20)</li>
+        <li>Widerspruch gegen die Verarbeitung (Art. 21)</li>
+        <li>Beschwerde bei einer Datenschutz-Aufsichtsbehörde (Art. 77)</li>
+      </ul>
+
+      <h2>7. Konto und Daten löschen</h2>
+      <div class="box">
+        Du kannst dein Konto und alle zugehörigen Daten jederzeit löschen – direkt in
+        der App unter <strong>Einstellungen → Konto → „Konto löschen"</strong> oder
+        per Anfrage. Eine ausführliche Anleitung findest du hier:<br />
+        <a href="https://craftlogapp.github.io/account-loeschen.html">
+          https://craftlogapp.github.io/account-loeschen.html
+        </a>
+      </div>
+
+      <h2>8. Kontakt</h2>
+      <p>
+        Bei Fragen zum Datenschutz erreichst du uns unter
+        <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>.
+      </p>
+
+      <footer>
+        Verantwortlich: Alexander Pfalz · CraftLog · Stand: Juni 2026
+      </footer>
     </div>
 
-    <h2>8. Kontakt</h2>
-    <p>
-      Bei Fragen zum Datenschutz erreichst du uns unter
-      <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>.
-    </p>
+    <!-- English -->
+    <div data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="sub">App: <strong>CraftLog</strong> (com.craftlog.app) · As of: June 2026</p>
 
-    <footer>
-      Verantwortlich: Alexander Pfalz · CraftLog · Stand: Juni 2026
-    </footer>
+      <p>
+        This privacy policy informs you about which personal data is processed when
+        using the CraftLog app, for what purpose, and which rights you have.
+      </p>
+
+      <h2>1. Controller</h2>
+      <div class="box">
+        Alexander Pfalz<br />
+        Hofsatz 29<br />
+        7082 Donnerskirchen<br />
+        Burgenland, Austria<br />
+        Email:
+        <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>
+      </div>
+
+      <h2>2. Principle: local use possible</h2>
+      <p>
+        CraftLog can be used entirely <strong>without an account</strong>. In that
+        case all data (projects, steps, materials, costs, times, photos) is stored
+        <strong>exclusively locally on your device</strong> and is not transmitted to
+        us or any third party.
+      </p>
+      <p>
+        Only when you sign up for the optional <strong>cloud synchronization</strong>
+        is data transmitted to our service provider (see point 4).
+      </p>
+
+      <h2>3. Which data is processed?</h2>
+      <table>
+        <tr><th>Data</th><th>Purpose</th><th>Legal basis</th></tr>
+        <tr>
+          <td>Email address, name (with Google sign-in), user ID</td>
+          <td>Create an account and sign in</td>
+          <td>Art. 6(1)(b) GDPR (contract)</td>
+        </tr>
+        <tr>
+          <td>Project content: titles, descriptions, steps, materials, costs, times, reminders</td>
+          <td>Providing the app functionality and cross-device synchronization</td>
+          <td>Art. 6(1)(b) GDPR (contract)</td>
+        </tr>
+        <tr>
+          <td>Purchase history / subscription status, device identifier</td>
+          <td>Processing and managing in-app subscriptions</td>
+          <td>Art. 6(1)(b) GDPR (contract)</td>
+        </tr>
+      </table>
+      <p>
+        <strong>Photos</strong> remain stored on your device and are
+        <strong>not</strong> transmitted to the cloud. <strong>No</strong> location
+        data is collected, there is <strong>no tracking</strong> and
+        <strong>no advertising</strong>. No advertising IDs are processed.
+      </p>
+
+      <h2>4. Services used (processors)</h2>
+      <p>
+        We do not share your data with third parties for our own purposes. To provide
+        the app, we use the following service providers, which process data only on
+        our behalf:
+      </p>
+      <h3>Supabase (authentication &amp; cloud database)</h3>
+      <p>
+        Stores your account and your synchronized project data. Provider:
+        Supabase, Inc. A transfer to third countries (including the USA) may occur;
+        this is safeguarded by appropriate guarantees (EU standard contractual clauses).
+      </p>
+      <h3>RevenueCat (subscription management)</h3>
+      <p>
+        Manages in-app subscriptions and processes your user ID, a device identifier
+        and the purchase status for this purpose. Provider: RevenueCat, Inc. (USA).
+        The actual payment is processed exclusively via Google Play – we and
+        RevenueCat receive <strong>no</strong> payment data such as card numbers.
+      </p>
+      <h3>Google Sign-In</h3>
+      <p>
+        If you sign in with Google, Google processes the sign-in data. Provider:
+        Google Ireland Ltd. Use is voluntary; alternatively you can register by email.
+      </p>
+      <h3>Google Play</h3>
+      <p>
+        Distribution of the app and processing of payments. Google's privacy terms
+        additionally apply.
+      </p>
+
+      <h2>5. Storage period</h2>
+      <p>
+        Account and project data is stored as long as your account exists. When the
+        account is deleted, all associated cloud data is deleted. Local data remains
+        on your device until you remove it there or uninstall the app.
+      </p>
+
+      <h2>6. Your rights</h2>
+      <p>Under the GDPR you have the following rights:</p>
+      <ul>
+        <li>Access to the data stored about you (Art. 15)</li>
+        <li>Rectification of inaccurate data (Art. 16)</li>
+        <li>Erasure (Art. 17)</li>
+        <li>Restriction of processing (Art. 18)</li>
+        <li>Data portability (Art. 20)</li>
+        <li>Objection to processing (Art. 21)</li>
+        <li>Complaint to a data protection supervisory authority (Art. 77)</li>
+      </ul>
+
+      <h2>7. Delete account and data</h2>
+      <div class="box">
+        You can delete your account and all associated data at any time – directly in
+        the app under <strong>Settings → Account → “Delete account"</strong> or by
+        request. You can find detailed instructions here:<br />
+        <a href="https://craftlogapp.github.io/account-loeschen.html">
+          https://craftlogapp.github.io/account-loeschen.html
+        </a>
+      </div>
+
+      <h2>8. Contact</h2>
+      <p>
+        If you have questions about data protection, you can reach us at
+        <a href="mailto:alexpfalz.installateurpfalz@gmail.com">alexpfalz.installateurpfalz@gmail.com</a>.
+      </p>
+
+      <footer>
+        Controller: Alexander Pfalz · CraftLog · As of: June 2026
+      </footer>
+    </div>
   </div>
+
+  <script>
+    (function () {
+      var KEY = 'craftlog_lang';
+      var TITLES = {
+        de: 'CraftLog – Datenschutzerklärung',
+        en: 'CraftLog – Privacy Policy'
+      };
+      function apply(lang) {
+        if (lang !== 'de' && lang !== 'en') lang = 'en';
+        document.documentElement.lang = lang;
+        document.title = TITLES[lang];
+        var blocks = document.querySelectorAll('[data-lang]');
+        for (var i = 0; i < blocks.length; i++) {
+          blocks[i].style.display = blocks[i].getAttribute('data-lang') === lang ? 'block' : 'none';
+        }
+        var btns = document.querySelectorAll('.lang-btn');
+        for (var j = 0; j < btns.length; j++) {
+          btns[j].classList.toggle('active', btns[j].getAttribute('data-set') === lang);
+        }
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var initial = saved || ((navigator.language || navigator.userLanguage || 'en').toLowerCase().indexOf('de') === 0 ? 'de' : 'en');
+      apply(initial);
+      var btns = document.querySelectorAll('.lang-btn');
+      for (var k = 0; k < btns.length; k++) {
+        btns[k].addEventListener('click', function () {
+          var lang = this.getAttribute('data-set');
+          try { localStorage.setItem(KEY, lang); } catch (e) {}
+          apply(lang);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
