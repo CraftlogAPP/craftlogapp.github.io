@@ -1,6 +1,6 @@
 # craftlogapp.github.io
 
-User Page für CraftLog. Liefert die Domain-Wurzel `https://craftlogapp.github.io/` aus.
+User Page für CraftDex. Liefert die Domain-Wurzel `https://craftlogapp.github.io/` aus.
 
 Zweck:
 - `/.well-known/assetlinks.json` — Digital Asset Links für die Android-App-Verifizierung (Google).
