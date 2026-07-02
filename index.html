@@ -1,13 +1,378 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CraftLog</title>
-  <meta http-equiv="refresh" content="0; url=https://craftlogapp.github.io/craftlog-web/">
-  <link rel="canonical" href="https://craftlogapp.github.io/craftlog-web/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dexware — Software fürs Handwerk. Compliance aus einer Hand.</title>
+  <meta name="description" content="Dexware entwickelt fokussierte Apps, die Dokumentation und gesetzliche Compliance für Handwerk und Betrieb mühelos machen — PrüfDex, SchutzDex, BaumDex, WinterDex, TourDex, CraftDex und DokuDex." />
+  <meta name="robots" content="all" />
+  <meta name="theme-color" content="#0B1220" />
+  <meta property="og:title" content="Dexware — Software fürs Handwerk" />
+  <meta property="og:description" content="Compliance aus einer Hand: fokussierte Apps für Dokumentation, Prüfung und Nachweis im Betrieb." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#0A1020; --surface:#121A2E; --surface2:#0E1626; --border:#26324B;
+      --text:#EAF0FA; --muted:#9DABC6; --blue:#2563EB; --blue2:#5B8DF7; --indigo:#6366F1;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:
+        radial-gradient(1100px 620px at 18% -120px, rgba(91,141,247,.20), transparent 65%),
+        radial-gradient(900px 600px at 92% 4%, rgba(124,58,237,.16), transparent 62%),
+        var(--bg);
+      background-attachment:fixed;
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;-webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+    /* Nav */
+    header{padding:24px 0;display:flex;align-items:center;gap:8px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand .tile{width:46px;height:46px;border-radius:13px;box-shadow:0 6px 18px rgba(8,16,40,.5)}
+    .brand .name{font-size:22px;font-weight:800;letter-spacing:-.5px}
+    .brand .name b{color:var(--blue2)}
+    .nav-spacer{flex:1}
+    .nav a{color:var(--muted);font-size:14.5px;margin-left:24px}
+    .nav a:hover{color:var(--text)}
+    @media(max-width:640px){.nav{display:none}}
+    .langbtn{margin-left:18px;color:var(--muted);font-size:13px;font-weight:800;letter-spacing:.5px;
+      border:1px solid var(--border);border-radius:999px;padding:6px 13px;cursor:pointer;background:transparent}
+    .langbtn:hover{color:var(--text);border-color:var(--blue2)}
+
+    /* Hero */
+    .hero{padding:64px 0 36px;max-width:820px}
+    .eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+      color:#BFD3FF;background:rgba(37,99,235,.14);border:1px solid rgba(91,141,247,.32);
+      padding:7px 14px;border-radius:999px;margin-bottom:24px}
+    h1{font-size:54px;font-weight:850;letter-spacing:-1.6px;line-height:1.08}
+    h1 .hl{background:linear-gradient(120deg,#9DC0FF,#6366F1);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:19px;color:var(--muted);margin-top:22px;max-width:680px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-block;font-size:15px;font-weight:650;padding:13px 24px;border-radius:12px;border:1px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue2)}
+    .btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+    .btn-ghost:hover{border-color:var(--blue2)}
+    @media(max-width:640px){h1{font-size:38px;letter-spacing:-1px}.lead{font-size:17px}}
+
+    /* Stats strip */
+    .stats{display:flex;gap:40px;flex-wrap:wrap;margin:40px 0 8px;padding-top:28px;border-top:1px solid var(--border)}
+    .stat .n{font-size:30px;font-weight:800;letter-spacing:-.5px}
+    .stat .l{color:var(--muted);font-size:13.5px}
+
+    /* Section */
+    section{padding:54px 0}
+    .sec-head{margin-bottom:30px}
+    .sec-eyebrow{color:var(--blue2);font-size:13px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
+    h2{font-size:32px;font-weight:850;letter-spacing:-.7px;margin-top:8px}
+    .sec-lead{color:var(--muted);font-size:16px;margin-top:10px;max-width:640px}
+
+    /* Apps grid */
+    .apps{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    @media(max-width:780px){.apps{grid-template-columns:1fr}}
+    .app{position:relative;display:flex;gap:18px;background:linear-gradient(180deg,var(--surface),var(--surface2));
+      border:1px solid var(--border);border-radius:18px;padding:22px;overflow:hidden;transition:transform .15s ease,border-color .15s ease}
+    .app:hover{transform:translateY(-3px);border-color:var(--accent)}
+    .app::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 180px at 100% 0%,var(--accentGlow),transparent 70%);opacity:.9}
+    .app>*{position:relative}
+    .app .ico{width:60px;height:60px;flex-shrink:0;border-radius:16px;overflow:hidden;
+      box-shadow:0 8px 20px var(--accentGlow),inset 0 0 0 1px rgba(255,255,255,.12)}
+    .app .ico img{width:100%;height:100%;object-fit:cover;display:block}
+    .app .body{flex:1}
+    .app h3{font-size:18px;font-weight:750;display:flex;align-items:center;gap:10px}
+    .badge{font-size:10.5px;font-weight:700;letter-spacing:.3px;padding:3px 9px;border-radius:999px;
+      color:var(--accent);background:var(--accentGlow);border:1px solid var(--accent)}
+    .badge.soon{color:var(--muted);background:rgba(255,255,255,.05);border-color:var(--border)}
+    .app p{color:var(--muted);font-size:14.5px;margin-top:7px}
+    .cta{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13.5px;font-weight:650;
+      color:var(--accent);background:var(--accentGlow);border:1px solid var(--accent);
+      padding:8px 15px;border-radius:10px;transition:background .15s ease,color .15s ease}
+    .cta:hover{background:var(--accent);color:#fff}
+    .cta-soon{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--muted)}
+
+    /* Values */
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:780px){.values{grid-template-columns:1fr}}
+    .value{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px}
+    .value .vi{font-size:22px}
+    .value h4{font-size:16px;font-weight:750;margin:12px 0 6px}
+    .value p{color:var(--muted);font-size:14px}
+
+    /* CTA band */
+    .band{background:linear-gradient(135deg,#1b2c55,#101a30);border:1px solid rgba(91,141,247,.32);
+      border-radius:22px;padding:48px 32px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+    .band h2{margin-bottom:10px}
+    .band p{color:var(--muted);margin-bottom:24px}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);margin-top:30px;padding:32px 0 56px}
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .foot .muted{color:var(--muted);font-size:13.5px}
+    .foot a{color:var(--muted);font-size:13.5px;margin-left:18px}
+    .foot a:hover{color:var(--text)}
+  </style>
 </head>
 <body>
-  <p>Weiterleitung zu <a href="https://craftlogapp.github.io/craftlog-web/">CraftLog</a> …</p>
+  <div class="wrap">
+    <!-- NAV -->
+    <header>
+      <a class="brand" href="#top">
+        <svg class="tile" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="t" x1="0" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#5B8DF7"/><stop offset="42%" stop-color="#2563EB"/><stop offset="100%" stop-color="#16225C"/>
+            </linearGradient>
+            <linearGradient id="dw" x1="0.1" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#DCE6FB"/>
+            </linearGradient>
+            <linearGradient id="sp" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FCD34D"/><stop offset="100%" stop-color="#F59E0B"/>
+            </linearGradient>
+          </defs>
+          <rect width="100" height="100" rx="24" fill="url(#t)"/>
+          <path d="M37,72 L37,28 C63,28 71,39 71,50 C71,61 63,72 37,72 Z" fill="none" stroke="url(#dw)" stroke-width="10.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M55.5,34.3 Q56.6,40.4 62.7,41.5 Q56.6,42.6 55.5,48.7 Q54.4,42.6 48.3,41.5 Q54.4,40.4 55.5,34.3 Z" fill="url(#sp)"/>
+        </svg>
+        <span class="name">Dex<b>ware</b></span>
+      </a>
+      <span class="nav-spacer"></span>
+      <nav class="nav">
+        <a href="#apps" data-i18n="navApps">Apps</a>
+        <a href="#warum" data-i18n="navWhy">Warum Dexware</a>
+        <a href="#kontakt" data-i18n="navContact">Kontakt</a>
+      </nav>
+      <button id="langToggle" class="langbtn" type="button">EN</button>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero" id="top">
+      <span class="eyebrow" data-i18n="eyebrow">Software-Studio fürs Handwerk</span>
+      <h1 data-i18n="heroTitle">Compliance aus einer Hand — <span class="hl">mobil, prüffest, ohne Papierkram</span>.</h1>
+      <p class="lead" data-i18n="heroLead">
+        Dexware baut fokussierte Apps, die Dokumentation und gesetzliche Nachweise im Betrieb
+        mühelos machen. Statt überladener Enterprise-Software: je eine schlanke App pro Pflicht —
+        gemacht fürs Elektro-Handwerk, Prüfdienstleister und KMU.
+      </p>
+      <div class="hero-cta">
+        <a href="#apps" class="btn btn-primary" data-i18n="ctaApps">Apps ansehen</a>
+        <a href="#kontakt" class="btn btn-ghost" data-i18n="ctaContact">Kontakt</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">7 Apps</div><div class="l" data-i18n="stat1l">Eine Familie, ein Stil</div></div>
+        <div class="stat"><div class="n">DGUV V3 · VDE</div><div class="l" data-i18n="stat2l">Prüffeste Nachweise</div></div>
+        <div class="stat"><div class="n" data-i18n="stat3n">Mobil-first</div><div class="l" data-i18n="stat3l">Alles am Handy erledigt</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow" data-i18n="appsEyebrow">Unsere Apps</div>
+        <h2 data-i18n="appsTitle">Eine Familie fürs Handwerk</h2>
+        <p class="sec-lead" data-i18n="appsLead">Jede App löst genau eine Pflicht — sauber, mobil und rechtssicher. Im Bundle stärker.</p>
+      </div>
+      <div class="apps">
+
+        <div class="app" style="--accent:#2563EB;--accent2:#1E3A8A;--accentGlow:rgba(37,99,235,.18)">
+          <div class="ico"><img src="assets/pruefdex-icon.png" alt="PrüfDex" /></div>
+          <div class="body">
+            <h3>PrüfDex <span class="badge" data-i18n="badgeAvailable">Verfügbar</span></h3>
+            <p data-i18n="appPruefdex">DGUV-V3-Geräteprüfung mobil &amp; prüffest: Gerät per QR scannen, Sicht- &amp; Messprüfung abhaken — fertiges Protokoll und Prüfplakette inklusive Fristen-Automatik.</p>
+            <a class="cta" href="https://craftlogapp.github.io/pruefdex-landing/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+          </div>
+        </div>
+
+        <div class="app" style="--accent:#22C55E;--accent2:#15803D;--accentGlow:rgba(34,197,94,.18)">
+          <div class="ico"><img src="assets/schutzheld-icon.png" alt="SchutzDex" /></div>
+          <div class="body">
+            <h3>SchutzDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
+            <p data-i18n="appSchutzDex">KI-gestützte Arbeitsschutz-Unterweisung mit prüffestem Nachweis und Gefährdungsbeurteilung — Sicherheitsunterweisungen ohne Zettelwirtschaft.</p>
+            <a class="cta" href="https://craftlogapp.github.io/schutzheld-web/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+          </div>
+        </div>
+
+        <div class="app" style="--accent:#F59E0B;--accent2:#B45309;--accentGlow:rgba(245,158,11,.16)">
+          <div class="ico"><img src="assets/craftlog-icon.png" alt="CraftDex" /></div>
+          <div class="body">
+            <h3>CraftDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
+            <p data-i18n="appCraftlog">Die App für Handwerksbetriebe — Aufträge, Zeiterfassung und Doku an einem Ort. Schluss mit verstreuten Zetteln und Excel-Listen.</p>
+            <a class="cta" href="https://craftlogapp.github.io/craftlog-web/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+          </div>
+        </div>
+
+        <div class="app" style="--accent:#0D9488;--accent2:#0F766E;--accentGlow:rgba(13,148,136,.18)">
+          <div class="ico"><img src="assets/baumdex-icon.png" alt="BaumDex" /></div>
+          <div class="body">
+            <h3>BaumDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
+            <p data-i18n="appBaumdex">Baumkataster &amp; Verkehrssicherung — Kontrollen lückenlos und rechtssicher dokumentieren, Fristen im Blick, Haftung im Griff.</p>
+            <span class="cta-soon" data-i18n="ctaSoon">Website folgt</span>
+          </div>
+        </div>
+
+        <div class="app" style="--accent:#06B6D4;--accent2:#0E7490;--accentGlow:rgba(6,182,212,.18)">
+          <div class="ico"><img src="assets/winterdex-icon.png" alt="WinterDex" /></div>
+          <div class="body">
+            <h3>WinterDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
+            <p data-i18n="appWinterdex">Winterdienst-Nachweis — Räum- &amp; Streueinsätze mit GPS, Foto und Wetter-Snapshot gerichtsfest dokumentieren. Glätte-Frühwarnung inklusive.</p>
+            <a class="cta" href="https://craftlogapp.github.io/winterdex-web/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+          </div>
+        </div>
+
+        <div class="app" style="--accent:#7C3AED;--accent2:#5B21B6;--accentGlow:rgba(124,58,237,.18)">
+          <div class="ico"><img src="assets/routelog-icon.png" alt="TourDex" /></div>
+          <div class="body">
+            <h3>TourDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
+            <p data-i18n="appRoutelog">Automatisches Fahrtenbuch — Fahrten erkennen und Kilometer rechtssicher dokumentieren. Finanzamt-konform, ganz ohne manuelles Mitschreiben.</p>
+            <a class="cta" href="https://craftlogapp.github.io/routelog-web/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+          </div>
+        </div>
+
+        <div class="app" style="--accent:#0EA5E9;--accent2:#0369A1;--accentGlow:rgba(14,165,233,.18)">
+          <div class="ico"><img src="assets/archio-icon.png" alt="DokuDex" /></div>
+          <div class="body">
+            <h3>DokuDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
+            <p data-i18n="appDokuDex">Dokumente sicher archivieren und jederzeit wiederfinden — Aufbewahrungsfristen erfüllen, ohne im Aktenchaos zu suchen.</p>
+            <a class="cta" href="https://craftlogapp.github.io/archio-web/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WARUM -->
+  <section id="warum">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-eyebrow" data-i18n="whyEyebrow">Warum Dexware</div>
+        <h2 data-i18n="whyTitle">Für den Betrieb, nicht für die IT-Abteilung</h2>
+      </div>
+      <div class="values">
+        <div class="value">
+          <div class="vi">⚡</div>
+          <h4 data-i18n="v1Title">Eine Pflicht, eine App</h4>
+          <p data-i18n="v1Desc">Keine überladene Suite. Jede App macht eine Sache richtig — in unter einer Minute pro Vorgang.</p>
+        </div>
+        <div class="value">
+          <div class="vi">🛡️</div>
+          <h4 data-i18n="v2Title">Prüffest &amp; rechtssicher</h4>
+          <p data-i18n="v2Desc">Nachweise mit allen Pflichtangaben nach DGUV V3, VDE und BetrSichV — lückenlos dokumentiert.</p>
+        </div>
+        <div class="value">
+          <div class="vi">🤝</div>
+          <h4 data-i18n="v3Title">Compliance aus einer Hand</h4>
+          <p data-i18n="v3Desc">Ein Stil, ein Login-Gefühl, faire Preise. Im Bundle decken die Apps deine Pflichten gemeinsam ab.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="band">
+        <h2 data-i18n="bandTitle">Sag uns, welche Pflicht dich nervt.</h2>
+        <p data-i18n="bandLead">Wir bauen die App, die sie dir abnimmt. Feedback, Bundle-Anfragen oder Partnerschaften willkommen.</p>
+        <a href="mailto:2easy4trash@gmail.com?subject=Dexware%20Anfrage" class="btn btn-primary" data-i18n="bandCta">E-Mail an Dexware</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot">
+      <span class="muted">© 2026 Dexware</span>
+      <span>
+        <a href="mailto:2easy4trash@gmail.com" data-i18n="footerContact">Kontakt</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    var T = {
+      de: {
+        docTitle: 'Dexware — Software fürs Handwerk. Compliance aus einer Hand.',
+        navApps: 'Apps', navWhy: 'Warum Dexware', navContact: 'Kontakt',
+        eyebrow: 'Software-Studio fürs Handwerk',
+        heroTitle: 'Compliance aus einer Hand — <span class="hl">mobil, prüffest, ohne Papierkram</span>.',
+        heroLead: 'Dexware baut fokussierte Apps, die Dokumentation und gesetzliche Nachweise im Betrieb mühelos machen. Statt überladener Enterprise-Software: je eine schlanke App pro Pflicht — gemacht fürs Elektro-Handwerk, Prüfdienstleister und KMU.',
+        ctaApps: 'Apps ansehen', ctaContact: 'Kontakt',
+        stat1l: 'Eine Familie, ein Stil', stat2l: 'Prüffeste Nachweise', stat3n: 'Mobil-first', stat3l: 'Alles am Handy erledigt',
+        appsEyebrow: 'Unsere Apps', appsTitle: 'Eine Familie fürs Handwerk',
+        appsLead: 'Jede App löst genau eine Pflicht — sauber, mobil und rechtssicher. Im Bundle stärker.',
+        badgeAvailable: 'Verfügbar', badgeSoon: 'Bald', ctaWebsite: 'Zur Website →', ctaSoon: 'Website folgt',
+        appPruefdex: 'DGUV-V3-Geräteprüfung mobil & prüffest: Gerät per QR scannen, Sicht- & Messprüfung abhaken — fertiges Protokoll und Prüfplakette inklusive Fristen-Automatik.',
+        appSchutzDex: 'KI-gestützte Arbeitsschutz-Unterweisung mit prüffestem Nachweis und Gefährdungsbeurteilung — Sicherheitsunterweisungen ohne Zettelwirtschaft.',
+        appCraftlog: 'Die App für Handwerksbetriebe — Aufträge, Zeiterfassung und Doku an einem Ort. Schluss mit verstreuten Zetteln und Excel-Listen.',
+        appBaumdex: 'Baumkataster & Verkehrssicherung — Kontrollen lückenlos und rechtssicher dokumentieren, Fristen im Blick, Haftung im Griff.',
+        appWinterdex: 'Winterdienst-Nachweis — Räum- & Streueinsätze mit GPS, Foto und Wetter-Snapshot gerichtsfest dokumentieren. Glätte-Frühwarnung inklusive.',
+        appRoutelog: 'Automatisches Fahrtenbuch — Fahrten erkennen und Kilometer rechtssicher dokumentieren. Finanzamt-konform, ganz ohne manuelles Mitschreiben.',
+        appDokuDex: 'Dokumente sicher archivieren und jederzeit wiederfinden — Aufbewahrungsfristen erfüllen, ohne im Aktenchaos zu suchen.',
+        whyEyebrow: 'Warum Dexware', whyTitle: 'Für den Betrieb, nicht für die IT-Abteilung',
+        v1Title: 'Eine Pflicht, eine App', v1Desc: 'Keine überladene Suite. Jede App macht eine Sache richtig — in unter einer Minute pro Vorgang.',
+        v2Title: 'Prüffest & rechtssicher', v2Desc: 'Nachweise mit allen Pflichtangaben nach DGUV V3, VDE und BetrSichV — lückenlos dokumentiert.',
+        v3Title: 'Compliance aus einer Hand', v3Desc: 'Ein Stil, ein Login-Gefühl, faire Preise. Im Bundle decken die Apps deine Pflichten gemeinsam ab.',
+        bandTitle: 'Sag uns, welche Pflicht dich nervt.', bandLead: 'Wir bauen die App, die sie dir abnimmt. Feedback, Bundle-Anfragen oder Partnerschaften willkommen.', bandCta: 'E-Mail an Dexware',
+        footerContact: 'Kontakt'
+      },
+      en: {
+        docTitle: 'Dexware — Software for the trades. Compliance in one place.',
+        navApps: 'Apps', navWhy: 'Why Dexware', navContact: 'Contact',
+        eyebrow: 'A software studio for the trades',
+        heroTitle: 'Compliance in one place — <span class="hl">mobile, audit-proof, paper-free</span>.',
+        heroLead: 'Dexware builds focused apps that make documentation and legal proof effortless for your business. Instead of bloated enterprise software: one lean app per obligation — made for electrical trades, testing providers and SMEs.',
+        ctaApps: 'See the apps', ctaContact: 'Contact',
+        stat1l: 'One family, one style', stat2l: 'Audit-proof records', stat3n: 'Mobile-first', stat3l: 'Done on your phone',
+        appsEyebrow: 'Our apps', appsTitle: 'A family for the trades',
+        appsLead: 'Each app solves exactly one obligation — clean, mobile and compliant. Stronger together.',
+        badgeAvailable: 'Available', badgeSoon: 'Soon', ctaWebsite: 'Visit website →', ctaSoon: 'Website coming soon',
+        appPruefdex: 'DGUV-V3 appliance testing, mobile & audit-proof: scan the device via QR, tick visual & measurement checks — finished report and test label including deadline automation.',
+        appSchutzDex: 'AI-assisted occupational-safety briefings with audit-proof records and risk assessment — safety instructions without paperwork.',
+        appCraftlog: 'The app for trade businesses — jobs, time tracking and documentation in one place. No more scattered notes and spreadsheets.',
+        appBaumdex: 'Tree register & traffic-safety inspections — document checks seamlessly and compliantly, deadlines in view, liability under control.',
+        appWinterdex: 'Winter service log — document clearing & gritting with GPS, photo and weather snapshot, court-proof. Ice early-warning included.',
+        appRoutelog: 'Automatic logbook — detect trips and record mileage compliantly. Tax-office-ready, with no manual logging.',
+        appDokuDex: 'Archive documents securely and find them anytime — meet retention requirements without digging through file chaos.',
+        whyEyebrow: 'Why Dexware', whyTitle: 'For the business, not the IT department',
+        v1Title: 'One obligation, one app', v1Desc: 'No bloated suite. Each app does one thing right — in under a minute per task.',
+        v2Title: 'Audit-proof & compliant', v2Desc: 'Records with all mandatory details per DGUV V3, VDE and BetrSichV — fully documented.',
+        v3Title: 'Compliance in one place', v3Desc: 'One style, one login feel, fair pricing. Together the apps cover your obligations.',
+        bandTitle: 'Tell us which obligation bugs you.', bandLead: "We'll build the app that takes it off your plate. Feedback, bundle requests or partnerships welcome.", bandCta: 'Email Dexware',
+        footerContact: 'Contact'
+      }
+    };
+    var current = 'de';
+    function applyLang(lang){
+      if(!T[lang]) lang = 'de';
+      current = lang;
+      document.documentElement.lang = lang;
+      var dict = T[lang];
+      var nodes = document.querySelectorAll('[data-i18n]');
+      for(var i=0;i<nodes.length;i++){
+        var k = nodes[i].getAttribute('data-i18n');
+        if(dict[k] != null) nodes[i].innerHTML = dict[k];
+      }
+      if(dict.docTitle) document.title = dict.docTitle;
+      var btn = document.getElementById('langToggle');
+      if(btn){ btn.textContent = (lang === 'de') ? 'EN' : 'DE'; btn.setAttribute('aria-label', lang === 'de' ? 'Switch to English' : 'Auf Deutsch umschalten'); }
+      try{ localStorage.setItem('dexware-lang', lang); }catch(e){}
+    }
+    function detectLang(){
+      try{ var saved = localStorage.getItem('dexware-lang'); if(saved) return saved; }catch(e){}
+      var n = (navigator.language || navigator.userLanguage || 'de').toLowerCase();
+      return n.indexOf('de') === 0 ? 'de' : 'en';
+    }
+    applyLang(detectLang());
+    document.getElementById('langToggle').addEventListener('click', function(){
+      applyLang(current === 'de' ? 'en' : 'de');
+    });
+  </script>
 </body>
 </html>
