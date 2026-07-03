@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KfzDex — UVV-Prüfung & Führerscheinkontrolle für deinen Fuhrpark</title>
+  <meta name="description" content="Fuhrpark-Pflichten im Griff: UVV-Prüfung (DGUV Vorschrift 70) und Führerscheinkontrolle (§21 StVG) mit Fristen-Ampel, Erinnerungen und prüffesten PDF-Nachweisen. Ein Preis für den ganzen Betrieb." />
+  <meta name="robots" content="all" />
+  <meta name="theme-color" content="#0C1017" />
+  <meta property="og:title" content="KfzDex — Fuhrpark-Pflichten im Griff" />
+  <meta property="og:description" content="UVV-Prüfung & Führerscheinkontrolle mit Nachweis — dokumentiert, erinnert, erledigt." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #0C1017; --surface: #151B26; --surface2: #10161F; --border: #2A3447;
+      --text: #EAEEF5; --muted: #9AA5B8; --accent: #F97316; --accent2: #FB923C;
+      --success: #16A34A; --warning: #F59E0B; --danger: #EF4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(1000px 560px at 15% -100px, rgba(249,115,22,.14), transparent 65%),
+        radial-gradient(800px 520px at 95% 5%, rgba(251,146,60,.08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 24px 0; display: flex; align-items: center; gap: 12px; }
+    .logo { width: 42px; height: 42px; background: var(--accent); border-radius: 11px; display: grid; place-items: center; box-shadow: 0 6px 18px rgba(249,115,22,.35); }
+    .brand { font-size: 21px; font-weight: 800; letter-spacing: -0.4px; }
+    .brand b { color: var(--accent); }
+    .nav-spacer { flex: 1; }
+    nav a { color: var(--muted); font-size: 14px; margin-left: 22px; }
+    nav a:hover { color: var(--text); }
+    @media (max-width: 600px) { nav { display: none; } }
+
+    .hero { padding: 56px 0 40px; max-width: 760px; }
+    .eyebrow { display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase;
+      color: #FDBA74; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.35);
+      padding: 7px 14px; border-radius: 999px; margin-bottom: 22px; }
+    h1 { font-size: 46px; font-weight: 850; letter-spacing: -1.3px; line-height: 1.1; }
+    h1 .hl { background: linear-gradient(120deg, #FDBA74, var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { font-size: 18px; color: var(--muted); margin-top: 20px; max-width: 640px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+    .btn { display: inline-block; font-size: 15px; font-weight: 700; padding: 13px 26px; border-radius: 12px; border: 1px solid transparent; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent2); }
+    .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .soon-badge { color: var(--muted); font-size: 13px; }
+    @media (max-width: 600px) { h1 { font-size: 34px; } .lead { font-size: 16px; } }
+
+    .ampel { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 38px; }
+    .amp { display: inline-flex; align-items: center; gap: 9px; font-size: 13.5px; font-weight: 700; padding: 9px 16px; border-radius: 12px; }
+    .amp .dot { width: 11px; height: 11px; border-radius: 6px; }
+    .a-ok { background: rgba(22,163,74,.13); color: #4ADE80; } .a-ok .dot { background: var(--success); }
+    .a-warn { background: rgba(245,158,11,.13); color: #FCD34D; } .a-warn .dot { background: var(--warning); }
+    .a-due { background: rgba(239,68,68,.13); color: #FCA5A5; } .a-due .dot { background: var(--danger); }
+
+    section { padding: 48px 0; }
+    .sec-eyebrow { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+    h2 { font-size: 29px; font-weight: 850; letter-spacing: -0.6px; margin-top: 8px; }
+    .sec-lead { color: var(--muted); font-size: 15.5px; margin-top: 10px; max-width: 620px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+    @media (max-width: 780px) { .grid { grid-template-columns: 1fr; } }
+    .feat { background: linear-gradient(180deg, var(--surface), var(--surface2)); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+    .feat .fi { font-size: 24px; }
+    .feat h3 { font-size: 16.5px; font-weight: 750; margin: 12px 0 6px; }
+    .feat p { color: var(--muted); font-size: 14px; }
+
+    .duty { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 14px; padding: 20px 22px; margin-top: 16px; }
+    .duty h3 { font-size: 16px; font-weight: 750; }
+    .duty p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 30px; }
+    @media (max-width: 680px) { .plans { grid-template-columns: 1fr; } }
+    .plan { background: linear-gradient(180deg, var(--surface), var(--surface2)); border: 1px solid var(--border); border-radius: 18px; padding: 26px; }
+    .plan.pro { border-color: rgba(249,115,22,.55); box-shadow: 0 18px 44px rgba(249,115,22,.10); }
+    .plan .pn { font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    .plan.pro .pn { color: var(--accent); }
+    .plan .pp { font-size: 32px; font-weight: 850; letter-spacing: -0.8px; margin-top: 8px; }
+    .plan .pp small { font-size: 14px; font-weight: 600; color: var(--muted); }
+    .plan .alt { color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+    .plan ul { list-style: none; margin-top: 16px; }
+    .plan li { font-size: 14px; color: var(--text); padding: 6px 0; }
+    .plan li::before { content: "✓  "; color: var(--accent); font-weight: 800; }
+    .plan li.mu { color: var(--muted); } .plan li.mu::before { content: "—  "; color: var(--muted); }
+    .anchor { background: rgba(249,115,22,.08); border: 1px dashed rgba(249,115,22,.4); border-radius: 12px; padding: 13px 16px; margin-top: 22px; font-size: 14px; color: var(--muted); }
+    .anchor b { color: var(--text); }
+
+    .band { background: linear-gradient(135deg, #3a2415, #171009); border: 1px solid rgba(249,115,22,.35);
+      border-radius: 20px; padding: 44px 30px; text-align: center; margin-top: 8px; }
+    .band h2 { margin-bottom: 10px; }
+    .band p { color: var(--muted); margin-bottom: 22px; }
+
+    footer { border-top: 1px solid var(--border); margin-top: 36px; padding: 30px 0 52px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .foot .muted { color: var(--muted); font-size: 13px; }
+    .foot a { color: var(--muted); font-size: 13px; margin-left: 16px; }
+    .foot a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="logo">
+        <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M22 68 A 32 32 0 1 1 78 68" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+          <line x1="50" y1="62" x2="68" y2="40" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand">Kfz<b>Dex</b></span>
+      <span class="nav-spacer"></span>
+      <nav>
+        <a href="#funktionen">Funktionen</a>
+        <a href="#pflichten">Pflichten</a>
+        <a href="#preise">Preise</a>
+        <a href="https://dexware.app/">Dexware</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <span class="eyebrow">Fuhrpark-Compliance für kleine Betriebe</span>
+      <h1>Dein Fuhrpark. <span class="hl">Alle Pflichten im Griff.</span></h1>
+      <p class="lead">
+        Jedes Firmenfahrzeug braucht jährlich eine UVV-Prüfung, jeder Fahrer regelmäßige
+        Führerscheinkontrollen. Ohne Nachweis haftest du persönlich. KfzDex macht daraus
+        eine Sache von Minuten — dokumentiert, erinnert, erledigt.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:2easy4trash@gmail.com?subject=KfzDex%20Interesse">Benachrichtigt mich zum Start</a>
+        <span class="soon-badge">Bald im Google Play Store — kostenlos starten</span>
+      </div>
+      <div class="ampel">
+        <span class="amp a-ok"><span class="dot"></span>UVV gültig bis 02.03.2027</span>
+        <span class="amp a-warn"><span class="dot"></span>Kontrolle fällig in 12 Tagen</span>
+        <span class="amp a-due"><span class="dot"></span>UVV 14 Tage überfällig</span>
+      </div>
+    </div>
+
+    <section id="funktionen">
+      <div class="sec-eyebrow">Funktionen</div>
+      <h2>Von der Frist bis zum prüffesten Nachweis</h2>
+      <p class="sec-lead">Fahrzeuge und Fahrer einmal anlegen — ab dann überwacht KfzDex jede Frist automatisch.</p>
+      <div class="grid">
+        <div class="feat"><div class="fi">🚦</div><h3>Fristen-Ampel</h3><p>Das Dashboard zeigt auf einen Blick, was überfällig ist, was bald fällig wird und was erledigt ist — sortiert nach Dringlichkeit.</p></div>
+        <div class="feat"><div class="fi">✅</div><h3>UVV-Prüfung in 2 Minuten</h3><p>Geführte 10-Punkte-Checkliste nach DGUV Vorschrift 70: Bremsen, Beleuchtung, Reifen, Lenkung und mehr. Die 12-Monats-Frist startet automatisch neu.</p></div>
+        <div class="feat"><div class="fi">🪪</div><h3>Führerscheinkontrolle</h3><p>Geführte Sichtprüfung nach §21 StVG mit optionalem Foto-Nachweis (bleibt lokal auf dem Gerät). Intervall pro Fahrer wählbar: 3, 6 oder 12 Monate.</p></div>
+        <div class="feat"><div class="fi">📄</div><h3>Prüffeste PDF-Nachweise</h3><p>Jede Prüfung landet in der Historie und lässt sich als PDF-Protokoll exportieren — mit Checkliste, Mängeln und Unterschriftszeilen.</p></div>
+        <div class="feat"><div class="fi">🔔</div><h3>Erinnerungen</h3><p>Lokale Benachrichtigungen am Fälligkeitstag — keine Frist rutscht mehr durch.</p></div>
+        <div class="feat"><div class="fi">👷</div><h3>Team-Zugang</h3><p>Einladungscode teilen, und der ganze Betrieb arbeitet mit demselben Fuhrpark. Der Meister prüft, das Büro exportiert die Nachweise.</p></div>
+      </div>
+    </section>
+
+    <section id="pflichten">
+      <div class="sec-eyebrow">Warum das wichtig ist</div>
+      <h2>Zwei Pflichten, die jeder Betrieb mit Fahrzeugen hat</h2>
+      <div class="duty">
+        <h3>UVV-Fahrzeugprüfung — jährlich (DGUV Vorschrift 70)</h3>
+        <p>Jedes betrieblich genutzte Fahrzeug muss mindestens einmal jährlich durch eine befähigte Person auf arbeitssicheren Zustand geprüft werden — vom Transporter bis zum Anhänger. Die Berufsgenossenschaft verlangt den Nachweis, spätestens nach einem Unfall.</p>
+      </div>
+      <div class="duty">
+        <h3>Führerscheinkontrolle — regelmäßig (§21 StVG, Halterhaftung)</h3>
+        <p>Wer als Unternehmer Fahrzeuge überlässt, muss regelmäßig kontrollieren, dass jeder Fahrer eine gültige Fahrerlaubnis besitzt. Ohne dokumentierte Kontrolle drohen im Ernstfall Geldstrafe oder Freiheitsstrafe wegen Zulassens des Fahrens ohne Fahrerlaubnis.</p>
+      </div>
+      <div class="duty">
+        <h3>KfzDex dokumentiert — du bleibst verantwortlich</h3>
+        <p>KfzDex unterstützt bei Organisation und Dokumentation, ersetzt aber keine Rechtsberatung. Verantwortlich für die Einhaltung der Pflichten bleibt der Halter bzw. Unternehmer.</p>
+      </div>
+    </section>
+
+    <section id="preise">
+      <div class="sec-eyebrow">Preise</div>
+      <h2>Ein Preis für den ganzen Betrieb</h2>
+      <p class="sec-lead">Egal ob 3 oder 30 Fahrzeuge — bei KfzDex zahlst du nie pro Fahrzeug.</p>
+      <div class="plans">
+        <div class="plan">
+          <div class="pn">Free</div>
+          <div class="pp">0 € <small>für immer</small></div>
+          <div class="alt">Zum Ausprobieren und für Kleinstbetriebe</div>
+          <ul>
+            <li>2 Fahrzeuge, 3 Fahrer</li>
+            <li>UVV-Checkliste &amp; Führerscheinkontrolle</li>
+            <li>Fristen-Ampel &amp; Erinnerungen</li>
+            <li>PDF-Nachweise &amp; Historie</li>
+            <li class="mu">Unbegrenzte Fahrzeuge &amp; Fahrer</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <div class="pn">Pro</div>
+          <div class="pp">9,99 € <small>/ Monat</small></div>
+          <div class="alt">oder 79,99 € / Jahr — rund 33 % gespart</div>
+          <ul>
+            <li>Unbegrenzt Fahrzeuge &amp; Fahrer</li>
+            <li>Alles aus Free</li>
+            <li>Team-Zugang für den ganzen Betrieb</li>
+            <li>Ein Preis — egal wie groß dein Fuhrpark ist</li>
+          </ul>
+        </div>
+      </div>
+      <div class="anchor">
+        <b>Zum Vergleich:</b> Große Fuhrpark-Anbieter kassieren 10–20 € <b>pro Fahrzeug</b> und Monat.
+        Bei 10 Fahrzeugen sind das über 100 € monatlich — KfzDex kostet einen Bruchteil davon, für den ganzen Betrieb.
+      </div>
+    </section>
+
+    <section>
+      <div class="band">
+        <h2>Bald im Google Play Store</h2>
+        <p>KfzDex ist Teil der Dexware-Suite — Software fürs Handwerk, Compliance aus einer Hand.</p>
+        <a class="btn btn-primary" href="mailto:2easy4trash@gmail.com?subject=KfzDex%20Interesse">Beim Start benachrichtigen</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <span class="muted">© 2026 Dexware · KfzDex</span>
+        <span>
+          <a href="https://dexware.app/">Dexware-Suite</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="konto-loeschen.html">Konto löschen</a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
