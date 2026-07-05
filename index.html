@@ -95,6 +95,32 @@
     .cta:hover{background:var(--accent);color:#fff}
     .cta-soon{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--muted)}
 
+    /* Dexware Suite */
+    .suite{background:linear-gradient(180deg,rgba(37,99,235,.14),var(--surface2));border:2px solid var(--blue2);
+      border-radius:24px;padding:40px 34px;box-shadow:0 0 0 1px rgba(91,141,247,.3),0 28px 70px rgba(37,99,235,.18)}
+    .suite-pill{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+      color:#fff;background:var(--blue);padding:7px 15px;border-radius:999px}
+    .suite h2{margin-top:16px}
+    .suite .sec-lead{max-width:720px}
+    .suite-prices{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;max-width:720px}
+    @media(max-width:700px){.suite-prices{grid-template-columns:1fr}}
+    .sp{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;position:relative}
+    .sp.best{border-color:var(--blue2);box-shadow:0 12px 34px rgba(37,99,235,.2)}
+    .sp-badge{position:absolute;top:-13px;right:18px;font-size:12px;font-weight:800;color:#052e12;background:#4ADE80;padding:4px 12px;border-radius:999px}
+    .sp-name{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+    .sp.best .sp-name{color:var(--blue2)}
+    .sp-strike{color:var(--muted);font-size:14.5px;text-decoration:line-through;margin-top:12px}
+    .sp-amount{font-size:36px;font-weight:850;letter-spacing:-.8px;margin-top:2px}
+    .sp-amount small{font-size:15px;font-weight:600;color:var(--muted)}
+    .sp-note{color:var(--muted);font-size:13.5px;margin-top:6px}
+    .suite-icons{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
+    .suite-icons img{width:46px;height:46px;border-radius:12px;border:1px solid var(--border);background:var(--surface)}
+    .suite-list{list-style:none;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px;max-width:720px}
+    @media(max-width:700px){.suite-list{grid-template-columns:1fr}}
+    .suite-list li{font-size:15px;padding:6px 0 6px 24px;position:relative;color:var(--text)}
+    .suite-list li::before{content:"★";color:var(--blue2);position:absolute;left:0}
+    .suite-how{color:var(--muted);font-size:14px;margin-top:22px;margin-bottom:22px}
+
     /* Values */
     .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     @media(max-width:780px){.values{grid-template-columns:1fr}}
@@ -143,6 +169,7 @@
       <span class="nav-spacer"></span>
       <nav class="nav">
         <a href="#apps" data-i18n="navApps">Apps</a>
+        <a href="#suite" data-i18n="navSuite">Suite</a>
         <a href="#warum" data-i18n="navWhy">Warum Dexware</a>
         <a href="#kontakt" data-i18n="navContact">Kontakt</a>
       </nav>
@@ -256,6 +283,50 @@
     </div>
   </section>
 
+  <!-- DEXWARE SUITE -->
+  <section id="suite">
+    <div class="wrap">
+      <div class="suite">
+        <span class="suite-pill" data-i18n="suitePill">Dexware Suite — ein Abo, alle Apps</span>
+        <h2 data-i18n="suiteTitle">Alle 8 Apps. Ein Abo. Ein Preis.</h2>
+        <p class="sec-lead" data-i18n="suiteLead">Statt jede App einzeln zu abonnieren: die Dexware Suite kostet so viel wie unsere teuerste Einzel-App und schaltet alle frei — auf allen deinen Geräten. Neue Apps sind automatisch dabei, ohne Aufpreis.</p>
+        <div class="suite-prices">
+          <div class="sp">
+            <div class="sp-name" data-i18n="suiteMName">Monatlich</div>
+            <div class="sp-strike" data-i18n="suiteMStrike">über 90 € — alle Apps einzeln</div>
+            <div class="sp-amount">29,99 € <small data-i18n="suitePerM">/ Monat</small></div>
+            <div class="sp-note" data-i18n="suiteMNote">Der Preis unserer teuersten Einzel-App — über 65 % günstiger als alles einzeln.</div>
+          </div>
+          <div class="sp best">
+            <span class="sp-badge" data-i18n="suiteBadge">4 Monate geschenkt · −33 %</span>
+            <div class="sp-name" data-i18n="suiteYName">Jährlich</div>
+            <div class="sp-strike" data-i18n="suiteYStrike">statt 359,88 € (12 × 29,99 €)</div>
+            <div class="sp-amount">239,99 € <small data-i18n="suitePerY">/ Jahr</small></div>
+            <div class="sp-note" data-i18n="suiteYNote">Entspricht 20,00 € im Monat — du zahlst nur 8 von 12 Monaten.</div>
+          </div>
+        </div>
+        <div class="suite-icons">
+          <img src="assets/kfzdex-icon.png" alt="KfzDex" title="KfzDex" />
+          <img src="assets/pruefdex-icon.png" alt="PrüfDex" title="PrüfDex" />
+          <img src="assets/schutzheld-icon.png" alt="SchutzDex" title="SchutzDex" />
+          <img src="assets/baumdex-icon.png" alt="BaumDex" title="BaumDex" />
+          <img src="assets/winterdex-icon.png" alt="WinterDex" title="WinterDex" />
+          <img src="assets/routelog-icon.png" alt="TourDex" title="TourDex" />
+          <img src="assets/craftlog-icon.png" alt="CraftDex" title="CraftDex" />
+          <img src="assets/archio-icon.png" alt="DokuDex" title="DokuDex" />
+        </div>
+        <ul class="suite-list">
+          <li data-i18n="suiteB1">Alle 8 Apps inklusive — von UVV bis Winterdienst</li>
+          <li data-i18n="suiteB2">Alle zukünftigen Dexware-Apps automatisch dabei</li>
+          <li data-i18n="suiteB3">Einmal kaufen — in jeder App freigeschaltet</li>
+          <li data-i18n="suiteB4">Jederzeit kündbar</li>
+        </ul>
+        <p class="suite-how" data-i18n="suiteHow">Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.</p>
+        <a href="#apps" class="btn btn-primary" data-i18n="suiteCta">Apps entdecken</a>
+      </div>
+    </div>
+  </section>
+
   <!-- WARUM -->
   <section id="warum">
     <div class="wrap">
@@ -308,7 +379,7 @@
     var T = {
       de: {
         docTitle: 'Dexware — Software fürs Handwerk. Compliance aus einer Hand.',
-        navApps: 'Apps', navWhy: 'Warum Dexware', navContact: 'Kontakt',
+        navApps: 'Apps', navSuite: 'Suite', navWhy: 'Warum Dexware', navContact: 'Kontakt',
         eyebrow: 'Software-Studio fürs Handwerk',
         heroTitle: 'Compliance aus einer Hand — <span class="hl">mobil, prüffest, ohne Papierkram</span>.',
         heroLead: 'Dexware baut fokussierte Apps, die Dokumentation und gesetzliche Nachweise im Betrieb mühelos machen. Statt überladener Enterprise-Software: je eine schlanke App pro Pflicht — gemacht fürs Elektro-Handwerk, Prüfdienstleister und KMU.',
@@ -325,6 +396,17 @@
         appRoutelog: 'Automatisches Fahrtenbuch — Fahrten erkennen und Kilometer rechtssicher dokumentieren. Finanzamt-konform, ganz ohne manuelles Mitschreiben.',
         appKfzdex: 'Fuhrpark-Pflichten im Griff — UVV-Prüfung (DGUV Vorschrift 70) & Führerscheinkontrolle (§21 StVG) mit Fristen-Ampel, Erinnerungen und prüffesten PDF-Nachweisen.',
         appDokuDex: 'Dokumente sicher archivieren und jederzeit wiederfinden — Aufbewahrungsfristen erfüllen, ohne im Aktenchaos zu suchen.',
+        suitePill: 'Dexware Suite — ein Abo, alle Apps',
+        suiteTitle: 'Alle 8 Apps. Ein Abo. Ein Preis.',
+        suiteLead: 'Statt jede App einzeln zu abonnieren: die Dexware Suite kostet so viel wie unsere teuerste Einzel-App und schaltet alle frei — auf allen deinen Geräten. Neue Apps sind automatisch dabei, ohne Aufpreis.',
+        suiteMName: 'Monatlich', suiteMStrike: 'über 90 € — alle Apps einzeln', suitePerM: '/ Monat',
+        suiteMNote: 'Der Preis unserer teuersten Einzel-App — über 65 % günstiger als alles einzeln.',
+        suiteBadge: '4 Monate geschenkt · −33 %', suiteYName: 'Jährlich', suiteYStrike: 'statt 359,88 € (12 × 29,99 €)', suitePerY: '/ Jahr',
+        suiteYNote: 'Entspricht 20,00 € im Monat — du zahlst nur 8 von 12 Monaten.',
+        suiteB1: 'Alle 8 Apps inklusive — von UVV bis Winterdienst', suiteB2: 'Alle zukünftigen Dexware-Apps automatisch dabei',
+        suiteB3: 'Einmal kaufen — in jeder App freigeschaltet', suiteB4: 'Jederzeit kündbar',
+        suiteHow: 'Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.',
+        suiteCta: 'Apps entdecken',
         whyEyebrow: 'Warum Dexware', whyTitle: 'Für den Betrieb, nicht für die IT-Abteilung',
         v1Title: 'Eine Pflicht, eine App', v1Desc: 'Keine überladene Suite. Jede App macht eine Sache richtig — in unter einer Minute pro Vorgang.',
         v2Title: 'Prüffest & rechtssicher', v2Desc: 'Nachweise mit allen Pflichtangaben nach DGUV V3, VDE und BetrSichV — lückenlos dokumentiert.',
@@ -334,7 +416,7 @@
       },
       en: {
         docTitle: 'Dexware — Software for the trades. Compliance in one place.',
-        navApps: 'Apps', navWhy: 'Why Dexware', navContact: 'Contact',
+        navApps: 'Apps', navSuite: 'Suite', navWhy: 'Why Dexware', navContact: 'Contact',
         eyebrow: 'A software studio for the trades',
         heroTitle: 'Compliance in one place — <span class="hl">mobile, audit-proof, paper-free</span>.',
         heroLead: 'Dexware builds focused apps that make documentation and legal proof effortless for your business. Instead of bloated enterprise software: one lean app per obligation — made for electrical trades, testing providers and SMEs.',
@@ -351,6 +433,17 @@
         appRoutelog: 'Automatic logbook — detect trips and record mileage compliantly. Tax-office-ready, with no manual logging.',
         appKfzdex: 'Fleet obligations under control — vehicle safety inspections (UVV) & driver licence checks with a deadline traffic light, reminders and audit-proof PDF records.',
         appDokuDex: 'Archive documents securely and find them anytime — meet retention requirements without digging through file chaos.',
+        suitePill: 'Dexware Suite — one subscription, all apps',
+        suiteTitle: 'All 8 apps. One subscription. One price.',
+        suiteLead: 'Instead of subscribing to each app separately: the Dexware Suite costs the same as our most expensive single app and unlocks them all — on all your devices. New apps are automatically included, at no extra cost.',
+        suiteMName: 'Monthly', suiteMStrike: 'over €90 — all apps separately', suitePerM: '/ month',
+        suiteMNote: 'The price of our most expensive single app — over 65% cheaper than everything separately.',
+        suiteBadge: '4 months free · −33%', suiteYName: 'Yearly', suiteYStrike: 'instead of €359.88 (12 × €29.99)', suitePerY: '/ year',
+        suiteYNote: 'Equals €20.00 per month — you only pay 8 of 12 months.',
+        suiteB1: 'All 8 apps included — from vehicle inspections to winter service', suiteB2: 'All future Dexware apps automatically included',
+        suiteB3: 'Buy once — unlocked in every app', suiteB4: 'Cancel anytime',
+        suiteHow: 'Available right inside every Dexware app: just tap “Go Pro” in the app and choose the Dexware Suite.',
+        suiteCta: 'Explore the apps',
         whyEyebrow: 'Why Dexware', whyTitle: 'For the business, not the IT department',
         v1Title: 'One obligation, one app', v1Desc: 'No bloated suite. Each app does one thing right — in under a minute per task.',
         v2Title: 'Audit-proof & compliant', v2Desc: 'Records with all mandatory details per DGUV V3, VDE and BetrSichV — fully documented.',
