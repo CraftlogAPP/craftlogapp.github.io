@@ -95,6 +95,17 @@
     .cta:hover{background:var(--accent);color:#fff}
     .cta-soon{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--muted)}
 
+    /* Region-Siegel */
+    .app .body{display:flex;flex-direction:column}
+    .card-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:auto;padding-top:14px}
+    .card-foot .cta,.card-foot .cta-soon{margin-top:0}
+    .region{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:750;
+      letter-spacing:.3px;padding:5px 10px 5px 8px;border-radius:999px;white-space:nowrap;
+      border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted)}
+    .region svg{width:14px;height:14px;flex-shrink:0}
+    .region.dach{color:#F1C77A;background:rgba(245,158,11,.10);border-color:rgba(245,158,11,.30)}
+    .region.intl{color:#AFC7FF;background:rgba(37,99,235,.12);border-color:rgba(91,141,247,.34)}
+
     /* Dexware Suite */
     .suite{background:linear-gradient(180deg,rgba(37,99,235,.14),var(--surface2));border:2px solid var(--blue2);
       border-radius:24px;padding:40px 34px;box-shadow:0 0 0 1px rgba(91,141,247,.3),0 28px 70px rgba(37,99,235,.18)}
@@ -144,6 +155,19 @@
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M3 12h18"/>
+        <path d="M12 3c2.6 2.7 3.9 5.7 3.9 9s-1.3 6.3-3.9 9c-2.6-2.7-3.9-5.7-3.9-9S9.4 5.7 12 3z"/>
+      </symbol>
+      <symbol id="ic-peaks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 19h20L14.5 6l-3.4 5.8-2.3-3z"/>
+        <path d="M12.6 10.6l1.9-3.2"/>
+      </symbol>
+    </defs>
+  </svg>
   <div class="wrap">
     <!-- NAV -->
     <header>
@@ -212,7 +236,10 @@
           <div class="body">
             <h3>PrüfDex <span class="badge" data-i18n="badgeAvailable">Verfügbar</span></h3>
             <p data-i18n="appPruefdex">DGUV-V3-Geräteprüfung mobil &amp; prüffest: Gerät per QR scannen, Sicht- &amp; Messprüfung abhaken — fertiges Protokoll und Prüfplakette inklusive Fristen-Automatik.</p>
-            <a class="cta" href="https://pruefdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://pruefdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region dach" title="Deutschland · Österreich · Schweiz"><svg><use href="#ic-peaks"/></svg><span data-i18n="regionDach">DACH-Raum</span></span>
+            </div>
           </div>
         </div>
 
@@ -221,7 +248,10 @@
           <div class="body">
             <h3>SchutzDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appSchutzDex">KI-gestützte Arbeitsschutz-Unterweisung mit prüffestem Nachweis und Gefährdungsbeurteilung — Sicherheitsunterweisungen ohne Zettelwirtschaft.</p>
-            <a class="cta" href="https://schutzdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://schutzdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region dach" title="Deutschland · Österreich · Schweiz"><svg><use href="#ic-peaks"/></svg><span data-i18n="regionDach">DACH-Raum</span></span>
+            </div>
           </div>
         </div>
 
@@ -230,7 +260,10 @@
           <div class="body">
             <h3>CraftDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appCraftlog">Die App für Handwerksbetriebe — Aufträge, Zeiterfassung und Doku an einem Ort. Schluss mit verstreuten Zetteln und Excel-Listen.</p>
-            <a class="cta" href="https://craftdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://craftdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region intl" title="Deutsch · English · Español · Français"><svg><use href="#ic-globe"/></svg><span data-i18n="regionIntl">International · 4 Sprachen</span></span>
+            </div>
           </div>
         </div>
 
@@ -239,7 +272,10 @@
           <div class="body">
             <h3>BaumDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appBaumdex">Baumkataster &amp; Verkehrssicherung — Kontrollen lückenlos und rechtssicher dokumentieren, Fristen im Blick, Haftung im Griff.</p>
-            <a class="cta" href="https://baumdex-portal.vercel.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://baumdex-portal.vercel.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region dach" title="Deutschland · Österreich · Schweiz"><svg><use href="#ic-peaks"/></svg><span data-i18n="regionDach">DACH-Raum</span></span>
+            </div>
           </div>
         </div>
 
@@ -248,7 +284,10 @@
           <div class="body">
             <h3>WinterDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appWinterdex">Winterdienst-Nachweis — Räum- &amp; Streueinsätze mit GPS, Foto und Wetter-Snapshot gerichtsfest dokumentieren. Glätte-Frühwarnung inklusive.</p>
-            <a class="cta" href="https://winterdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://winterdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region dach" title="Deutschland · Österreich · Schweiz"><svg><use href="#ic-peaks"/></svg><span data-i18n="regionDach">DACH-Raum</span></span>
+            </div>
           </div>
         </div>
 
@@ -257,7 +296,10 @@
           <div class="body">
             <h3>TourDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appRoutelog">Automatisches Fahrtenbuch — Fahrten erkennen und Kilometer rechtssicher dokumentieren. Finanzamt-konform, ganz ohne manuelles Mitschreiben.</p>
-            <a class="cta" href="https://tourdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://tourdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region dach" title="Deutschland · Österreich · Schweiz"><svg><use href="#ic-peaks"/></svg><span data-i18n="regionDach">DACH-Raum</span></span>
+            </div>
           </div>
         </div>
 
@@ -266,7 +308,10 @@
           <div class="body">
             <h3>KfzDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appKfzdex">Fuhrpark-Pflichten im Griff — UVV-Prüfung (DGUV Vorschrift 70) &amp; Führerscheinkontrolle (§21 StVG) mit Fristen-Ampel, Erinnerungen und prüffesten PDF-Nachweisen.</p>
-            <a class="cta" href="https://kfzdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://kfzdex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region dach" title="Deutschland · Österreich · Schweiz"><svg><use href="#ic-peaks"/></svg><span data-i18n="regionDach">DACH-Raum</span></span>
+            </div>
           </div>
         </div>
 
@@ -275,7 +320,10 @@
           <div class="body">
             <h3>DokuDex <span class="badge soon" data-i18n="badgeSoon">Bald</span></h3>
             <p data-i18n="appDokuDex">Dokumente sicher archivieren und jederzeit wiederfinden — Aufbewahrungsfristen erfüllen, ohne im Aktenchaos zu suchen.</p>
-            <a class="cta" href="https://dokudex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+            <div class="card-foot">
+              <a class="cta" href="https://dokudex.dexware.app/" target="_blank" rel="noopener" data-i18n="ctaWebsite">Zur Website →</a>
+              <span class="region intl" title="Deutsch · English · Español · Français"><svg><use href="#ic-globe"/></svg><span data-i18n="regionIntl">International · 4 Sprachen</span></span>
+            </div>
           </div>
         </div>
 
@@ -388,6 +436,7 @@
         appsEyebrow: 'Unsere Apps', appsTitle: 'Eine Familie fürs Handwerk',
         appsLead: 'Jede App löst genau eine Pflicht — sauber, mobil und rechtssicher. Im Bundle stärker.',
         badgeAvailable: 'Verfügbar', badgeSoon: 'Bald', ctaWebsite: 'Zur Website →', ctaSoon: 'Website folgt',
+        regionDach: 'DACH-Raum', regionIntl: 'International · 4 Sprachen',
         appPruefdex: 'DGUV-V3-Geräteprüfung mobil & prüffest: Gerät per QR scannen, Sicht- & Messprüfung abhaken — fertiges Protokoll und Prüfplakette inklusive Fristen-Automatik.',
         appSchutzDex: 'KI-gestützte Arbeitsschutz-Unterweisung mit prüffestem Nachweis und Gefährdungsbeurteilung — Sicherheitsunterweisungen ohne Zettelwirtschaft.',
         appCraftlog: 'Die App für Handwerksbetriebe — Aufträge, Zeiterfassung und Doku an einem Ort. Schluss mit verstreuten Zetteln und Excel-Listen.',
@@ -425,6 +474,7 @@
         appsEyebrow: 'Our apps', appsTitle: 'A family for the trades',
         appsLead: 'Each app solves exactly one obligation — clean, mobile and compliant. Stronger together.',
         badgeAvailable: 'Available', badgeSoon: 'Soon', ctaWebsite: 'Visit website →', ctaSoon: 'Website coming soon',
+        regionDach: 'DACH region', regionIntl: 'International · 4 languages',
         appPruefdex: 'DGUV-V3 appliance testing, mobile & audit-proof: scan the device via QR, tick visual & measurement checks — finished report and test label including deadline automation.',
         appSchutzDex: 'AI-assisted occupational-safety briefings with audit-proof records and risk assessment — safety instructions without paperwork.',
         appCraftlog: 'The app for trade businesses — jobs, time tracking and documentation in one place. No more scattered notes and spreadsheets.',
