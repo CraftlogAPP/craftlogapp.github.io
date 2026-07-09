@@ -50,7 +50,10 @@
       color:#BFD3FF;background:rgba(37,99,235,.14);border:1px solid rgba(91,141,247,.32);
       padding:7px 14px;border-radius:999px;margin-bottom:24px}
     h1{font-size:54px;font-weight:850;letter-spacing:-1.6px;line-height:1.08}
-    h1 .hl{background:linear-gradient(120deg,#9DC0FF,#6366F1);-webkit-background-clip:text;background-clip:text;color:transparent}
+    h1 .hl{background:linear-gradient(120deg,#9DC0FF,#6366F1,#38BDF8,#9DC0FF);background-size:280% 100%;
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    @media(prefers-reduced-motion:no-preference){h1 .hl{animation:hlShift 9s linear infinite}}
+    @keyframes hlShift{to{background-position:280% 0}}
     .lead{font-size:19px;color:var(--muted);margin-top:22px;max-width:680px}
     .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
     .btn{display:inline-block;font-size:15px;font-weight:650;padding:13px 24px;border-radius:12px;border:1px solid transparent;cursor:pointer}
@@ -62,8 +65,15 @@
 
     /* Stats strip */
     .stats{display:flex;gap:40px;flex-wrap:wrap;margin:40px 0 8px;padding-top:28px;border-top:1px solid var(--border)}
-    .stat .n{font-size:30px;font-weight:800;letter-spacing:-.5px}
+    .stat .n{font-size:30px;font-weight:800;letter-spacing:-.5px;
+      background:linear-gradient(120deg,#EAF0FA,#9DC0FF);-webkit-background-clip:text;background-clip:text;color:transparent}
     .stat .l{color:var(--muted);font-size:13.5px}
+
+    /* Sanftes Einblenden beim Scrollen — bei reduced motion sofort sichtbar */
+    @media(prefers-reduced-motion:no-preference){
+      .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+      .reveal.in{opacity:1;transform:none}
+    }
 
     /* Section */
     section{padding:54px 0}
@@ -81,7 +91,9 @@
     .app::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 180px at 100% 0%,var(--accentGlow),transparent 70%);opacity:.9}
     .app>*{position:relative}
     .app .ico{width:60px;height:60px;flex-shrink:0;border-radius:16px;overflow:hidden;
-      box-shadow:0 8px 20px var(--accentGlow),inset 0 0 0 1px rgba(255,255,255,.12)}
+      box-shadow:0 8px 20px var(--accentGlow),inset 0 0 0 1px rgba(255,255,255,.12);
+      transition:transform .2s ease}
+    .app:hover .ico{transform:scale(1.07) rotate(-2deg)}
     .app .ico img{width:100%;height:100%;object-fit:cover;display:block}
     .app .body{flex:1}
     .app h3{font-size:18px;font-weight:750;display:flex;align-items:center;gap:10px}
@@ -102,6 +114,69 @@
     .region svg{width:12px;height:12px;flex-shrink:0}
     .region.dach{color:#F1C77A;background:rgba(245,158,11,.10);border-color:rgba(245,158,11,.30)}
 
+    /* Dashboard showcase */
+    .dash-panel{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center;
+      background:linear-gradient(135deg,rgba(37,99,235,.12),var(--surface2) 62%);
+      border:1px solid rgba(91,141,247,.35);border-radius:24px;padding:46px 42px;position:relative;overflow:hidden;
+      box-shadow:0 0 0 1px rgba(91,141,247,.18),0 28px 70px rgba(37,99,235,.14)}
+    .dash-panel::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(620px 340px at 88% 8%,rgba(91,141,247,.18),transparent 70%)}
+    .dash-panel>*{position:relative}
+    @media(max-width:880px){.dash-panel{grid-template-columns:1fr;gap:34px;padding:34px 24px}}
+    .dash-domain{display:inline-flex;align-items:center;gap:9px;margin-top:16px;font-size:15px;font-weight:750;
+      color:#BFD3FF;background:rgba(37,99,235,.16);border:1px solid rgba(91,141,247,.42);
+      border-radius:999px;padding:9px 18px;transition:border-color .15s ease,background .15s ease}
+    .dash-domain:hover{border-color:#9DC0FF;background:rgba(37,99,235,.26)}
+    .dash-domain svg{width:15px;height:15px;color:#9DC0FF}
+    .dash-list{list-style:none;margin:22px 0 28px}
+    .dash-list li{position:relative;padding:7px 0 7px 34px;font-size:15px}
+    .dash-list li::before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:7px;
+      display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#9DC0FF;
+      background:rgba(37,99,235,.20);border:1px solid rgba(91,141,247,.38)}
+
+    /* Browser mockup */
+    .browser{background:#0B1322;border:1px solid rgba(91,141,247,.28);border-radius:16px;overflow:hidden;
+      box-shadow:0 34px 90px rgba(3,8,26,.65),0 0 60px rgba(37,99,235,.12);
+      transform:rotate(1.4deg);transition:transform .35s ease}
+    .dash-panel:hover .browser{transform:rotate(0deg) translateY(-4px)}
+    .b-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:rgba(255,255,255,.04);
+      border-bottom:1px solid rgba(255,255,255,.07)}
+    .b-dot{width:10px;height:10px;border-radius:50%}
+    .b-dot.r{background:#F87171}.b-dot.y{background:#FBBF24}.b-dot.g{background:#34D399}
+    .b-url{flex:1;margin-left:8px;font-size:11.5px;color:var(--muted);background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.07);border-radius:999px;padding:4px 12px;text-align:center;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .b-url b{color:#BFD3FF;font-weight:650}
+    .b-body{padding:16px 16px 18px}
+    .b-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .b-title{font-size:13px;font-weight:750;letter-spacing:-.2px}
+    .b-live{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:750;color:#4ADE80;
+      background:rgba(74,222,128,.10);border:1px solid rgba(74,222,128,.30);border-radius:999px;padding:3px 10px}
+    .b-live::before{content:"";width:6px;height:6px;border-radius:50%;background:#4ADE80;
+      box-shadow:0 0 8px rgba(74,222,128,.9);animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    .b-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:11px}
+    .b-kpi{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px 12px 11px}
+    .b-kpi .k{font-size:9.5px;font-weight:750;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .b-kpi .v{font-size:19px;font-weight:850;letter-spacing:-.4px;margin-top:1px}
+    .b-kpi.warn .v{color:#FBBF24}
+    .b-kpi.ok .v{color:#4ADE80}
+    .b-kpi .bar{height:4px;border-radius:99px;background:rgba(255,255,255,.09);margin-top:8px;overflow:hidden}
+    .b-kpi .bar i{display:block;height:100%;border-radius:99px}
+    .mini-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+    .mini-tile{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;
+      padding:12px 6px 10px;text-align:center;position:relative;overflow:hidden;
+      transition:transform .15s ease,border-color .15s ease}
+    .mini-tile::before{content:"";position:absolute;inset:0;
+      background:radial-gradient(110px 56px at 50% 0%,var(--mG),transparent 75%)}
+    .mini-tile>*{position:relative}
+    .mini-tile:hover{transform:translateY(-3px);border-color:var(--mA)}
+    .mini-tile img{width:32px;height:32px;border-radius:9px;box-shadow:0 5px 12px var(--mG)}
+    .mini-tile span{display:block;font-size:10.5px;font-weight:650;color:var(--muted);margin-top:6px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    @media(max-width:400px){.mini-tiles{gap:7px}.mini-tile img{width:28px;height:28px}}
+
     /* Dexware Suite */
     .suite{background:linear-gradient(180deg,rgba(37,99,235,.14),var(--surface2));border:2px solid var(--blue2);
       border-radius:24px;padding:40px 34px;box-shadow:0 0 0 1px rgba(91,141,247,.3),0 28px 70px rgba(37,99,235,.18)}
@@ -121,7 +196,9 @@
     .sp-amount small{font-size:15px;font-weight:600;color:var(--muted)}
     .sp-note{color:var(--muted);font-size:13.5px;margin-top:6px}
     .suite-icons{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
-    .suite-icons img{width:46px;height:46px;border-radius:12px;border:1px solid var(--border);background:var(--surface)}
+    .suite-icons img{width:46px;height:46px;border-radius:12px;border:1px solid var(--border);background:var(--surface);
+      transition:transform .15s ease,border-color .15s ease}
+    .suite-icons img:hover{transform:translateY(-4px) scale(1.08);border-color:var(--blue2)}
     .suite-list{list-style:none;margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px;max-width:720px}
     @media(max-width:700px){.suite-list{grid-template-columns:1fr}}
     .suite-list li{font-size:15px;padding:6px 0 6px 24px;position:relative;color:var(--text)}
@@ -131,7 +208,9 @@
     /* Values */
     .values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     @media(max-width:780px){.values{grid-template-columns:1fr}}
-    .value{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px}
+    .value{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;
+      transition:transform .15s ease,border-color .15s ease}
+    .value:hover{transform:translateY(-3px);border-color:var(--blue2)}
     .value .vi{font-size:22px}
     .value h4{font-size:16px;font-weight:750;margin:12px 0 6px}
     .value p{color:var(--muted);font-size:14px}
@@ -226,7 +305,7 @@
         <h2 data-i18n="appsTitle">Eine Familie fürs Handwerk</h2>
         <p class="sec-lead" data-i18n="appsLead">Jede App löst genau eine Pflicht — sauber, mobil und rechtssicher. Im Bundle stärker.</p>
       </div>
-      <div class="apps">
+      <div class="apps reveal">
 
         <div class="app" style="--accent:#14B8A6;--accent2:#0F766E;--accentGlow:rgba(20,184,166,.18)">
           <div class="ico"><img src="assets/spieldex-icon.png" alt="SpielDex" /></div>
@@ -316,19 +395,62 @@
   <!-- WEB-DASHBOARD -->
   <section id="dashboard">
     <div class="wrap">
-      <div class="sec-head">
-        <div class="sec-eyebrow" data-i18n="dashEyebrow">Web-Dashboard</div>
-        <h2 data-i18n="dashTitle">Ein Einstieg für alles: dashboard.dexware.app</h2>
-        <p class="sec-lead" data-i18n="dashLead">Das Web-Dashboard ist der Haupteinstieg der Dexware-Suite: die Übersicht aller App-Dashboards. Einfach die App wählen, deren Dashboard du öffnen willst — fertig.</p>
-      </div>
-      <ul class="suite-list">
-        <li data-i18n="dashB1">Objekte, Kontrollen und Fristen am großen Bildschirm</li>
-        <li data-i18n="dashB2">Gleiche Daten wie in den Apps — live</li>
-        <li data-i18n="dashB3">Kennzahlen, Listen und PDF-Berichte im Browser</li>
-        <li data-i18n="dashB4">Anmeldung mit deinem App-Konto — per Google oder E-Mail + Passwort</li>
-      </ul>
-      <div style="text-align:center;margin-top:28px;">
-        <a class="btn btn-primary" href="https://dashboard.dexware.app" target="_blank" rel="noopener" data-i18n="dashCta">Dashboard öffnen →</a>
+      <div class="dash-panel reveal">
+        <div>
+          <div class="sec-eyebrow" data-i18n="dashEyebrow">Web-Dashboard</div>
+          <h2 data-i18n="dashTitle">Dein Betrieb am großen Bildschirm</h2>
+          <a class="dash-domain" href="https://dashboard.dexware.app" target="_blank" rel="noopener">
+            <svg><use href="#ic-globe"/></svg>dashboard.dexware.app
+          </a>
+          <p class="sec-lead" data-i18n="dashLead">Das Web-Dashboard ist der Haupteinstieg der Dexware-Suite: die Übersicht aller App-Dashboards. Einfach die App wählen, deren Dashboard du öffnen willst — fertig.</p>
+          <ul class="dash-list">
+            <li data-i18n="dashB1">Objekte, Kontrollen und Fristen am großen Bildschirm</li>
+            <li data-i18n="dashB2">Gleiche Daten wie in den Apps — live</li>
+            <li data-i18n="dashB3">Kennzahlen, Listen und PDF-Berichte im Browser</li>
+            <li data-i18n="dashB4">Anmeldung mit deinem App-Konto — per Google oder E-Mail + Passwort</li>
+          </ul>
+          <a class="btn btn-primary" href="https://dashboard.dexware.app" target="_blank" rel="noopener" data-i18n="dashCta">Dashboard öffnen →</a>
+        </div>
+        <a class="browser" href="https://dashboard.dexware.app" target="_blank" rel="noopener" aria-label="dashboard.dexware.app öffnen">
+          <div class="b-bar">
+            <span class="b-dot r"></span><span class="b-dot y"></span><span class="b-dot g"></span>
+            <span class="b-url">🔒 <b>dashboard.dexware.app</b></span>
+          </div>
+          <div class="b-body">
+            <div class="b-head">
+              <span class="b-title" data-i18n="dashPrevTitle">Deine App-Dashboards</span>
+              <span class="b-live" data-i18n="dashLive">Live</span>
+            </div>
+            <div class="b-kpis">
+              <div class="b-kpi">
+                <div class="k" data-i18n="dashK1">Objekte</div>
+                <div class="v">24</div>
+                <div class="bar"><i style="width:82%;background:linear-gradient(90deg,#5B8DF7,#6366F1)"></i></div>
+              </div>
+              <div class="b-kpi warn">
+                <div class="k" data-i18n="dashK2">Fällig</div>
+                <div class="v">3</div>
+                <div class="bar"><i style="width:16%;background:#FBBF24"></i></div>
+              </div>
+              <div class="b-kpi ok">
+                <div class="k" data-i18n="dashK3">Dokumentiert</div>
+                <div class="v">98&hairsp;%</div>
+                <div class="bar"><i style="width:98%;background:#4ADE80"></i></div>
+              </div>
+            </div>
+            <div class="mini-tiles">
+              <div class="mini-tile" style="--mA:#2563EB;--mG:rgba(37,99,235,.30)"><img src="assets/pruefdex-icon.png" alt="" /><span>PrüfDex</span></div>
+              <div class="mini-tile" style="--mA:#22C55E;--mG:rgba(34,197,94,.30)"><img src="assets/schutzheld-icon.png" alt="" /><span>SchutzDex</span></div>
+              <div class="mini-tile" style="--mA:#14B8A6;--mG:rgba(20,184,166,.30)"><img src="assets/spieldex-icon.png" alt="" /><span>SpielDex</span></div>
+              <div class="mini-tile" style="--mA:#F97316;--mG:rgba(249,115,22,.30)"><img src="assets/kfzdex-icon.png" alt="" /><span>KfzDex</span></div>
+              <div class="mini-tile" style="--mA:#06B6D4;--mG:rgba(6,182,212,.30)"><img src="assets/winterdex-icon.png" alt="" /><span>WinterDex</span></div>
+              <div class="mini-tile" style="--mA:#7C3AED;--mG:rgba(124,58,237,.30)"><img src="assets/routelog-icon.png" alt="" /><span>TourDex</span></div>
+              <div class="mini-tile" style="--mA:#F59E0B;--mG:rgba(245,158,11,.28)"><img src="assets/craftlog-icon.png" alt="" /><span>CraftDex</span></div>
+              <div class="mini-tile" style="--mA:#0D9488;--mG:rgba(13,148,136,.30)"><img src="assets/baumdex-icon.png" alt="" /><span>BaumDex</span></div>
+              <div class="mini-tile" style="--mA:#0EA5E9;--mG:rgba(14,165,233,.30)"><img src="assets/archio-icon.png" alt="" /><span>DokuDex</span></div>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -336,7 +458,7 @@
   <!-- DEXWARE SUITE -->
   <section id="suite">
     <div class="wrap">
-      <div class="suite">
+      <div class="suite reveal">
         <span class="suite-pill" data-i18n="suitePill">Dexware Suite — ein Abo, alle Apps</span>
         <h2 data-i18n="suiteTitle">Alle 9 Apps. Ein Abo. Ein Preis.</h2>
         <p class="sec-lead" data-i18n="suiteLead">Statt jede App einzeln zu abonnieren: die Dexware Suite kostet so viel wie unsere teuerste Einzel-App und schaltet alle frei — auf allen deinen Geräten. Neue Apps sind automatisch dabei, ohne Aufpreis.</p>
@@ -386,7 +508,7 @@
         <div class="sec-eyebrow" data-i18n="whyEyebrow">Warum Dexware</div>
         <h2 data-i18n="whyTitle">Für den Betrieb, nicht für die IT-Abteilung</h2>
       </div>
-      <div class="values">
+      <div class="values reveal">
         <div class="value">
           <div class="vi">⚡</div>
           <h4 data-i18n="v1Title">Eine Pflicht, eine App</h4>
@@ -409,7 +531,7 @@
   <!-- CTA -->
   <section id="kontakt">
     <div class="wrap">
-      <div class="band">
+      <div class="band reveal">
         <h2 data-i18n="bandTitle">Sag uns, welche Pflicht dich nervt.</h2>
         <p data-i18n="bandLead">Wir bauen die App, die sie dir abnimmt. Feedback, Bundle-Anfragen oder Partnerschaften willkommen.</p>
         <a href="mailto:2easy4trash@gmail.com?subject=Dexware%20Anfrage" class="btn btn-primary" data-i18n="bandCta">E-Mail an Dexware</a>
@@ -451,13 +573,15 @@
         appKfzdex: 'Fuhrpark-Pflichten im Griff — UVV-Prüfung (DGUV Vorschrift 70) & Führerscheinkontrolle (§21 StVG) mit Fristen-Ampel, Erinnerungen und prüffesten PDF-Nachweisen.',
         appDokuDex: 'Dokumente sicher archivieren und jederzeit wiederfinden — Aufbewahrungsfristen erfüllen, ohne im Aktenchaos zu suchen.',
         dashEyebrow: 'Web-Dashboard',
-        dashTitle: 'Ein Einstieg für alles: dashboard.dexware.app',
+        dashTitle: 'Dein Betrieb am großen Bildschirm',
+        dashK1: 'Objekte', dashK2: 'Fällig', dashK3: 'Dokumentiert',
         dashLead: 'Das Web-Dashboard ist der Haupteinstieg der Dexware-Suite: die Übersicht aller App-Dashboards. Einfach die App wählen, deren Dashboard du öffnen willst — fertig.',
         dashB1: 'Objekte, Kontrollen und Fristen am großen Bildschirm',
         dashB2: 'Gleiche Daten wie in den Apps — live',
         dashB3: 'Kennzahlen, Listen und PDF-Berichte im Browser',
         dashB4: 'Anmeldung mit deinem App-Konto — per Google oder E-Mail + Passwort',
         dashCta: 'Dashboard öffnen →',
+        dashPrevTitle: 'Deine App-Dashboards', dashLive: 'Live',
         suitePill: 'Dexware Suite — ein Abo, alle Apps',
         suiteTitle: 'Alle 9 Apps. Ein Abo. Ein Preis.',
         suiteLead: 'Statt jede App einzeln zu abonnieren: die Dexware Suite kostet so viel wie unsere teuerste Einzel-App und schaltet alle frei — auf allen deinen Geräten. Neue Apps sind automatisch dabei, ohne Aufpreis.',
@@ -499,13 +623,15 @@
         appKfzdex: 'Fleet obligations under control — vehicle safety inspections (UVV) & driver licence checks with a deadline traffic light, reminders and audit-proof PDF records.',
         appDokuDex: 'Archive documents securely and find them anytime — meet retention requirements without digging through file chaos.',
         dashEyebrow: 'Web dashboard',
-        dashTitle: 'One entry point for everything: dashboard.dexware.app',
+        dashTitle: 'Your business on the big screen',
+        dashK1: 'Objects', dashK2: 'Due', dashK3: 'Documented',
         dashLead: 'The web dashboard is the main entry point of the Dexware suite: your overview of all app dashboards. Just pick the app whose dashboard you want to open — done.',
         dashB1: 'Objects, inspections and deadlines on the big screen',
         dashB2: 'The same data as in the apps — live',
         dashB3: 'Key figures, lists and PDF reports in the browser',
         dashB4: 'Sign in with your app account — via Google or email + password',
         dashCta: 'Open dashboard →',
+        dashPrevTitle: 'Your app dashboards', dashLive: 'Live',
         suitePill: 'Dexware Suite — one subscription, all apps',
         suiteTitle: 'All 9 apps. One subscription. One price.',
         suiteLead: 'Instead of subscribing to each app separately: the Dexware Suite costs the same as our most expensive single app and unlocks them all — on all your devices. New apps are automatically included, at no extra cost.',
@@ -551,6 +677,22 @@
     document.getElementById('langToggle').addEventListener('click', function(){
       applyLang(current === 'de' ? 'en' : 'de');
     });
+
+    // Sanftes Einblenden beim Scrollen (nur wenn Motion erlaubt; ohne IO bleibt alles sichtbar)
+    (function(){
+      if(!('IntersectionObserver' in window)) return;
+      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = document.querySelectorAll('.reveal');
+      var io = new IntersectionObserver(function(entries){
+        for(var i=0;i<entries.length;i++){
+          if(entries[i].isIntersecting){
+            entries[i].target.classList.add('in');
+            io.unobserve(entries[i].target);
+          }
+        }
+      }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+      for(var i=0;i<els.length;i++) io.observe(els[i]);
+    })();
   </script>
 </body>
 </html>
