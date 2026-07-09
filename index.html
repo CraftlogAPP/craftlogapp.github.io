@@ -189,6 +189,7 @@
       <span class="nav-spacer"></span>
       <nav class="nav">
         <a href="#apps" data-i18n="navApps">Apps</a>
+        <a href="https://dashboard.dexware.app" target="_blank" rel="noopener" data-i18n="navDash">Dashboard</a>
         <a href="#suite" data-i18n="navSuite">Suite</a>
         <a href="#warum" data-i18n="navWhy">Warum Dexware</a>
         <a href="#kontakt" data-i18n="navContact">Kontakt</a>
@@ -317,10 +318,16 @@
     <div class="wrap">
       <div class="sec-head">
         <div class="sec-eyebrow" data-i18n="dashEyebrow">Web-Dashboard</div>
-        <h2 data-i18n="dashTitle">Jede App hat ein Dashboard für den PC</h2>
-        <p class="sec-lead" data-i18n="dashLead">Alle Daten aus der App auch im Browser: Kennzahlen, Listen und PDF-Berichte am großen Bildschirm — verwalten statt nur am Handy tippen. Anmeldung einfach mit deinem App-Konto.</p>
+        <h2 data-i18n="dashTitle">Ein Einstieg für alles: dashboard.dexware.app</h2>
+        <p class="sec-lead" data-i18n="dashLead">Das Web-Dashboard ist der Haupteinstieg der Dexware-Suite: die Übersicht aller App-Dashboards. Einfach die App wählen, deren Dashboard du öffnen willst — fertig.</p>
       </div>
-      <div style="text-align:center;margin-top:18px;">
+      <ul class="suite-list">
+        <li data-i18n="dashB1">Objekte, Kontrollen und Fristen am großen Bildschirm</li>
+        <li data-i18n="dashB2">Gleiche Daten wie in den Apps — live</li>
+        <li data-i18n="dashB3">Kennzahlen, Listen und PDF-Berichte im Browser</li>
+        <li data-i18n="dashB4">Anmeldung mit deinem App-Konto — per Google oder E-Mail + Passwort</li>
+      </ul>
+      <div style="text-align:center;margin-top:28px;">
         <a class="btn btn-primary" href="https://dashboard.dexware.app" target="_blank" rel="noopener" data-i18n="dashCta">Dashboard öffnen →</a>
       </div>
     </div>
@@ -366,6 +373,7 @@
           <li data-i18n="suiteB4">Jederzeit kündbar</li>
         </ul>
         <p class="suite-how" data-i18n="suiteHow">Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.</p>
+        <p class="suite-how" data-i18n="suiteDash">Und am PC: <a href="https://dashboard.dexware.app" target="_blank" rel="noopener" style="color:var(--blue2)">dashboard.dexware.app</a> ist der Haupteinstieg zu allen App-Dashboards — anmelden, App wählen, loslegen.</p>
         <a href="#apps" class="btn btn-primary" data-i18n="suiteCta">Apps entdecken</a>
       </div>
     </div>
@@ -423,7 +431,7 @@
     var T = {
       de: {
         docTitle: 'Dexware — Software fürs Handwerk. Compliance aus einer Hand.',
-        navApps: 'Apps', navSuite: 'Suite', navWhy: 'Warum Dexware', navContact: 'Kontakt',
+        navApps: 'Apps', navDash: 'Dashboard', navSuite: 'Suite', navWhy: 'Warum Dexware', navContact: 'Kontakt',
         eyebrow: 'Software-Studio fürs Handwerk',
         heroTitle: 'Compliance aus einer Hand — <span class="hl">mobil, prüffest, ohne Papierkram</span>.',
         heroLead: 'Dexware baut fokussierte Apps, die Dokumentation und gesetzliche Nachweise im Betrieb mühelos machen. Statt überladener Enterprise-Software: je eine schlanke App pro Pflicht — gemacht fürs Elektro-Handwerk, Prüfdienstleister und KMU.',
@@ -443,8 +451,12 @@
         appKfzdex: 'Fuhrpark-Pflichten im Griff — UVV-Prüfung (DGUV Vorschrift 70) & Führerscheinkontrolle (§21 StVG) mit Fristen-Ampel, Erinnerungen und prüffesten PDF-Nachweisen.',
         appDokuDex: 'Dokumente sicher archivieren und jederzeit wiederfinden — Aufbewahrungsfristen erfüllen, ohne im Aktenchaos zu suchen.',
         dashEyebrow: 'Web-Dashboard',
-        dashTitle: 'Jede App hat ein Dashboard für den PC',
-        dashLead: 'Alle Daten aus der App auch im Browser: Kennzahlen, Listen und PDF-Berichte am großen Bildschirm — verwalten statt nur am Handy tippen. Anmeldung einfach mit deinem App-Konto.',
+        dashTitle: 'Ein Einstieg für alles: dashboard.dexware.app',
+        dashLead: 'Das Web-Dashboard ist der Haupteinstieg der Dexware-Suite: die Übersicht aller App-Dashboards. Einfach die App wählen, deren Dashboard du öffnen willst — fertig.',
+        dashB1: 'Objekte, Kontrollen und Fristen am großen Bildschirm',
+        dashB2: 'Gleiche Daten wie in den Apps — live',
+        dashB3: 'Kennzahlen, Listen und PDF-Berichte im Browser',
+        dashB4: 'Anmeldung mit deinem App-Konto — per Google oder E-Mail + Passwort',
         dashCta: 'Dashboard öffnen →',
         suitePill: 'Dexware Suite — ein Abo, alle Apps',
         suiteTitle: 'Alle 9 Apps. Ein Abo. Ein Preis.',
@@ -456,6 +468,7 @@
         suiteB1: 'Alle 9 Apps inklusive — von UVV bis Winterdienst', suiteB2: 'Alle zukünftigen Dexware-Apps automatisch dabei',
         suiteB3: 'Einmal kaufen — in jeder App freigeschaltet', suiteB4: 'Jederzeit kündbar',
         suiteHow: 'Erhältlich direkt in jeder Dexware-App: einfach in der App auf „Pro werden" tippen und die Dexware Suite wählen.',
+        suiteDash: 'Und am PC: <a href="https://dashboard.dexware.app" target="_blank" rel="noopener" style="color:var(--blue2)">dashboard.dexware.app</a> ist der Haupteinstieg zu allen App-Dashboards — anmelden, App wählen, loslegen.',
         suiteCta: 'Apps entdecken',
         whyEyebrow: 'Warum Dexware', whyTitle: 'Für den Betrieb, nicht für die IT-Abteilung',
         v1Title: 'Eine Pflicht, eine App', v1Desc: 'Keine überladene Suite. Jede App macht eine Sache richtig — in unter einer Minute pro Vorgang.',
@@ -466,7 +479,7 @@
       },
       en: {
         docTitle: 'Dexware — Software for the trades. Compliance in one place.',
-        navApps: 'Apps', navSuite: 'Suite', navWhy: 'Why Dexware', navContact: 'Contact',
+        navApps: 'Apps', navDash: 'Dashboard', navSuite: 'Suite', navWhy: 'Why Dexware', navContact: 'Contact',
         eyebrow: 'A software studio for the trades',
         heroTitle: 'Compliance in one place — <span class="hl">mobile, audit-proof, paper-free</span>.',
         heroLead: 'Dexware builds focused apps that make documentation and legal proof effortless for your business. Instead of bloated enterprise software: one lean app per obligation — made for electrical trades, testing providers and SMEs.',
@@ -486,8 +499,12 @@
         appKfzdex: 'Fleet obligations under control — vehicle safety inspections (UVV) & driver licence checks with a deadline traffic light, reminders and audit-proof PDF records.',
         appDokuDex: 'Archive documents securely and find them anytime — meet retention requirements without digging through file chaos.',
         dashEyebrow: 'Web dashboard',
-        dashTitle: 'Every app comes with a desktop dashboard',
-        dashLead: 'All your app data in the browser too: key figures, lists and PDF reports on the big screen — manage instead of just tapping on your phone. Simply sign in with your app account.',
+        dashTitle: 'One entry point for everything: dashboard.dexware.app',
+        dashLead: 'The web dashboard is the main entry point of the Dexware suite: your overview of all app dashboards. Just pick the app whose dashboard you want to open — done.',
+        dashB1: 'Objects, inspections and deadlines on the big screen',
+        dashB2: 'The same data as in the apps — live',
+        dashB3: 'Key figures, lists and PDF reports in the browser',
+        dashB4: 'Sign in with your app account — via Google or email + password',
         dashCta: 'Open dashboard →',
         suitePill: 'Dexware Suite — one subscription, all apps',
         suiteTitle: 'All 9 apps. One subscription. One price.',
@@ -499,6 +516,7 @@
         suiteB1: 'All 9 apps included — from vehicle inspections to winter service', suiteB2: 'All future Dexware apps automatically included',
         suiteB3: 'Buy once — unlocked in every app', suiteB4: 'Cancel anytime',
         suiteHow: 'Available right inside every Dexware app: just tap “Go Pro” in the app and choose the Dexware Suite.',
+        suiteDash: 'And on your desktop: <a href="https://dashboard.dexware.app" target="_blank" rel="noopener" style="color:var(--blue2)">dashboard.dexware.app</a> is the main entry point to all app dashboards — sign in, pick an app, get going.',
         suiteCta: 'Explore the apps',
         whyEyebrow: 'Why Dexware', whyTitle: 'For the business, not the IT department',
         v1Title: 'One obligation, one app', v1Desc: 'No bloated suite. Each app does one thing right — in under a minute per task.',
