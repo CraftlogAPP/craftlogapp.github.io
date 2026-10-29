@@ -1,0 +1,183 @@
+{
+ "v": 1,
+ "updated": "2026-10-29",
+ "apps": [
+  {
+   "id": "hebedex",
+   "name": "HebeDex",
+   "pkg": "com.hebedex.app",
+   "icon": "https://dexware.app/assets/hebedex-icon.png",
+   "color": "#84CC16",
+   "url": "https://hebedex.dexware.app",
+   "play": false,
+   "de": "Anschlag-, Hebe- & Zurrmittel prüfen",
+   "en": "Lifting & lashing gear inspections",
+   "soon": true
+  },
+  {
+   "id": "gurtdex",
+   "name": "GurtDex",
+   "pkg": "com.gurtdex.app",
+   "icon": "https://dexware.app/assets/gurtdex-icon.png",
+   "color": "#DB2777",
+   "url": "https://gurtdex.dexware.app",
+   "play": false,
+   "de": "PSA gegen Absturz prüfen (DGUV 312-906, EN 365)",
+   "en": "Fall-protection PPE inspections"
+  },
+  {
+   "id": "toredex",
+   "name": "ToreDex",
+   "pkg": "com.toredex.app",
+   "icon": "https://dexware.app/assets/toredex-icon.png",
+   "color": "#7C3AED",
+   "url": "https://toredex.dexware.app",
+   "play": false,
+   "de": "Tor- & Türprüfung nach ASR A1.7",
+   "en": "Powered door & gate inspections"
+  },
+  {
+   "id": "geruestdex",
+   "name": "GerüstDex",
+   "pkg": "com.geruestdex.app",
+   "icon": "https://dexware.app/assets/geruestdex-icon.png",
+   "color": "#14B8A6",
+   "url": "https://geruestdex.dexware.app",
+   "play": false,
+   "de": "Gerüstprüfung nach TRBS 2121-1",
+   "en": "Scaffolding inspections"
+  },
+  {
+   "id": "feuerdex",
+   "name": "FeuerDex",
+   "pkg": "com.feuerdex.app",
+   "icon": "https://dexware.app/assets/feuerdex-icon.png",
+   "color": "#DC2626",
+   "url": "https://feuerdex.dexware.app",
+   "play": false,
+   "de": "Feuerlöscher-Prüfung nach ASR A2.2",
+   "en": "Fire extinguisher inspections"
+  },
+  {
+   "id": "leiterdex",
+   "name": "LeiterDex",
+   "pkg": "com.leiterdex.app",
+   "icon": "https://dexware.app/assets/leiterdex-icon.png",
+   "color": "#2563EB",
+   "url": "https://leiterdex.dexware.app",
+   "play": false,
+   "de": "Leitern & Tritte prüfen (DGUV 208-016)",
+   "en": "Ladder & step inspections"
+  },
+  {
+   "id": "regaldex",
+   "name": "RegalDex",
+   "pkg": "com.regaldex.app",
+   "icon": "https://dexware.app/assets/regaldex-icon.png",
+   "color": "#F59E0B",
+   "url": "https://regaldex.dexware.app",
+   "play": false,
+   "de": "Regalinspektion nach DIN EN 15635",
+   "en": "Racking inspections"
+  },
+  {
+   "id": "spieldex",
+   "name": "SpielDex",
+   "pkg": "com.spieldex.app",
+   "icon": "https://dexware.app/assets/spieldex-icon.png",
+   "color": "#EA5A47",
+   "url": "https://spieldex.dexware.app",
+   "play": false,
+   "de": "Spielplatzkontrolle nach DIN EN 1176",
+   "en": "Playground inspections"
+  },
+  {
+   "id": "winterdex",
+   "name": "WinterDex",
+   "pkg": "com.winterdex.app",
+   "icon": "https://dexware.app/assets/winterdex-icon.png",
+   "color": "#0EA5E9",
+   "url": "https://winterdex.dexware.app",
+   "play": false,
+   "de": "Räum- & Streueinsätze dokumentieren",
+   "en": "Winter service records"
+  },
+  {
+   "id": "kfzdex",
+   "name": "KfzDex",
+   "pkg": "com.kfzdex.app",
+   "icon": "https://dexware.app/assets/kfzdex-icon.png",
+   "color": "#F97316",
+   "url": "https://kfzdex.dexware.app",
+   "play": false,
+   "de": "Fuhrpark, UVV-Prüfung & Fristen",
+   "en": "Fleet, vehicle checks & deadlines"
+  },
+  {
+   "id": "pruefdex",
+   "name": "PrüfDex",
+   "pkg": "de.pruefdex.app",
+   "icon": "https://dexware.app/assets/pruefdex-icon.png",
+   "color": "#2F6BF2",
+   "url": "https://pruefdex.dexware.app",
+   "play": false,
+   "de": "DGUV-V3-Prüfung mit QR & Protokoll",
+   "en": "Electrical testing with QR & report"
+  },
+  {
+   "id": "schutzdex",
+   "name": "SchutzDex",
+   "pkg": "com.safedex.app",
+   "icon": "https://dexware.app/assets/schutzheld-icon.png",
+   "color": "#3B82F6",
+   "url": "https://schutzdex.dexware.app",
+   "play": false,
+   "de": "Unterweisungen & Gefährdungsbeurteilung mit KI",
+   "en": "AI safety briefings & risk assessments"
+  },
+  {
+   "id": "baumdex",
+   "name": "BaumDex",
+   "pkg": "com.baumdex.app",
+   "icon": "https://dexware.app/assets/baumdex-icon.png",
+   "color": "#4ADE80",
+   "url": "https://baumdex.dexware.app",
+   "play": true,
+   "de": "Baumkataster & Baumkontrolle",
+   "en": "Tree register & tree inspections"
+  },
+  {
+   "id": "tourdex",
+   "name": "TourDex",
+   "pkg": "com.routelog.app",
+   "icon": "https://dexware.app/assets/routelog-icon.png",
+   "color": "#3B82F6",
+   "url": "https://tourdex.dexware.app",
+   "play": true,
+   "de": "Automatisches Fahrtenbuch",
+   "en": "Automatic mileage log"
+  },
+  {
+   "id": "craftdex",
+   "name": "CraftDex",
+   "pkg": "com.craftlog.app",
+   "icon": "https://dexware.app/assets/craftlog-icon.png",
+   "color": "#E8C97A",
+   "url": "https://craftdex.dexware.app",
+   "play": true,
+   "de": "Projekte, Material & Stunden festhalten",
+   "en": "Log projects, materials & hours"
+  },
+  {
+   "id": "dokudex",
+   "name": "DokuDex",
+   "pkg": "com.archio.app",
+   "icon": "https://dexware.app/assets/archio-icon.png",
+   "color": "#4F9EF8",
+   "url": "https://dokudex.dexware.app",
+   "play": true,
+   "de": "Dokumente scannen & per KI verstehen",
+   "en": "Scan documents, understand them with AI"
+  }
+ ]
+}
