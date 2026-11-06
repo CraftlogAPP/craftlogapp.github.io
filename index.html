@@ -83,7 +83,8 @@
     .top .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
     .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: -.01em; }
     .brand:hover { text-decoration: none; }
-    .brand img { width: 32px; height: 32px; border-radius: 8px; }
+    /* Feiner heller Rand wie auf dem Hub: dunkle Symbole (TourDex, GurtDex, HebeDex, KfzDex) verschwinden sonst im dunklen Hintergrund. */
+    .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
     .brand .wm span { color: var(--accent-text); }
     .top nav { display: flex; gap: 24px; margin-left: auto; }
     .top nav a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
@@ -239,7 +240,7 @@
       color: var(--ink); text-align: center; transition: background .15s; }
     .family a:hover { background: var(--surface); text-decoration: none; box-shadow: var(--shadow); }
     .family a[aria-disabled] { cursor: default; opacity: .75; } .family a[aria-disabled]:hover { background: none; box-shadow: none; }
-    .family img { width: 44px; height: 44px; border-radius: 11px; }
+    .family img { width: 44px; height: 44px; border-radius: 11px; box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
     .family b { font-size: 13.5px; font-weight: 600; line-height: 1.2; }
     .family small { font-size: 12px; color: var(--muted); line-height: 1.3; }
     .family-row { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
@@ -594,8 +595,8 @@
           <div class="phone sb"><div class="screen" style="--bar:#27201e"><img src="assets/hub/ph/feuerdex-hero-2.webp" width="540" height="1011" alt="FeuerDex: Prüf-Checkliste" loading="lazy" decoding="async" /></div></div>
           <div class="offer">
             <div class="row">
-              <div class="opt"><span class="lbl"><span data-l="de">Monatlich</span><span data-l="en">Monthly</span></span><p>39,99 € <small><span data-l="de">/ Monat</span><span data-l="en">/ month</span></small></p><em><span data-l="de">jederzeit kündbar</span><span data-l="en">cancel anytime</span></em></div>
-              <div class="opt best"><span class="tag"><span data-l="de">4 Monate geschenkt</span><span data-l="en">4 months free</span></span><span class="lbl"><span data-l="de">Jährlich</span><span data-l="en">Yearly</span></span><p>319,99 € <small><span data-l="de">/ Jahr</span><span data-l="en">/ year</span></small></p><em><span data-l="de">entspricht 26,67 € im Monat</span><span data-l="en">that is €26.67 per month</span></em></div>
+              <div class="opt"><span class="lbl"><span data-l="de">Monatlich</span><span data-l="en">Monthly</span></span><p><span data-l="de">39,99 €</span><span data-l="en">€39.99</span> <small><span data-l="de">/ Monat</span><span data-l="en">/ month</span></small></p><em><span data-l="de">jederzeit kündbar</span><span data-l="en">cancel anytime</span></em></div>
+              <div class="opt best"><span class="tag"><span data-l="de">4 Monate geschenkt</span><span data-l="en">4 months free</span></span><span class="lbl"><span data-l="de">Jährlich</span><span data-l="en">Yearly</span></span><p><span data-l="de">319,99 €</span><span data-l="en">€319.99</span> <small><span data-l="de">/ Jahr</span><span data-l="en">/ year</span></small></p><em><span data-l="de">entspricht 26,67 € im Monat</span><span data-l="en">that is €26.67 per month</span></em></div>
             </div>
             <div class="icons" aria-hidden="true"><img src="assets/hub/gurtdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/toredex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/geruestdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/feuerdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/leiterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/regaldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/spieldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/winterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/kfzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/pruefdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/schutzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/baumdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/tourdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/craftdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/dokudex.webp" alt="" width="26" height="26" loading="lazy" /></div>
             <p class="fine"><span data-l="de">Abschluss in der App über Google Play · Preise inkl. MwSt.</span><span data-l="en">Subscribe in the app via Google Play · prices incl. VAT</span></p>
