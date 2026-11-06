@@ -101,6 +101,7 @@
     .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--border); }
     .btn.ghost:hover { background: var(--bg-soft); }
     .btn .play { width: 14px; height: 14px; fill: currentColor; stroke: none; }
+    .btn .i { width: 16px; height: 16px; }
 
     /* Hero */
     .hero { position: relative; overflow: hidden; }
@@ -213,6 +214,10 @@
     .icons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 22px; }
     .icons img { width: 26px; height: 26px; border-radius: 7px; }
     .fine { margin-top: 20px; font-size: 13.5px; color: var(--muted); }
+    .trust { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px 26px; font-size: 14px; color: var(--muted); }
+    .trust li { display: flex; align-items: center; gap: 8px; }
+    .trust .i { width: 18px; height: 18px; flex: none; color: var(--accent-text); }
+    .trust a { color: inherit; }
     @media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 480px; } }
 
     /* FAQ */
@@ -354,6 +359,14 @@
 
     .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     @media (max-width: 860px) { .why { grid-template-columns: 1fr; gap: 10px; } }
+    .soon-band { display: grid; grid-template-columns: 64px 1fr auto; gap: 22px; align-items: center; padding: 26px 28px; border-radius: 22px; color: var(--ink);
+      background: radial-gradient(120% 140% at 0% 0%, rgba(227,154,84,.16), transparent 55%), var(--card); border: 1px solid rgba(227,154,84,.35); transition: border-color .15s, transform .15s; }
+    .soon-band:hover { text-decoration: none; border-color: rgba(227,154,84,.6); transform: translateY(-2px); }
+    .soon-band img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 10px 24px -10px rgba(227,154,84,.55); }
+    .soon-band b { display: block; font-size: 20px; font-weight: 680; letter-spacing: -.02em; margin-top: 6px; }
+    .soon-pill { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 99px; background: #E39A54; color: #14181D; }
+    .soon-p { display: block; color: var(--muted); font-size: 15px; line-height: 1.55; margin-top: 4px; max-width: 640px; }
+    @media (max-width: 700px) { .soon-band { grid-template-columns: 52px 1fr; padding: 20px; gap: 14px 16px; } .soon-band img { width: 52px; height: 52px; border-radius: 13px; } .soon-band .btn { grid-column: 1 / -1; justify-content: center; } }
     .band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding: 30px 32px;
       border-radius: 22px; background: var(--card); border: 1px solid var(--border); }
     .band + .band { margin-top: 14px; }
@@ -422,10 +435,16 @@
           </div>
         </div>
         <div class="group rv">
+          <h3><span data-l="de">Handwerk & Kundendienst</span><span data-l="en">Trades & customer service</span></h3>
+          <div class="cards">
+            <a class="card" href="https://installateurdex.dexware.app"><img src="assets/hub/installateurdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>InstallateurDex</b><small><span data-l="de">Wartung & Kundendienst · bald</span><span data-l="en">Service & maintenance · soon</span></small><p><span data-l="de">Wartung diktieren, Protokoll im Firmen-Look, QR-Anlagenpass für deine Kunden.</span><span data-l="en">Dictate service reports in your branding, with a QR system pass for your customers.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" href="https://craftdex.dexware.app"><img src="assets/hub/craftdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>CraftDex</b><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small><p><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+          </div>
+        </div>
+        <div class="group rv">
           <h3><span data-l="de">Büro & Alltag</span><span data-l="en">Office & everyday</span></h3>
           <div class="cards">
             <a class="card" href="https://tourdex.dexware.app"><img src="assets/hub/tourdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>TourDex</b><small><span data-l="de">Fahrtenbuch</span><span data-l="en">Mileage log</span></small><p><span data-l="de">Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt.</span><span data-l="en">Automatic mileage log with AI categorisation and a tax-ready PDF.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://craftdex.dexware.app"><img src="assets/hub/craftdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>CraftDex</b><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small><p><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="card" href="https://dokudex.dexware.app"><img src="assets/hub/dokudex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>DokuDex</b><small><span data-l="de">Dokumente & KI</span><span data-l="en">Documents & AI</span></small><p><span data-l="de">Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung.</span><span data-l="en">Scan documents and understand them with AI — with deadline reminders.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
           </div>
         </div>
@@ -473,6 +492,20 @@
             <a class="url" href="ratgeber.html"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span><span><b><span data-l="de">Ratgeber</span><span data-l="en">Guides</span></b><small><span data-l="de">Fristen und Pflichten verständlich erklärt</span><span data-l="en">Deadlines and duties explained (German)</span></small></span></a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="neu">
+      <div class="wrap">
+        <a class="soon-band rv" href="https://installateurdex.dexware.app">
+          <img src="assets/hub/installateurdex.webp" alt="" width="64" height="64" loading="lazy" />
+          <span class="soon-txt">
+            <span class="soon-pill"><span data-l="de">Bald verfügbar</span><span data-l="en">Coming soon</span></span>
+            <b>InstallateurDex</b>
+            <span class="soon-p"><span data-l="de">Für Installateure, Heizungs- und Klimabetriebe: Einsatz erzählen, die App schreibt das Protokoll im Firmen-Look. Jede Anlage bekommt einen QR-Anlagenpass — deine Kunden fragen Wartungen und Störungen direkt bei dir an.</span><span data-l="en">For plumbing, heating and HVAC businesses: talk through the job, the app writes the report in your branding. Every system gets a QR pass — your customers request service directly from you.</span></span>
+          </span>
+          <span class="btn ghost"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></span>
+        </a>
       </div>
     </section>
 
