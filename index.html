@@ -6,7 +6,7 @@
   <title>Dexware — Software fürs Handwerk. Compliance aus einer Hand.</title>
   <meta name="description" content="Dexware: schlanke Apps für Prüfung, Arbeitsschutz und Dokumentation im Betrieb – UVV, DGUV V3, Leitern, Feuerlöscher, Winterdienst und mehr." />
   <meta name="robots" content="all" />
-  <meta name="theme-color" content="#080b14" />
+  <meta name="theme-color" content="#070b16" />
   <!-- seo:start -->
   <meta name="google-site-verification" content="T7OIh7cSP7aX5bA0EWqK9xNPm_rKGml27H30rI1ONtg" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -50,9 +50,9 @@
       color-scheme: light;
     }
     html.dark {
-      --bg: #080b14;
-      --bg-soft: color-mix(in oklab, #080b14 96%, #fff);
-      --surface: color-mix(in oklab, #080b14 93%, #fff);
+      --bg: #070b16;
+      --bg-soft: color-mix(in oklab, #070b16 96%, #fff);
+      --surface: color-mix(in oklab, #070b16 93%, #fff);
       --card: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
       --border: rgba(255,255,255,.085);
       --ink: #f6f5f7;
@@ -292,37 +292,113 @@
     .js .rv.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
-    /* Hub */
+    /* ===== Hub ===== */
+    body { background: #070b16; }
     .brand img { border-radius: 8px; }
     .kicker:hover { text-decoration: none; filter: brightness(1.15); }
     .kicker .pill { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px; border-radius: 99px;
       background: var(--accent); color: #fff; }
-    .hero h1 em { background: linear-gradient(100deg, #7aa2ff, #a78bfa 60%, #c4b5fd); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .mosaic { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; padding: 28px; border-radius: 28px;
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); border: 1px solid var(--border);
-      box-shadow: 0 40px 80px -40px rgba(20,30,80,.6); }
-    .mosaic::before { content: ''; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
-      background: linear-gradient(140deg, rgba(122,162,255,.5), transparent 40%, transparent 60%, rgba(167,139,250,.45));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
-    .mosaic a { display: block; aspect-ratio: 1; border-radius: 22%; transition: transform .2s; }
-    .mosaic a:hover { transform: translateY(-3px) scale(1.04); }
-    .mosaic img { width: 100%; height: 100%; border-radius: 22%; display: block; box-shadow: 0 8px 18px -8px rgba(0,0,0,.6); }
-    @media (max-width: 900px) { .mosaic { max-width: 420px; margin: 0 auto; gap: 10px; padding: 18px; } }
+    h1 em, .grad { background: linear-gradient(100deg, #7aa2ff, #a78bfa 55%, #f0abfc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* Hero: Lichter + Handy-Wand + scharfe Handys */
+    .hero { isolation: isolate; min-height: min(820px, 100svh); display: flex; align-items: center;
+      background:
+        radial-gradient(60% 70% at 78% 30%, rgba(79,124,255,.30), transparent 70%),
+        radial-gradient(40% 50% at 100% 85%, rgba(236,72,153,.16), transparent 70%),
+        radial-gradient(45% 55% at 55% 105%, rgba(20,184,166,.16), transparent 70%),
+        radial-gradient(40% 60% at 0% 0%, rgba(139,92,246,.20), transparent 70%),
+        linear-gradient(180deg, #0a1022, #070b16); }
+    .hero::before { display: none; }
+    .hero::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(90deg, #070b16 0%, rgba(7,11,22,.92) 30%, rgba(7,11,22,.35) 55%, rgba(7,11,22,0) 75%),
+        linear-gradient(0deg, #070b16 0%, rgba(7,11,22,.6) 12%, rgba(7,11,22,0) 34%); }
+    .wall { position: absolute; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+    .wall-in { position: absolute; top: -38%; left: 22%; width: 120%; height: 190%; display: flex; gap: 26px;
+      transform: perspective(2200px) rotateX(14deg) rotateZ(-15deg); transform-origin: 50% 0; opacity: .62; }
+    .col { flex: none; width: 168px; }
+    .track { animation: wall-up var(--d) linear infinite; will-change: transform; }
+    .col:nth-child(even) .track { animation-name: wall-down; }
+    .col:nth-child(even) { margin-top: -140px; }
+    @keyframes wall-up { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -50%, 0); } }
+    @keyframes wall-down { from { transform: translate3d(0, -50%, 0); } to { transform: translate3d(0, 0, 0); } }
+    .wall.paused .track { animation-play-state: paused; }
+    .mp { position: relative; margin-bottom: 26px; padding: 5px; border-radius: 27px; background: linear-gradient(160deg, #343947, #0d1018 45%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset, 0 24px 40px -22px rgba(0,0,0,.9); }
+    .mp::before { content: ''; display: block; height: 15px; border-radius: 22px 22px 0 0; background: var(--bar); }
+    .mp::after { content: ''; position: absolute; top: 9px; left: 50%; width: 32%; height: 9px; transform: translateX(-50%); border-radius: 99px; background: #000; }
+    .mp img { display: block; width: 100%; height: auto; aspect-ratio: 158 / 296; object-fit: cover; object-position: top; border-radius: 0 0 22px 22px; }
+
+    .hero .wrap { position: relative; z-index: 1; width: 100%; grid-template-columns: 1.02fr .98fr; padding-top: 64px; padding-bottom: 72px; }
+    .hero .sub { color: #b9b5c6; }
+    .apprail { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 26px; }
+    .apprail a { display: block; width: 30px; height: 30px; border-radius: 8px; transition: transform .18s; }
+    .apprail a:hover { transform: translateY(-3px) scale(1.08); }
+    .apprail img { width: 30px; height: 30px; border-radius: 8px; display: block; box-shadow: 0 6px 14px -6px rgba(0,0,0,.7); }
+    .fan { position: relative; height: 600px; }
+    .fan .phone { position: absolute; top: 50%; left: 50%; }
+    .fan .phone.f { --pw: 270px; z-index: 3; transform: translate(-50%, -50%); }
+    .fan .phone.l { --pw: 228px; z-index: 2; transform: translate(-124%, -42%) rotate(-10deg); filter: brightness(.8); }
+    .fan .phone.r { --pw: 228px; z-index: 1; transform: translate(24%, -58%) rotate(9deg); filter: brightness(.78); }
+    .fan .phone .screen img { aspect-ratio: 600 / 1090; object-fit: cover; object-position: top; }
+    .fan .halo { position: absolute; inset: 12% 8%; border-radius: 50%; z-index: 0; filter: blur(50px);
+      background: radial-gradient(closest-side, rgba(96,140,255,.55), rgba(139,92,246,.25) 60%, transparent); }
+    .fan .chip { position: absolute; z-index: 4; display: flex; align-items: center; gap: 10px; padding: 10px 14px 10px 10px; border-radius: 14px;
+      background: rgba(13,17,30,.78); border: 1px solid rgba(255,255,255,.1); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      box-shadow: 0 18px 40px -18px rgba(0,0,0,.8); font-size: 13px; line-height: 1.3; color: var(--ink); white-space: nowrap; }
+    .fan .chip img { width: 30px; height: 30px; border-radius: 8px; }
+    .fan .chip b { display: block; font-size: 13.5px; }
+    .fan .chip small { color: var(--muted); font-size: 12px; }
+    .fan .chip.c1 { left: -2%; bottom: 13%; }
+    .fan .chip.c2 { right: -3%; top: 9%; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fan .phone.f { animation: float 7s ease-in-out infinite; }
+      .fan .chip.c1 { animation: bob 6s ease-in-out infinite; } .fan .chip.c2 { animation: bob 6s ease-in-out 1.5s infinite; }
+    }
+    @keyframes float { 0%, 100% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, calc(-50% - 10px)); } }
+    @keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+    @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+    @media (max-width: 1180px) { .fan .phone.l { transform: translate(-108%, -42%) rotate(-10deg); } .fan .phone.r { transform: translate(8%, -58%) rotate(9deg); } .fan .chip.c2 { right: 0; } }
+    @media (max-width: 900px) {
+      .hero { min-height: 0; }
+      .hero::after { background: linear-gradient(180deg, rgba(7,11,22,.9) 0%, rgba(7,11,22,.72) 45%, rgba(7,11,22,.55) 70%, #070b16 100%); }
+      .wall-in { left: -30%; top: -20%; width: 170%; opacity: .5; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 28px; padding-top: 40px; padding-bottom: 40px; }
+      .fan { height: 470px; max-width: 460px; width: 100%; margin: 0 auto; }
+      .fan .phone.f { --pw: 222px; } .fan .phone.l, .fan .phone.r { --pw: 188px; }
+      .fan .phone.l { transform: translate(-108%, -44%) rotate(-9deg); } .fan .phone.r { transform: translate(8%, -56%) rotate(8deg); }
+      .fan .chip.c2 { display: none; } .fan .chip.c1 { left: 0; bottom: 6%; }
+    }
+    @media (max-width: 480px) {
+      .fan { height: 420px; } .fan .phone.f { --pw: 200px; } .fan .phone.l, .fan .phone.r { --pw: 164px; }
+      .col { width: 132px; } .wall-in { gap: 18px; }
+    }
+
+    /* Abschnitte: Lichter statt Flächen-Schwarz */
+    section { position: relative; isolation: isolate; }
+    section.soft { background: linear-gradient(180deg, #070b16, #0a0f1f 18%, #090d1b 82%, #070b16); }
+    .lights::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+    #apps::before { background: radial-gradient(50% 40% at 85% 0%, rgba(139,92,246,.16), transparent 70%), radial-gradient(40% 35% at 0% 40%, rgba(59,130,246,.12), transparent 70%),
+      radial-gradient(rgba(255,255,255,.055) 1px, transparent 1.4px) 0 0 / 24px 24px;
+      -webkit-mask-image: linear-gradient(180deg, #000, rgba(0,0,0,.35)); mask-image: linear-gradient(180deg, #000, rgba(0,0,0,.35)); }
 
     .group { margin-top: 36px; }
     .group:first-of-type { margin-top: 0; }
     .group h3 { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
     .group h3::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .card { display: grid; grid-template-columns: 44px 1fr 18px; gap: 14px; align-items: start; padding: 18px; border-radius: var(--radius);
-      background: var(--card); border: 1px solid var(--border); color: var(--ink); transition: border-color .15s, transform .15s; }
-    .card:hover { text-decoration: none; border-color: rgba(255,255,255,.2); transform: translateY(-2px); }
-    .card[aria-disabled] { cursor: default; } .card[aria-disabled]:hover { transform: none; border-color: var(--border); } .card[aria-disabled] > .i { visibility: hidden; }
-    .card img { width: 44px; height: 44px; border-radius: 11px; }
+    .card { --c: #4F7CFF; position: relative; display: grid; grid-template-columns: 44px 1fr 18px; gap: 14px; align-items: start; padding: 18px; border-radius: var(--radius);
+      background: radial-gradient(120% 120% at 0% 0%, color-mix(in oklab, var(--c) 7%, transparent), transparent 55%), rgba(255,255,255,.028);
+      border: 1px solid var(--border); color: var(--ink); transition: border-color .2s, transform .2s, background .2s, box-shadow .2s; }
+    .card:hover { text-decoration: none; transform: translateY(-2px); border-color: color-mix(in oklab, var(--c) 55%, transparent);
+      background: radial-gradient(120% 120% at 0% 0%, color-mix(in oklab, var(--c) 18%, transparent), transparent 60%), rgba(255,255,255,.035);
+      box-shadow: 0 20px 40px -24px color-mix(in oklab, var(--c) 60%, transparent); }
+    .card[aria-disabled] { cursor: default; } .card[aria-disabled]:hover { transform: none; border-color: var(--border); box-shadow: none; } .card[aria-disabled] > .i { visibility: hidden; }
+    .card img { width: 44px; height: 44px; border-radius: 11px; box-shadow: 0 8px 18px -8px color-mix(in oklab, var(--c) 75%, transparent); }
     .card b { display: block; font-size: 15.5px; font-weight: 640; }
-    .card small { display: block; font-size: 12.5px; color: var(--accent-text); font-weight: 600; margin-top: 1px; }
+    .card small { display: block; font-size: 12.5px; color: color-mix(in oklab, var(--c) 62%, #fff); font-weight: 600; margin-top: 1px; }
     .card p { font-size: 14px; color: var(--muted); line-height: 1.5; margin-top: 6px; }
-    .card .i { width: 18px; height: 18px; color: var(--muted); margin-top: 3px; }
+    .card .i { width: 18px; height: 18px; color: var(--muted); margin-top: 3px; transition: transform .2s, color .2s; }
+    .card:hover .i { transform: translateX(3px); color: var(--ink); }
     @media (max-width: 960px) { .cards { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 620px) { .cards { grid-template-columns: 1fr 1fr; gap: 8px; }
       .card { grid-template-columns: 1fr; gap: 8px; padding: 14px; } .card img { width: 38px; height: 38px; }
@@ -333,11 +409,21 @@
     .bul { list-style: none; display: grid; gap: 10px; margin-top: 24px; }
     .bul li { display: flex; gap: 10px; font-size: 15.5px; }
     .bul .i { width: 19px; height: 19px; margin-top: 2px; color: var(--accent-text); }
-    .offer { padding: 30px; border-radius: 22px; border: 1px solid transparent;
-      background: linear-gradient(180deg, #121624, #0b0e18) padding-box, linear-gradient(140deg, #3b82f6, #8b5cf6 60%, #c084fc) border-box; }
+
+    /* Suite: Preis-Karte vor schwebenden Handys */
+    #suite::before { background: radial-gradient(45% 60% at 80% 50%, rgba(139,92,246,.22), transparent 70%), radial-gradient(35% 50% at 10% 80%, rgba(59,130,246,.12), transparent 70%); }
+    .stage { position: relative; padding: 70px 0; }
+    .stage .phone { position: absolute; --pw: 190px; z-index: 0; opacity: .9; }
+    .stage .phone .screen img { aspect-ratio: 600 / 1090; object-fit: cover; object-position: top; }
+    .stage .phone.sa { right: -4%; top: -6%; transform: rotate(9deg); }
+    .stage .phone.sb { left: -6%; bottom: -10%; transform: rotate(-8deg); }
+    .stage .phone::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(7,11,22,.15), rgba(7,11,22,.55)); }
+    .offer { position: relative; z-index: 1; padding: 30px; border-radius: 22px; border: 1px solid transparent;
+      background: linear-gradient(180deg, rgba(20,24,40,.92), rgba(11,14,24,.95)) padding-box, linear-gradient(140deg, #3b82f6, #8b5cf6 60%, #f0abfc) border-box;
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 40px 80px -40px rgba(80,60,200,.6); }
     .offer .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .offer .opt { padding: 18px; border-radius: 14px; background: rgba(255,255,255,.035); border: 1px solid var(--border); position: relative; }
-    .offer .opt.best { border-color: rgba(167,139,250,.6); }
+    .offer .opt.best { border-color: rgba(167,139,250,.6); background: rgba(139,92,246,.08); }
     .offer .opt .tag { position: absolute; top: -10px; right: 12px; font-size: 11.5px; font-weight: 650; padding: 2px 9px; border-radius: 99px; background: #8b5cf6; color: #fff; }
     .offer .lbl { font-size: 13px; color: var(--muted); font-weight: 600; }
     .offer .opt p { font-size: 28px; font-weight: 720; letter-spacing: -.02em; margin-top: 4px; }
@@ -346,33 +432,58 @@
     .offer .icons { padding-top: 22px; gap: 5px; }
     .offer .icons img { width: 23px; height: 23px; border-radius: 6px; }
     .offer .fine { margin-top: 14px; }
+    @media (max-width: 900px) { .stage { padding: 0; } .stage .phone { display: none; } }
     @media (max-width: 480px) { .offer { padding: 20px; } .offer .row { grid-template-columns: 1fr; } }
 
-    .dash { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 36px; border-radius: 22px;
-      background: var(--card); border: 1px solid var(--border); }
-    .url { display: flex; align-items: center; gap: 12px; padding: 18px 20px; border-radius: 16px; background: rgba(0,0,0,.25); border: 1px solid var(--border); }
-    .url .ic { flex: none; }
-    .url b { display: block; font-size: 17px; }
+    /* Dashboard: echtes Bild im Browserrahmen + Handy */
+    #dashboard::before { background: radial-gradient(50% 60% at 75% 40%, rgba(236,107,86,.13), transparent 70%), radial-gradient(40% 50% at 15% 10%, rgba(20,184,166,.12), transparent 70%); }
+    .dash { display: grid; grid-template-columns: .82fr 1.18fr; gap: 56px; align-items: center; }
+    .urls { margin-top: 26px; display: grid; gap: 10px; }
+    .url { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.035); border: 1px solid var(--border); color: var(--ink); transition: border-color .15s; }
+    .url:hover { text-decoration: none; border-color: rgba(255,255,255,.22); }
+    .url b { display: block; font-size: 16px; }
     .url small { color: var(--muted); font-size: 13.5px; }
-    .url + .url { margin-top: 10px; }
-    @media (max-width: 860px) { .dash { grid-template-columns: 1fr; padding: 22px; gap: 22px; } }
+    .duo { position: relative; padding: 0 0 60px 0; }
+    .browser { border-radius: 14px; overflow: hidden; background: #0b0f17; border: 1px solid rgba(255,255,255,.1);
+      box-shadow: 0 50px 90px -40px rgba(0,0,0,.9), 0 0 0 1px rgba(0,0,0,.4); transform: perspective(1800px) rotateY(-7deg) rotateX(2deg); transform-origin: 0 50%; }
+    .browser .bar { display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 12px; background: #141925; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .browser .bar i { width: 10px; height: 10px; border-radius: 50%; background: #3a4152; }
+    .browser .bar i:nth-child(1) { background: #ff5f57; } .browser .bar i:nth-child(2) { background: #febc2e; } .browser .bar i:nth-child(3) { background: #28c840; }
+    .browser .bar span { margin-left: 12px; flex: 1; max-width: 300px; height: 20px; border-radius: 6px; background: rgba(255,255,255,.06); font-size: 11.5px; line-height: 20px; color: #9aa3b5; text-align: center; }
+    .browser img { display: block; width: 100%; height: auto; }
+    .duo .phone { --pw: 168px; position: absolute; right: -10px; bottom: 0; z-index: 2; }
+    .duo .phone .screen img { aspect-ratio: 600 / 1090; object-fit: cover; object-position: top; }
+    .duo .sync { position: absolute; left: 6%; bottom: 14px; z-index: 2; display: flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 99px;
+      background: rgba(13,17,30,.85); border: 1px solid rgba(255,255,255,.12); font-size: 13px; font-weight: 600; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    .duo .sync .dot { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52,211,153,.18); }
+    @media (max-width: 960px) { .dash { grid-template-columns: 1fr; gap: 36px; } .browser { transform: none; } }
+    @media (max-width: 560px) { .duo { padding-bottom: 80px; } .duo .phone { --pw: 124px; right: 0; } .duo .sync { left: 0; bottom: 0; } }
 
-    .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    @media (max-width: 860px) { .why { grid-template-columns: 1fr; gap: 10px; } }
+    /* Bald: InstallateurDex */
     .soon-band { display: grid; grid-template-columns: 64px 1fr auto; gap: 22px; align-items: center; padding: 26px 28px; border-radius: 22px; color: var(--ink);
-      background: radial-gradient(120% 140% at 0% 0%, rgba(227,154,84,.16), transparent 55%), var(--card); border: 1px solid rgba(227,154,84,.35); transition: border-color .15s, transform .15s; }
+      background: radial-gradient(120% 140% at 0% 0%, rgba(227,154,84,.16), transparent 55%), rgba(255,255,255,.03); border: 1px solid rgba(227,154,84,.35); transition: border-color .15s, transform .15s; }
     .soon-band:hover { text-decoration: none; border-color: rgba(227,154,84,.6); transform: translateY(-2px); }
     .soon-band img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 10px 24px -10px rgba(227,154,84,.55); }
     .soon-band b { display: block; font-size: 20px; font-weight: 680; letter-spacing: -.02em; margin-top: 6px; }
     .soon-pill { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 99px; background: #E39A54; color: #14181D; }
     .soon-p { display: block; color: var(--muted); font-size: 15px; line-height: 1.55; margin-top: 4px; max-width: 640px; }
     @media (max-width: 700px) { .soon-band { grid-template-columns: 52px 1fr; padding: 20px; gap: 14px 16px; } .soon-band img { width: 52px; height: 52px; border-radius: 13px; } .soon-band .btn { grid-column: 1 / -1; justify-content: center; } }
+
+    /* Warum */
+    #warum::before { background: radial-gradient(40% 60% at 50% 0%, rgba(59,130,246,.12), transparent 70%); }
+    .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .why .feature { background: rgba(255,255,255,.03); }
+    .why .feature:nth-child(1) .ic { background: rgba(250,204,21,.14); color: #fde047; }
+    .why .feature:nth-child(2) .ic { background: rgba(52,211,153,.14); color: #6ee7b7; }
+    .why .feature:nth-child(3) .ic { background: rgba(167,139,250,.16); color: #c4b5fd; }
+    @media (max-width: 860px) { .why { grid-template-columns: 1fr; gap: 10px; } }
     .band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding: 30px 32px;
-      border-radius: 22px; background: var(--card); border: 1px solid var(--border); }
-    .band + .band { margin-top: 14px; }
+      border-radius: 22px; border: 1px solid transparent;
+      background: linear-gradient(180deg, #121729, #0c1020) padding-box, linear-gradient(120deg, rgba(79,124,255,.6), rgba(139,92,246,.35) 50%, rgba(255,255,255,.08)) border-box; }
     .band h3 { font-size: 20px; font-weight: 680; letter-spacing: -.02em; }
     .band p { color: var(--muted); font-size: 15px; margin-top: 4px; max-width: 560px; }
     @media (max-width: 600px) { .band { padding: 22px; } .band .btn { width: 100%; justify-content: center; } }
+    footer { background: #060913; }
   </style>
   <script>document.documentElement.classList.add('js');(function(){var l;try{l=localStorage.getItem('dexware-lang')}catch(e){}if(l!=='de'&&l!=='en')l=(navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 </head>
@@ -390,6 +501,7 @@
 
   <main>
     <div class="hero">
+      <div class="wall" aria-hidden="true"><div class="wall-in"><div class="col" style="--d:64s"><div class="track"><div class="mp" style="--bar:#2b1925"><img src="assets/hub/wall/gurtdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#085984"><img src="assets/hub/wall/winterdex-hero-1.webp" width="316" height="580" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/regaldex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#27201e"><img src="assets/hub/wall/feuerdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#2b1925"><img src="assets/hub/wall/gurtdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#085984"><img src="assets/hub/wall/winterdex-hero-1.webp" width="316" height="580" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/regaldex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#27201e"><img src="assets/hub/wall/feuerdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div></div></div><div class="col" style="--d:82s"><div class="track"><div class="mp" style="--bar:#231e30"><img src="assets/hub/wall/toredex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c4fd8"><img src="assets/hub/wall/pruefdex-hero-1.webp" width="316" height="583" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#11393e"><img src="assets/hub/wall/spieldex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c2733"><img src="assets/hub/wall/leiterdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#231e30"><img src="assets/hub/wall/toredex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c4fd8"><img src="assets/hub/wall/pruefdex-hero-1.webp" width="316" height="583" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#11393e"><img src="assets/hub/wall/spieldex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c2733"><img src="assets/hub/wall/leiterdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div></div></div><div class="col" style="--d:100s"><div class="track"><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/geruestdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#2b1925"><img src="assets/hub/wall/gurtdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#085984"><img src="assets/hub/wall/winterdex-hero-2.webp" width="316" height="580" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/regaldex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/geruestdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#2b1925"><img src="assets/hub/wall/gurtdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#085984"><img src="assets/hub/wall/winterdex-hero-2.webp" width="316" height="580" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/regaldex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div></div></div><div class="col" style="--d:73s"><div class="track"><div class="mp" style="--bar:#27201e"><img src="assets/hub/wall/feuerdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#231e30"><img src="assets/hub/wall/toredex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c4fd8"><img src="assets/hub/wall/pruefdex-hero-2.webp" width="316" height="583" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#11393e"><img src="assets/hub/wall/spieldex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#27201e"><img src="assets/hub/wall/feuerdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#231e30"><img src="assets/hub/wall/toredex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c4fd8"><img src="assets/hub/wall/pruefdex-hero-2.webp" width="316" height="583" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#11393e"><img src="assets/hub/wall/spieldex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div></div></div><div class="col" style="--d:91s"><div class="track"><div class="mp" style="--bar:#1c2733"><img src="assets/hub/wall/leiterdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/geruestdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#2b1925"><img src="assets/hub/wall/gurtdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#085984"><img src="assets/hub/wall/winterdex-ablauf.webp" width="316" height="580" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c2733"><img src="assets/hub/wall/leiterdex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/geruestdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#2b1925"><img src="assets/hub/wall/gurtdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#085984"><img src="assets/hub/wall/winterdex-ablauf.webp" width="316" height="580" alt="" decoding="async" fetchpriority="low" /></div></div></div><div class="col" style="--d:64s"><div class="track"><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/regaldex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#27201e"><img src="assets/hub/wall/feuerdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#231e30"><img src="assets/hub/wall/toredex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c4fd8"><img src="assets/hub/wall/pruefdex-ablauf.webp" width="316" height="583" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/regaldex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#27201e"><img src="assets/hub/wall/feuerdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#231e30"><img src="assets/hub/wall/toredex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c4fd8"><img src="assets/hub/wall/pruefdex-ablauf.webp" width="316" height="583" alt="" decoding="async" fetchpriority="low" /></div></div></div><div class="col" style="--d:82s"><div class="track"><div class="mp" style="--bar:#11393e"><img src="assets/hub/wall/spieldex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c2733"><img src="assets/hub/wall/leiterdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/geruestdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#11393e"><img src="assets/hub/wall/spieldex-hero-1.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1c2733"><img src="assets/hub/wall/leiterdex-hero-2.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div><div class="mp" style="--bar:#1b232c"><img src="assets/hub/wall/geruestdex-ablauf.webp" width="316" height="591" alt="" decoding="async" fetchpriority="low" /></div></div></div></div></div>
       <div class="wrap">
         <div>
           <a class="kicker" href="mailto:support@dexware.app?subject=Bitte%20benachrichtigen%3A%20Dexware%20f%C3%BCr%20iOS"><span class="pill"><span data-l="de">Bald</span><span data-l="en">Soon</span></span><span data-l="de">Dexware kommt auf iPhone & iPad — benachrichtigen</span><span data-l="en">Dexware is coming to iPhone & iPad — notify me</span> →</a>
@@ -399,17 +511,25 @@
             <a class="btn" href="#apps"><span data-l="de">Apps ansehen</span><span data-l="en">See the apps</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="btn ghost" href="https://dashboard.dexware.app"><span data-l="de">Zum Dashboard</span><span data-l="en">Go to dashboard</span></a>
           </div>
+          <div class="apprail" aria-label="15 Dexware-Apps"><a href="https://gurtdex.dexware.app" title="GurtDex"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="30" height="30" /></a><a href="https://toredex.dexware.app" title="ToreDex"><img src="assets/hub/toredex.webp" alt="ToreDex" width="30" height="30" /></a><a href="https://geruestdex.dexware.app" title="GerüstDex"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="30" height="30" /></a><a href="https://feuerdex.dexware.app" title="FeuerDex"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="30" height="30" /></a><a href="https://leiterdex.dexware.app" title="LeiterDex"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="30" height="30" /></a><a href="https://regaldex.dexware.app" title="RegalDex"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="30" height="30" /></a><a href="https://spieldex.dexware.app" title="SpielDex"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="30" height="30" /></a><a href="https://winterdex.dexware.app" title="WinterDex"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="30" height="30" /></a><a href="https://kfzdex.dexware.app" title="KfzDex"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="30" height="30" /></a><a href="https://pruefdex.dexware.app" title="PrüfDex"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="30" height="30" /></a><a href="https://schutzdex.dexware.app" title="SchutzDex"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="30" height="30" /></a><a href="https://baumdex.dexware.app" title="BaumDex"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="30" height="30" /></a><a href="https://tourdex.dexware.app" title="TourDex"><img src="assets/hub/tourdex.webp" alt="TourDex" width="30" height="30" /></a><a href="https://craftdex.dexware.app" title="CraftDex"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="30" height="30" /></a><a href="https://dokudex.dexware.app" title="DokuDex"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="30" height="30" /></a></div>
           <ul class="ticks">
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">15 Apps, ein Stil</span><span data-l="en">15 apps, one style</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Für Deutschland, Österreich und die Schweiz</span><span data-l="en">Built for Germany, Austria and Switzerland</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Web-Dashboard inklusive</span><span data-l="en">Web dashboard included</span></li>
           </ul>
         </div>
-        <div class="mosaic" aria-label="15 Dexware-Apps"><a href="https://gurtdex.dexware.app" title="GurtDex"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="80" height="80" /></a><a href="https://toredex.dexware.app" title="ToreDex"><img src="assets/hub/toredex.webp" alt="ToreDex" width="80" height="80" /></a><a href="https://geruestdex.dexware.app" title="GerüstDex"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="80" height="80" /></a><a href="https://feuerdex.dexware.app" title="FeuerDex"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="80" height="80" /></a><a href="https://leiterdex.dexware.app" title="LeiterDex"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="80" height="80" /></a><a href="https://regaldex.dexware.app" title="RegalDex"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="80" height="80" /></a><a href="https://spieldex.dexware.app" title="SpielDex"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="80" height="80" /></a><a href="https://winterdex.dexware.app" title="WinterDex"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="80" height="80" /></a><a href="https://kfzdex.dexware.app" title="KfzDex"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="80" height="80" /></a><a href="https://pruefdex.dexware.app" title="PrüfDex"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="80" height="80" /></a><a href="https://schutzdex.dexware.app" title="SchutzDex"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="80" height="80" /></a><a href="https://baumdex.dexware.app" title="BaumDex"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="80" height="80" /></a><a href="https://tourdex.dexware.app" title="TourDex"><img src="assets/hub/tourdex.webp" alt="TourDex" width="80" height="80" /></a><a href="https://craftdex.dexware.app" title="CraftDex"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="80" height="80" /></a><a href="https://dokudex.dexware.app" title="DokuDex"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="80" height="80" /></a></div>
+        <div class="fan">
+          <div class="halo" aria-hidden="true"></div>
+          <div class="phone l"><div class="screen" style="--bar:#1c4fd8"><img src="assets/hub/ph/pruefdex-hero-1.webp" width="540" height="996" alt="PrüfDex: Gerät mit QR-Code und nächster Prüfung" decoding="sync" fetchpriority="high" /></div></div>
+          <div class="phone r"><div class="screen" style="--bar:#2b1925"><img src="assets/hub/ph/gurtdex-hero-1.webp" width="540" height="1011" alt="GurtDex: Standort mit PSA-Artikeln und Mängeln" decoding="sync" fetchpriority="high" /></div></div>
+          <div class="phone f"><div class="screen" style="--bar:#085984"><img src="assets/hub/ph/winterdex-hero-2.webp" width="540" height="992" alt="WinterDex: Fahrt mit GPS-Strecke, abgedeckt 92 %" decoding="sync" fetchpriority="high" /></div></div>
+          <div class="chip c1"><img src="assets/hub/winterdex.webp" alt="" width="30" height="30" /><span><b><span data-l="de">Einsatz belegt</span><span data-l="en">Run recorded</span></b><small><span data-l="de">GPS · Wetter · Foto</span><span data-l="en">GPS · weather · photo</span></small></span></div>
+          <div class="chip c2"><img src="assets/hub/pruefdex.webp" alt="" width="30" height="30" /><span><b><span data-l="de">Prüfplakette fertig</span><span data-l="en">Test label ready</span></b><small><span data-l="de">per QR in Sekunden</span><span data-l="en">via QR in seconds</span></small></span></div>
+        </div>
       </div>
     </div>
 
-    <section class="soft" id="apps">
+    <section class="soft lights" id="apps">
       <div class="wrap">
         <div class="head rv">
           <p class="eyebrow"><span data-l="de">Unsere Apps</span><span data-l="en">Our apps</span></p>
@@ -419,43 +539,43 @@
         <div class="group rv">
           <h3><span data-l="de">Prüfpflichten im Betrieb</span><span data-l="en">Workplace inspections</span></h3>
           <div class="cards">
-            <a class="card" href="https://pruefdex.dexware.app"><img src="assets/hub/pruefdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>PrüfDex</b><small><span data-l="de">DGUV V3</span><span data-l="en">Electrical testing</span></small><p><span data-l="de">DGUV-V3-Geräteprüfung per QR — Protokoll und Prüfplakette automatisch.</span><span data-l="en">DGUV V3 appliance testing via QR — report and test label generated automatically.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://gurtdex.dexware.app"><img src="assets/hub/gurtdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>GurtDex</b><small><span data-l="de">PSA gegen Absturz</span><span data-l="en">Fall protection</span></small><p><span data-l="de">PSA gegen Absturz nach DGUV 312-906 und EN 365 — mit Ablegereife-Wächter.</span><span data-l="en">Fall-protection equipment per DGUV 312-906 and EN 365 — with retirement tracking.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://hebedex.dexware.app"><img src="assets/hub/hebedex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>HebeDex</b><small><span data-l="de">Anschlag- & Zurrmittel · bald</span><span data-l="en">Lifting & lashing gear · soon</span></small><p><span data-l="de">Anschlag-, Hebe- und Zurrmittel nach DGUV Regel 109-017 — QR-Etiketten und Ablegereife-Rechner.</span><span data-l="en">Lifting slings, hoists and lashing gear per DGUV Rule 109-017 — QR labels and discard calculator.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://toredex.dexware.app"><img src="assets/hub/toredex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>ToreDex</b><small><span data-l="de">Tore & Türen</span><span data-l="en">Doors & gates</span></small><p><span data-l="de">Kraftbetätigte Tore und Türen nach ASR A1.7 prüfen, Stilllegungen belegen.</span><span data-l="en">Inspect powered doors and gates per ASR A1.7 and document shutdowns.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://geruestdex.dexware.app"><img src="assets/hub/geruestdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>GerüstDex</b><small><span data-l="de">Gerüstprüfung</span><span data-l="en">Scaffolding</span></small><p><span data-l="de">Gerüstprüfung nach TRBS 2121-1 mit Sperr-Dokumentation per Ampel.</span><span data-l="en">Scaffold inspections per TRBS 2121-1 with traffic-light lockouts.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://feuerdex.dexware.app"><img src="assets/hub/feuerdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>FeuerDex</b><small><span data-l="de">Feuerlöscher</span><span data-l="en">Fire extinguishers</span></small><p><span data-l="de">Feuerlöscher nach ASR A2.2 und DIN 14406-4 — Inventar, Fristen, Bericht.</span><span data-l="en">Fire extinguishers per ASR A2.2 and DIN 14406-4 — inventory, deadlines, reports.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://leiterdex.dexware.app"><img src="assets/hub/leiterdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>LeiterDex</b><small><span data-l="de">Leitern & Tritte</span><span data-l="en">Ladders</span></small><p><span data-l="de">Leitern und Tritte nach BetrSichV und DGUV 208-016 prüfen und belegen.</span><span data-l="en">Inspect and document ladders and steps per BetrSichV and DGUV 208-016.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://regaldex.dexware.app"><img src="assets/hub/regaldex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>RegalDex</b><small><span data-l="de">Regalinspektion</span><span data-l="en">Racking</span></small><p><span data-l="de">Regalinspektion nach DIN EN 15635 — Schäden einstufen, Felder sperren.</span><span data-l="en">Racking inspections per DIN EN 15635 — rate damage, lock bays.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://spieldex.dexware.app"><img src="assets/hub/spieldex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>SpielDex</b><small><span data-l="de">Spielplatzkontrolle</span><span data-l="en">Playgrounds</span></small><p><span data-l="de">Spielplatzkontrolle nach DIN EN 1176 mit PDF-Kontrollbuch.</span><span data-l="en">Playground inspections per DIN EN 1176 with a PDF logbook.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://kfzdex.dexware.app"><img src="assets/hub/kfzdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>KfzDex</b><small><span data-l="de">Fuhrpark & UVV</span><span data-l="en">Fleet & vehicle checks</span></small><p><span data-l="de">UVV-Prüfung und Führerscheinkontrolle mit Fristen-Ampel.</span><span data-l="en">Vehicle inspections and licence checks with deadline alerts.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://baumdex.dexware.app"><img src="assets/hub/baumdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>BaumDex</b><small><span data-l="de">Baumkataster</span><span data-l="en">Tree register</span></small><p><span data-l="de">Baumkataster und Verkehrssicherung — Kontrollen lückenlos belegt.</span><span data-l="en">Tree register and safety checks — every inspection on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://winterdex.dexware.app"><img src="assets/hub/winterdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>WinterDex</b><small><span data-l="de">Winterdienst</span><span data-l="en">Winter service</span></small><p><span data-l="de">Räum- und Streueinsätze mit GPS, Foto und Wetter lückenlos belegt.</span><span data-l="en">Snow clearing and gritting with GPS, photo and weather on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://schutzdex.dexware.app"><img src="assets/hub/schutzdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>SchutzDex</b><small><span data-l="de">Unterweisungen</span><span data-l="en">Safety briefings</span></small><p><span data-l="de">KI-Unterweisungen mit Verständnis-Check und Gefährdungsbeurteilung.</span><span data-l="en">AI safety briefings with comprehension check and risk assessment.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#2F6BF2" href="https://pruefdex.dexware.app"><img src="assets/hub/pruefdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>PrüfDex</b><small><span data-l="de">DGUV V3</span><span data-l="en">Electrical testing</span></small><p><span data-l="de">DGUV-V3-Geräteprüfung per QR — Protokoll und Prüfplakette automatisch.</span><span data-l="en">DGUV V3 appliance testing via QR — report and test label generated automatically.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#DB2777" href="https://gurtdex.dexware.app"><img src="assets/hub/gurtdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>GurtDex</b><small><span data-l="de">PSA gegen Absturz</span><span data-l="en">Fall protection</span></small><p><span data-l="de">PSA gegen Absturz nach DGUV 312-906 und EN 365 — mit Ablegereife-Wächter.</span><span data-l="en">Fall-protection equipment per DGUV 312-906 and EN 365 — with retirement tracking.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#84CC16" href="https://hebedex.dexware.app"><img src="assets/hub/hebedex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>HebeDex</b><small><span data-l="de">Anschlag- & Zurrmittel · bald</span><span data-l="en">Lifting & lashing gear · soon</span></small><p><span data-l="de">Anschlag-, Hebe- und Zurrmittel nach DGUV Regel 109-017 — QR-Etiketten und Ablegereife-Rechner.</span><span data-l="en">Lifting slings, hoists and lashing gear per DGUV Rule 109-017 — QR labels and discard calculator.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#7C3AED" href="https://toredex.dexware.app"><img src="assets/hub/toredex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>ToreDex</b><small><span data-l="de">Tore & Türen</span><span data-l="en">Doors & gates</span></small><p><span data-l="de">Kraftbetätigte Tore und Türen nach ASR A1.7 prüfen, Stilllegungen belegen.</span><span data-l="en">Inspect powered doors and gates per ASR A1.7 and document shutdowns.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#14B8A6" href="https://geruestdex.dexware.app"><img src="assets/hub/geruestdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>GerüstDex</b><small><span data-l="de">Gerüstprüfung</span><span data-l="en">Scaffolding</span></small><p><span data-l="de">Gerüstprüfung nach TRBS 2121-1 mit Sperr-Dokumentation per Ampel.</span><span data-l="en">Scaffold inspections per TRBS 2121-1 with traffic-light lockouts.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#DC2626" href="https://feuerdex.dexware.app"><img src="assets/hub/feuerdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>FeuerDex</b><small><span data-l="de">Feuerlöscher</span><span data-l="en">Fire extinguishers</span></small><p><span data-l="de">Feuerlöscher nach ASR A2.2 und DIN 14406-4 — Inventar, Fristen, Bericht.</span><span data-l="en">Fire extinguishers per ASR A2.2 and DIN 14406-4 — inventory, deadlines, reports.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#2563EB" href="https://leiterdex.dexware.app"><img src="assets/hub/leiterdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>LeiterDex</b><small><span data-l="de">Leitern & Tritte</span><span data-l="en">Ladders</span></small><p><span data-l="de">Leitern und Tritte nach BetrSichV und DGUV 208-016 prüfen und belegen.</span><span data-l="en">Inspect and document ladders and steps per BetrSichV and DGUV 208-016.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#F59E0B" href="https://regaldex.dexware.app"><img src="assets/hub/regaldex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>RegalDex</b><small><span data-l="de">Regalinspektion</span><span data-l="en">Racking</span></small><p><span data-l="de">Regalinspektion nach DIN EN 15635 — Schäden einstufen, Felder sperren.</span><span data-l="en">Racking inspections per DIN EN 15635 — rate damage, lock bays.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#EA5A47" href="https://spieldex.dexware.app"><img src="assets/hub/spieldex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>SpielDex</b><small><span data-l="de">Spielplatzkontrolle</span><span data-l="en">Playgrounds</span></small><p><span data-l="de">Spielplatzkontrolle nach DIN EN 1176 mit PDF-Kontrollbuch.</span><span data-l="en">Playground inspections per DIN EN 1176 with a PDF logbook.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#F97316" href="https://kfzdex.dexware.app"><img src="assets/hub/kfzdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>KfzDex</b><small><span data-l="de">Fuhrpark & UVV</span><span data-l="en">Fleet & vehicle checks</span></small><p><span data-l="de">UVV-Prüfung und Führerscheinkontrolle mit Fristen-Ampel.</span><span data-l="en">Vehicle inspections and licence checks with deadline alerts.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#4ADE80" href="https://baumdex.dexware.app"><img src="assets/hub/baumdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>BaumDex</b><small><span data-l="de">Baumkataster</span><span data-l="en">Tree register</span></small><p><span data-l="de">Baumkataster und Verkehrssicherung — Kontrollen lückenlos belegt.</span><span data-l="en">Tree register and safety checks — every inspection on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#0EA5E9" href="https://winterdex.dexware.app"><img src="assets/hub/winterdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>WinterDex</b><small><span data-l="de">Winterdienst</span><span data-l="en">Winter service</span></small><p><span data-l="de">Räum- und Streueinsätze mit GPS, Foto und Wetter lückenlos belegt.</span><span data-l="en">Snow clearing and gritting with GPS, photo and weather on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#3B82F6" href="https://schutzdex.dexware.app"><img src="assets/hub/schutzdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>SchutzDex</b><small><span data-l="de">Unterweisungen</span><span data-l="en">Safety briefings</span></small><p><span data-l="de">KI-Unterweisungen mit Verständnis-Check und Gefährdungsbeurteilung.</span><span data-l="en">AI safety briefings with comprehension check and risk assessment.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
           </div>
         </div>
         <div class="group rv">
           <h3><span data-l="de">Handwerk & Kundendienst</span><span data-l="en">Trades & customer service</span></h3>
           <div class="cards">
-            <a class="card" href="https://installateurdex.dexware.app"><img src="assets/hub/installateurdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>InstallateurDex</b><small><span data-l="de">Wartung & Kundendienst · bald</span><span data-l="en">Service & maintenance · soon</span></small><p><span data-l="de">Wartung diktieren, Protokoll im Firmen-Look, QR-Anlagenpass für deine Kunden.</span><span data-l="en">Dictate service reports in your branding, with a QR system pass for your customers.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://craftdex.dexware.app"><img src="assets/hub/craftdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>CraftDex</b><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small><p><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#E39A54" href="https://installateurdex.dexware.app"><img src="assets/hub/installateurdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>InstallateurDex</b><small><span data-l="de">Wartung & Kundendienst · bald</span><span data-l="en">Service & maintenance · soon</span></small><p><span data-l="de">Wartung diktieren, Protokoll im Firmen-Look, QR-Anlagenpass für deine Kunden.</span><span data-l="en">Dictate service reports in your branding, with a QR system pass for your customers.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#E8C97A" href="https://craftdex.dexware.app"><img src="assets/hub/craftdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>CraftDex</b><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small><p><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
           </div>
         </div>
         <div class="group rv">
           <h3><span data-l="de">Büro & Alltag</span><span data-l="en">Office & everyday</span></h3>
           <div class="cards">
-            <a class="card" href="https://tourdex.dexware.app"><img src="assets/hub/tourdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>TourDex</b><small><span data-l="de">Fahrtenbuch</span><span data-l="en">Mileage log</span></small><p><span data-l="de">Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt.</span><span data-l="en">Automatic mileage log with AI categorisation and a tax-ready PDF.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" href="https://dokudex.dexware.app"><img src="assets/hub/dokudex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>DokuDex</b><small><span data-l="de">Dokumente & KI</span><span data-l="en">Documents & AI</span></small><p><span data-l="de">Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung.</span><span data-l="en">Scan documents and understand them with AI — with deadline reminders.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#3B82F6" href="https://tourdex.dexware.app"><img src="assets/hub/tourdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>TourDex</b><small><span data-l="de">Fahrtenbuch</span><span data-l="en">Mileage log</span></small><p><span data-l="de">Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt.</span><span data-l="en">Automatic mileage log with AI categorisation and a tax-ready PDF.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#4F9EF8" href="https://dokudex.dexware.app"><img src="assets/hub/dokudex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>DokuDex</b><small><span data-l="de">Dokumente & KI</span><span data-l="en">Documents & AI</span></small><p><span data-l="de">Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung.</span><span data-l="en">Scan documents and understand them with AI — with deadline reminders.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="suite">
+    <section class="lights" id="suite">
       <div class="wrap split">
         <div class="rv">
           <p class="eyebrow">Dexware Suite</p>
-          <h2><span data-l="de">Alle 15 Apps. Ein Abo.</span><span data-l="en">All 15 apps. One subscription.</span></h2>
+          <h2><span data-l="de">Alle 15 Apps. <span class="grad">Ein Abo.</span></span><span data-l="en">All 15 apps. <span class="grad">One subscription.</span></span></h2>
           <p class="lead"><span data-l="de">Die Suite kostet so viel wie unsere teuerste Einzel-App und schaltet alle frei — auf allen deinen Geräten.</span><span data-l="en">The suite costs the same as our most expensive single app and unlocks all of them — on all your devices.</span></p>
           <ul class="bul">
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Neue Apps automatisch dabei, ohne Aufpreis</span><span data-l="en">New apps included automatically, at no extra cost</span></li>
@@ -463,39 +583,47 @@
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Erhältlich in jeder Dexware-App unter „Pro werden"</span><span data-l="en">Available in every Dexware app under "Go Pro"</span></li>
           </ul>
         </div>
-        <div class="offer rv">
-          <div class="row">
-            <div class="opt"><span class="lbl"><span data-l="de">Monatlich</span><span data-l="en">Monthly</span></span><p>29,99 € <small><span data-l="de">/ Monat</span><span data-l="en">/ month</span></small></p><em><span data-l="de">jederzeit kündbar</span><span data-l="en">cancel anytime</span></em></div>
-            <div class="opt best"><span class="tag"><span data-l="de">4 Monate geschenkt</span><span data-l="en">4 months free</span></span><span class="lbl"><span data-l="de">Jährlich</span><span data-l="en">Yearly</span></span><p>239,99 € <small><span data-l="de">/ Jahr</span><span data-l="en">/ year</span></small></p><em><span data-l="de">entspricht 20 € im Monat</span><span data-l="en">that is €20 per month</span></em></div>
+        <div class="stage rv">
+          <div class="phone sa"><div class="screen" style="--bar:#231e30"><img src="assets/hub/ph/toredex-hero-1.webp" width="540" height="1011" alt="ToreDex: Objekt mit Toren" loading="lazy" decoding="async" /></div></div>
+          <div class="phone sb"><div class="screen" style="--bar:#27201e"><img src="assets/hub/ph/feuerdex-hero-2.webp" width="540" height="1011" alt="FeuerDex: Prüf-Checkliste" loading="lazy" decoding="async" /></div></div>
+          <div class="offer">
+            <div class="row">
+              <div class="opt"><span class="lbl"><span data-l="de">Monatlich</span><span data-l="en">Monthly</span></span><p>29,99 € <small><span data-l="de">/ Monat</span><span data-l="en">/ month</span></small></p><em><span data-l="de">jederzeit kündbar</span><span data-l="en">cancel anytime</span></em></div>
+              <div class="opt best"><span class="tag"><span data-l="de">4 Monate geschenkt</span><span data-l="en">4 months free</span></span><span class="lbl"><span data-l="de">Jährlich</span><span data-l="en">Yearly</span></span><p>239,99 € <small><span data-l="de">/ Jahr</span><span data-l="en">/ year</span></small></p><em><span data-l="de">entspricht 20 € im Monat</span><span data-l="en">that is €20 per month</span></em></div>
+            </div>
+            <div class="icons" aria-hidden="true"><img src="assets/hub/gurtdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/toredex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/geruestdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/feuerdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/leiterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/regaldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/spieldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/winterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/kfzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/pruefdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/schutzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/baumdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/tourdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/craftdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/dokudex.webp" alt="" width="26" height="26" loading="lazy" /></div>
+            <p class="fine"><span data-l="de">Abschluss in der App über Google Play · Preise inkl. MwSt.</span><span data-l="en">Subscribe in the app via Google Play · prices incl. VAT</span></p>
           </div>
-          <div class="icons" aria-hidden="true"><img src="assets/hub/gurtdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/toredex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/geruestdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/feuerdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/leiterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/regaldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/spieldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/winterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/kfzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/pruefdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/schutzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/baumdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/tourdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/craftdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/dokudex.webp" alt="" width="26" height="26" loading="lazy" /></div>
-          <p class="fine"><span data-l="de">Abschluss in der App über Google Play · Preise inkl. MwSt.</span><span data-l="en">Subscribe in the app via Google Play · prices incl. VAT</span></p>
         </div>
       </div>
     </section>
 
-    <section class="soft" id="dashboard">
-      <div class="wrap">
-        <div class="dash rv">
-          <div>
-            <p class="eyebrow">Web-Dashboard</p>
-            <h2><span data-l="de">Dein Betrieb am großen Bildschirm</span><span data-l="en">Your business on the big screen</span></h2>
-            <p class="lead"><span data-l="de">Das Dashboard ist der Einstieg zu allen App-Dashboards — App wählen, anmelden, fertig.</span><span data-l="en">The dashboard is the entry point to every app dashboard — pick an app, sign in, done.</span></p>
-            <ul class="bul">
-              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Objekte, Prüfungen und Fristen im Browser</span><span data-l="en">Sites, inspections and deadlines in your browser</span></li>
-              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Gleiche Daten wie in der App — live</span><span data-l="en">Same data as in the app — live</span></li>
-              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">PDF-Berichte direkt herunterladen</span><span data-l="en">Download PDF reports directly</span></li>
-            </ul>
-          </div>
-          <div>
+    <section class="soft lights" id="dashboard">
+      <div class="wrap dash">
+        <div class="rv">
+          <p class="eyebrow">Web-Dashboard</p>
+          <h2><span data-l="de">Dein Betrieb am großen Bildschirm</span><span data-l="en">Your business on the big screen</span></h2>
+          <p class="lead"><span data-l="de">Das Dashboard ist der Einstieg zu allen App-Dashboards — App wählen, anmelden, fertig.</span><span data-l="en">The dashboard is the entry point to every app dashboard — pick an app, sign in, done.</span></p>
+          <ul class="bul">
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Objekte, Prüfungen und Fristen im Browser</span><span data-l="en">Sites, inspections and deadlines in your browser</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Gleiche Daten wie in der App — live</span><span data-l="en">Same data as in the app — live</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">PDF-Berichte direkt herunterladen</span><span data-l="en">Download PDF reports directly</span></li>
+          </ul>
+          <div class="urls">
             <a class="url" href="https://dashboard.dexware.app"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2" /><line x1="8" x2="16" y1="21" y2="21" /><line x1="12" x2="12" y1="17" y2="21" /></svg></span><span><b>dashboard.dexware.app</b><small><span data-l="de">Anmeldung mit deinem App-Konto — Google oder E-Mail</span><span data-l="en">Sign in with your app account — Google or email</span></small></span></a>
             <a class="url" href="ratgeber.html"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg></span><span><b><span data-l="de">Ratgeber</span><span data-l="en">Guides</span></b><small><span data-l="de">Fristen und Pflichten verständlich erklärt</span><span data-l="en">Deadlines and duties explained (German)</span></small></span></a>
           </div>
         </div>
+        <div class="duo rv">
+          <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>dashboard.dexware.app</span></div>
+            <img src="assets/hub/dashboard.webp" width="1500" height="891" alt="Web-Dashboard von SpielDex: Übersicht mit Spielplätzen, Kontrollen und offenen Mängeln" loading="lazy" decoding="async" /></div>
+          <div class="phone dp"><div class="screen" style="--bar:#11393e"><img src="assets/hub/ph/spieldex-hero-1.webp" width="540" height="1011" alt="SpielDex: Spielplatz mit offenem Mangel" loading="lazy" decoding="async" /></div></div>
+          <div class="sync"><span class="dot" aria-hidden="true"></span><span data-l="de">Handy und Browser zeigen dieselben Daten</span><span data-l="en">Phone and browser show the same data</span></div>
+        </div>
       </div>
     </section>
 
-    <section id="neu">
+    <section class="lights" id="neu">
       <div class="wrap">
         <a class="soon-band rv" href="https://installateurdex.dexware.app">
           <img src="assets/hub/installateurdex.webp" alt="" width="64" height="64" loading="lazy" />
@@ -509,7 +637,7 @@
       </div>
     </section>
 
-    <section id="warum">
+    <section class="soft lights" id="warum">
       <div class="wrap">
         <div class="head rv">
           <p class="eyebrow"><span data-l="de">Warum Dexware</span><span data-l="en">Why Dexware</span></p>
@@ -523,7 +651,7 @@
       </div>
     </section>
 
-    <section class="soft" id="kontakt">
+    <section id="kontakt">
       <div class="wrap">
         <div class="band rv">
           <div>
@@ -555,6 +683,10 @@
           try { localStorage.setItem('dexware-lang', l); } catch (e) {}
         });
       });
+      var wall = document.querySelector('.wall');
+      if (wall && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { wall.classList.toggle('paused', !es[0].isIntersecting); }).observe(wall);
+      }
       var els = document.querySelectorAll('.rv');
       if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
         els.forEach(function (e) { e.classList.add('in'); }); return;
