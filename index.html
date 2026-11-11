@@ -380,6 +380,42 @@
       .col { width: 132px; } .wall-in { gap: 18px; }
     }
 
+    /* Sammel-App „Dexware“ (über den Einzel-Apps) */
+    #dexware-app::before { background: radial-gradient(45% 70% at 85% 40%, rgba(139,92,246,.20), transparent 70%), radial-gradient(40% 60% at 0% 100%, rgba(59,130,246,.14), transparent 70%); }
+    .sa { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .sa .cta { margin-top: 26px; }
+    .sa .play { width: 18px; height: 18px; fill: currentColor; }
+    .sa-note { margin-top: 12px; font-size: 13.5px; color: var(--muted); }
+    .sa-box { position: relative; max-width: 380px; margin: 0 auto; padding: 22px; border-radius: 28px; border: 1px solid transparent;
+      background: linear-gradient(180deg, rgba(20,24,40,.95), rgba(11,14,24,.97)) padding-box, linear-gradient(140deg, #3b82f6, #8b5cf6 60%, #f0abfc) border-box;
+      box-shadow: 0 40px 80px -40px rgba(80,60,200,.65); }
+    .sa-box .hd { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .sa-box .hd img { width: 44px; height: 44px; border-radius: 12px; }
+    .sa-box .hd b { display: block; font-size: 17px; }
+    .sa-box .hd small { color: var(--muted); font-size: 13px; }
+    .sa-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .sa-grid img { width: 100%; aspect-ratio: 1; border-radius: 22%; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 8px 18px -10px rgba(0,0,0,.8); }
+    @media (max-width: 900px) { .sa { grid-template-columns: 1fr; gap: 32px; } }
+    @media (max-width: 480px) { .sa-box { padding: 16px; } .sa-grid { gap: 9px; } .sa .cta .btn { width: 100%; justify-content: center; } }
+
+    /* Zwei Gruppen: Suite (im Abo) und Weitere Apps (eigener Tarif) + Legende */
+    .legend { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; font-size: 14px; color: var(--muted); }
+    .legend span { display: inline-flex; align-items: center; gap: 8px; }
+    .tag-in, .tag-own { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 99px; font-size: 12px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
+    .tag-in { background: rgba(52,211,153,.14); color: #6ee7b7; }
+    .tag-in .i, .tag-own .i { width: 14px; height: 14px; }
+    .tag-own { color: #fbbf77; border: 1px dashed rgba(251,191,119,.6); }
+    .tier { margin-top: 34px; padding: 28px; border-radius: 24px; }
+    .tier-suite { border: 1px solid transparent;
+      background: linear-gradient(180deg, rgba(14,18,33,.92), rgba(9,13,26,.92)) padding-box, linear-gradient(140deg, rgba(59,130,246,.7), rgba(139,92,246,.55) 55%, rgba(240,171,252,.35)) border-box; }
+    .tier-own { border: 1.5px dashed rgba(251,191,119,.42); background: rgba(251,191,119,.035); }
+    .tier-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-bottom: 22px; }
+    .tier-head h3 { font-size: 21px; font-weight: 680; letter-spacing: -.02em; margin-top: 8px; }
+    .tier-head p { color: var(--muted); font-size: 15px; margin-top: 4px; max-width: 640px; }
+    .tier .group h3 { font-size: 13.5px; }
+    .own-tag { display: inline-block; margin-top: 8px; font-style: normal; font-size: 12px; font-weight: 650; color: #fbbf77; }
+    @media (max-width: 620px) { .tier { padding: 16px; margin-top: 24px; border-radius: 18px; } .tier-head h3 { font-size: 18px; } .tier-head .btn { width: 100%; justify-content: center; } .own-tag { margin-top: 4px; } }
+
     /* Abschnitte: Lichter statt Flächen-Schwarz */
     section { position: relative; isolation: isolate; }
     section.soft { background: linear-gradient(180deg, #070b16, #0a0f1f 18%, #090d1b 82%, #070b16); }
@@ -466,15 +502,6 @@
     @media (max-width: 960px) { .dash { grid-template-columns: 1fr; gap: 36px; } .browser { transform: none; } }
     @media (max-width: 560px) { .duo { padding-bottom: 80px; } .duo .phone { --pw: 124px; right: 0; } .duo .sync { left: 0; bottom: 0; } }
 
-    /* Bald: InstallateurDex */
-    .soon-band { display: grid; grid-template-columns: 64px 1fr auto; gap: 22px; align-items: center; padding: 26px 28px; border-radius: 22px; color: var(--ink);
-      background: radial-gradient(120% 140% at 0% 0%, rgba(227,154,84,.16), transparent 55%), rgba(255,255,255,.03); border: 1px solid rgba(227,154,84,.35); transition: border-color .15s, transform .15s; }
-    .soon-band:hover { text-decoration: none; border-color: rgba(227,154,84,.6); transform: translateY(-2px); }
-    .soon-band img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 10px 24px -10px rgba(227,154,84,.55); }
-    .soon-band b { display: block; font-size: 20px; font-weight: 680; letter-spacing: -.02em; margin-top: 6px; }
-    .soon-pill { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 99px; background: #E39A54; color: #14181D; }
-    .soon-p { display: block; color: var(--muted); font-size: 15px; line-height: 1.55; margin-top: 4px; max-width: 640px; }
-    @media (max-width: 700px) { .soon-band { grid-template-columns: 52px 1fr; padding: 20px; gap: 14px 16px; } .soon-band img { width: 52px; height: 52px; border-radius: 13px; } .soon-band .btn { grid-column: 1 / -1; justify-content: center; } }
 
     /* Warum */
     #warum::before { background: radial-gradient(40% 60% at 50% 0%, rgba(59,130,246,.12), transparent 70%); }
@@ -499,7 +526,7 @@
     <div class="wrap">
       <a class="brand" href="/" aria-label="Dexware"><img src="assets/hub/dexware.webp" alt="" width="32" height="32" /><span class="wm">Dex<span>ware</span></span></a>
       <nav aria-label="Navigation">
-        <a href="#apps">Apps</a><a href="#suite">Suite</a><a href="https://dashboard.dexware.app">Dashboard</a><a href="ratgeber.html"><span data-l="de">Ratgeber</span><span data-l="en">Guides</span></a><a href="#kontakt"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
+        <a href="#dexware-app"><span data-l="de">Dexware-App</span><span data-l="en">Dexware app</span></a><a href="#apps">Apps</a><a href="#suite">Suite</a><a href="https://dashboard.dexware.app">Dashboard</a><a href="ratgeber.html"><span data-l="de">Ratgeber</span><span data-l="en">Guides</span></a><a href="#kontakt"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Sprache / Language"><button type="button" data-set="de">DE</button><button type="button" data-set="en">EN</button></div>
       <a class="btn sm" href="https://dashboard.dexware.app">Dashboard</a>
@@ -518,7 +545,7 @@
             <a class="btn" href="#apps"><span data-l="de">Apps ansehen</span><span data-l="en">See the apps</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="btn ghost" href="https://dashboard.dexware.app"><span data-l="de">Zum Dashboard</span><span data-l="en">Go to dashboard</span></a>
           </div>
-          <div class="apprail" aria-label="15 Dexware-Apps"><a href="https://gurtdex.dexware.app" title="GurtDex"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="30" height="30" /></a><a href="https://toredex.dexware.app" title="ToreDex"><img src="assets/hub/toredex.webp" alt="ToreDex" width="30" height="30" /></a><a href="https://geruestdex.dexware.app" title="GerüstDex"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="30" height="30" /></a><a href="https://feuerdex.dexware.app" title="FeuerDex"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="30" height="30" /></a><a href="https://leiterdex.dexware.app" title="LeiterDex"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="30" height="30" /></a><a href="https://regaldex.dexware.app" title="RegalDex"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="30" height="30" /></a><a href="https://spieldex.dexware.app" title="SpielDex"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="30" height="30" /></a><a href="https://winterdex.dexware.app" title="WinterDex"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="30" height="30" /></a><a href="https://kfzdex.dexware.app" title="KfzDex"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="30" height="30" /></a><a href="https://pruefdex.dexware.app" title="PrüfDex"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="30" height="30" /></a><a href="https://schutzdex.dexware.app" title="SchutzDex"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="30" height="30" /></a><a href="https://baumdex.dexware.app" title="BaumDex"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="30" height="30" /></a><a href="https://tourdex.dexware.app" title="TourDex"><img src="assets/hub/tourdex.webp" alt="TourDex" width="30" height="30" /></a><a href="https://craftdex.dexware.app" title="CraftDex"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="30" height="30" /></a><a href="https://dokudex.dexware.app" title="DokuDex"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="30" height="30" /></a><a class="soon" href="https://installateurdex.dexware.app" title="InstallateurDex — bald verfügbar"><img src="assets/hub/installateurdex.webp" alt="InstallateurDex (bald)" width="30" height="30" /></a><a class="soon" href="https://hausdex.dexware.app" title="HausDex — bald verfügbar"><img src="assets/hub/hausdex.webp" alt="HausDex (bald)" width="30" height="30" /></a></div>
+          <div class="apprail" aria-label="15 Dexware-Apps"><a href="https://gurtdex.dexware.app" title="GurtDex"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="30" height="30" /></a><a href="https://toredex.dexware.app" title="ToreDex"><img src="assets/hub/toredex.webp" alt="ToreDex" width="30" height="30" /></a><a href="https://geruestdex.dexware.app" title="GerüstDex"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="30" height="30" /></a><a href="https://feuerdex.dexware.app" title="FeuerDex"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="30" height="30" /></a><a href="https://leiterdex.dexware.app" title="LeiterDex"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="30" height="30" /></a><a href="https://regaldex.dexware.app" title="RegalDex"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="30" height="30" /></a><a href="https://spieldex.dexware.app" title="SpielDex"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="30" height="30" /></a><a href="https://winterdex.dexware.app" title="WinterDex"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="30" height="30" /></a><a href="https://kfzdex.dexware.app" title="KfzDex"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="30" height="30" /></a><a href="https://pruefdex.dexware.app" title="PrüfDex"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="30" height="30" /></a><a href="https://schutzdex.dexware.app" title="SchutzDex"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="30" height="30" /></a><a href="https://baumdex.dexware.app" title="BaumDex"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="30" height="30" /></a><a href="https://tourdex.dexware.app" title="TourDex"><img src="assets/hub/tourdex.webp" alt="TourDex" width="30" height="30" /></a><a href="https://craftdex.dexware.app" title="CraftDex"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="30" height="30" /></a><a href="https://dokudex.dexware.app" title="DokuDex"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="30" height="30" /></a></div>
           <ul class="ticks">
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">15 Apps, ein Stil</span><span data-l="en">15 apps, one style</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Für Deutschland, Österreich und die Schweiz</span><span data-l="en">Built for Germany, Austria and Switzerland</span></li>
@@ -536,16 +563,50 @@
       </div>
     </div>
 
+    <section class="lights" id="dexware-app">
+      <div class="wrap sa">
+        <div class="rv">
+          <p class="eyebrow"><span data-l="de">Die Dexware-App</span><span data-l="en">The Dexware app</span></p>
+          <h2><span data-l="de">Alle Prüf-Apps <span class="grad">in einer App.</span></span><span data-l="en">Every inspection app <span class="grad">in one app.</span></span></h2>
+          <p class="lead"><span data-l="de">Statt vieler einzelner Apps: In „Dexware“ wählst du die Bereiche, die dein Betrieb braucht — Leitern, Feuerlöscher, Fuhrpark, Winterdienst und mehr. Eine Startseite mit allen Fristen, Erinnerungen je Bereich.</span><span data-l="en">Instead of many separate apps: in “Dexware” you pick the areas your business needs — ladders, fire extinguishers, vehicles, winter service and more. One home screen with every deadline, reminders per area.</span></p>
+          <ul class="bul">
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Nur die Bereiche, die du brauchst — jederzeit erweiterbar</span><span data-l="en">Only the areas you need — add more anytime</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">„Demnächst“: fällige Fristen aller Bereiche auf einen Blick</span><span data-l="en">“Upcoming”: deadlines from every area at a glance</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Mit dem Suite-Abo alle Prüf-Apps freigeschaltet</span><span data-l="en">Every inspection app unlocked with the Suite subscription</span></li>
+          </ul>
+          <div class="cta"><a class="btn" href="mailto:support@dexware.app?subject=Dexware-App%20%E2%80%93%20bitte%20Bescheid%20geben%2C%20sobald%20verf%C3%BCgbar"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bald bei Google Play – Bescheid geben</span><span data-l="en">Coming to Google Play – notify me</span></a>
+          </div>
+          <p class="sa-note"><span data-l="de">Die einzelnen Apps gibt es weiterhin — Konto und Daten sind dieselben.</span><span data-l="en">The single apps remain available — same account, same data.</span></p>
+        </div>
+        <div class="rv">
+          <div class="sa-box" aria-hidden="true">
+            <div class="hd"><img src="assets/hub/dexware.webp" alt="" width="44" height="44" /><span><b>Dexware</b><small><span data-l="de">Alle Prüf-Apps in einer App</span><span data-l="en">Every inspection app in one app</span></small></span></div>
+            <div class="sa-grid"><img src="assets/hub/gurtdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/toredex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/geruestdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/feuerdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/leiterdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/regaldex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/spieldex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/winterdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/kfzdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/pruefdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/schutzdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/baumdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/tourdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/craftdex.webp" alt="" width="64" height="64" loading="lazy" /><img src="assets/hub/dokudex.webp" alt="" width="64" height="64" loading="lazy" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="soft lights" id="apps">
       <div class="wrap">
         <div class="head rv">
           <p class="eyebrow"><span data-l="de">Unsere Apps</span><span data-l="en">Our apps</span></p>
           <h2><span data-l="de">Für jede Pflicht die passende App</span><span data-l="en">The right app for every obligation</span></h2>
-          <p class="lead"><span data-l="de">Jede App löst genau eine Aufgabe — sauber, mobil und nachweisbar. Gemeinsam decken sie den Betrieb ab.</span><span data-l="en">Each app solves exactly one task — clean, mobile and compliant. Together they cover your business.</span></p>
+          <p class="lead"><span data-l="de">Jede App löst genau eine Aufgabe — sauber, mobil und nachweisbar. Die Prüf-Apps gibt es zusammen im Suite-Abo; einige weitere Apps von Dexware haben einen eigenen Tarif.</span><span data-l="en">Each app solves exactly one task — clean, mobile and compliant. The inspection apps come together in the Suite subscription; a few more Dexware apps have their own plan.</span></p>
+          <p class="legend"><span><span class="tag-in"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Im Suite-Abo</span><span data-l="en">In the Suite</span></span><span data-l="de">ein Abo schaltet alle frei</span><span data-l="en">one subscription unlocks all</span></span><span><span class="tag-own"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg><span data-l="de">Eigener Tarif</span><span data-l="en">Own plan</span></span><span data-l="de">nicht im Suite-Abo</span><span data-l="en">not in the Suite</span></span></p>
         </div>
-        <div class="group rv">
-          <h3><span data-l="de">Prüfpflichten im Betrieb</span><span data-l="en">Workplace inspections</span></h3>
-          <div class="cards">
+        <div class="tier tier-suite rv">
+          <div class="tier-head">
+            <div>
+              <span class="tag-in"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Im Suite-Abo</span><span data-l="en">In the Suite</span></span>
+              <h3><span data-l="de">Dexware Suite – ein Abo, alle Prüf-Apps</span><span data-l="en">Dexware Suite – one subscription, all inspection apps</span></h3>
+              <p><span data-l="de">15 Apps für Prüfungen und Nachweise im Betrieb. Ein Abo schaltet Pro in allen frei.</span><span data-l="en">15 apps for inspections and records at work. One subscription unlocks Pro in all of them.</span></p>
+            </div>
+            <a class="btn ghost sm" href="#suite"><span data-l="de">Zum Suite-Abo</span><span data-l="en">About the Suite</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+          </div>
+          <div class="group">
+            <h3><span data-l="de">Prüfpflichten im Betrieb</span><span data-l="en">Workplace inspections</span></h3>
+            <div class="cards">
             <a class="card" style="--c:#2F6BF2" href="https://pruefdex.dexware.app"><img src="assets/hub/pruefdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>PrüfDex</b><small><span data-l="de">DGUV V3</span><span data-l="en">Electrical testing</span></small><p><span data-l="de">DGUV-V3-Geräteprüfung per QR — Protokoll und Prüfplakette automatisch.</span><span data-l="en">DGUV V3 appliance testing via QR — report and test label generated automatically.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="card" style="--c:#DB2777" href="https://gurtdex.dexware.app"><img src="assets/hub/gurtdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>GurtDex</b><small><span data-l="de">PSA gegen Absturz</span><span data-l="en">Fall protection</span></small><p><span data-l="de">PSA gegen Absturz nach DGUV 312-906 und EN 365 — mit Ablegereife-Wächter.</span><span data-l="en">Fall-protection equipment per DGUV 312-906 and EN 365 — with retirement tracking.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="card" style="--c:#84CC16" href="https://hebedex.dexware.app"><img src="assets/hub/hebedex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>HebeDex</b><small><span data-l="de">Anschlag- & Zurrmittel · bald</span><span data-l="en">Lifting & lashing gear · soon</span></small><p><span data-l="de">Anschlag-, Hebe- und Zurrmittel nach DGUV Regel 109-017 — QR-Etiketten und Ablegereife-Rechner.</span><span data-l="en">Lifting slings, hoists and lashing gear per DGUV Rule 109-017 — QR labels and discard calculator.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
@@ -559,21 +620,29 @@
             <a class="card" style="--c:#4ADE80" href="https://baumdex.dexware.app"><img src="assets/hub/baumdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>BaumDex</b><small><span data-l="de">Baumkataster</span><span data-l="en">Tree register</span></small><p><span data-l="de">Baumkataster und Verkehrssicherung — Kontrollen lückenlos belegt.</span><span data-l="en">Tree register and safety checks — every inspection on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="card" style="--c:#0EA5E9" href="https://winterdex.dexware.app"><img src="assets/hub/winterdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>WinterDex</b><small><span data-l="de">Winterdienst</span><span data-l="en">Winter service</span></small><p><span data-l="de">Räum- und Streueinsätze mit GPS, Foto und Wetter lückenlos belegt.</span><span data-l="en">Snow clearing and gritting with GPS, photo and weather on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="card" style="--c:#3B82F6" href="https://schutzdex.dexware.app"><img src="assets/hub/schutzdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>SchutzDex</b><small><span data-l="de">Unterweisungen</span><span data-l="en">Safety briefings</span></small><p><span data-l="de">KI-Unterweisungen mit Verständnis-Check und Gefährdungsbeurteilung.</span><span data-l="en">AI safety briefings with comprehension check and risk assessment.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            </div>
           </div>
-        </div>
-        <div class="group rv">
-          <h3><span data-l="de">Handwerk & Kundendienst</span><span data-l="en">Trades & customer service</span></h3>
-          <div class="cards">
-            <a class="card" style="--c:#E39A54" href="https://installateurdex.dexware.app"><img src="assets/hub/installateurdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>InstallateurDex</b><small><span data-l="de">Wartung & Kundendienst · bald</span><span data-l="en">Service & maintenance · soon</span></small><p><span data-l="de">Wartung diktieren, Protokoll im Firmen-Look, QR-Anlagenpass für deine Kunden.</span><span data-l="en">Dictate service reports in your branding, with a QR system pass for your customers.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+          <div class="group">
+            <h3><span data-l="de">Handwerk, Büro & Unterwegs</span><span data-l="en">Trades, office & on the road</span></h3>
+            <div class="cards">
             <a class="card" style="--c:#E8C97A" href="https://craftdex.dexware.app"><img src="assets/hub/craftdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>CraftDex</b><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small><p><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-          </div>
-        </div>
-        <div class="group rv">
-          <h3><span data-l="de">Büro & Alltag</span><span data-l="en">Office & everyday</span></h3>
-          <div class="cards">
             <a class="card" style="--c:#3B82F6" href="https://tourdex.dexware.app"><img src="assets/hub/tourdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>TourDex</b><small><span data-l="de">Fahrtenbuch</span><span data-l="en">Mileage log</span></small><p><span data-l="de">Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt.</span><span data-l="en">Automatic mileage log with AI categorisation and a tax-ready PDF.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="card" style="--c:#4F9EF8" href="https://dokudex.dexware.app"><img src="assets/hub/dokudex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>DokuDex</b><small><span data-l="de">Dokumente & KI</span><span data-l="en">Documents & AI</span></small><p><span data-l="de">Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung.</span><span data-l="en">Scan documents and understand them with AI — with deadline reminders.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="card" style="--c:#818CF8" href="https://hausdex.dexware.app"><img src="assets/hub/hausdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>HausDex</b><small><span data-l="de">Hausakte · bald</span><span data-l="en">Home logbook · soon</span></small><p><span data-l="de">Das Scheckheft fürs Haus — merkt sich jede Arbeit, jede Rechnung und jede Garantie und erinnert an die nächste Wartung.</span><span data-l="en">The service log for your home — keeps every job, invoice and warranty and reminds you of the next maintenance.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="tier tier-own rv">
+          <div class="tier-head">
+            <div>
+              <span class="tag-own"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg><span data-l="de">Eigener Tarif · nicht im Suite-Abo</span><span data-l="en">Own plan · not in the Suite</span></span>
+              <h3><span data-l="de">Weitere Apps von Dexware – nicht im Suite-Abo</span><span data-l="en">More apps from Dexware – not in the Suite</span></h3>
+              <p><span data-l="de">Für Hausbesitzer, Mieter und Handwerksbetriebe. Jede dieser Apps hat ihren eigenen Tarif — das Suite-Abo schaltet hier nichts frei.</span><span data-l="en">For homeowners, tenants and trade businesses. Each of these apps has its own plan — the Suite subscription does not unlock them.</span></p>
+            </div>
+          </div>
+          <div class="cards">
+            <a class="card" style="--c:#818CF8" href="https://hausdex.dexware.app"><img src="assets/hub/hausdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>HausDex</b><small><span data-l="de">Hausakte · bald</span><span data-l="en">Home logbook · soon</span></small><p><span data-l="de">Das Scheckheft fürs Haus — merkt sich jede Arbeit, jede Rechnung und jede Garantie und erinnert an die nächste Wartung.</span><span data-l="en">The service log for your home — keeps every job, invoice and warranty and reminds you of the next maintenance.</span></p><em class="own-tag"><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#E39A54" href="https://installateurdex.dexware.app"><img src="assets/hub/installateurdex.webp" alt="" width="44" height="44" loading="lazy" /><span><b>InstallateurDex</b><small><span data-l="de">Wartung & Kundendienst · bald</span><span data-l="en">Service & maintenance · soon</span></small><p><span data-l="de">Wartung diktieren, Protokoll im Firmen-Look, QR-Anlagenpass für deine Kunden.</span><span data-l="en">Dictate service reports in your branding, with a QR system pass for your customers.</span></p><em class="own-tag"><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="card" style="--c:#2DD4BF" href="https://mietzeuge.dexware.app"><img src="assets/hub/mietzeuge.webp" alt="" width="44" height="44" loading="lazy" /><span><b>Mietzeuge</b><small><span data-l="de">Wohnungsübergabe · bald</span><span data-l="en">Move-in & move-out · soon</span></small><p><span data-l="de">Übergabe-Protokoll für Mieter — Fotos mit Fingerabdruck, Unterschriften und Prüfcode, damit die Kaution zurückkommt.</span><span data-l="en">Move-in and move-out records for tenants — fingerprinted photos, signatures and a verification code to get your deposit back.</span></p><em class="own-tag"><span data-l="de">Einmalkauf je Wohnung</span><span data-l="en">One-time purchase per flat</span></em></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
           </div>
         </div>
       </div>
@@ -583,13 +652,14 @@
       <div class="wrap split">
         <div class="rv">
           <p class="eyebrow">Dexware Suite</p>
-          <h2><span data-l="de">Alle 15 Apps. <span class="grad">Ein Abo.</span></span><span data-l="en">All 15 apps. <span class="grad">One subscription.</span></span></h2>
-          <p class="lead"><span data-l="de">Ein Abo schaltet Pro in allen Apps frei — auf allen deinen Geräten, neue Apps inklusive.</span><span data-l="en">One subscription unlocks Pro in every app — on all your devices, new apps included.</span></p>
+          <h2><span data-l="de">Alle 15 Prüf-Apps. <span class="grad">Ein Abo.</span></span><span data-l="en">All 15 inspection apps. <span class="grad">One subscription.</span></span></h2>
+          <p class="lead"><span data-l="de">Ein Abo schaltet Pro in allen Prüf-Apps frei — auf allen deinen Geräten, neue Prüf-Apps inklusive.</span><span data-l="en">One subscription unlocks Pro in every inspection app — on all your devices, new inspection apps included.</span></p>
           <ul class="bul">
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Neue Apps automatisch dabei, ohne Aufpreis</span><span data-l="en">New apps included automatically, at no extra cost</span></li>
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Einmal kaufen — in jeder App freigeschaltet</span><span data-l="en">Buy once — unlocked in every app</span></li>
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Erhältlich in jeder Dexware-App unter „Pro werden"</span><span data-l="en">Available in every Dexware app under "Go Pro"</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Neue Prüf-Apps automatisch dabei, ohne Aufpreis</span><span data-l="en">New inspection apps included automatically, at no extra cost</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Einmal kaufen — in jeder Suite-App und in der Dexware-App freigeschaltet</span><span data-l="en">Buy once — unlocked in every Suite app and in the Dexware app</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Erhältlich in jeder Suite-App unter „Pro werden"</span><span data-l="en">Available in every Suite app under "Go Pro"</span></li>
           </ul>
+          <p class="fine"><span data-l="de">Nicht enthalten: HausDex, InstallateurDex und Mietzeuge — diese Apps haben einen eigenen Tarif.</span><span data-l="en">Not included: HausDex, InstallateurDex and Mietzeuge — these apps have their own plan.</span></p>
         </div>
         <div class="stage rv">
           <div class="phone sa"><div class="screen" style="--bar:#231e30"><img src="assets/hub/ph/toredex-hero-1.webp" width="540" height="1011" alt="ToreDex: Objekt mit Toren" loading="lazy" decoding="async" /></div></div>
@@ -631,19 +701,6 @@
       </div>
     </section>
 
-    <section class="lights" id="neu">
-      <div class="wrap">
-        <a class="soon-band rv" href="https://installateurdex.dexware.app">
-          <img src="assets/hub/installateurdex.webp" alt="" width="64" height="64" loading="lazy" />
-          <span class="soon-txt">
-            <span class="soon-pill"><span data-l="de">Bald verfügbar</span><span data-l="en">Coming soon</span></span>
-            <b>InstallateurDex</b>
-            <span class="soon-p"><span data-l="de">Für Installateure, Heizungs- und Klimabetriebe: Einsatz erzählen, die App schreibt das Protokoll im Firmen-Look. Jede Anlage bekommt einen QR-Anlagenpass — deine Kunden fragen Wartungen und Störungen direkt bei dir an.</span><span data-l="en">For plumbing, heating and HVAC businesses: talk through the job, the app writes the report in your branding. Every system gets a QR pass — your customers request service directly from you.</span></span>
-          </span>
-          <span class="btn ghost"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></span>
-        </a>
-      </div>
-    </section>
 
     <section class="soft lights" id="warum">
       <div class="wrap">
@@ -654,7 +711,7 @@
         <div class="why">
           <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg></span><h3><span data-l="de">Eine Pflicht, eine App</span><span data-l="en">One obligation, one app</span></h3><p><span data-l="de">Keine überladene Software. Jede App macht eine Sache richtig — in unter einer Minute pro Vorgang.</span><span data-l="en">No bloated software. Each app does one thing right — in under a minute per task.</span></p></article>
           <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span><h3><span data-l="de">Nachvollziehbar dokumentiert</span><span data-l="en">Audit-ready records</span></h3><p><span data-l="de">GPS, Zeitstempel, Fotos und unveränderliche Einträge — Nachweise, die du BG, Versicherung oder Gericht vorlegen kannst.</span><span data-l="en">GPS, timestamps, photos and tamper-evident entries — records you can present to insurers and in court.</span></p></article>
-          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span><h3><span data-l="de">Aus einer Hand</span><span data-l="en">All in one place</span></h3><p><span data-l="de">Ein Stil, ein Konto-Gefühl, faire Preise — und mit der Suite alle Apps in einem Abo.</span><span data-l="en">One style, one familiar login, fair prices — and every app in one subscription with the suite.</span></p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg></span><h3><span data-l="de">Aus einer Hand</span><span data-l="en">All in one place</span></h3><p><span data-l="de">Ein Stil, ein Konto-Gefühl, faire Preise — und mit der Suite alle Prüf-Apps in einem Abo.</span><span data-l="en">One style, one familiar login, fair prices — and every inspection app in one subscription with the suite.</span></p></article>
         </div>
       </div>
     </section>

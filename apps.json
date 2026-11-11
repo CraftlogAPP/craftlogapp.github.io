@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": "2026-10-29",
+ "updated": "2026-11-11",
  "apps": [
   {
    "id": "hebedex",
@@ -178,6 +178,44 @@
    "play": true,
    "de": "Dokumente scannen & per KI verstehen",
    "en": "Scan documents, understand them with AI"
+  }
+ ],
+ "extern": [
+  {
+   "id": "hausdex",
+   "name": "HausDex",
+   "pkg": "com.hausdex.app",
+   "icon": "https://dexware.app/assets/hausdex-icon-512.png",
+   "color": "#818CF8",
+   "url": "https://hausdex.dexware.app",
+   "play": false,
+   "de": "Das Scheckheft fürs Haus",
+   "en": "The service log for your home",
+   "soon": true
+  },
+  {
+   "id": "installateurdex",
+   "name": "InstallateurDex",
+   "pkg": "com.installateurdex.app",
+   "icon": "https://dexware.app/assets/installateurdex-icon.png",
+   "color": "#E39A54",
+   "url": "https://installateurdex.dexware.app",
+   "play": false,
+   "de": "Wartungen diktieren, QR-Anlagenpass für Kunden",
+   "en": "Dictated service reports, QR system pass for customers",
+   "soon": true
+  },
+  {
+   "id": "mietzeuge",
+   "name": "Mietzeuge",
+   "pkg": "com.mietzeuge.app",
+   "icon": "https://dexware.app/assets/mietzeuge-icon-512.png",
+   "color": "#2DD4BF",
+   "url": "https://mietzeuge.dexware.app",
+   "play": false,
+   "de": "Übergabe-Protokoll mit Beweisfotos für Mieter",
+   "en": "Move-in and move-out records with evidence photos for tenants",
+   "soon": true
   }
  ]
 }
