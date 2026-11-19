@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kommunal-Paket: Winterdienst, Spielplätze, Bäume nachweisen | Dexware</title>
+  <meta name="description" content="Ein Paket für Bauhof und Gemeinde: Winterdienst, Spielplatzkontrolle, Baumkontrolle, Leitern und Feuerlöscher per App dokumentieren. 15 Apps, 319,99 € im Jahr — auch auf Rechnung." />
+  <meta name="theme-color" content="#070b16" />
+  <link rel="canonical" href="https://dexware.app/kommunal/" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <meta property="og:title" content="Kommunal-Paket: Winterdienst, Spielplätze, Bäume nachweisen | Dexware" />
+  <meta property="og:description" content="Ein Paket für Bauhof und Gemeinde: Winterdienst, Spielplatzkontrolle, Baumkontrolle, Leitern und Feuerlöscher per App dokumentieren. 15 Apps, 319,99 € im Jahr — auch auf Rechnung." />
+  <meta property="og:url" content="https://dexware.app/kommunal/" />
+  <meta property="og:image" content="https://dexware.app/assets/og-image.png" />
+  <link rel="preload" href="/assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/assets/inter-latin-var.woff2') format('woff2'); }
+    :root { --bg: #070b16; --card: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); --border: rgba(255,255,255,.09);
+      --text: #f4f5f8; --muted: #a6abb8; --accent: #4f7cff; --accent-text: #9db5ff; --green: #34d399; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font: 400 16px/1.6 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    a { color: var(--accent-text); }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 22px; }
+    .i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(7,11,22,.82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    header .wrap { display: flex; align-items: center; gap: 14px; height: 60px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; font-size: 17px; letter-spacing: -.02em; }
+    .brand img { width: 30px; height: 30px; border-radius: 8px; } .brand b { font-weight: 700; } .brand span { color: var(--accent-text); }
+    header .sp { flex: 1; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 12px; background: var(--accent); color: #fff; font-weight: 650; font-size: 15.5px; text-decoration: none; border: 0; }
+    .btn.sm { min-height: 38px; padding: 0 14px; font-size: 14px; } .btn.ghost { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1px var(--border); }
+    .hero { padding: 72px 0 40px; background: radial-gradient(60% 70% at 80% 0%, rgba(79,124,255,.20), transparent 70%), radial-gradient(40% 50% at 0% 30%, rgba(52,211,153,.10), transparent 70%); }
+    .kicker { display: inline-block; font-size: 13px; font-weight: 650; color: var(--accent-text); border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px; }
+    h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.08; letter-spacing: -.035em; font-weight: 780; margin: 18px 0 16px; max-width: 16ch; }
+    h1 em { font-style: normal; background: linear-gradient(100deg, #7aa2ff, #6ee7b7); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .sub { font-size: clamp(16.5px, 1.6vw, 19px); color: var(--muted); max-width: 60ch; }
+    .sub strong { color: var(--text); font-weight: 600; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .ticks { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 22px; font-size: 14.5px; color: var(--muted); }
+    .ticks li { display: flex; align-items: center; gap: 7px; } .ticks .i { color: var(--green); }
+    section { padding: 56px 0; }
+    .eyebrow { font-size: 13px; font-weight: 650; color: var(--accent-text); margin-bottom: 8px; }
+    h2 { font-size: clamp(25px, 3.2vw, 34px); line-height: 1.15; letter-spacing: -.03em; font-weight: 750; }
+    .lead { color: var(--muted); margin-top: 12px; max-width: 62ch; font-size: 16.5px; }
+    .duties { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
+    .duty { display: block; padding: 20px; border-radius: 18px; border: 1px solid var(--border); background: var(--card); color: var(--text); text-decoration: none; transition: border-color .15s, transform .15s; }
+    .duty:hover { border-color: rgba(255,255,255,.22); transform: translateY(-2px); }
+    .duty-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .duty img { width: 44px; height: 44px; border-radius: 11px; }
+    .duty h3 { font-size: 18px; letter-spacing: -.02em; } .duty small { display: block; font-size: 12.5px; color: var(--muted); font-weight: 500; }
+    .duty p { font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+    .duty.wide { grid-column: span 2; }
+    .more { margin-top: 26px; font-size: 14.5px; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chips a { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px 5px 5px; border-radius: 99px; border: 1px solid var(--border); color: var(--text); text-decoration: none; font-size: 13.5px; font-weight: 600; }
+    .chips img { width: 24px; height: 24px; border-radius: 7px; }
+    .soft { background: rgba(255,255,255,.02); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; counter-reset: how; }
+    .how li { list-style: none; counter-increment: how; padding: 20px; border-radius: 18px; border: 1px solid var(--border); background: var(--card); }
+    .how li::before { content: '0' counter(how); display: block; font-size: 26px; font-weight: 780; color: var(--accent-text); letter-spacing: -.03em; margin-bottom: 6px; }
+    .how b { display: block; font-size: 16.5px; margin-bottom: 4px; } .how span { font-size: 14.5px; color: var(--muted); }
+    .price { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; }
+    .offer { padding: 26px; border-radius: 22px; border: 1px solid rgba(122,162,255,.5); background: linear-gradient(180deg, rgba(79,124,255,.14), rgba(79,124,255,.04)); }
+    .offer .big { font-size: 40px; font-weight: 780; letter-spacing: -.03em; line-height: 1.1; } .offer .big small { font-size: 16px; font-weight: 500; color: var(--muted); }
+    .offer p { color: var(--muted); font-size: 14.5px; margin-top: 6px; }
+    .offer .btn { width: 100%; margin-top: 18px; }
+    .bul { list-style: none; display: grid; gap: 10px; margin-top: 20px; }
+    .bul li { display: flex; gap: 10px; font-size: 15.5px; } .bul .i { margin-top: 3px; color: var(--green); }
+    .fine { margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+    footer { padding: 30px 0 40px; font-size: 13.5px; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; } footer a { color: var(--muted); margin-left: 16px; } footer a:first-child { margin-left: 0; }
+    @media (max-width: 860px) { .duties, .how { grid-template-columns: 1fr 1fr; } .duty.wide { grid-column: span 2; } .price { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .duties, .how { grid-template-columns: 1fr; } .duty.wide { grid-column: auto; } .hero { padding-top: 48px; } .cta .btn { flex: 1 1 100%; } section { padding: 44px 0; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Dexware Startseite"><img src="/assets/hub/dexware.webp" alt="" width="30" height="30" /><b>Dex<span>ware</span></b></a>
+      <div class="sp"></div>
+      <a class="btn sm ghost" href="/#apps">Alle Apps</a>
+      <a class="btn sm" href="mailto:support@dexware.app?subject=Kommunal-Paket%20%E2%80%93%20bitte%20um%20ein%20Angebot">Angebot anfordern</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <span class="kicker">Für Gemeinden und Bauhöfe · DE · AT · CH</span>
+        <h1>Ein Paket für alles, was der Bauhof <em>nachweisen muss.</em></h1>
+        <p class="sub">Winterdienst, Spielplätze, Bäume, Leitern, Feuerlöscher: Der Bauhof kontrolliert das ohnehin. Mit dem Kommunal-Paket ist es auch <strong>mit Datum, Ort und Foto belegt</strong> — am Handy erfasst, im Amt am Bildschirm ausgewertet.</p>
+        <div class="cta">
+          <a class="btn" href="mailto:support@dexware.app?subject=Kommunal-Paket%20%E2%80%93%20bitte%20um%20ein%20Angebot"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>Angebot anfordern</a>
+          <a class="btn ghost" href="#paket">Was ist drin?</a>
+        </div>
+        <ul class="ticks">
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>15 Apps in einem Abo</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Auf Jahresrechnung möglich</li>
+          <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>Jede App vorher kostenlos testen</li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="paket">
+      <div class="wrap">
+        <p class="eyebrow">Das Paket</p>
+        <h2>Fünf Aufgaben, die jeder Bauhof kennt</h2>
+        <p class="lead">Jede App löst genau eine Aufgabe und funktioniert für sich. Zusammen ergeben sie den Nachweis, nach dem Versicherung, Aufsicht oder Gemeinderat fragen.</p>
+        <div class="duties">
+          <a class="duty wide" href="https://winterdex.dexware.app">
+            <div class="duty-head"><img src="/assets/hub/winterdex.webp" alt="" width="44" height="44" loading="lazy" /><div><h3>Winterdienst</h3><small>WinterDex</small></div></div>
+            <p>Räum- und Streueinsätze mit Uhrzeit, GPS, Wetterlage und Foto. Ganze Gehweg-Strecken per GPS abfahren — die Karte zeigt, was geräumt wurde.</p>
+          </a>
+          <a class="duty" href="https://spieldex.dexware.app">
+            <div class="duty-head"><img src="/assets/hub/spieldex.webp" alt="" width="44" height="44" loading="lazy" /><div><h3>Spielplätze</h3><small>SpielDex</small></div></div>
+            <p>Sicht-, Funktions- und Jahreskontrolle nach DIN EN 1176 Gerät für Gerät abhaken. Mängel mit Foto, Kontrollbuch als PDF.</p>
+          </a>
+          <a class="duty" href="https://baumdex.dexware.app">
+            <div class="duty-head"><img src="/assets/hub/baumdex.webp" alt="" width="44" height="44" loading="lazy" /><div><h3>Bäume</h3><small>BaumDex</small></div></div>
+            <p>Baumkataster und Baumkontrolle: jeder Baum mit Standort, Zustand und nächstem Kontrolltermin.</p>
+          </a>
+          <a class="duty" href="https://leiterdex.dexware.app">
+            <div class="duty-head"><img src="/assets/hub/leiterdex.webp" alt="" width="44" height="44" loading="lazy" /><div><h3>Leitern & Tritte</h3><small>LeiterDex</small></div></div>
+            <p>Jede Leiter im Bauhof, in der Schule und im Amt einmal erfassen, regelmäßig prüfen, Nachweis als PDF.</p>
+          </a>
+          <a class="duty" href="https://feuerdex.dexware.app">
+            <div class="duty-head"><img src="/assets/hub/feuerdex.webp" alt="" width="44" height="44" loading="lazy" /><div><h3>Feuerlöscher</h3><small>FeuerDex</small></div></div>
+            <p>Sichtkontrolle zwischen den Wartungen und die Fristen aller Löscher in allen Gebäuden im Blick.</p>
+          </a>
+        </div>
+        <p class="more">Außerdem im selben Abo enthalten:</p>
+        <div class="chips"><a href="https://gurtdex.dexware.app"><img src="/assets/hub/gurtdex.webp" alt="" width="24" height="24" loading="lazy" />GurtDex · PSA gegen Absturz</a><a href="https://toredex.dexware.app"><img src="/assets/hub/toredex.webp" alt="" width="24" height="24" loading="lazy" />ToreDex · Tore & Türen</a><a href="https://geruestdex.dexware.app"><img src="/assets/hub/geruestdex.webp" alt="" width="24" height="24" loading="lazy" />GerüstDex · Gerüstprüfung</a><a href="https://regaldex.dexware.app"><img src="/assets/hub/regaldex.webp" alt="" width="24" height="24" loading="lazy" />RegalDex · Regalinspektion</a><a href="https://kfzdex.dexware.app"><img src="/assets/hub/kfzdex.webp" alt="" width="24" height="24" loading="lazy" />KfzDex · Fuhrpark & UVV</a><a href="https://pruefdex.dexware.app"><img src="/assets/hub/pruefdex.webp" alt="" width="24" height="24" loading="lazy" />PrüfDex · DGUV V3</a><a href="https://schutzdex.dexware.app"><img src="/assets/hub/schutzdex.webp" alt="" width="24" height="24" loading="lazy" />SchutzDex · Unterweisungen</a><a href="https://tourdex.dexware.app"><img src="/assets/hub/tourdex.webp" alt="" width="24" height="24" loading="lazy" />TourDex · Fahrtenbuch</a><a href="https://craftdex.dexware.app"><img src="/assets/hub/craftdex.webp" alt="" width="24" height="24" loading="lazy" />CraftDex · Projekt-Doku</a><a href="https://dokudex.dexware.app"><img src="/assets/hub/dokudex.webp" alt="" width="24" height="24" loading="lazy" />DokuDex · Dokumente & KI</a></div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="wrap">
+        <p class="eyebrow">So läuft es</p>
+        <h2>Draußen am Handy, drinnen am Bildschirm</h2>
+        <ol class="how">
+          <li><b>Bauhofleiter richtet ein</b><span>Objekte, Spielplätze, Strecken einmal anlegen. Die Mitarbeiter treten mit einem Team-Code bei — ohne eigenes Abo.</span></li>
+          <li><b>Mitarbeiter dokumentieren</b><span>Vor Ort in wenigen Sekunden: antippen, Foto, fertig. Uhrzeit und Standort kommen von selbst dazu.</span></li>
+          <li><b>Amt hat den Nachweis</b><span>Im Web-Dashboard sieht die Verwaltung alles live und erzeugt PDF-Nachweise je Objekt, Monat oder Saison.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="preis">
+      <div class="wrap price">
+        <div>
+          <p class="eyebrow">Preis</p>
+          <h2>Ein Abo für den ganzen Bauhof</h2>
+          <p class="lead">Das Kommunal-Paket ist die Dexware Suite — auf Wunsch auf Jahresrechnung an die Gemeinde statt über Google Play.</p>
+          <ul class="bul">
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Alle 15 Apps freigeschaltet, neue Prüf-Apps ohne Aufpreis</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Team bis 20 Mitarbeiter je App inklusive — größere Teams auf Anfrage</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Web-Dashboard fürs Amt inklusive</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Kein Tracking, keine Werbung — eure Daten gehören euch</span></li>
+          </ul>
+          <p class="fine">Die Apps gibt es für Android. Am iPhone läuft WinterDex schon jetzt <a href="https://winterdex.dexware.app/#iphone">direkt im Browser</a>; die iPhone-Apps sind auf dem Weg in den App Store.</p>
+        </div>
+        <div class="offer">
+          <p class="big">319,99 € <small>/ Jahr</small></p>
+          <p>entspricht 26,67 € im Monat · oder 39,99 € monatlich über Google Play · Preise inkl. MwSt.</p>
+          <a class="btn" href="mailto:support@dexware.app?subject=Kommunal-Paket%20%E2%80%93%20bitte%20um%20ein%20Angebot"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>Angebot anfordern</a>
+          <p class="fine">Antwort in der Regel am nächsten Werktag: support@dexware.app</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Dexware</span>
+      <nav aria-label="Rechtliches"><a href="/">Startseite</a><a href="/impressum.html">Impressum</a><a href="/agb.html">AGB</a><a href="/datenschutz.html">Datenschutz</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
