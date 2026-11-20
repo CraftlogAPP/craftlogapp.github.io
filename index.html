@@ -393,7 +393,7 @@
         linear-gradient(0deg, #070b16 0%, rgba(7,11,22,.6) 12%, rgba(7,11,22,0) 34%); }
     .wall { position: absolute; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
     .wall-in { position: absolute; top: -38%; left: 22%; width: 120%; height: 190%; display: flex; gap: 26px;
-      transform: perspective(2200px) rotateX(14deg) rotateZ(-15deg); transform-origin: 50% 0; opacity: .62; }
+      transform: perspective(2200px) rotateX(14deg) rotateZ(-15deg); transform-origin: 50% 0; opacity: .3; }
     .col { flex: none; width: 168px; }
     .track { animation: wall-up var(--d) linear infinite; will-change: transform; }
     .col:nth-child(even) .track { animation-name: wall-down; }
@@ -419,7 +419,7 @@
     .apprail a.soon::after { content: 'bald'; position: absolute; left: 50%; top: -8px; transform: translateX(-50%); font-size: 8.5px; font-weight: 700;
       letter-spacing: .03em; text-transform: uppercase; line-height: 1; padding: 2px 4px; border-radius: 99px; background: #E39A54; color: #14181D; }
     html[data-lang="en"] .apprail a.soon::after { content: 'soon'; }
-    .fan { position: relative; height: 600px; }
+    .fan { position: relative; height: 600px; transform: perspective(1400px) rotateY(calc(var(--mx, 0) * 6deg)) rotateX(calc(var(--my, 0) * -5deg)); transition: transform .35s cubic-bezier(.2,.7,.2,1); }
     .fan .phone { position: absolute; top: 50%; left: 50%; }
     .fan .phone.f { --pw: 270px; z-index: 3; transform: translate(-50%, -50%); }
     .fan .phone.l { --pw: 228px; z-index: 2; transform: translate(-124%, -42%) rotate(-10deg); filter: brightness(.8); }
@@ -439,12 +439,22 @@
     .fan .ptag.tl { left: -7%; top: 19%; }
     .fan .ptag.tr { right: -5%; top: 5%; }
     @media (prefers-reduced-motion: no-preference) {
-      .fan .phone.f, .fan .ptag.tf { animation: drift 7s ease-in-out infinite; }
-      .fan .phone.l, .fan .ptag.tl { animation: drift 8.5s ease-in-out -2s infinite; }
-      .fan .phone.r, .fan .ptag.tr { animation: drift 9.5s ease-in-out -5s infinite; }
+      /* Auftritt: vorderes Handy steigt auf, die beiden hinteren fächern aus der Mitte heraus, dann erscheinen die Schilder. Danach schweben alle. */
+      .fan .phone.f { animation: fan-f 1.1s cubic-bezier(.16,.84,.24,1) both, drift 7s ease-in-out 1.2s infinite; }
+      .fan .phone.l { animation: fan-l 1.2s cubic-bezier(.16,.84,.24,1) .25s both, drift 8.5s ease-in-out 1.6s infinite; }
+      .fan .phone.r { animation: fan-r 1.2s cubic-bezier(.16,.84,.24,1) .35s both, drift 9.5s ease-in-out 1.8s infinite; }
+      .fan .ptag.tf { animation: tag-in .6s cubic-bezier(.3,1.5,.5,1) 1.15s both, drift 7s ease-in-out 1.8s infinite; }
+      .fan .ptag.tl { animation: tag-in .6s cubic-bezier(.3,1.5,.5,1) 1.35s both, drift 8.5s ease-in-out 2s infinite; }
+      .fan .ptag.tr { animation: tag-in .6s cubic-bezier(.3,1.5,.5,1) 1.5s both, drift 9.5s ease-in-out 2.2s infinite; }
       .fan .halo { animation: breathe 9s ease-in-out infinite; }
+      .apprail a { animation: rail-in .5s cubic-bezier(.3,1.4,.5,1) both; animation-delay: calc(.5s + var(--i) * 45ms); }
     }
-    @keyframes drift { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+    @keyframes fan-f { from { opacity: 0; translate: 0 90px; scale: .9; } }
+    @keyframes fan-l { from { opacity: 0; translate: 170px 30px; rotate: 10deg; scale: .9; } }
+    @keyframes fan-r { from { opacity: 0; translate: -170px 60px; rotate: -9deg; scale: .9; } }
+    @keyframes tag-in { from { opacity: 0; scale: .5; } }
+    @keyframes rail-in { from { opacity: 0; translate: 0 14px; scale: .6; } }
+    @keyframes drift { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
     @keyframes breathe { 0%, 100% { opacity: .85; scale: 1; } 50% { opacity: 1; scale: 1.07; } }
     @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
     @media (max-width: 1180px) { .fan .phone.l { transform: translate(-108%, -42%) rotate(-10deg); } .fan .phone.r { transform: translate(8%, -58%) rotate(9deg); } .fan .ptag.tr { right: 0; } .fan .ptag.tl { left: 0; } }
@@ -480,7 +490,7 @@
     .sa-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
     .sa-grid img { width: 100%; aspect-ratio: 1; border-radius: 22%; box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 8px 18px -10px rgba(0,0,0,.8); }
     @media (prefers-reduced-motion: no-preference) { .sa-grid img { animation: sa-pop 9s ease-in-out calc(var(--i) * .6s) infinite; } }
-    @keyframes sa-pop { 0%, 9%, 100% { scale: 1; filter: none; } 4.5% { scale: 1.13; filter: brightness(1.25) drop-shadow(0 0 12px rgba(140,160,255,.75)); } }
+    @keyframes sa-pop { 0%, 9%, 100% { scale: 1; filter: none; } 4.5% { scale: 1.2; filter: brightness(1.3) drop-shadow(0 0 16px rgba(140,160,255,.9)); } }
     @media (max-width: 900px) { .sa { grid-template-columns: 1fr; gap: 32px; } }
     @media (max-width: 480px) { .sa-box { padding: 16px; } .sa-grid { gap: 9px; } .sa .cta .btn { width: 100%; justify-content: center; } }
 
@@ -518,7 +528,7 @@
       .js .rv:not(.in) .card { opacity: 0; }
       .js .rv.in .card { animation: card-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 45ms); }
     }
-    @keyframes card-in { from { opacity: 0; translate: 0 14px; } to { opacity: 1; translate: 0 0; } }
+    @keyframes card-in { from { opacity: 0; translate: 0 30px; scale: .95; } to { opacity: 1; translate: 0 0; scale: 1; } }
     @media (max-width: 620px) { .tier { margin-top: 24px; border-radius: 20px; } .tier-head { padding: 20px 16px 18px; } .tier-body { padding: 18px 12px 14px; } .tier-head h3 { font-size: 20px; } .tier-own .tier-head h3 { font-size: 17px; }
       .th-r { width: 100%; justify-content: space-between; } .th-price { text-align: left; } .own-tag { margin-top: 6px; } .card.promo p { display: block; } .card.promo .stack img { width: 26px; height: 26px; } }
 
@@ -659,6 +669,25 @@
     .band h3 { font-size: 20px; font-weight: 680; letter-spacing: -.02em; }
     .band p { color: var(--muted); font-size: 15px; margin-top: 4px; max-width: 560px; }
     @media (max-width: 600px) { .band { padding: 22px; } .band .btn { width: 100%; justify-content: center; } }
+    /* Bewegung beim Scrollen (kräftiger als die Grundvorlage) */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .rv { transform: translateY(40px) scale(.98); transition: opacity .8s ease, transform .9s cubic-bezier(.16,.84,.24,1); }
+      h1 em, .grad { background-size: 220% 100%; animation: grad-move 7s ease-in-out infinite alternate; }
+      .js .duo.rv .browser { transform: perspective(1800px) rotateY(-24deg) rotateX(6deg) translateX(70px); opacity: 0; transition: transform 1.2s cubic-bezier(.16,.84,.24,1) .1s, opacity .8s ease .1s; }
+      .js .duo.rv.in .browser { transform: perspective(1800px) rotateY(-7deg) rotateX(2deg); opacity: 1; }
+      .js .duo.rv .phone { translate: 0 70px; opacity: 0; transition: translate 1s cubic-bezier(.16,.84,.24,1) .55s, opacity .7s ease .55s; }
+      .js .duo.rv.in .phone { translate: 0 0; opacity: 1; }
+      .js .duo.rv .sync { scale: .6; opacity: 0; transition: scale .5s cubic-bezier(.3,1.5,.5,1) 1.1s, opacity .4s ease 1.1s; }
+      .js .duo.rv.in .sync { scale: 1; opacity: 1; }
+      .duo .sync .dot { animation: ping 2.2s ease-out infinite; }
+      .stage .phone.sa { animation: drift 8s ease-in-out infinite; } .stage .phone.sb { animation: drift 9.5s ease-in-out -4s infinite; }
+      .why .feature:nth-child(2) { transition-delay: .12s; } .why .feature:nth-child(3) { transition-delay: .24s; }
+      .js .sa .rv .sa-box { scale: .9; rotate: 3deg; transition: scale 1s cubic-bezier(.16,.84,.24,1) .15s, rotate 1s cubic-bezier(.16,.84,.24,1) .15s; }
+      .js .sa .rv.in .sa-box { scale: 1; rotate: 0deg; }
+    }
+    @keyframes grad-move { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+    @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.55); } 100% { box-shadow: 0 0 0 12px rgba(52,211,153,0); } }
+    @media (max-width: 960px) { .js .duo.rv .browser, .js .duo.rv.in .browser { transform: none; } }
     footer { background: #060913; }
   </style>
   <script>document.documentElement.classList.add('js');(function(){var l;try{l=localStorage.getItem('dexware-lang')}catch(e){}if(l!=='de'&&l!=='en')l=(navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
@@ -688,7 +717,7 @@
             <a class="btn ghost" href="https://dashboard.dexware.app"><span data-l="de">Zum Dashboard</span><span data-l="en">Go to dashboard</span></a>
           </div>
           <a class="ios-tab" href="#iphone"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg><span><b>iPhone &amp; iPad</b><small><span data-l="de">Apps noch in Arbeit — laufen schon jetzt im Browser</span><span data-l="en">Apps still in the works — already run in your browser</span></small></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-          <div class="apprail" aria-label="15 Dexware-Apps"><a href="https://gurtdex.dexware.app" title="GurtDex"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="30" height="30" /></a><a href="https://toredex.dexware.app" title="ToreDex"><img src="assets/hub/toredex.webp" alt="ToreDex" width="30" height="30" /></a><a href="https://geruestdex.dexware.app" title="GerüstDex"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="30" height="30" /></a><a href="https://feuerdex.dexware.app" title="FeuerDex"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="30" height="30" /></a><a href="https://leiterdex.dexware.app" title="LeiterDex"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="30" height="30" /></a><a href="https://regaldex.dexware.app" title="RegalDex"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="30" height="30" /></a><a href="https://spieldex.dexware.app" title="SpielDex"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="30" height="30" /></a><a href="https://winterdex.dexware.app" title="WinterDex"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="30" height="30" /></a><a href="https://kfzdex.dexware.app" title="KfzDex"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="30" height="30" /></a><a href="https://pruefdex.dexware.app" title="PrüfDex"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="30" height="30" /></a><a href="https://schutzdex.dexware.app" title="SchutzDex"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="30" height="30" /></a><a href="https://baumdex.dexware.app" title="BaumDex"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="30" height="30" /></a><a href="https://tourdex.dexware.app" title="TourDex"><img src="assets/hub/tourdex.webp" alt="TourDex" width="30" height="30" /></a><a href="https://craftdex.dexware.app" title="CraftDex"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="30" height="30" /></a><a href="https://dokudex.dexware.app" title="DokuDex"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="30" height="30" /></a></div>
+          <div class="apprail" aria-label="15 Dexware-Apps"><a href="https://gurtdex.dexware.app" title="GurtDex" style="--i:0"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="30" height="30" /></a><a href="https://toredex.dexware.app" title="ToreDex" style="--i:1"><img src="assets/hub/toredex.webp" alt="ToreDex" width="30" height="30" /></a><a href="https://geruestdex.dexware.app" title="GerüstDex" style="--i:2"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="30" height="30" /></a><a href="https://feuerdex.dexware.app" title="FeuerDex" style="--i:3"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="30" height="30" /></a><a href="https://leiterdex.dexware.app" title="LeiterDex" style="--i:4"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="30" height="30" /></a><a href="https://regaldex.dexware.app" title="RegalDex" style="--i:5"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="30" height="30" /></a><a href="https://spieldex.dexware.app" title="SpielDex" style="--i:6"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="30" height="30" /></a><a href="https://winterdex.dexware.app" title="WinterDex" style="--i:7"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="30" height="30" /></a><a href="https://kfzdex.dexware.app" title="KfzDex" style="--i:8"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="30" height="30" /></a><a href="https://pruefdex.dexware.app" title="PrüfDex" style="--i:9"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="30" height="30" /></a><a href="https://schutzdex.dexware.app" title="SchutzDex" style="--i:10"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="30" height="30" /></a><a href="https://baumdex.dexware.app" title="BaumDex" style="--i:11"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="30" height="30" /></a><a href="https://tourdex.dexware.app" title="TourDex" style="--i:12"><img src="assets/hub/tourdex.webp" alt="TourDex" width="30" height="30" /></a><a href="https://craftdex.dexware.app" title="CraftDex" style="--i:13"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="30" height="30" /></a><a href="https://dokudex.dexware.app" title="DokuDex" style="--i:14"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="30" height="30" /></a></div>
           <ul class="ticks">
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">15 Apps, ein Stil</span><span data-l="en">15 apps, one style</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Für Deutschland, Österreich und die Schweiz</span><span data-l="en">Built for Germany, Austria and Switzerland</span></li>
@@ -971,6 +1000,15 @@
           try { localStorage.setItem('dexware-lang', l); } catch (e) {}
         });
       });
+      var fan = document.querySelector('.fan'), hero = document.querySelector('.hero');
+      if (fan && hero && matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        hero.addEventListener('pointermove', function (e) {
+          var r = hero.getBoundingClientRect();
+          fan.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 2 - 1).toFixed(3));
+          fan.style.setProperty('--my', ((e.clientY - r.top) / r.height * 2 - 1).toFixed(3));
+        });
+        hero.addEventListener('pointerleave', function () { fan.style.setProperty('--mx', 0); fan.style.setProperty('--my', 0); });
+      }
       var wall = document.querySelector('.wall');
       if (wall && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (es) { wall.classList.toggle('paused', !es[0].isIntersecting); }).observe(wall);
