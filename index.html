@@ -381,64 +381,124 @@
     h1 em, .grad { background: linear-gradient(100deg, #7aa2ff, #a78bfa 55%, #f0abfc); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
     /* Kopf (21.11.2026, Alex: „weg von den Handy-Einblendungen und aufgeklebten Namenskacheln — cleaner, hübscher, animiert wie bei WinterDex“):
-       ein schräg liegendes Brett mit allen echten App-Symbolen; eine Lichtlinie fährt sie der Reihe nach ab, jedes Symbol hebt sich kurz. */
+       ein schräg liegendes Brett mit allen echten App-Symbolen; eine Lichtlinie fährt sie der Reihe nach ab, jedes Symbol hebt sich kurz.
+       Zweite Fassung am selben Tag („am PC etwas low quality, Animation flüssiger, fürs Handy optimieren“): Brett größer gezeichnet und
+       verkleinert dargestellt (scharf), Symbole als dicke Kacheln, nur noch transform/opacity bewegt (kein Weichzeichner, kein
+       SVG-Nachzeichnen) und fürs Handy ein eigenes, dichtes 4er-Brett (.bm) statt des verkleinerten PC-Bretts (.bd). */
     .hero { isolation: isolate; min-height: min(800px, 100svh); display: flex; align-items: center;
       background:
-        radial-gradient(50% 60% at 74% 44%, rgba(79,124,255,.20), transparent 70%),
+        radial-gradient(46% 58% at 74% 46%, rgba(79,124,255,.22), transparent 70%),
         radial-gradient(34% 44% at 100% 92%, rgba(139,92,246,.14), transparent 70%),
         linear-gradient(180deg, #0a1022, #070b16); }
     .hero::before { display: none; }
     .hero::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-      background: linear-gradient(90deg, #070b16 0%, rgba(7,11,22,.9) 26%, rgba(7,11,22,.3) 46%, rgba(7,11,22,0) 60%),
-        linear-gradient(0deg, #070b16 0%, rgba(7,11,22,0) 22%), linear-gradient(180deg, #070b16 0%, rgba(7,11,22,0) 14%); }
-    .hero .wrap { position: relative; z-index: 1; width: 100%; grid-template-columns: minmax(0, 540px) 1fr; padding-top: 64px; padding-bottom: 72px; pointer-events: none; }
+      background: linear-gradient(90deg, #070b16 0%, rgba(7,11,22,.86) 24%, rgba(7,11,22,0) 46%),
+        linear-gradient(0deg, #070b16 0%, rgba(7,11,22,0) 20%), linear-gradient(180deg, #070b16 0%, rgba(7,11,22,0) 12%); }
+    .hero .wrap { position: relative; z-index: 1; width: 100%; grid-template-columns: minmax(0, 520px) 1fr; padding-top: 64px; padding-bottom: 72px; pointer-events: none; }
     .hero .wrap > div { pointer-events: auto; }
     .hero .sub { color: #b9b5c6; }
-    .bstage { position: absolute; inset: 0; z-index: -2; overflow: hidden; perspective: 1900px; perspective-origin: 64% 40%; }
-    .board { --bw: 830px; --bh: 684px; position: absolute; left: calc(50% + clamp(300px, 25vw, 420px)); top: 50%; width: var(--bw); height: var(--bh); margin: calc(var(--bh) / -2 - 6px) 0 0 calc(var(--bw) / -2);
-      transform-style: preserve-3d; transform: rotateX(calc(55deg + var(--my, 0) * -3deg)) rotateZ(calc(-31deg + var(--mx, 0) * 3deg)); transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-    .bd-floor { position: absolute; inset: -34%; background: radial-gradient(rgba(190,205,255,.20) 1.3px, transparent 1.9px) 0 0 / 36.5px 36.5px;
-      -webkit-mask-image: radial-gradient(closest-side, #000 38%, transparent 96%); mask-image: radial-gradient(closest-side, #000 38%, transparent 96%); }
-    .board svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-    .board .rt-base { fill: none; stroke: rgba(160,180,255,.13); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-    .board .rt-glow { fill: none; stroke: #6f8dff; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; opacity: .2; stroke-dasharray: 1; stroke-dashoffset: 1; }
-    .board .rt { fill: none; stroke: url(#rtg); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
-    .bt { --c: #4F7CFF; position: absolute; width: 100px; height: 100px; transform-style: preserve-3d; color: var(--ink); }
+    .bstage { position: absolute; inset: 0; z-index: -2; overflow: hidden; perspective: 2000px; perspective-origin: 66% 38%; }
+    .board { position: absolute; left: calc(50% + clamp(300px, 25vw, 430px)); top: 50%; width: var(--bw); height: var(--bh); margin: calc(var(--bh) / -2 - 4px) 0 0 calc(var(--bw) / -2);
+      scale: .7; transform-style: preserve-3d; transform: rotateX(calc(55deg + var(--my, 0) * -2.5deg)) rotateZ(calc(-31deg + var(--mx, 0) * 2.5deg)); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+    .board.bm { display: none; }
+    .board i { position: absolute; display: block; }
+    .bd-floor { left: 50%; top: 50%; width: 62%; height: 62%; translate: -50% -50%; scale: 2.8; border-radius: 50%;
+      background: radial-gradient(rgba(190,205,255,.34) .7px, transparent 1.1px) 0 0 / calc(var(--bp) / 5.6) calc(var(--bp) / 5.6), radial-gradient(closest-side, rgba(96,128,255,.2), transparent 78%);
+      -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent 92%); mask-image: radial-gradient(closest-side, #000 30%, transparent 92%); }
+    .board .sl { width: var(--bc); height: var(--bc); border-radius: 23%; border: 1.5px solid rgba(170,188,255,.11); background: rgba(150,170,255,.022); }
+    .board .sb, .board .sg { height: var(--lw); border-radius: 99px; transform-origin: calc(var(--lw) / 2) 50%; }
+    .board .sb { background: rgba(160,180,255,.13); }
+    .board .sg { box-shadow: 0 0 calc(var(--lw) * 2.6) calc(var(--lw) * .5) rgba(118,140,255,.5); will-change: transform, opacity; }
+    .board .hd { left: 0; top: 0; width: calc(var(--lw) * 2.6); height: calc(var(--lw) * 2.6); margin: calc(var(--lw) * -1.3) 0 0 calc(var(--lw) * -1.3); border-radius: 50%; opacity: 0;
+      background: #fff; box-shadow: 0 0 calc(var(--lw) * 2) calc(var(--lw) * .9) rgba(190,205,255,.85), 0 0 calc(var(--lw) * 7) calc(var(--lw) * 2.4) rgba(120,140,255,.5); will-change: transform, opacity; }
+    .bt { --c: #4F7CFF; --z0: calc(var(--bc) * .1); --z1: calc(var(--bc) * .52); position: absolute; width: var(--bc); height: var(--bc); transform-style: preserve-3d; color: var(--ink); }
     .bt:hover { text-decoration: none; }
-    .bt::before { content: ''; position: absolute; inset: 6%; border-radius: 26%; background: var(--c); filter: blur(26px); opacity: .34; }
-    .bt::after { content: ''; position: absolute; inset: 4% -2% -6% 6%; border-radius: 24%; background: rgba(0,0,0,.6); filter: blur(12px); }
-    .bt img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; border-radius: 23%; transform: translateZ(10px);
-      box-shadow: 0 0 0 1px rgba(255,255,255,.16), 0 0 0 5px rgba(7,11,22,.55); transition: transform .3s cubic-bezier(.2,.7,.2,1); }
-    .bt:hover img { transform: translateZ(54px); }
-    .bt small { position: absolute; left: 50%; top: calc(100% + 12px); translate: -50% 0; white-space: nowrap; font-size: 13.5px; font-weight: 650; letter-spacing: -.005em; line-height: 1;
-      color: rgba(226,232,255,.62); padding: 3px 7px; border-radius: 6px; background: #080c18; }
+    /* Farblicht und Schatten liegen auf dem Brett (Verläufe statt Weichzeichner), die Kachel schwebt darüber. */
+    .bt::before { content: ''; position: absolute; inset: -42%; border-radius: 50%; opacity: .32; will-change: opacity;
+      background: radial-gradient(closest-side, color-mix(in oklab, var(--c) 78%, transparent), color-mix(in oklab, var(--c) 30%, transparent) 46%, transparent 74%); }
+    .bt::after { content: ''; position: absolute; inset: -6% 2% -22% -18%; border-radius: 34%; background: radial-gradient(closest-side, rgba(0,0,0,.62), rgba(0,0,0,.3) 62%, transparent); }
+    /* Dicke der Kachel: harte Schatten in Richtung „Bildschirm unten“ (auf dem gedrehten Brett = links unten). */
+    .bt img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; border-radius: 23%; transform: translateZ(var(--z0)); will-change: transform; backface-visibility: hidden;
+      box-shadow: 0 0 0 1.5px rgba(255,255,255,.2),
+        calc(var(--bc) * -.022) calc(var(--bc) * .036) 0 0 color-mix(in oklab, var(--c) 52%, #05070f),
+        calc(var(--bc) * -.044) calc(var(--bc) * .072) 0 0 color-mix(in oklab, var(--c) 38%, #05070f),
+        calc(var(--bc) * -.066) calc(var(--bc) * .108) 0 0 color-mix(in oklab, var(--c) 26%, #05070f); }
+    .bt small { position: absolute; left: 50%; top: calc(100% + var(--bc) * .2); translate: -50% 0; white-space: nowrap; font-size: calc(var(--bc) * .15); font-weight: 650; letter-spacing: -.005em; line-height: 1;
+      color: rgba(228,234,255,.72); padding: .2em .5em; border-radius: .4em; background: #080c18; transition: color .2s; }
+    .bt:hover small { color: #fff; }
     @media (prefers-reduced-motion: no-preference) {
-      .board { animation: board-in 1.4s cubic-bezier(.16,.84,.24,1) both; }
-      .board .rt, .board .rt-glow { animation: rt-draw 22s linear infinite; }
-      .bt img { animation: bt-lift 22s cubic-bezier(.3,.6,.3,1) var(--t) infinite; }
-      .bt::before { animation: bt-glow 22s ease var(--t) infinite; }
+      .board { animation: board-in 1.5s cubic-bezier(.16,.84,.24,1) both; }
+      .board .sg, .board .hd { animation-duration: 22s; animation-timing-function: linear; animation-iteration-count: infinite; }
+      .bt img { animation: bt-lift 22s var(--t) infinite; }
+      .bt::before { animation: bt-glow 22s ease-in-out var(--t) infinite; }
     }
-    @media (prefers-reduced-motion: reduce) { .board .rt, .board .rt-glow { stroke-dashoffset: 0; } }
-    @keyframes board-in { from { opacity: 0; transform: rotateX(66deg) rotateZ(-20deg) translate3d(0, 120px, -260px); } }
-    @keyframes rt-draw { 0% { stroke-dashoffset: 1; } 52%, 90% { stroke-dashoffset: 0; } 96% { stroke-dashoffset: 0; opacity: 0; } 100% { stroke-dashoffset: 1; opacity: 0; } }
-    @keyframes bt-lift { 0%, 15%, 100% { transform: translateZ(10px); } 2.2%, 8% { transform: translateZ(60px); } }
-    @keyframes bt-glow { 0%, 17%, 100% { opacity: .34; } 2.2%, 9% { opacity: 1; } }
+    @keyframes board-in { from { opacity: 0; transform: rotateX(64deg) rotateZ(-22deg) translate3d(0, 160px, -320px); } }
+    @keyframes bt-lift { 0% { transform: translateZ(var(--z0)); animation-timing-function: cubic-bezier(.22,.9,.3,1); } 3.2% { transform: translateZ(var(--z1)); animation-timing-function: ease-in-out; }
+      7% { transform: translateZ(var(--z1)); animation-timing-function: cubic-bezier(.4,0,.2,1); } 14%, 100% { transform: translateZ(var(--z0)); } }
+    @keyframes bt-glow { 0%, 16%, 100% { opacity: .32; } 3.2%, 8% { opacity: 1; } }
     .bstage.paused * { animation-play-state: paused !important; }
-    @media (max-width: 1600px) { .board { scale: .83; left: calc(50% + 23.5vw); } }
-    @media (max-width: 1320px) { .board { scale: .72; left: calc(50% + 300px); } .hero .wrap > div { max-width: 480px; } }
-    @media (max-width: 1040px) { .board { scale: .64; left: calc(50% + 270px); } .hero .wrap > div { max-width: 430px; } }
-    
+    @media (max-width: 1600px) { .board { scale: .55; left: calc(50% + 23vw); } }
+    @media (max-width: 1320px) { .board { scale: .5; left: calc(50% + 300px); } .hero .wrap > div { max-width: 480px; } }
+    @media (max-width: 1040px) { .board { scale: .445; left: calc(50% + 270px); } .hero .wrap > div { max-width: 430px; } }
     @media (max-width: 900px) {
-      .hero { min-height: 0; display: block; }
+      .hero { min-height: 0; display: block; background: radial-gradient(80% 36% at 50% 80%, rgba(79,124,255,.2), transparent 70%), linear-gradient(180deg, #0a1022, #070b16 92%); }
       .hero::after { display: none; }
-      .hero .wrap { grid-template-columns: 1fr; gap: 0; padding-top: 40px; padding-bottom: 8px; }
-      .bstage { position: relative; inset: auto; z-index: 0; height: 400px; perspective: 1500px; perspective-origin: 50% 40%;
-        -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 80%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 80%, transparent 100%); }
+      .hero .wrap { grid-template-columns: 1fr; gap: 0; padding-top: 40px; padding-bottom: 0; }
       .hero .wrap > div { max-width: none; }
-      .board { left: 50%; scale: .56; margin-top: calc(var(--bh) / -2 + 6px); }
-      .bt small { font-size: 17px; }
+      .hero .ticks { border-top: 0; padding-top: 0; }
+      .bstage { position: relative; inset: auto; z-index: 0; height: 480px; margin-top: -6px; perspective: 1500px; perspective-origin: 50% 30%;
+        -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent); mask-image: linear-gradient(180deg, #000 80%, transparent); }
+      .bm .bt small { display: none; }
+      .board.bd { display: none; } .board.bm { display: block; }
+      .board { left: 47%; top: 42%; scale: .84; margin-top: calc(var(--bh) / -2); transform: rotateX(52deg) rotateZ(-27deg); }
     }
-    @media (max-width: 480px) { .bstage { height: 300px; } .board { scale: .4; } .bt small { font-size: 21px; } }
+    @media (max-width: 640px) { .bstage { height: 366px; } .board { scale: .64; } }
+    @media (max-width: 440px) { .bstage { height: 296px; } .board { scale: .52; } }
+    @media (max-width: 370px) { .bstage { height: 272px; } .board { scale: .47; } }
+
+    .board.bd { --bw: 1194px; --bh: 984px; --bc: 144px; --bp: 210px; --lw: 7px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .bd .s0 { animation-name: bd-s0; }
+      .bd .s1 { animation-name: bd-s1; }
+      .bd .s2 { animation-name: bd-s2; }
+      .bd .s3 { animation-name: bd-s3; }
+      .bd .s4 { animation-name: bd-s4; }
+      .bd .s5 { animation-name: bd-s5; }
+      .bd .s6 { animation-name: bd-s6; }
+      .bd .s7 { animation-name: bd-s7; }
+      .bd .s8 { animation-name: bd-s8; }
+      .bd .hd { animation-name: bd-hd; }
+    }
+    @keyframes bd-s0 { 0%, 0% { transform: scaleX(0); opacity: 1; } 8%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s1 { 0%, 8% { transform: scaleX(0); opacity: 1; } 10%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s2 { 0%, 10% { transform: scaleX(0); opacity: 1; } 20%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s3 { 0%, 20% { transform: scaleX(0); opacity: 1; } 22%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s4 { 0%, 22% { transform: scaleX(0); opacity: 1; } 32%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s5 { 0%, 32% { transform: scaleX(0); opacity: 1; } 34%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s6 { 0%, 34% { transform: scaleX(0); opacity: 1; } 44%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s7 { 0%, 44% { transform: scaleX(0); opacity: 1; } 46%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s8 { 0%, 46% { transform: scaleX(0); opacity: 1; } 52%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-hd { 0% { transform: translate(282px,72px); opacity: 1; } 8% { transform: translate(1122px,72px); opacity: 1; } 10% { transform: translate(1122px,282px); opacity: 1; } 20% { transform: translate(72px,282px); opacity: 1; } 22% { transform: translate(72px,492px); opacity: 1; } 32% { transform: translate(1122px,492px); opacity: 1; } 34% { transform: translate(1122px,702px); opacity: 1; } 44% { transform: translate(72px,702px); opacity: 1; } 46% { transform: translate(72px,912px); opacity: 1; } 52% { transform: translate(702px,912px); opacity: 1; } 54%, 100% { transform: translate(702px,912px); opacity: 0; } }
+
+    .board.bm { --bw: 532px; --bh: 532px; --bc: 100px; --bp: 144px; --lw: 6px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .bm .s0 { animation-name: bm-s0; }
+      .bm .s1 { animation-name: bm-s1; }
+      .bm .s2 { animation-name: bm-s2; }
+      .bm .s3 { animation-name: bm-s3; }
+      .bm .s4 { animation-name: bm-s4; }
+      .bm .s5 { animation-name: bm-s5; }
+      .bm .s6 { animation-name: bm-s6; }
+      .bm .hd { animation-name: bm-hd; }
+    }
+    @keyframes bm-s0 { 0%, 0% { transform: scaleX(0); opacity: 1; } 10.4%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s1 { 0%, 10.4% { transform: scaleX(0); opacity: 1; } 13.87%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s2 { 0%, 13.87% { transform: scaleX(0); opacity: 1; } 24.27%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s3 { 0%, 24.27% { transform: scaleX(0); opacity: 1; } 27.73%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s4 { 0%, 27.73% { transform: scaleX(0); opacity: 1; } 38.13%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s5 { 0%, 38.13% { transform: scaleX(0); opacity: 1; } 41.6%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s6 { 0%, 41.6% { transform: scaleX(0); opacity: 1; } 52%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-hd { 0% { transform: translate(50px,50px); opacity: 1; } 10.4% { transform: translate(482px,50px); opacity: 1; } 13.87% { transform: translate(482px,194px); opacity: 1; } 24.27% { transform: translate(50px,194px); opacity: 1; } 27.73% { transform: translate(50px,338px); opacity: 1; } 38.13% { transform: translate(482px,338px); opacity: 1; } 41.6% { transform: translate(482px,482px); opacity: 1; } 52% { transform: translate(50px,482px); opacity: 1; } 54%, 100% { transform: translate(50px,482px); opacity: 0; } }
 
     /* Sammel-App „Dexware“: breites Feld mit drei echten Dexware-Bildschirmen (21.11.2026, Alex: „am PC alles zu eng, zusammengepresst — hübscher und breiter“) */
     #dexware-app .wrap { max-width: 1320px; }
@@ -707,12 +767,18 @@
           </ul>
         </div>
       </div>
-      <div class="bstage"><div class="board" aria-label="16 Dexware-Apps">
-        <div class="bd-floor" aria-hidden="true"></div>
-        <svg viewBox="0 0 830 684" aria-hidden="true"><defs><linearGradient id="rtg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="830" y2="684"><stop offset="0" stop-color="#7aa2ff"/><stop offset=".55" stop-color="#a78bfa"/><stop offset="1" stop-color="#f0abfc"/></linearGradient></defs>
-          <path class="rt-base" d="M196 50L342 50L488 50L634 50L780 50L780 196L634 196L488 196L342 196L196 196L50 196L50 342L196 342L342 342L488 342L634 342L780 342L780 488L634 488L488 488L342 488L196 488L50 488L50 634L196 634L342 634L488 634"/><path class="rt-glow" d="M196 50L342 50L488 50L634 50L780 50L780 196L634 196L488 196L342 196L196 196L50 196L50 342L196 342L342 342L488 342L634 342L780 342L780 488L634 488L488 488L342 488L196 488L50 488L50 634L196 634L342 634L488 634" pathLength="1"/><path class="rt" d="M196 50L342 50L488 50L634 50L780 50L780 196L634 196L488 196L342 196L196 196L50 196L50 342L196 342L342 342L488 342L634 342L780 342L780 488L634 488L488 488L342 488L196 488L50 488L50 634L196 634L342 634L488 634" pathLength="1"/></svg>
-        <a class="bt" href="https://gurtdex.dexware.app" style="left:146px;top:0px;--c:#DB2777;--t:-0.25s"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="100" height="100" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://toredex.dexware.app" style="left:292px;top:0px;--c:#7C3AED;--t:0.19s"><img src="assets/hub/toredex.webp" alt="ToreDex" width="100" height="100" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="left:584px;top:0px;--c:#14B8A6;--t:1.07s"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="100" height="100" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="left:730px;top:146px;--c:#DC2626;--t:1.95s"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="100" height="100" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="left:438px;top:146px;--c:#2563EB;--t:2.83s"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="100" height="100" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="left:292px;top:146px;--c:#F59E0B;--t:3.27s"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="100" height="100" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://spieldex.dexware.app" style="left:0px;top:146px;--c:#EA5A47;--t:4.15s"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="100" height="100" decoding="async" /><small>SpielDex</small></a><a class="bt" href="https://winterdex.dexware.app" style="left:146px;top:292px;--c:#0EA5E9;--t:5.03s"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="100" height="100" decoding="async" /><small>WinterDex</small></a><a class="bt" href="https://kfzdex.dexware.app" style="left:438px;top:292px;--c:#F97316;--t:5.91s"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="100" height="100" decoding="async" /><small>KfzDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="left:584px;top:292px;--c:#2F6BF2;--t:6.35s"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="100" height="100" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="left:730px;top:438px;--c:#3B82F6;--t:7.23s"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="100" height="100" decoding="async" /><small>SchutzDex</small></a><a class="bt" href="https://baumdex.dexware.app" style="left:584px;top:438px;--c:#4ADE80;--t:7.67s"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="100" height="100" decoding="async" /><small>BaumDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="left:146px;top:438px;--c:#84CC16;--t:8.99s"><img src="assets/hub/hebedex.webp" alt="HebeDex" width="100" height="100" decoding="async" /><small>HebeDex</small></a><a class="bt" href="https://tourdex.dexware.app" style="left:0px;top:438px;--c:#3B82F6;--t:9.43s"><img src="assets/hub/tourdex.webp" alt="TourDex" width="100" height="100" decoding="async" /><small>TourDex</small></a><a class="bt" href="https://craftdex.dexware.app" style="left:146px;top:584px;--c:#E8C97A;--t:10.31s"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="100" height="100" decoding="async" /><small>CraftDex</small></a><a class="bt" href="https://dokudex.dexware.app" style="left:438px;top:584px;--c:#4F9EF8;--t:11.19s"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="100" height="100" decoding="async" /><small>DokuDex</small></a>
-      </div></div>
+      <div class="bstage" aria-label="16 Dexware-Apps">
+      <div class="board bd">
+        <i class="bd-floor"></i><i class="sl" style="left:0px;top:0px"></i><i class="sl" style="left:630px;top:0px"></i><i class="sl" style="left:1050px;top:0px"></i><i class="sl" style="left:840px;top:210px"></i><i class="sl" style="left:210px;top:210px"></i><i class="sl" style="left:0px;top:420px"></i><i class="sl" style="left:420px;top:420px"></i><i class="sl" style="left:1050px;top:420px"></i><i class="sl" style="left:630px;top:630px"></i><i class="sl" style="left:420px;top:630px"></i><i class="sl" style="left:0px;top:840px"></i><i class="sl" style="left:420px;top:840px"></i><i class="sl" style="left:840px;top:840px"></i><i class="sl" style="left:1050px;top:840px"></i>
+        <i class="sb" style="left:278.5px;top:68.5px;width:847px;rotate:0deg"></i><i class="sb" style="left:1118.5px;top:68.5px;width:217px;rotate:90deg"></i><i class="sb" style="left:1118.5px;top:278.5px;width:1057px;rotate:180deg"></i><i class="sb" style="left:68.5px;top:278.5px;width:217px;rotate:90deg"></i><i class="sb" style="left:68.5px;top:488.5px;width:1057px;rotate:0deg"></i><i class="sb" style="left:1118.5px;top:488.5px;width:217px;rotate:90deg"></i><i class="sb" style="left:1118.5px;top:698.5px;width:1057px;rotate:180deg"></i><i class="sb" style="left:68.5px;top:698.5px;width:217px;rotate:90deg"></i><i class="sb" style="left:68.5px;top:908.5px;width:637px;rotate:0deg"></i><i class="sg s0" style="left:278.5px;top:68.5px;width:847px;rotate:0deg;background:linear-gradient(90deg,#7aa2ff,#879cfe)"></i><i class="sg s1" style="left:1118.5px;top:68.5px;width:217px;rotate:90deg;background:linear-gradient(90deg,#879cfe,#8a9afd)"></i><i class="sg s2" style="left:1118.5px;top:278.5px;width:1057px;rotate:180deg;background:linear-gradient(90deg,#8a9afd,#9992fc)"></i><i class="sg s3" style="left:68.5px;top:278.5px;width:217px;rotate:90deg;background:linear-gradient(90deg,#9992fc,#9d90fb)"></i><i class="sg s4" style="left:68.5px;top:488.5px;width:1057px;rotate:0deg;background:linear-gradient(90deg,#9d90fb,#b290fa)"></i><i class="sg s5" style="left:1118.5px;top:488.5px;width:217px;rotate:90deg;background:linear-gradient(90deg,#b290fa,#b892fa)"></i><i class="sg s6" style="left:1118.5px;top:698.5px;width:1057px;rotate:180deg;background:linear-gradient(90deg,#b892fa,#d7a0fb)"></i><i class="sg s7" style="left:68.5px;top:698.5px;width:217px;rotate:90deg;background:linear-gradient(90deg,#d7a0fb,#dda3fb)"></i><i class="sg s8" style="left:68.5px;top:908.5px;width:637px;rotate:0deg;background:linear-gradient(90deg,#dda3fb,#f0abfc)"></i><i class="hd"></i>
+        <a class="bt" href="https://gurtdex.dexware.app" style="left:210px;top:0px;--c:#DB2777;--t:-0.30s"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="144" height="144" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://toredex.dexware.app" style="left:420px;top:0px;--c:#7C3AED;--t:0.14s"><img src="assets/hub/toredex.webp" alt="ToreDex" width="144" height="144" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="left:840px;top:0px;--c:#14B8A6;--t:1.02s"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="144" height="144" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="left:1050px;top:210px;--c:#DC2626;--t:1.90s"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="144" height="144" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="left:630px;top:210px;--c:#2563EB;--t:2.78s"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="144" height="144" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="left:420px;top:210px;--c:#F59E0B;--t:3.22s"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="144" height="144" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://spieldex.dexware.app" style="left:0px;top:210px;--c:#EA5A47;--t:4.10s"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="144" height="144" decoding="async" /><small>SpielDex</small></a><a class="bt" href="https://winterdex.dexware.app" style="left:210px;top:420px;--c:#0EA5E9;--t:4.98s"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="144" height="144" decoding="async" /><small>WinterDex</small></a><a class="bt" href="https://kfzdex.dexware.app" style="left:630px;top:420px;--c:#F97316;--t:5.86s"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="144" height="144" decoding="async" /><small>KfzDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="left:840px;top:420px;--c:#2F6BF2;--t:6.30s"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="144" height="144" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="left:1050px;top:630px;--c:#3B82F6;--t:7.18s"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="144" height="144" decoding="async" /><small>SchutzDex</small></a><a class="bt" href="https://baumdex.dexware.app" style="left:840px;top:630px;--c:#4ADE80;--t:7.62s"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="144" height="144" decoding="async" /><small>BaumDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="left:210px;top:630px;--c:#84CC16;--t:8.94s"><img src="assets/hub/hebedex.webp" alt="HebeDex" width="144" height="144" decoding="async" /><small>HebeDex</small></a><a class="bt" href="https://tourdex.dexware.app" style="left:0px;top:630px;--c:#3B82F6;--t:9.38s"><img src="assets/hub/tourdex.webp" alt="TourDex" width="144" height="144" decoding="async" /><small>TourDex</small></a><a class="bt" href="https://craftdex.dexware.app" style="left:210px;top:840px;--c:#E8C97A;--t:10.26s"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="144" height="144" decoding="async" /><small>CraftDex</small></a><a class="bt" href="https://dokudex.dexware.app" style="left:630px;top:840px;--c:#4F9EF8;--t:11.14s"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="144" height="144" decoding="async" /><small>DokuDex</small></a>
+      </div>
+      <div class="board bm">
+        <i class="bd-floor"></i>
+        <i class="sb" style="left:47px;top:47px;width:438px;rotate:0deg"></i><i class="sb" style="left:479px;top:47px;width:150px;rotate:90deg"></i><i class="sb" style="left:479px;top:191px;width:438px;rotate:180deg"></i><i class="sb" style="left:47px;top:191px;width:150px;rotate:90deg"></i><i class="sb" style="left:47px;top:335px;width:438px;rotate:0deg"></i><i class="sb" style="left:479px;top:335px;width:150px;rotate:90deg"></i><i class="sb" style="left:479px;top:479px;width:438px;rotate:180deg"></i><i class="sg s0" style="left:47px;top:47px;width:438px;rotate:0deg;background:linear-gradient(90deg,#7aa2ff,#8a9afd)"></i><i class="sg s1" style="left:479px;top:47px;width:150px;rotate:90deg;background:linear-gradient(90deg,#8a9afd,#9097fd)"></i><i class="sg s2" style="left:479px;top:191px;width:438px;rotate:180deg;background:linear-gradient(90deg,#9097fd,#a08efb)"></i><i class="sg s3" style="left:47px;top:191px;width:150px;rotate:90deg;background:linear-gradient(90deg,#a08efb,#a68cfa)"></i><i class="sg s4" style="left:47px;top:335px;width:438px;rotate:0deg;background:linear-gradient(90deg,#a68cfa,#c598fb)"></i><i class="sg s5" style="left:479px;top:335px;width:150px;rotate:90deg;background:linear-gradient(90deg,#c598fb,#d09dfb)"></i><i class="sg s6" style="left:479px;top:479px;width:438px;rotate:180deg;background:linear-gradient(90deg,#d09dfb,#f0abfc)"></i><i class="hd"></i>
+        <a class="bt" href="https://gurtdex.dexware.app" style="left:0px;top:0px;--c:#DB2777;--t:-0.30s"><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="100" height="100" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://toredex.dexware.app" style="left:144px;top:0px;--c:#7C3AED;--t:0.46s"><img src="assets/hub/toredex.webp" alt="ToreDex" width="100" height="100" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="left:288px;top:0px;--c:#14B8A6;--t:1.23s"><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="100" height="100" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="left:432px;top:0px;--c:#DC2626;--t:1.99s"><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="100" height="100" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="left:432px;top:144px;--c:#2563EB;--t:2.75s"><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="100" height="100" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="left:288px;top:144px;--c:#F59E0B;--t:3.51s"><img src="assets/hub/regaldex.webp" alt="RegalDex" width="100" height="100" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://spieldex.dexware.app" style="left:144px;top:144px;--c:#EA5A47;--t:4.28s"><img src="assets/hub/spieldex.webp" alt="SpielDex" width="100" height="100" decoding="async" /><small>SpielDex</small></a><a class="bt" href="https://winterdex.dexware.app" style="left:0px;top:144px;--c:#0EA5E9;--t:5.04s"><img src="assets/hub/winterdex.webp" alt="WinterDex" width="100" height="100" decoding="async" /><small>WinterDex</small></a><a class="bt" href="https://kfzdex.dexware.app" style="left:0px;top:288px;--c:#F97316;--t:5.80s"><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="100" height="100" decoding="async" /><small>KfzDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="left:144px;top:288px;--c:#2F6BF2;--t:6.56s"><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="100" height="100" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="left:288px;top:288px;--c:#3B82F6;--t:7.33s"><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="100" height="100" decoding="async" /><small>SchutzDex</small></a><a class="bt" href="https://baumdex.dexware.app" style="left:432px;top:288px;--c:#4ADE80;--t:8.09s"><img src="assets/hub/baumdex.webp" alt="BaumDex" width="100" height="100" decoding="async" /><small>BaumDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="left:432px;top:432px;--c:#84CC16;--t:8.85s"><img src="assets/hub/hebedex.webp" alt="HebeDex" width="100" height="100" decoding="async" /><small>HebeDex</small></a><a class="bt" href="https://tourdex.dexware.app" style="left:288px;top:432px;--c:#3B82F6;--t:9.61s"><img src="assets/hub/tourdex.webp" alt="TourDex" width="100" height="100" decoding="async" /><small>TourDex</small></a><a class="bt" href="https://craftdex.dexware.app" style="left:144px;top:432px;--c:#E8C97A;--t:10.38s"><img src="assets/hub/craftdex.webp" alt="CraftDex" width="100" height="100" decoding="async" /><small>CraftDex</small></a><a class="bt" href="https://dokudex.dexware.app" style="left:0px;top:432px;--c:#4F9EF8;--t:11.14s"><img src="assets/hub/dokudex.webp" alt="DokuDex" width="100" height="100" decoding="async" /><small>DokuDex</small></a>
+      </div>
+      </div>
     </div>
 
     <section class="lights" id="iphone">
@@ -982,7 +1048,7 @@
           try { localStorage.setItem('dexware-lang', l); } catch (e) {}
         });
       });
-      var brd = document.querySelector('.board'), hero = document.querySelector('.hero'), bst = document.querySelector('.bstage');
+      var brd = document.querySelector('.board.bd'), hero = document.querySelector('.hero'), bst = document.querySelector('.bstage');
       if (brd && hero && matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         hero.addEventListener('pointermove', function (e) {
           var r = hero.getBoundingClientRect();
