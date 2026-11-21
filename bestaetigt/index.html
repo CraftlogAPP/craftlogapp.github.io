@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>E-Mail bestätigt</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- Anmeldedaten in der Adresse nie an andere Seiten weitergeben; nur eigene Bilder/Schrift, keine fremden Skripte -->
+  <meta name="referrer" content="no-referrer" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; font-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#070b16" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="preload" href="/assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/assets/inter-latin-var.woff2') format('woff2'); }
+    :root { --bg: #070b16; --card: rgba(255,255,255,.04); --border: rgba(255,255,255,.1); --ink: #f4f5f8; --muted: #a6abb8;
+      --c: #4F7CFF; --on: #fff; --ok: #22c55e; --warn: #f59e0b; color-scheme: dark; }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f4f6fb; --card: #fff; --border: rgba(16,24,40,.1); --ink: #0d1220; --muted: #586074; --ok: #16a34a; --warn: #d97706; color-scheme: light; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center;
+      padding: max(28px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+      background: var(--bg); background-image: radial-gradient(80% 46% at 50% 0%, rgba(79,124,255,.18), transparent 72%);
+      background-image: radial-gradient(80% 46% at 50% 0%, color-mix(in oklab, var(--c) 24%, transparent), transparent 72%); background-repeat: no-repeat;
+      color: var(--ink); font: 400 16px/1.55 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { width: 100%; max-width: 460px; margin: auto 0; text-align: center; padding: 36px 22px 26px; border-radius: 24px;
+      background: var(--card); border: 1px solid var(--border); box-shadow: 0 24px 60px -30px rgba(0,0,0,.45); }
+    .mark { position: relative; width: 88px; height: 88px; margin: 0 auto 20px; }
+    .mark img { display: block; width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 0 0 1px var(--border), 0 12px 30px -12px rgba(0,0,0,.5); }
+    .badge { position: absolute; right: -12px; bottom: -12px; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--ok); color: #fff; border: 4px solid var(--bg); }
+    .badge.warn { background: var(--warn); }
+    .badge .i { width: 22px; height: 22px; stroke-width: 3; }
+    .badge.warn .i { stroke-width: 2.4; }
+    .kicker { font-size: 14px; font-weight: 650; color: var(--muted); }
+    h1 { font-size: clamp(28px, 8vw, 36px); line-height: 1.12; letter-spacing: -.03em; font-weight: 780; margin: 6px 0 10px; overflow-wrap: anywhere; }
+    .sub { color: var(--muted); font-size: 16.5px; }
+    .i { width: 20px; height: 20px; flex: none; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 54px; margin-top: 24px; padding: 10px 20px;
+      border-radius: 14px; background: var(--c); color: var(--on); font-weight: 700; font-size: 17px; line-height: 1.25; text-decoration: none; }
+    .btn.ghost { min-height: 48px; margin-top: 18px; background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--border); font-weight: 650; font-size: 15.5px; }
+    .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .note { margin-top: 12px; font-size: 14px; color: var(--muted); }
+    .box { display: flex; gap: 12px; align-items: flex-start; text-align: left; margin-top: 24px; padding: 14px 16px; border-radius: 14px; font-size: 15.5px;
+      background: rgba(127,127,127,.08); border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--c) 10%, transparent); border-color: color-mix(in oklab, var(--c) 34%, transparent); }
+    .box .i { width: 24px; height: 24px; margin-top: 1px; color: var(--ink); }
+    .steps { list-style: none; counter-reset: s; display: grid; gap: 12px; margin-top: 22px; text-align: left; font-size: 15.5px; }
+    .steps li { counter-increment: s; display: flex; gap: 12px; }
+    .steps li::before { content: counter(s); flex: none; width: 26px; height: 26px; margin-top: 1px; border-radius: 50%; display: grid; place-items: center;
+      font-size: 13.5px; font-weight: 700; background: var(--c); color: var(--on); }
+    footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 22px; font-size: 13.5px; color: var(--muted); }
+    footer a { color: var(--muted); }
+    noscript p { margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="mark"><img id="ic" src="i/dexware.webp" alt="" width="88" height="88" /><span class="badge" id="bd"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span></div>
+    <p class="kicker" id="kk">Dexware</p>
+    <h1 id="hh">E-Mail bestätigt</h1>
+    <p class="sub" id="ss">Deine E-Mail-Adresse ist bestätigt. Öffne jetzt die App, mit der du dich registriert hast, und melde dich mit deiner E-Mail-Adresse und deinem Passwort an.</p>
+    <div id="xx"></div>
+  </main>
+  <footer id="ff"><a href="/">Dexware</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></footer>
+  <script>
+    (function () {
+      var A = {"winterdex":{"n":"WinterDex","c":"#0EA5E9","t":"#ffffff","l":"winterdex://confirm-email","d":"winterdex","o":""},"hausdex":{"n":"HausDex","c":"#818CF8","t":"#ffffff","l":"hausdex://confirm-email","d":"","o":""},"mietzeuge":{"n":"Mietzeuge","c":"#2DD4BF","t":"#0b0f19","l":"mietzeuge://confirm-email","d":"","o":""},"installateurdex":{"n":"InstallateurDex","c":"#E39A54","t":"#0b0f19","l":"installateurdex://confirm-email","d":"installateurdex","o":""},"kfzdex":{"n":"KfzDex","c":"#F97316","t":"#ffffff","l":"kfzdex://confirm-email","d":"kfzdex","o":""},"schutzdex":{"n":"SchutzDex","c":"#3B82F6","t":"#ffffff","l":"safedex://confirm-email","d":"schutzdex","o":""},"craftdex":{"n":"CraftDex","c":"#E8C97A","t":"#0b0f19","l":"craftlog://confirm-email","d":"craftdex","o":""},"dokudex":{"n":"DokuDex","c":"#4F9EF8","t":"#ffffff","l":"dokudex://confirm-email","d":"dokudex","o":""},"tourdex":{"n":"TourDex","c":"#3B82F6","t":"#ffffff","l":"routelog://confirm-email","d":"tourdex","o":""},"pruefdex":{"n":"PrüfDex","c":"#2F6BF2","t":"#ffffff","l":"pruefdex://auth-callback","d":"pruefdex","o":""},"leiterdex":{"n":"LeiterDex","c":"#2563EB","t":"#ffffff","l":"leiterdex://confirm-email","d":"leiterdex","o":""},"feuerdex":{"n":"FeuerDex","c":"#DC2626","t":"#ffffff","l":"feuerdex://confirm-email","d":"feuerdex","o":""},"geruestdex":{"n":"GerüstDex","c":"#14B8A6","t":"#0b0f19","l":"geruestdex://confirm-email","d":"geruestdex","o":""},"toredex":{"n":"ToreDex","c":"#7C3AED","t":"#ffffff","l":"toredex://confirm-email","d":"toredex","o":""},"gurtdex":{"n":"GurtDex","c":"#DB2777","t":"#ffffff","l":"gurtdex://confirm-email","d":"gurtdex","o":""},"hebedex":{"n":"HebeDex","c":"#84CC16","t":"#0b0f19","l":"hebedex://confirm-email","d":"hebedex","o":""},"spieldex":{"n":"SpielDex","c":"#EA5A47","t":"#ffffff","l":"spieldex://confirm-email","d":"spieldex","o":""},"regaldex":{"n":"RegalDex","c":"#F59E0B","t":"#0b0f19","l":"regaldex://confirm-email","d":"regaldex","o":""},"objektdex":{"n":"ObjektDex","c":"#34D8A6","t":"#0b0f19","l":"objektdex://confirm-email","d":"objektdex","o":""},"laufzettel":{"n":"Laufzettel","c":"#F5B544","t":"#0b0f19","l":"laufzettel://confirm-email","d":"pinndex","o":""},"wechselzeit":{"n":"Wechselzeit","c":"#2E6E73","t":"#ffffff","l":"wechselzeit://confirm-email","d":"","o":"https://wechselzeit.dexware.app"}};
+      var T = {"de":{"theApp":"der App","okTitle":"E-Mail bestätigt","okSub":"Deine E-Mail-Adresse ist bestätigt.","okSubNeutral":"Deine E-Mail-Adresse ist bestätigt. Öffne jetzt die App, mit der du dich registriert hast, und melde dich mit deiner E-Mail-Adresse und deinem Passwort an.","open":"{a} öffnen","openDx":"In Dexware öffnen","noteLogin":"Die App öffnet sich und meldet dich direkt an.","noteNoLogin":"Jetzt in der App anmelden: mit deiner E-Mail-Adresse und deinem Passwort.","notOpen":"Öffnet sich nichts? Starte {a} selbst und melde dich mit deiner E-Mail-Adresse und deinem Passwort an.","pc":"\u003cb>Jetzt in der App anmelden:\u003c/b> Öffne {a} auf deinem Handy und melde dich mit deiner E-Mail-Adresse und deinem Passwort an.","pcDx":"\u003cb>Jetzt in der App anmelden:\u003c/b> Öffne die Dexware-App auf deinem Handy, wähle {a} und melde dich mit deiner E-Mail-Adresse und deinem Passwort an.","dash":"{a} im Dexware-Dashboard öffnen","dashNote":"Lieber am PC? Im Dashboard meldest du dich mit denselben Daten an.","errTitle":"Link abgelaufen oder schon benutzt","errTitle2":"Bestätigung hat nicht geklappt","errSub":"Dieser Bestätigungslink gilt nicht mehr. Das passiert, wenn er schon älter ist oder schon einmal geöffnet wurde – manche E-Mail-Programme öffnen Links vorab zur Prüfung.","step1":"Melde dich in {a} mit deiner E-Mail-Adresse und deinem Passwort an – vielleicht ist deine Adresse schon bestätigt.","step2":"Klappt das nicht, registriere dich in {a} noch einmal mit derselben E-Mail-Adresse. Du bekommst dann einen neuen Bestätigungslink.","dashErr":"Im Dexware-Dashboard anmelden","dashErrNote":"Dort kannst du dir auch eine neue Bestätigungs-Mail schicken lassen.","legal":["Impressum","Datenschutz"]},"en":{"theApp":"the app","okTitle":"Email confirmed","okSub":"Your email address is confirmed.","okSubNeutral":"Your email address is confirmed. Now open the app you signed up with and sign in with your email address and password.","open":"Open {a}","openDx":"Open in Dexware","noteLogin":"The app opens and signs you in right away.","noteNoLogin":"Now sign in to the app with your email address and password.","notOpen":"Nothing happens? Open {a} yourself and sign in with your email address and password.","pc":"\u003cb>Now sign in to the app:\u003c/b> open {a} on your phone and sign in with your email address and password.","pcDx":"\u003cb>Now sign in to the app:\u003c/b> open the Dexware app on your phone, choose {a} and sign in with your email address and password.","dash":"Open {a} in the Dexware dashboard","dashNote":"Prefer your computer? Sign in to the dashboard with the same details.","errTitle":"Link expired or already used","errTitle2":"Confirmation did not work","errSub":"This confirmation link is no longer valid. That happens when it is older or has already been opened – some email programs open links in advance to check them.","step1":"Sign in to {a} with your email address and password – your address may already be confirmed.","step2":"If that does not work, sign up in {a} again with the same email address. You will then get a new confirmation link.","dashErr":"Sign in to the Dexware dashboard","dashErrNote":"There you can also request a new confirmation email.","legal":["Legal notice","Privacy"]}};
+      var SVG = {"check":"\u003csvg class=\"i\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M20 6 9 17l-5-5\" />\u003c/svg>","warn":"\u003csvg class=\"i\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\" />\u003cpath d=\"M12 9v4\" />\u003cpath d=\"M12 17h.01\" />\u003c/svg>","phone":"\u003csvg class=\"i\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003crect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" />\u003cpath d=\"M12 18h.01\" />\u003c/svg>","pc":"\u003csvg class=\"i\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003crect width=\"20\" height=\"14\" x=\"2\" y=\"3\" rx=\"2\" />\u003cline x1=\"8\" x2=\"16\" y1=\"21\" y2=\"21\" />\u003cline x1=\"12\" x2=\"12\" y1=\"17\" y2=\"21\" />\u003c/svg>","go":"\u003csvg class=\"i\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\">\u003cpath d=\"M5 12h14\" />\u003cpath d=\"m12 5 7 7-7 7\" />\u003c/svg>"};
+      var q = new URLSearchParams(location.search), h = new URLSearchParams(location.hash.replace(/^#/, ''));
+      var val = function (k) { return h.get(k) || q.get(k) || ''; };
+      var slug = (q.get('app') || '').toLowerCase();
+      var a = Object.prototype.hasOwnProperty.call(A, slug) ? A[slug] : null;
+      var dx = q.get('in') === 'dexware';
+      var code = val('error_code'), err = val('error') || code;
+      var login = !!(h.get('access_token') || q.get('code'));
+      var en = !/^de/i.test(navigator.language || 'de');
+      var L = T[en ? 'en' : 'de'];
+      var ua = navigator.userAgent || '';
+      var mobile = /Android|iPhone|iPad|iPod/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
+      // Weitergabe an die App: unveränderte Adresse (?app=…&code=… / #access_token=…), wie vorher direkt aus der Mail
+      var tail = location.search + location.hash;
+      var name = a ? a.n : L.theApp;
+      var fill = function (s) { return s.split('{a}').join(name); };
+      var $ = function (id) { return document.getElementById(id); };
+      var el = function (tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
+      var x = $('xx');
+
+      // Anmeldedaten und Fehler aus der Adressleiste nehmen (Verlauf, Bildschirmfoto, Teilen) — der Knopf hat sie schon.
+      if (location.hash || q.has('code') || err) {
+        try { history.replaceState(null, '', location.pathname + (a ? '?app=' + slug + (dx ? '&in=dexware' : '') : '')); } catch (e) {}
+      }
+      if (en) document.documentElement.lang = 'en';
+      if (a) {
+        document.documentElement.style.setProperty('--c', a.c);
+        document.documentElement.style.setProperty('--on', a.t);
+        $('ic').src = 'i/' + slug + '.webp';
+        $('kk').textContent = dx ? a.n + ' · Dexware' : a.n;
+      }
+      // Knopf „App öffnen“: in der Sammel-App über die Hülle (dexware://app/<slug>/confirm-email)
+      var deep = a ? (dx ? 'dexware://app/' + slug + '/confirm-email' : a.l) : '';
+      var dashUrl = a && a.d ? 'https://dashboard.dexware.app/app/' + a.d : '';
+      var button = function (cls, href, icon, label) { var b = el('a', cls, icon + '<span></span>'); b.href = href; b.lastChild.textContent = label; return b; };
+
+      if (err) {
+        $('bd').className = 'badge warn';
+        $('bd').innerHTML = SVG.warn;
+        $('hh').textContent = (code === 'otp_expired' || err === 'access_denied') ? L.errTitle : L.errTitle2;
+        $('ss').textContent = L.errSub;
+        var ol = el('ol', 'steps');
+        ol.appendChild(el('li', '', '')).textContent = fill(L.step1);
+        ol.appendChild(el('li', '', '')).textContent = fill(L.step2);
+        x.appendChild(ol);
+        // App nur öffnen (ohne den ungültigen Link) — dort anmelden bzw. neu registrieren
+        if (mobile && deep) x.appendChild(button('btn', dx ? 'dexware://' : deep.split('://')[0] + '://', SVG.phone, dx ? L.openDx : fill(L.open)));
+        if (dashUrl) {
+          x.appendChild(button('btn ghost', dashUrl, SVG.pc, L.dashErr));
+          x.appendChild(el('p', 'note', '')).textContent = L.dashErrNote;
+        }
+      } else {
+        $('hh').textContent = L.okTitle;
+        $('ss').textContent = a ? L.okSub : L.okSubNeutral;
+        if (a && mobile) {
+          x.appendChild(button('btn', deep + tail, SVG.phone, dx ? L.openDx : fill(L.open)));
+          x.appendChild(el('p', 'note', '')).textContent = login ? L.noteLogin : L.noteNoLogin;
+          x.appendChild(el('p', 'note', '')).textContent = fill(L.notOpen);
+        } else if (a) {
+          // Text und Name stammen nur aus den Daten oben (nichts aus der Adresse) → innerHTML ist hier unbedenklich
+          x.appendChild(el('div', 'box', SVG.phone + '<span>' + fill(dx ? L.pcDx : L.pc) + '</span>'));
+          if (dashUrl) {
+            x.appendChild(button('btn ghost', dashUrl, SVG.pc, fill(L.dash)));
+            x.appendChild(el('p', 'note', '')).textContent = L.dashNote;
+          }
+        }
+      }
+      document.title = $('hh').textContent + (a ? ' – ' + a.n : '');
+
+      var f = $('ff');
+      f.innerHTML = '';
+      var link = function (href, text) { var l = document.createElement('a'); l.href = href; l.textContent = text; f.appendChild(l); };
+      if (a && a.o) { link(a.o + '/', a.n); link(a.o + '/impressum.html', L.legal[0]); link(a.o + '/datenschutz.html', L.legal[1]); }
+      else { link('/', 'Dexware'); link('/impressum.html', L.legal[0]); link('/datenschutz.html', L.legal[1]); }
+    })();
+  </script>
+</body>
+</html>
