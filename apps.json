@@ -1,19 +1,7 @@
 {
  "v": 1,
- "updated": "2026-11-11",
+ "updated": "2026-11-21",
  "apps": [
-  {
-   "id": "hebedex",
-   "name": "HebeDex",
-   "pkg": "com.hebedex.app",
-   "icon": "https://dexware.app/assets/hebedex-icon.png",
-   "color": "#84CC16",
-   "url": "https://hebedex.dexware.app",
-   "play": false,
-   "de": "Anschlag-, Hebe- & Zurrmittel prüfen",
-   "en": "Lifting & lashing gear inspections",
-   "soon": true
-  },
   {
    "id": "gurtdex",
    "name": "GurtDex",
@@ -66,7 +54,7 @@
    "color": "#2563EB",
    "url": "https://leiterdex.dexware.app",
    "play": false,
-   "de": "Leitern & Tritte prüfen (DGUV 208-016)",
+   "de": "Leitern prüfen (DGUV 208-016)",
    "en": "Ladder & step inspections"
   },
   {
@@ -145,6 +133,17 @@
    "play": true,
    "de": "Baumkataster & Baumkontrolle",
    "en": "Tree register & tree inspections"
+  },
+  {
+   "id": "hebedex",
+   "name": "HebeDex",
+   "pkg": "com.hebedex.app",
+   "icon": "https://dexware.app/assets/hebedex-icon.png",
+   "color": "#84CC16",
+   "url": "https://hebedex.dexware.app",
+   "play": false,
+   "de": "Anschlag-, Hebe- & Zurrmittel prüfen",
+   "en": "Lifting & lashing gear inspections"
   },
   {
    "id": "tourdex",
