@@ -1,16 +1,16 @@
 {
  "com.winterdex.app": {
   "android": {
-   "code": 40,
-   "name": "0.7.8",
-   "ab": "2026-11-24"
+   "code": 41,
+   "name": "0.7.9",
+   "ab": "2026-11-25"
   }
  },
  "com.leiterdex.app": {
   "android": {
-   "code": 25,
-   "name": "1.3.12",
-   "ab": "2026-11-24"
+   "code": 26,
+   "name": "1.3.13",
+   "ab": "2026-11-25"
   }
  },
  "com.feuerdex.app": {
@@ -57,51 +57,51 @@
  },
  "de.pruefdex.app": {
   "android": {
-   "code": 43,
-   "name": "1.3.10",
-   "ab": "2026-11-24"
+   "code": 44,
+   "name": "1.3.11",
+   "ab": "2026-11-25"
   }
  },
  "com.kfzdex.app": {
   "android": {
-   "code": 32,
-   "name": "1.1.11",
-   "ab": "2026-11-24"
+   "code": 33,
+   "name": "1.1.12",
+   "ab": "2026-11-25"
   }
  },
  "com.safedex.app": {
   "android": {
-   "code": 38,
-   "name": "1.0.12",
-   "ab": "2026-11-24"
+   "code": 39,
+   "name": "1.0.13",
+   "ab": "2026-11-25"
   }
  },
  "com.craftlog.app": {
   "android": {
-   "code": 40,
-   "name": "1.1.11",
-   "ab": "2026-11-24"
+   "code": 41,
+   "name": "1.1.12",
+   "ab": "2026-11-25"
   }
  },
  "com.archio.app": {
   "android": {
-   "code": 43,
-   "name": "1.0.11",
-   "ab": "2026-11-24"
+   "code": 44,
+   "name": "1.0.12",
+   "ab": "2026-11-25"
   }
  },
  "com.routelog.app": {
   "android": {
-   "code": 55,
-   "name": "1.1.9",
-   "ab": "2026-11-24"
+   "code": 56,
+   "name": "1.1.10",
+   "ab": "2026-11-25"
   }
  },
  "com.hebedex.app": {
   "android": {
-   "code": 19,
-   "name": "1.0.11",
-   "ab": "2026-11-24"
+   "code": 20,
+   "name": "1.0.12",
+   "ab": "2026-11-25"
   }
  },
  "com.installateurdex.app": {
