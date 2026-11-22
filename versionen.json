@@ -15,44 +15,44 @@
  },
  "com.feuerdex.app": {
   "android": {
-   "code": 23,
-   "name": "1.3.11",
-   "ab": "2026-11-24"
+   "code": 24,
+   "name": "1.3.12",
+   "ab": "2026-11-25"
   }
  },
  "com.geruestdex.app": {
   "android": {
-   "code": 23,
-   "name": "1.3.11",
-   "ab": "2026-11-24"
+   "code": 24,
+   "name": "1.3.12",
+   "ab": "2026-11-25"
   }
  },
  "com.toredex.app": {
   "android": {
-   "code": 26,
-   "name": "1.3.11",
-   "ab": "2026-11-24"
+   "code": 27,
+   "name": "1.3.12",
+   "ab": "2026-11-25"
   }
  },
  "com.gurtdex.app": {
   "android": {
-   "code": 24,
-   "name": "1.3.11",
-   "ab": "2026-11-24"
+   "code": 25,
+   "name": "1.3.12",
+   "ab": "2026-11-25"
   }
  },
  "com.regaldex.app": {
   "android": {
-   "code": 24,
-   "name": "1.3.11",
-   "ab": "2026-11-24"
+   "code": 25,
+   "name": "1.3.12",
+   "ab": "2026-11-25"
   }
  },
  "com.spieldex.app": {
   "android": {
-   "code": 23,
-   "name": "1.3.11",
-   "ab": "2026-11-24"
+   "code": 24,
+   "name": "1.3.12",
+   "ab": "2026-11-25"
   }
  },
  "de.pruefdex.app": {
