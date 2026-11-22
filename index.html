@@ -432,6 +432,10 @@
     .bt small { position: absolute; left: 50%; top: calc(100% + var(--bc) * .2); translate: -50% 0; white-space: nowrap; font-size: calc(var(--bc) * .15); font-weight: 650; letter-spacing: -.005em; line-height: 1;
       color: rgba(228,234,255,.72); padding: .2em .5em; border-radius: .4em; background: #080c18; transition: color .2s; }
     .bt:hover small { color: #fff; }
+    /* Achtung (22.11.2026 gemessen): board-in MUSS „both“ bleiben. Die stehen bleibende Deckkraft-Animation lässt Chrome das
+       Brett flach in einen Zwischenpuffer zeichnen — darum heben sich die Kacheln in Chrome nicht wirklich an (translateZ wirkt
+       nicht), sie werden nur größer. Mit „backwards“ springen sie in Chrome sichtbar ~40 px hoch (Safari zeigt das vermutlich
+       schon heute). Das wäre eine Änderung der Optik, keine reine Beschleunigung. */
     @media (prefers-reduced-motion: no-preference) {
       .board { animation: board-in 1.5s cubic-bezier(.16,.84,.24,1) both; }
       .bpan { animation: bpan 46s ease-in-out infinite; will-change: transform; }
@@ -473,7 +477,15 @@
     .trail .tc { left: var(--xb); } .trail .td { left: var(--xb); top: 62%; }
     .trail .tt img { display: block; width: 100%; height: 100%; border-radius: inherit;
       box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 0 22px 2px color-mix(in oklab, var(--c) 55%, transparent), 0 10px 24px -8px rgba(0,0,0,.8); }
-    .trail .th { width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; opacity: 0;
+    /* Leuchtpunkt (22.11.2026): fährt per transform statt left/top — so rechnet der Compositor beim Scrollen allein (vorher kostete
+       jedes Scroll-Bild Layout auf dem Hauptthread). Trick: .th ist so groß wie die Spur und liegt links oberhalb davon, der Punkt
+       (::after) sitzt an seiner rechten unteren Ecke. translate in % bezieht sich auf die eigene Größe = Spurgröße, also gelten
+       dieselben Werte wie vorher bei left/top (--xa/--xb, 100 %). Wird die Spur später höher (Schrift lädt, Sprachwechsel), startet
+       Chrome die Compositor-Animation von selbst neu — mit cqh/px blieb der Punkt dort hängen (gemessen bis 190 px daneben).
+       Die Fläche ragt nur nach links/oben über die Spur hinaus: dort entsteht kein Querscrollen. clip-path schneidet sie auf die
+       Ecke mit Punkt + Glühen (±64 px, Glühen reicht ±56 px) zu — sonst wäre die Compositor-Ebene so groß wie die ganze Spur. */
+    .trail .th { right: 100%; bottom: 100%; width: 100%; height: 100%; opacity: 0; clip-path: inset(calc(100% - 64px) -64px -64px calc(100% - 64px)); }
+    .trail .th::after { content: ''; position: absolute; right: -5px; bottom: -5px; width: 10px; height: 10px; border-radius: 50%; background: #fff;
       box-shadow: 0 0 8px 3px rgba(190,205,255,.85), 0 0 28px 9px rgba(120,140,255,.45); }
     @media (max-width: 1279px) { .trail .tt { display: none; } }
     @media (max-width: 720px) { .trail { --lw: 1.5px; } .trail .tl { opacity: .38; } }
@@ -491,8 +503,8 @@
     @keyframes tr-v1 { 0% { transform: scaleY(0); } 6%, 100% { transform: scaleY(1); } }
     @keyframes tr-h { 0%, 6% { transform: scaleX(0); } 24%, 100% { transform: scaleX(1); } }
     @keyframes tr-v3 { 0%, 24% { transform: scaleY(0); } 100% { transform: scaleY(1); } }
-    @keyframes tr-head { 0% { left: var(--xa); top: 0; opacity: 0; } 1% { opacity: 1; } 6% { left: var(--xa); top: var(--ty); } 24% { left: var(--xb); top: var(--ty); }
-      99% { opacity: 1; } 100% { left: var(--xb); top: 100%; opacity: 0; } }
+    @keyframes tr-head { 0% { transform: translate(var(--xa), 0); opacity: 0; } 1% { opacity: 1; } 6% { transform: translate(var(--xa), var(--ty)); } 24% { transform: translate(var(--xb), var(--ty)); }
+      99% { opacity: 1; } 100% { transform: translate(var(--xb), 100%); opacity: 0; } }
     @keyframes tr-ta { 0%, 5% { opacity: .14; scale: .9; } 7.5% { opacity: 1; scale: 1.14; } 11%, 100% { opacity: .82; scale: 1; } }
     @keyframes tr-tc { 0%, 23% { opacity: .14; scale: .9; } 25.5% { opacity: 1; scale: 1.14; } 29%, 100% { opacity: .82; scale: 1; } }
     @keyframes tr-td { 0%, 70% { opacity: .14; scale: .9; } 72.5% { opacity: 1; scale: 1.14; } 76%, 100% { opacity: .82; scale: 1; } }
@@ -508,6 +520,9 @@
       .bstage { position: relative; inset: auto; z-index: 0; height: 480px; margin-top: -6px; perspective: 1500px; perspective-origin: 50% 30%;
         -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent); mask-image: linear-gradient(180deg, #000 80%, transparent); }
       .bm .bt small { display: none; }
+      /* Handy-Brett: die blasse Spur ohne runde Enden — jedes Ende liegt unter einer App-Kachel (4er-Raster ohne Lücken), man sieht
+         es nicht. Runde Enden machten aus jedem Spurstück eine eigene Fläche mit Zwischenpuffer (4 von 10 Render-Passes je Bild). */
+      .bm .sb { border-radius: 0; }
       .board.bd { display: none; } .board.bm { display: block; }
       .board { left: 47%; top: 42%; scale: .84; margin-top: calc(var(--bh) / -2); transform: rotateX(52deg) rotateZ(-27deg); }
     }
@@ -845,6 +860,9 @@
     }
     @keyframes grad-move { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
     @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.55); } 100% { box-shadow: 0 0 0 12px rgba(52,211,153,0); } }
+    /* Endlos-Animationen, die nur der Hauptthread rechnen kann (Rahmen-Drehung --ang, Puls box-shadow): außerhalb des Bildes
+       angehalten (Skript unten) — sonst kosteten sie auch oben im Kopf jedes Bild Stil, Malen und Commit für die ganze Seite. */
+    .offer.ruht, .duo .sync .dot.ruht { animation-play-state: paused; }
     @media (max-width: 960px) { .js .duo.rv .browser, .js .duo.rv.in .browser { transform: none; } }
     footer { background: #060913; }
   </style>
@@ -1168,6 +1186,43 @@
       }
       if (bst && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (es) { bst.classList.toggle('paused', !es[0].isIntersecting); }).observe(bst);
+      }
+      if ('IntersectionObserver' in window) {
+        // Rahmen-Drehung und Puls nur im Bild laufen lassen (.ruht hält sie an; bei „weniger Bewegung“ gibt es nichts anzuhalten).
+        var rio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('ruht', !e.isIntersecting); }); });
+        document.querySelectorAll('.offer, .duo .sync .dot').forEach(function (e) { rio.observe(e); });
+        // Verlaufsschrift (h1 em, .grad): background-position kann nur der Hauptthread bewegen — als laufende CSS-Animation hieß das
+        // in jedem Bild (60–120×/s) Stil, Malen und Commit für die ganze Seite. grad-move bleibt die Vorlage (Dauer, Kurve, Richtung),
+        // wird aber angehalten und nur 20× pro Sekunde weitergestellt, solange das Element im Bild ist (gemessen: je Schritt höchstens
+        // 2–3 Farbstufen — nicht zu sehen). Ohne getAnimations (alte Browser) läuft die CSS-Animation einfach normal weiter.
+        var g0 = performance.now(), gsicht = [], guhr = 0;
+        var ganim = function (el) { var l = el.getAnimations ? el.getAnimations() : []; for (var i = 0; i < l.length; i++) if (l[i].animationName === 'grad-move') return l[i]; return null; };
+        var gschritt = function () {
+          var t = performance.now() - g0;
+          // Animation inzwischen entfernt (Sprache gewechselt, „weniger Bewegung“ eingeschaltet)? Dann nicht mehr anfassen —
+          // ein gesetztes currentTime würde sie sonst als Skript-Animation wiederbeleben. Erst alle lesen, dann alle setzen.
+          gsicht = gsicht.filter(function (s) { return s.a.playState !== 'idle'; });
+          gsicht.forEach(function (s) { s.a.currentTime = t; });
+          if (!gsicht.length) { clearInterval(guhr); guhr = 0; }
+        };
+        var gio = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            gsicht = gsicht.filter(function (s) { return s.el !== e.target; });
+            var a = ganim(e.target); if (!a) return; // ausgeblendete Sprache bzw. „weniger Bewegung“: keine Animation (gneu meldet beim Umschalten neu an)
+            a.pause(); a.currentTime = performance.now() - g0;
+            if (e.isIntersecting) gsicht.push({ el: e.target, a: a });
+          });
+          if (gsicht.length && !guhr) guhr = setInterval(gschritt, 50);
+          else if (!gsicht.length && guhr) { clearInterval(guhr); guhr = 0; }
+        });
+        var gels = document.querySelectorAll('h1 em, .grad');
+        var gneu = function () { gels.forEach(function (e) { gio.unobserve(e); gio.observe(e); }); };
+        gneu();
+        // Sprachwechsel (die andere Sprache bekommt eine neue CSS-Animation) und „weniger Bewegung“ zur Laufzeit: alle neu anmelden.
+        // Der Beobachter meldet sonst nur Elemente, deren Sichtbarkeit sich ändert — außerhalb des Bildes liefe grad-move wieder ungedrosselt.
+        document.querySelectorAll('.lang [data-set]').forEach(function (b) { b.addEventListener('click', gneu); });
+        var gmq = matchMedia('(prefers-reduced-motion: reduce)');
+        if (gmq.addEventListener) gmq.addEventListener('change', gneu);
       }
       var els = document.querySelectorAll('.rv');
       if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
