@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": "2026-11-21",
+ "updated": "2026-11-23",
  "apps": [
   {
    "id": "gurtdex",
@@ -194,14 +194,14 @@
   },
   {
    "id": "installateurdex",
-   "name": "InstallateurDex",
+   "name": "AngebotDex",
    "pkg": "com.installateurdex.app",
    "icon": "https://dexware.app/assets/installateurdex-icon.png",
    "color": "#E39A54",
    "url": "https://installateurdex.dexware.app",
    "play": false,
-   "de": "Wartungen diktieren, QR-Anlagenpass für Kunden",
-   "en": "Dictated service reports, QR system pass for customers",
+   "de": "Angebot einsprechen – mit deinen Preisen und deinem Logo",
+   "en": "Speak your quote – with your own prices and logo",
    "soon": true
   },
   {
