@@ -106,44 +106,44 @@
  },
  "com.installateurdex.app": {
   "android": {
-   "code": 16,
-   "name": "1.0.15",
-   "ab": "2026-11-24"
+   "code": 19,
+   "name": "1.0.18",
+   "ab": "2026-11-26"
   }
  },
  "com.mietzeuge.app": {
   "android": {
-   "code": 10,
-   "name": "1.0.7",
-   "ab": "2026-11-24"
+   "code": 12,
+   "name": "1.0.9",
+   "ab": "2026-11-26"
   }
  },
  "com.hausdex.app": {
   "android": {
-   "code": 8,
-   "name": "1.0.7",
-   "ab": "2026-11-24"
+   "code": 10,
+   "name": "1.0.9",
+   "ab": "2026-11-26"
   }
  },
  "com.objektdex.app": {
   "android": {
-   "code": 8,
-   "name": "1.0.7",
-   "ab": "2026-11-24"
+   "code": 10,
+   "name": "1.0.9",
+   "ab": "2026-11-26"
   }
  },
  "com.laufzettel.app": {
   "android": {
-   "code": 6,
-   "name": "1.0.5",
-   "ab": "2026-11-24"
+   "code": 9,
+   "name": "1.0.8",
+   "ab": "2026-11-26"
   }
  },
  "com.wechselzeit.app": {
   "android": {
-   "code": 7,
-   "name": "1.0.6",
-   "ab": "2026-11-24"
+   "code": 10,
+   "name": "1.0.9",
+   "ab": "2026-11-26"
   }
  }
 }
