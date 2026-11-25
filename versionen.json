@@ -1,9 +1,9 @@
 {
  "com.winterdex.app": {
   "android": {
-   "code": 45,
-   "name": "0.7.13",
-   "ab": "2026-11-28"
+   "code": 46,
+   "name": "0.7.14",
+   "ab": "2026-11-29"
   }
  },
  "com.leiterdex.app": {
