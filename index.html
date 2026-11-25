@@ -868,31 +868,21 @@
     .offer.ruht, .duo .sync .dot.ruht { animation-play-state: paused; }
     @media (max-width: 960px) { .js .duo.rv .browser, .js .duo.rv.in .browser { transform: none; } }
 
-    /* ===== Feinschliff Texte (25.11.2026, Alex: „den Text ganz oben, die iPhone-Kachel etc. leichte Animationen, allgemein Texten
-       auch — nichts Großes, am Handy darf nichts laggen“) =====
-       Kopf: Etikett, Überschrift, Untertitel, Knöpfe und Häkchen blenden beim Laden gestaffelt auf (Deckkraft ab .35 — der Text steht
-       schon im ersten Bild, über der Falz wird nichts versteckt; ohne JS keine Bewegung, .js setzt das Skript im <head> vor dem ersten
-       Bild). Am PC (Maus, ab 901 px) ziehen sie dabei zusätzlich 12 px nach oben. Am Handy bewusst NUR Deckkraft: gemessen (Edge,
-       390 px, CPU 4× gedrosselt, langsames 4G, je 7 Läufe) verschob jede Transform-Animation an Kopf-Text beim Laden das Zeichnen des
-       Untertitels (LCP) in 6 von 7 Läufen um ~0,33 s, reine Deckkraft in 0 von 7. Aus demselben Grund starten Lichtschimmer und
-       Aufspringen des iPhone-Etiketts erst nach dem Laden (Klasse .pop per Skript); der Schimmer wiederholt sich alle 8 s, außerhalb
-       des Bildes hält .ruht ihn an. Abschnitte: kommt ein Block herein (.rv → .in), folgen Etikett, Überschrift, Absatz, Häkchen und
-       Knöpfe leicht gestaffelt (10 px, 70 ms Abstand); Kacheln (iPhone-Apps, Suite-Finder, eigene Apps, Symbole der Suite-Tafel)
-       erscheinen nacheinander. Nur transform/opacity (Compositor), einmalig, Füllmodus „backwards“: nach dem Ende hängt keine
-       Animation mehr am Element, nichts verschiebt das Layout. Bei „weniger Bewegung“ entfällt alles. */
-    .hero .kicker { position: relative; overflow: hidden; }
-    .hero .kicker::after { content: ''; position: absolute; inset: 0; pointer-events: none; translate: -101% 0;
-      background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.16) 50%, transparent 70%); }
-    .kicker .ka { display: inline-block; transition: translate .2s; } .kicker:hover .ka { translate: 3px 0; }
-    .url { transition: border-color .15s, transform .2s; } .url:hover { transform: translateY(-1px); }
-    .fd-opt:active { transform: scale(.97); }
+    /* Feinschliff Texte 25.11.2026 — Erklärung im Baukasten (landing-system/hub.js) */
+    .kicker .ka { display: inline-block; }
+    @media (hover: hover) and (pointer: fine) {
+      .hero .kicker { position: relative; overflow: hidden; }
+      .hero .kicker::after { content: ''; position: absolute; inset: 0; pointer-events: none; translate: -101% 0;
+        background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.16) 50%, transparent 70%); }
+    }
     @media (prefers-reduced-motion: no-preference) {
+      .kicker .ka { transition: translate .2s; } .kicker:hover .ka { translate: 3px 0; }
+      .url { transition: border-color .15s, transform .2s; } .url:hover { transform: translateY(-1px); }
+      .fd-opt:active { transform: scale(.97); }
       .js .hero .wrap > div > :not(.ticks), .js .hero .ticks li { animation: hx-in .62s cubic-bezier(.2,.7,.2,1) var(--hd, 0s) backwards; }
       .hero h1 { --hd: .07s; } .hero .sub { --hd: .14s; } .hero .cta { --hd: .21s; }
       .hero .ticks li { --hd: .28s; } .hero .ticks li + li { --hd: .34s; } .hero .ticks li + li + li { --hd: .4s; }
-      .hero .kicker.pop::after { animation: kick-shine 8s cubic-bezier(.45,0,.25,1) infinite; }
-      .hero .kicker.pop .pill { animation: pill-pop .6s cubic-bezier(.3,1.4,.5,1) .12s; }
-      .hero .kicker.ruht::after { animation-play-state: paused; }
+      .hero .kicker.pop .pill { animation: pill-pop .5s ease-in-out .12s; }
       .js .rv.in :is(.eyebrow, .tag-in, .tag-own, .dxa-brand, h2, .lead, .bul > li, .cta, .urls, .sa-note, .fine, .lib-panel h3, .lib-panel > p, .lib-price, .lib-cta,
         .own-head h3, .own-head p, .band h3, .band p, .iph-steps > li) { animation: tx-in .55s cubic-bezier(.2,.7,.2,1) calc(var(--td, 0) * 70ms + 60ms) backwards; }
       :is(h2, .lib-panel h3, .own-head h3, .band h3) { --td: 1; } :is(.lead, .lib-panel > p, .own-head p, .band p) { --td: 2; }
@@ -903,12 +893,16 @@
       .own-card:nth-child(2) { --i: 1; } .own-card:nth-child(3) { --i: 2; } .own-card:nth-child(4) { --i: 3; }
       .js .lib.rv.in .lib-cloud img { animation: cloud-in .45s cubic-bezier(.3,1.4,.5,1) calc(var(--i, 0) * 28ms + 260ms) backwards; }
     }
+    @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+      .hero .kicker.pop::after { animation: kick-shine 8s cubic-bezier(.45,0,.25,1) infinite; }
+      .hero .kicker.ruht::after { animation-play-state: paused; }
+    }
     @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) and (min-width: 901px) {
       .js .hero .wrap > div > :not(.ticks), .js .hero .ticks li { animation-name: hx-in-pc; }
     }
     @keyframes hx-in { from { opacity: .35; } }
     @keyframes hx-in-pc { from { opacity: .35; translate: 0 12px; } }
-    @keyframes pill-pop { 40% { scale: 1.14; } }
+    @keyframes pill-pop { 45% { scale: 1.08; } }
     @keyframes kick-shine { from { translate: -101% 0; } 15%, to { translate: 101% 0; } }
     @keyframes tx-in { from { opacity: 0; translate: 0 10px; } }
     @keyframes tile-in { from { opacity: 0; translate: 0 14px; scale: .97; } }
@@ -1273,8 +1267,7 @@
         var gmq = matchMedia('(prefers-reduced-motion: reduce)');
         if (gmq.addEventListener) gmq.addEventListener('change', gneu);
       }
-      // iPhone-Etikett: Lichtschimmer + kurzes Aufspringen erst nach dem Laden (.pop) — eine Transform-Animation, die schon beim
-      // ersten Bild ansteht, verzögerte im gedrosselten Handy-Test das Zeichnen des Kopf-Texts (siehe CSS „Feinschliff Texte“).
+      // iPhone-Etikett: Aufspringen (am PC auch Schimmer) erst nach dem Laden — Begründung im Baukasten („Feinschliff Texte“).
       var kick = document.querySelector('.hero .kicker');
       if (kick) {
         var kpop = function () { setTimeout(function () { kick.classList.add('pop'); }, 600); };
