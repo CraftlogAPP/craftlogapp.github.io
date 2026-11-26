@@ -83,6 +83,9 @@
     .bul { list-style: none; display: grid; gap: 10px; margin-top: 20px; }
     .bul li { display: flex; gap: 10px; font-size: 15.5px; } .bul .i { margin-top: 3px; color: var(--green); }
     .fine { margin-top: 16px; font-size: 13.5px; color: var(--muted); }
+    .pausch { margin-top: 24px; padding: 20px 22px; border-radius: 18px; border: 1px solid var(--border); background: var(--card); }
+    .pausch h3 { font-size: 17.5px; letter-spacing: -.02em; }
+    .pausch p { color: var(--muted); font-size: 14.5px; margin-top: 8px; } .pausch .fine { margin-top: 10px; font-size: 13px; }
     footer { padding: 30px 0 40px; font-size: 13.5px; color: var(--muted); }
     footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; } footer a { color: var(--muted); margin-left: 16px; } footer a:first-child { margin-left: 0; }
     @media (max-width: 860px) { .how { grid-template-columns: 1fr 1fr; } .price, .suite-box { grid-template-columns: 1fr; } }
@@ -214,10 +217,15 @@
           <p class="lead">Statt über Google Play kauft die Gemeinde direkt bei Dexware — mit Angebot und Jahresrechnung.</p>
           <ul class="bul">
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>WinterDex, SpielDex und KfzDex, die Prüf-Apps und die Dexware Suite auf Rechnung</span></li>
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Gleiche Preise wie im Store, als Endbetrag — z. B. WinterDex Pro 69,99 € je Saison, Dexware Suite 319,99 € im Jahr</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Gleiche Preise wie im Store, als Endbetrag — z. B. WinterDex Pro 69,99 € je Saison, Dexware Suite 319,99 € im Jahr — oder die WinterDex-Pauschale für den ganzen Bauhof (unten)</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Größere Teams und Lizenzen mit Angebot und Auftragsverarbeitungsvertrag</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span>Kein Tracking, keine Werbung — eure Daten gehören euch</span></li>
           </ul>
+          <div class="pausch" id="winterdex-pauschale">
+            <h3>WinterDex-Pauschale für den ganzen Bauhof</h3>
+            <p>Für den ganzen Bauhof gibt es WinterDex als Pauschale: 149 € je Saison für die Leitung und beliebig viele Mitarbeiter, also knapp 25 € je Wintermonat, mit Angebot, Rechnung und Auftragsverarbeitungsvertrag. Drin ist alles aus Pro, vom Strecken-Nachweis für Gehsteige und Gemeindestraßen über die Glätte-Frühwarnung bis zum Prüfbericht auf echter Straßenkarte, dazu der Betrieb dahinter: Wetterdaten für jeden Einsatzort und die Speicherung eurer Nachweise auf Servern in Frankfurt. Keine automatische Verlängerung: Für die nächste Saison bekommt ihr rechtzeitig ein neues Angebot.</p>
+            <p class="fine">Endbetrag – als Kleinunternehmer gem. § 6 Abs. 1 Z 27 UStG berechnen wir keine Umsatzsteuer. Für Gemeinden in Deutschland und der Schweiz nennen wir die steuerliche Behandlung im Angebot.</p>
+          </div>
           <p class="fine">Die Apps gibt es für Android. Am iPhone laufen WinterDex, SpielDex, LeiterDex, FeuerDex und weitere Apps schon jetzt <a href="https://dexware.app/#iphone">direkt im Browser</a>; die iPhone-Apps sind auf dem Weg in den App Store.</p>
         </div>
         <div class="offer">
