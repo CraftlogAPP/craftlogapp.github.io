@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dexware — Software fürs Handwerk. Compliance aus einer Hand.</title>
-  <meta name="description" content="Dexware: schlanke Apps für Prüfung, Arbeitsschutz und Dokumentation im Betrieb – UVV, DGUV V3, Leitern, Feuerlöscher, Winterdienst und mehr." />
+  <title>Dexware – Apps für Winterdienst, Prüfpflichten &amp; Nachweise</title>
+  <meta name="description" content="Dexware – App-Zentrum für Nachweise: WinterDex für den Winterdienst, Apps für Spielplätze, Bäume, Fuhrpark, Fahrtenbuch und 9 Prüf-Apps im Prüf-Paket." />
   <meta name="robots" content="all" />
   <meta name="theme-color" content="#070b16" />
   <!-- seo:start -->
@@ -17,17 +17,17 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dexware" />
   <meta property="og:locale" content="de_DE" />
-  <meta property="og:title" content="Dexware — Software fürs Handwerk" />
-  <meta property="og:description" content="Compliance aus einer Hand: fokussierte Apps für Dokumentation, Prüfung und Nachweis im Betrieb." />
+  <meta property="og:title" content="Dexware – das App-Zentrum für Nachweise" />
+  <meta property="og:description" content="Für jede Aufgabe die passende App: Winterdienst, Spielplätze, Bäume, Fuhrpark, Prüfpflichten und Fahrtenbuch – mobil, nachweisbar, ohne Papierkram." />
   <meta property="og:url" content="https://dexware.app/" />
-  <meta property="og:image" content="https://dexware.app/assets/og-image.png" />
+  <meta property="og:image" content="https://dexware.app/assets/og-hub.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Dexware — Software fürs Handwerk" />
-  <meta name="twitter:description" content="Compliance aus einer Hand: fokussierte Apps für Dokumentation, Prüfung und Nachweis im Betrieb." />
-  <meta name="twitter:image" content="https://dexware.app/assets/og-image.png" />
-  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","@id":"https://dexware.app/#organization","name":"Dexware","url":"https://dexware.app/","logo":{"@type":"ImageObject","url":"https://dexware.app/assets/dexware-logo-512.png","width":512,"height":512},"email":"support@dexware.app","description":"Dexware entwickelt schlanke Apps für Prüfung, Arbeitsschutz und Dokumentation im Betrieb: GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex und HebeDex (gemeinsam im Dexware-Suite-Abo), außerdem WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex, CraftDex, HausDex, AngebotDex und Mietzeuge.","areaServed":["DE","AT","CH"]},{"@context":"https://schema.org","@type":"WebSite","@id":"https://dexware.app/#website","name":"Dexware","url":"https://dexware.app/","inLanguage":["de","en"],"publisher":{"@id":"https://dexware.app/#organization"}}]</script>
+  <meta name="twitter:title" content="Dexware – das App-Zentrum für Nachweise" />
+  <meta name="twitter:description" content="Für jede Aufgabe die passende App: Winterdienst, Spielplätze, Bäume, Fuhrpark, Prüfpflichten und Fahrtenbuch – mobil, nachweisbar, ohne Papierkram." />
+  <meta name="twitter:image" content="https://dexware.app/assets/og-hub.jpg" />
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","@id":"https://dexware.app/#organization","name":"Dexware","url":"https://dexware.app/","logo":{"@type":"ImageObject","url":"https://dexware.app/assets/dexware-logo-512.png","width":512,"height":512},"email":"support@dexware.app","description":"Dexware ist ein App-Zentrum für Nachweise: WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex und CraftDex sowie das Prüf-Paket (Dexware Suite) mit GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex und HebeDex.","areaServed":["DE","AT","CH"]},{"@context":"https://schema.org","@type":"WebSite","@id":"https://dexware.app/#website","name":"Dexware","url":"https://dexware.app/","inLanguage":["de","en"],"publisher":{"@id":"https://dexware.app/#organization"}}]</script>
   <!-- seo:end -->
   <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <style>
@@ -77,8 +77,6 @@
     .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
     @media (max-width: 600px) { .wrap { padding: 0 16px; } }
     .i { width: 20px; height: 20px; flex: none; }
-
-    /* Kopfzeile */
     .top { position: sticky; top: 0; z-index: 40; background: color-mix(in oklab, var(--bg) 82%, transparent);
       -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
       border-bottom: 1px solid transparent; transition: border-color .2s; }
@@ -86,15 +84,12 @@
     .top .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
     .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: -.01em; }
     .brand:hover { text-decoration: none; }
-    /* Feiner heller Rand wie auf dem Hub: dunkle Symbole (TourDex, GurtDex, HebeDex, KfzDex) verschwinden sonst im dunklen Hintergrund. */
     .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
     .brand .wm span { color: var(--accent-text); }
     .top nav { display: flex; gap: 24px; margin-left: auto; }
     .top nav a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
     .top nav a:hover { color: var(--ink); text-decoration: none; }
     @media (max-width: 760px) { .top nav { display: none; } .top .btn { margin-left: auto; } }
-
-    /* Knöpfe */
     .btn { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 12px;
       font-weight: 600; font-size: 15.5px; background: var(--accent); color: var(--on-accent);
       box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 6px 20px -8px color-mix(in oklab, var(--accent) 70%, transparent);
@@ -106,8 +101,6 @@
     .btn.ghost:hover { background: var(--bg-soft); }
     .btn .play { width: 14px; height: 14px; fill: currentColor; stroke: none; }
     .btn .i { width: 16px; height: 16px; }
-
-    /* Hero */
     .hero { position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: -20% -10% auto 40%; height: 120%; z-index: -1; pointer-events: none;
       background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 22%, transparent), transparent 75%); }
@@ -135,8 +128,6 @@
       .shots .phone { --pw: 210px; }
       .shots .phone.a { left: 2%; } .shots .phone.b { top: 40px; }
     }
-
-    /* Handyrahmen */
     .phone { --pw: 262px; width: var(--pw); padding: 8px; border-radius: calc(var(--pw) * .16);
       background: linear-gradient(160deg, #2b2b31, #0e0e11 40%);
       box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 0 0 1px rgba(0,0,0,.5), 0 40px 70px -30px rgba(10,10,20,.55), 0 18px 30px -18px rgba(10,10,20,.35); }
@@ -144,8 +135,6 @@
     .screen::before { content: ''; position: absolute; top: calc(var(--pw) * .03); left: 50%; transform: translateX(-50%);
       width: 30%; height: calc(var(--pw) * .075); border-radius: 99px; background: #000; }
     .screen img { display: block; width: 100%; height: auto; }
-
-    /* Abschnitte */
     section { padding: 80px 0; }
     section.soft { background: var(--bg-soft); }
     @media (max-width: 700px) {
@@ -163,8 +152,6 @@
     .lead { margin-top: 14px; font-size: 17px; color: var(--muted); max-width: 620px; }
     .lead strong { color: var(--ink); font-weight: 600; }
     .head { margin-bottom: 40px; }
-
-    /* Pflicht */
     .duty { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
     .rules { list-style: none; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
     .rules li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 18px 22px; border-top: 1px solid var(--border); font-size: 15px; color: var(--muted); }
@@ -172,8 +159,6 @@
     .rules b { display: block; color: var(--ink); font-weight: 600; font-size: 15.5px; margin-bottom: 1px; }
     .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-text); }
     @media (max-width: 860px) { .duty { grid-template-columns: 1fr; gap: 28px; } }
-
-    /* Funktionen */
     .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .feature { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
     .feature .ic { margin-bottom: 16px; }
@@ -183,8 +168,6 @@
     @media (max-width: 600px) { .features { grid-template-columns: 1fr; gap: 10px; }
       .feature { padding: 16px; display: grid; grid-template-columns: 36px 1fr; gap: 0 14px; }
       .feature .ic { margin: 0; grid-row: span 2; } .feature p { font-size: 14.5px; } }
-
-    /* Ablauf */
     .flow { display: grid; grid-template-columns: 1fr auto; gap: 72px; align-items: center; }
     .steps { list-style: none; counter-reset: s; margin-top: 32px; }
     .steps li { counter-increment: s; position: relative; padding: 0 0 26px 56px; }
@@ -196,8 +179,6 @@
     .steps p { color: var(--muted); font-size: 15.5px; }
     .flow .phone { --pw: 280px; }
     @media (max-width: 860px) { .flow { grid-template-columns: 1fr; } .flow > div:last-child { display: none; } .steps { margin-top: 24px; } }
-
-    /* Preise */
     .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
     .plan { position: relative; display: flex; flex-direction: column; min-width: 0; background: var(--card); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
@@ -223,8 +204,6 @@
     .trust .i { width: 18px; height: 18px; flex: none; color: var(--accent-text); }
     .trust a { color: inherit; }
     @media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 480px; } }
-
-    /* FAQ */
     .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
     .faq details { border-bottom: 1px solid var(--border); }
     .faq details:first-child { border-top: 1px solid var(--border); }
@@ -236,8 +215,6 @@
     .faq .a { padding: 0 2px 20px; color: var(--muted); font-size: 15.5px; max-width: 640px; }
     .ask { margin-top: 18px; color: var(--muted); font-size: 15px; display: flex; align-items: center; gap: 8px; }
     @media (max-width: 860px) { .faq { grid-template-columns: 1fr; gap: 24px; } }
-
-    /* Familie */
     .family { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 32px; }
     .family a { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 6px 14px; border-radius: 14px;
       color: var(--ink); text-align: center; transition: background .15s; }
@@ -250,8 +227,6 @@
     @media (max-width: 900px) { .family { grid-template-columns: repeat(4, 1fr); } }
     @media (max-width: 480px) { .family { grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 20px; } .family a { padding: 10px 2px; gap: 6px; }
       .family img { width: 40px; height: 40px; } .family b { font-size: 11.5px; } .family small { display: none; } }
-
-    /* Prüfpunkte (optional) */
     .points { margin-top: 16px; padding: 22px 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
     .points p { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
     .points p b { color: var(--ink); font-weight: 600; margin-right: 4px; }
@@ -263,16 +238,12 @@
     .points.plain li { padding: 5px 12px; }
     .points.plain li::before { display: none; }
     @media (max-width: 600px) { .points { padding: 16px; } .points li { font-size: 13px; } }
-
-    /* Fußzeile */
     footer { border-top: 1px solid var(--border); padding: 32px 0 40px; font-size: 14px; color: var(--muted); }
     footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; }
     footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
     footer .note { display: block; font-size: 13px; line-height: 1.55; margin-bottom: 20px; max-width: var(--wrap); }
     footer a { color: var(--muted); }
     footer a:hover { color: var(--ink); }
-
-    /* Handy: Feinschliff (muss nach den Grundregeln stehen) */
     @media (max-width: 700px) {
       .duty { gap: 22px; }
       .plan { padding: 22px; }
@@ -283,21 +254,14 @@
       .rules li { padding: 13px 16px; }
       .family-row .btn { order: 2; }
     }
-
-    /* Sprachen (nur zweisprachige Seiten) */
     html:not([data-lang="en"]) [data-l="en"], html[data-lang="en"] [data-l="de"] { display: none !important; }
     .lang { display: flex; padding: 3px; border-radius: 10px; box-shadow: inset 0 0 0 1px var(--border); }
     .lang button { font: inherit; font-size: 12.5px; font-weight: 600; color: var(--muted); background: none; border: 0;
       padding: 5px 9px; border-radius: 7px; cursor: pointer; }
     html:not([data-lang="en"]) .lang [data-set="de"], html[data-lang="en"] .lang [data-set="en"] { background: var(--accent-soft); color: var(--accent-text); }
-
-    /* Einblenden beim Scrollen — nur mit JS und ohne reduzierte Bewegung */
     .js .rv { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .85s cubic-bezier(.16,.84,.24,1); }
     .js .rv.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
-
-    /* ===== Hub ===== */
-
     .ios-tab { display: inline-flex; align-items: center; gap: 12px; margin-top: 14px; padding: 10px 16px 10px 12px; border-radius: 14px; color: var(--ink);
       background: color-mix(in oklab, var(--accent) 9%, transparent); border: 1px solid color-mix(in oklab, var(--accent) 34%, transparent); transition: background .15s, transform .15s; }
     .ios-tab:hover { text-decoration: none; transform: translateY(-1px); background: color-mix(in oklab, var(--accent) 15%, transparent); }
@@ -350,7 +314,6 @@
       .ipw-visual .phone.a { --pw: 186px; } .ipw-visual .phone.b { --pw: 160px; }
       .ipw-home { left: 12%; }
     }
-    /* Schmale Handys (360 px): beide Bildschirme nebeneinander, ohne dass der vordere den hinteren verdeckt. */
     @media (max-width: 374px) {
       .ipw.tall .ipw-visual { height: 462px; }
       .ipw-visual .phone.a { --pw: 172px; } .ipw-visual .phone.b { --pw: 150px; }
@@ -370,24 +333,19 @@
     .iph-app small { display: block; font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .iph-app .i { width: 16px; height: 16px; flex: none; color: var(--muted); }
     #iphone .fine a { color: var(--accent-text); }
-    /* Handy: zwei Spalten, die nie breiter als der Bildschirm werden (minmax(0, …) — sonst schiebt ein langer Untertitel die Spalte hinaus). */
     @media (max-width: 560px) { .iph-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .iph-app { padding: 10px; gap: 8px; } .iph-app .i { display: none; } .iph-app img { width: 34px; height: 34px; } .iph-app b { font-size: 14px; } .iph-app small { font-size: 12px; white-space: normal; overflow-wrap: anywhere; line-height: 1.3; } }
-    /* Kopfleiste: sechs Menüpunkte + Sprachwahl + Knopf passen erst ab ca. 900 px (vorher Querscrollen am iPad hochkant). */
     @media (max-width: 1020px) { .top nav { display: none; } .top .lang { margin-left: auto; } }
     .top nav a { white-space: nowrap; }
-
+    .top nav .ns { display: none; }
+    @media (max-width: 1180px) { .top nav .nl { display: none; } .top nav .ns { display: inline; } }
+    @media (max-width: 380px) { .top .wrap { gap: 14px; } }
     body { background: #070b16; }
     .brand img { border-radius: 8px; }
+    .nw { white-space: nowrap; }
     .kicker:hover { text-decoration: none; filter: brightness(1.15); }
     .kicker .pill { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px; border-radius: 99px;
       background: var(--accent); color: #fff; }
     h1 em, .grad { background: linear-gradient(100deg, #7aa2ff, #a78bfa 55%, #f0abfc); -webkit-background-clip: text; background-clip: text; color: transparent; }
-
-    /* Kopf (21.11.2026, Alex: „weg von den Handy-Einblendungen und aufgeklebten Namenskacheln — cleaner, hübscher, animiert wie bei WinterDex“):
-       ein schräg liegendes Brett mit allen echten App-Symbolen; eine Lichtlinie fährt sie der Reihe nach ab, jedes Symbol hebt sich kurz.
-       Zweite Fassung am selben Tag („am PC etwas low quality, Animation flüssiger, fürs Handy optimieren“): Brett größer gezeichnet und
-       verkleinert dargestellt (scharf), Symbole als dicke Kacheln, nur noch transform/opacity bewegt (kein Weichzeichner, kein
-       SVG-Nachzeichnen) und fürs Handy ein eigenes, dichtes 4er-Brett (.bm) statt des verkleinerten PC-Bretts (.bd). */
     .hero { isolation: isolate; min-height: min(800px, 100svh); display: flex; align-items: center;
       background:
         radial-gradient(46% 58% at 74% 46%, rgba(79,124,255,.22), transparent 70%),
@@ -399,7 +357,12 @@
         linear-gradient(0deg, #070b16 0%, rgba(7,11,22,0) 20%), linear-gradient(180deg, #070b16 0%, rgba(7,11,22,0) 12%); }
     .hero .wrap { position: relative; z-index: 1; width: 100%; grid-template-columns: minmax(0, 520px) 1fr; padding-top: 64px; padding-bottom: 72px; pointer-events: none; }
     .hero .wrap > div { pointer-events: auto; }
-    .hero .sub { color: #b9b5c6; }
+    .hero .sub { color: #b9b5c6; max-width: 476px; }
+    .happs { display: none; }
+    @media (max-width: 900px) {
+      .happs { display: flex; flex-wrap: wrap; gap: 8px; height: 34px; margin-top: 20px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, #000 78%, transparent); mask-image: linear-gradient(90deg, #000 78%, transparent); }
+      .happs img { flex: none; width: 34px; height: 34px; border-radius: 9px; box-shadow: 0 0 0 1px rgba(255,255,255,.12); }
+    }
     .bstage { position: absolute; inset: 0; z-index: -2; overflow: hidden; perspective: 2000px; perspective-origin: 66% 38%; }
     .board { position: absolute; left: calc(50% + clamp(300px, 25vw, 470px)); top: 50%; --bp: calc(var(--bc) + var(--gap)); --bw: calc(var(--cols) * var(--bp) - var(--gap)); --bh: calc(var(--rows) * var(--bp) - var(--gap));
       width: var(--bw); height: var(--bh); margin: calc(var(--bh) / -2 - 4px) 0 0 calc(var(--bw) / -2);
@@ -415,30 +378,22 @@
     .board .sg { box-shadow: 0 0 calc(var(--lw) * 2.6) calc(var(--lw) * .5) rgba(118,140,255,.5); will-change: transform, opacity; }
     .board .hd { left: 0; top: 0; width: calc(var(--lw) * 2.6); height: calc(var(--lw) * 2.6); margin: calc(var(--lw) * -1.3) 0 0 calc(var(--lw) * -1.3); border-radius: 50%; opacity: 0;
       background: #fff; box-shadow: 0 0 calc(var(--lw) * 2) calc(var(--lw) * .9) rgba(190,205,255,.85), 0 0 calc(var(--lw) * 7) calc(var(--lw) * 2.4) rgba(120,140,255,.5); will-change: transform, opacity; }
-    /* 21.11.2026 abends (Alex: „das Hochfahren, wenn die Linie ankommt, ist weg“): gemessen lief es noch, hob aber nur ~40 px auf
-       2000 px Perspektive (= 2 % Größe) — man sah es nicht. Jetzt doppelt so hoch, kurz größer, Schatten wird weich und weit,
-       ein Lichtring läuft auf dem Brett aus und das Namensschild leuchtet in der App-Farbe auf. */
     .bt { --c: #4F7CFF; --z0: calc(var(--bc) * .1); --z1: calc(var(--bc) * 1.02); position: absolute; left: calc(var(--cx) * var(--bp)); top: calc(var(--cy) * var(--bp)); width: var(--bc); height: var(--bc); transform-style: preserve-3d; color: var(--ink); }
     .bt:hover { text-decoration: none; }
-    /* Farblicht und Schatten liegen auf dem Brett (Verläufe statt Weichzeichner), die Kachel schwebt darüber. */
     .bt::before { content: ''; position: absolute; inset: -42%; border-radius: 50%; opacity: .32; will-change: opacity;
       background: radial-gradient(closest-side, color-mix(in oklab, var(--c) 78%, transparent), color-mix(in oklab, var(--c) 30%, transparent) 46%, transparent 74%); }
     .bt::after { content: ''; position: absolute; inset: -6% 2% -22% -18%; border-radius: 34%; background: radial-gradient(closest-side, rgba(0,0,0,.62), rgba(0,0,0,.3) 62%, transparent); will-change: transform, opacity; }
     .board .bt .br { inset: -10%; border-radius: 30%; border: calc(var(--bc) * .03) solid color-mix(in oklab, var(--c) 70%, #fff); opacity: 0; will-change: transform, opacity;
       box-shadow: 0 0 calc(var(--bc) * .18) color-mix(in oklab, var(--c) 70%, transparent), inset 0 0 calc(var(--bc) * .12) color-mix(in oklab, var(--c) 50%, transparent); }
-    /* Dicke der Kachel: harte Schatten in Richtung „Bildschirm unten“ (auf dem gedrehten Brett = links unten). */
     .bt img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; border-radius: 23%; transform: translateZ(var(--z0)); will-change: transform;
       box-shadow: 0 0 0 1.5px rgba(255,255,255,.2),
         calc(var(--bc) * -.022) calc(var(--bc) * .036) 0 0 color-mix(in oklab, var(--c) 52%, #05070f),
         calc(var(--bc) * -.044) calc(var(--bc) * .072) 0 0 color-mix(in oklab, var(--c) 38%, #05070f),
         calc(var(--bc) * -.066) calc(var(--bc) * .108) 0 0 color-mix(in oklab, var(--c) 26%, #05070f); }
     .bt small { position: absolute; left: 50%; top: calc(100% + var(--bc) * .2); translate: -50% 0; white-space: nowrap; font-size: calc(var(--bc) * .15); font-weight: 650; letter-spacing: -.005em; line-height: 1;
-      color: rgba(228,234,255,.72); padding: .2em .5em; border-radius: .4em; background: #080c18; transition: color .2s; }
+      color: rgba(228,234,255,.72); padding: .2em .5em; border-radius: .4em; background: #080c18; transition: color .2s;
+      transform: translateZ(calc(var(--bc) * .14)); }
     .bt:hover small { color: #fff; }
-    /* Achtung (22.11.2026 gemessen): board-in MUSS „both“ bleiben. Die stehen bleibende Deckkraft-Animation lässt Chrome das
-       Brett flach in einen Zwischenpuffer zeichnen — darum heben sich die Kacheln in Chrome nicht wirklich an (translateZ wirkt
-       nicht), sie werden nur größer. Mit „backwards“ springen sie in Chrome sichtbar ~40 px hoch (Safari zeigt das vermutlich
-       schon heute). Das wäre eine Änderung der Optik, keine reine Beschleunigung. */
     @media (prefers-reduced-motion: no-preference) {
       .board { animation: board-in 1.5s cubic-bezier(.16,.84,.24,1) both; }
       .bpan { animation: bpan 46s ease-in-out infinite; will-change: transform; }
@@ -450,7 +405,6 @@
       .bt small { animation: bt-label 22s ease-in-out var(--t) infinite; }
     }
     @keyframes board-in { from { opacity: 0; transform: rotateX(64deg) rotateZ(-22deg) translate3d(0, 160px, -320px); } }
-    /* Das Brett gleitet langsam in seiner Ebene und dreht sich dabei ganz leicht — wie ein ruhiger Kameraflug. */
     @keyframes bpan { 0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); } 25% { transform: translate3d(-5%, 4%, 0) rotate(2.2deg); } 50% { transform: translate3d(3%, 7%, 0) rotate(-1.6deg); } 75% { transform: translate3d(6%, -3%, 0) rotate(1.4deg); } }
     @keyframes bt-lift { 0% { transform: translateZ(var(--z0)); scale: 1; animation-timing-function: cubic-bezier(.22,.9,.3,1); }
       3.2% { transform: translateZ(var(--z1)); scale: 1.1; animation-timing-function: ease-in-out; }
@@ -462,8 +416,6 @@
     @keyframes bt-label { 0%, 13%, 100% { color: rgba(228,234,255,.72); background-color: #080c18; }
       3.2%, 8% { color: #fff; background-color: color-mix(in oklab, var(--c) 46%, #080c18); } }
     .bstage.paused * { animation-play-state: paused !important; }
-
-    /* ===== Lichtlinie durch die Seite (trailOf) ===== */
     :root { --tl: max(14px, calc(50% - var(--wrap) / 2 - 46px)); --tr: min(calc(100% - 14px), calc(50% + var(--wrap) / 2 + 46px)); }
     @media (max-width: 720px) { :root { --tl: 7px; --tr: calc(100% - 7px); } }
     section { view-timeline: --sec block; }
@@ -480,13 +432,6 @@
     .trail .tc { left: var(--xb); } .trail .td { left: var(--xb); top: 62%; }
     .trail .tt img { display: block; width: 100%; height: 100%; border-radius: inherit;
       box-shadow: 0 0 0 1px rgba(255,255,255,.14), 0 0 22px 2px color-mix(in oklab, var(--c) 55%, transparent), 0 10px 24px -8px rgba(0,0,0,.8); }
-    /* Leuchtpunkt (22.11.2026): fährt per transform statt left/top — so rechnet der Compositor beim Scrollen allein (vorher kostete
-       jedes Scroll-Bild Layout auf dem Hauptthread). Trick: .th ist so groß wie die Spur und liegt links oberhalb davon, der Punkt
-       (::after) sitzt an seiner rechten unteren Ecke. translate in % bezieht sich auf die eigene Größe = Spurgröße, also gelten
-       dieselben Werte wie vorher bei left/top (--xa/--xb, 100 %). Wird die Spur später höher (Schrift lädt, Sprachwechsel), startet
-       Chrome die Compositor-Animation von selbst neu — mit cqh/px blieb der Punkt dort hängen (gemessen bis 190 px daneben).
-       Die Fläche ragt nur nach links/oben über die Spur hinaus: dort entsteht kein Querscrollen. clip-path schneidet sie auf die
-       Ecke mit Punkt + Glühen (±64 px, Glühen reicht ±56 px) zu — sonst wäre die Compositor-Ebene so groß wie die ganze Spur. */
     .trail .th { right: 100%; bottom: 100%; width: 100%; height: 100%; opacity: 0; clip-path: inset(calc(100% - 64px) -64px -64px calc(100% - 64px)); }
     .trail .th::after { content: ''; position: absolute; right: -5px; bottom: -5px; width: 10px; height: 10px; border-radius: 50%; background: #fff;
       box-shadow: 0 0 8px 3px rgba(190,205,255,.85), 0 0 28px 9px rgba(120,140,255,.45); }
@@ -523,8 +468,6 @@
       .bstage { position: relative; inset: auto; z-index: 0; height: 480px; margin-top: -6px; perspective: 1500px; perspective-origin: 50% 30%;
         -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent); mask-image: linear-gradient(180deg, #000 80%, transparent); }
       .bm .bt small { display: none; }
-      /* Handy-Brett: die blasse Spur ohne runde Enden — jedes Ende liegt unter einer App-Kachel (4er-Raster ohne Lücken), man sieht
-         es nicht. Runde Enden machten aus jedem Spurstück eine eigene Fläche mit Zwischenpuffer (4 von 10 Render-Passes je Bild). */
       .bm .sb { border-radius: 0; }
       .board.bd { display: none; } .board.bm { display: block; }
       .board { left: 47%; top: 42%; scale: .84; margin-top: calc(var(--bh) / -2); transform: rotateX(52deg) rotateZ(-27deg); }
@@ -532,8 +475,7 @@
     @media (max-width: 640px) { .bstage { height: 366px; } .board { scale: .64; } }
     @media (max-width: 440px) { .bstage { height: 296px; } .board { scale: .52; } }
     @media (max-width: 370px) { .bstage { height: 272px; } .board { scale: .47; } }
-
-    .board.bd { --cols: 6; --rows: 3; --bc: 124px; --gap: 57px; --lw: 6px; }
+    .board.bd { --cols: 6; --rows: 5; --bc: 124px; --gap: 57px; --lw: 6px; }
     .bd .bd-floor { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='.5' y='.5' width='68.51' height='68.51' rx='15.76' fill='%2396aaff' fill-opacity='.03' stroke='%23aabcff' stroke-opacity='.15' stroke-width='.9'/%3E%3C/svg%3E"), radial-gradient(rgba(190,205,255,.3) 1px, transparent 1.6px); }
     @media (prefers-reduced-motion: no-preference) {
       .bd .s0 { animation-name: bd-s0; }
@@ -541,16 +483,23 @@
       .bd .s2 { animation-name: bd-s2; }
       .bd .s3 { animation-name: bd-s3; }
       .bd .s4 { animation-name: bd-s4; }
+      .bd .s5 { animation-name: bd-s5; }
+      .bd .s6 { animation-name: bd-s6; }
+      .bd .s7 { animation-name: bd-s7; }
+      .bd .s8 { animation-name: bd-s8; }
       .bd .hd { animation-name: bd-hd; }
     }
-    @keyframes bd-s0 { 0%, 0% { transform: scaleX(0); opacity: 1; } 13%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bd-s1 { 0%, 13% { transform: scaleX(0); opacity: 1; } 16.25%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bd-s2 { 0%, 16.25% { transform: scaleX(0); opacity: 1; } 32.5%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bd-s3 { 0%, 32.5% { transform: scaleX(0); opacity: 1; } 35.75%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bd-s4 { 0%, 35.75% { transform: scaleX(0); opacity: 1; } 52%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bd-hd { 0% { transform: translate(calc(var(--bp) * 1 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 13% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 16.25% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 32.5% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 35.75% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 52% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 54%, 100% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 0; } }
-
-    .board.bm { --cols: 3; --rows: 3; --bc: 100px; --gap: 44px; --lw: 6px; }
+    @keyframes bd-s0 { 0%, 0% { transform: scaleX(0); opacity: 1; } 8%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s1 { 0%, 8% { transform: scaleX(0); opacity: 1; } 10%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s2 { 0%, 10% { transform: scaleX(0); opacity: 1; } 20%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s3 { 0%, 20% { transform: scaleX(0); opacity: 1; } 22%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s4 { 0%, 22% { transform: scaleX(0); opacity: 1; } 32%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s5 { 0%, 32% { transform: scaleX(0); opacity: 1; } 34%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s6 { 0%, 34% { transform: scaleX(0); opacity: 1; } 44%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s7 { 0%, 44% { transform: scaleX(0); opacity: 1; } 46%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-s8 { 0%, 46% { transform: scaleX(0); opacity: 1; } 52%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bd-hd { 0% { transform: translate(calc(var(--bp) * 1 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 8% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 10% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 20% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 22% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 32% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 34% { transform: translate(calc(var(--bp) * 5 + var(--bc) / 2), calc(var(--bp) * 3 + var(--bc) / 2)); opacity: 1; } 44% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 3 + var(--bc) / 2)); opacity: 1; } 46% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 4 + var(--bc) / 2)); opacity: 1; } 52% { transform: translate(calc(var(--bp) * 3 + var(--bc) / 2), calc(var(--bp) * 4 + var(--bc) / 2)); opacity: 1; } 54%, 100% { transform: translate(calc(var(--bp) * 3 + var(--bc) / 2), calc(var(--bp) * 4 + var(--bc) / 2)); opacity: 0; } }
+    .board.bm { --cols: 4; --rows: 4; --bc: 100px; --gap: 44px; --lw: 6px; }
     .bm .bd-floor { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='.5' y='.5' width='69.44' height='69.44' rx='15.97' fill='%2396aaff' fill-opacity='.03' stroke='%23aabcff' stroke-opacity='.15' stroke-width='.9'/%3E%3C/svg%3E"), radial-gradient(rgba(190,205,255,.3) 1px, transparent 1.6px); }
     @media (prefers-reduced-motion: no-preference) {
       .bm .s0 { animation-name: bm-s0; }
@@ -558,16 +507,18 @@
       .bm .s2 { animation-name: bm-s2; }
       .bm .s3 { animation-name: bm-s3; }
       .bm .s4 { animation-name: bm-s4; }
+      .bm .s5 { animation-name: bm-s5; }
+      .bm .s6 { animation-name: bm-s6; }
       .bm .hd { animation-name: bm-hd; }
     }
-    @keyframes bm-s0 { 0%, 0% { transform: scaleX(0); opacity: 1; } 13%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bm-s1 { 0%, 13% { transform: scaleX(0); opacity: 1; } 19.5%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bm-s2 { 0%, 19.5% { transform: scaleX(0); opacity: 1; } 32.5%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bm-s3 { 0%, 32.5% { transform: scaleX(0); opacity: 1; } 39%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bm-s4 { 0%, 39% { transform: scaleX(0); opacity: 1; } 52%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
-    @keyframes bm-hd { 0% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 13% { transform: translate(calc(var(--bp) * 2 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 19.5% { transform: translate(calc(var(--bp) * 2 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 32.5% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 39% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 52% { transform: translate(calc(var(--bp) * 2 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 54%, 100% { transform: translate(calc(var(--bp) * 2 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 0; } }
-
-    /* Sammel-App „Dexware“: breites Feld mit drei echten Dexware-Bildschirmen (21.11.2026, Alex: „am PC alles zu eng, zusammengepresst — hübscher und breiter“) */
+    @keyframes bm-s0 { 0%, 0% { transform: scaleX(0); opacity: 1; } 10.4%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s1 { 0%, 10.4% { transform: scaleX(0); opacity: 1; } 13.87%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s2 { 0%, 13.87% { transform: scaleX(0); opacity: 1; } 24.27%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s3 { 0%, 24.27% { transform: scaleX(0); opacity: 1; } 27.73%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s4 { 0%, 27.73% { transform: scaleX(0); opacity: 1; } 38.13%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s5 { 0%, 38.13% { transform: scaleX(0); opacity: 1; } 41.6%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-s6 { 0%, 41.6% { transform: scaleX(0); opacity: 1; } 52%, 90% { transform: scaleX(1); opacity: 1; } 96%, 100% { transform: scaleX(1); opacity: 0; } }
+    @keyframes bm-hd { 0% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 10.4% { transform: translate(calc(var(--bp) * 3 + var(--bc) / 2), calc(var(--bp) * 0 + var(--bc) / 2)); opacity: 1; } 13.87% { transform: translate(calc(var(--bp) * 3 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 24.27% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 1 + var(--bc) / 2)); opacity: 1; } 27.73% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 38.13% { transform: translate(calc(var(--bp) * 3 + var(--bc) / 2), calc(var(--bp) * 2 + var(--bc) / 2)); opacity: 1; } 41.6% { transform: translate(calc(var(--bp) * 3 + var(--bc) / 2), calc(var(--bp) * 3 + var(--bc) / 2)); opacity: 1; } 52% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 3 + var(--bc) / 2)); opacity: 1; } 54%, 100% { transform: translate(calc(var(--bp) * 0 + var(--bc) / 2), calc(var(--bp) * 3 + var(--bc) / 2)); opacity: 0; } }
     #dexware-app .wrap { max-width: 1320px; }
     .dxa { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 24px; align-items: center; padding-left: 72px; border-radius: 36px; overflow: hidden;
       border: 1px solid rgba(122,162,255,.2);
@@ -607,137 +558,144 @@
     }
     @media (max-width: 480px) { .dxa-text { padding: 28px 16px 4px; } .dxa .cta .btn { width: 100%; justify-content: center; height: auto; min-height: 48px; padding: 10px 18px; } .dxa-brand small { display: none; }
       .dxa-phones { height: 350px; } .dxa-phones .pf { --pw: 180px; } .dxa-phones .pl, .dxa-phones .pr { --pw: 148px; } }
-
-    /* Zwei Gruppen: Suite (im Abo) und Weitere Apps (eigener Tarif) + Legende */
-    /* 20.11.2026 (Alex: Rahmen „relativ billig“): zwei ruhige Flächen mit Kopfzeile statt Verlaufs- und Strichelrahmen. */
-    .tag-in, .tag-own { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 99px; font-size: 12px; font-weight: 700; letter-spacing: .02em; white-space: nowrap; }
-    .tag-in { background: rgba(52,211,153,.14); color: #6ee7b7; }
-    .tag-in .i, .tag-own .i { width: 14px; height: 14px; }
-    .tag-own { background: rgba(255,255,255,.07); color: #d5d9e6; }
-    /* ===== Unsere Apps (21.11.2026 abends, Alex: „die App-Aufzählung … ist gut, aber das geht besser“) =====
-       Statt Kasten-im-Kasten mit 16 gleichen Karten: links die Suite als mitlaufende Tafel (Preis, alle Symbole, zwei Wege),
-       rechts eine ruhige Liste. Durch die Symbole läuft dieselbe Lichtlinie wie im Kopf; jede App leuchtet auf, wenn sie die
-       Bildschirmmitte erreicht. Darunter klar getrennt die Apps mit eigenem Tarif als eigenständige Karten in ihrer Farbe. */
-    .lib { display: grid; grid-template-columns: minmax(0, 350px) minmax(0, 1fr); gap: 44px; align-items: start; margin-top: 8px; }
-    .lib-panel { position: sticky; top: 88px; padding: 28px 26px 26px; border-radius: 24px; border: 1px solid rgba(122,162,255,.22); overflow: hidden;
-      background: linear-gradient(180deg, rgba(79,124,255,.14), rgba(139,92,246,.05) 62%, rgba(255,255,255,.015)); box-shadow: 0 50px 100px -70px rgba(90,110,255,.75); }
-    .lib-panel::before { content: ''; position: absolute; left: 10%; right: 10%; top: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(160,185,255,.9), rgba(200,160,255,.7), transparent); }
-    .lib-panel h3 { font-size: 24px; font-weight: 720; letter-spacing: -.025em; line-height: 1.2; margin-top: 14px; }
-    .lib-panel > p { color: var(--muted); font-size: 14.5px; margin-top: 8px; line-height: 1.55; }
-    .lib-cloud { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 6px; margin-top: 20px; }
-    .lib-cloud img { width: 100%; height: auto; aspect-ratio: 1; border-radius: 24%; box-shadow: 0 6px 14px -8px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08); }
-    .lib-price { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); }
-    .lib-price b { font-size: 34px; font-weight: 760; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-    .lib-price > span { margin-left: 8px; color: var(--muted); font-size: 13.5px; }
-    .lib-price small { display: block; margin-top: 4px; color: #a9b4d0; font-size: 13px; }
-    .lib-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 20px; }
-    .lib-cta .btn { width: 100%; justify-content: center; }
-    .lib-finder { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--accent-text); }
-    .lib-finder .i { width: 16px; height: 16px; transition: transform .2s; } .lib-finder:hover .i { transform: translateX(3px); }
-    .lib-group + .lib-group { margin-top: 30px; }
-    .lib-group h3 { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px 14px; }
-    .lib-group h3 > span:last-child { font-size: 11px; letter-spacing: 0; padding: 1px 8px; border-radius: 99px; background: rgba(255,255,255,.06); color: #c7cfe6; }
-    .rows-box { position: relative; view-timeline: --rows block; }
-    .rows { list-style: none; }
-    .rows-box .rl { position: absolute; display: block; left: 34px; top: 32px; bottom: 32px; width: 2px; margin-left: -1px; border-radius: 99px; pointer-events: none; }
-    .rows-box .rl-b { background: rgba(150,170,255,.1); }
-    .rows-box .rl-l { background: linear-gradient(180deg, #7aa2ff, #a78bfa 60%, #f0abfc); box-shadow: 0 0 12px rgba(122,140,255,.45); opacity: .55; transform-origin: 50% 0; }
-    .row { position: relative; display: grid; grid-template-columns: 40px 190px minmax(0, 1fr) 18px; gap: 18px; align-items: center; padding: 12px 14px; border-radius: 16px; color: var(--ink);
-      transition: background .2s; }
-    .row:hover { text-decoration: none; background: linear-gradient(90deg, color-mix(in oklab, var(--c) 14%, transparent), rgba(255,255,255,.02) 75%); }
-    .row[aria-disabled] { cursor: default; } .row[aria-disabled] > .i { visibility: hidden; }
-    .row-ic { position: relative; z-index: 1; display: block; width: 40px; height: 40px; }
-    .row-ic img { position: relative; display: block; width: 40px; height: 40px; border-radius: 11px; box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 8px 18px -8px color-mix(in oklab, var(--c) 75%, transparent); }
-    .row-ic .rg { position: absolute; display: block; inset: -5px; border-radius: 15px; border: 2px solid color-mix(in oklab, var(--c) 70%, #fff); opacity: 0;
-      box-shadow: 0 0 18px 2px color-mix(in oklab, var(--c) 60%, transparent); }
-    .row-nm { min-width: 0; }
-    .row-nm b { display: block; font-size: 15.5px; font-weight: 650; }
-    .row-nm small { display: block; font-size: 12.5px; font-weight: 600; color: color-mix(in oklab, var(--c) 62%, #fff); margin-top: 1px; }
-    .row-ds { font-size: 14px; color: var(--muted); line-height: 1.45; }
-    .row > .i { width: 18px; height: 18px; color: var(--muted); transition: transform .2s, color .2s; }
-    .row:hover > .i { transform: translateX(3px); color: var(--ink); }
-    @supports (animation-timeline: view()) {
-      @media (prefers-reduced-motion: no-preference) {
-        .rows-box .rl-l { opacity: 1; will-change: transform; animation: rows-draw linear both; animation-timeline: --rows; animation-range: cover 50vh cover calc(100% - 50vh); }
-        .row-ic .rg { animation: row-lit linear both; animation-timeline: view(); animation-range: cover calc(50vh - 10px) cover calc(50vh + 46px); }
-      }
+    .ggrp + .ggrp { margin-top: 48px; }
+    .ggrp-h { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px 24px; margin-bottom: 18px; }
+    .ggrp-h h3 { font-size: 21px; font-weight: 700; letter-spacing: -.02em; line-height: 1.25; }
+    .ggrp-h p { margin-top: 4px; color: var(--muted); font-size: 15px; }
+    :is(.g-ds, .bc-for, .pp-txt, .ggrp-h p) { text-wrap: pretty; }
+    .ggrp-link { font-size: 14.5px; font-weight: 600; white-space: nowrap; }
+    .bcard, .scard { --c: #4F7CFF; position: relative; overflow: hidden; border-radius: 24px; color: var(--ink);
+      border: 1px solid color-mix(in oklab, var(--c) 24%, rgba(255,255,255,.07));
+      background: radial-gradient(120% 90% at 0% 0%, color-mix(in oklab, var(--c) 11%, transparent), transparent 60%), rgba(255,255,255,.022); }
+    .bcard:hover, .scard:hover { border-color: color-mix(in oklab, var(--c) 55%, transparent); box-shadow: 0 34px 70px -46px color-mix(in oklab, var(--c) 85%, transparent); }
+    .g-nm { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .g-nm img { flex: none; width: 44px; height: 44px; border-radius: 12px; box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 10px 22px -10px color-mix(in oklab, var(--c) 80%, transparent); }
+    .g-nm > div { min-width: 0; }
+    .g-nm h4 { font-size: 18.5px; font-weight: 700; letter-spacing: -.015em; line-height: 1.2; }
+    .g-nm h4 a { color: var(--ink); }
+    .g-nm h4 a:hover { text-decoration: none; }
+    .g-nm small { display: block; margin-top: 2px; font-size: 13px; font-weight: 600; color: color-mix(in oklab, var(--c) 60%, #fff); }
+    .stretch::after { content: ''; position: absolute; inset: 0; z-index: 4; border-radius: inherit; }
+    .stretch:focus-visible { outline: none; }
+    .stretch:focus-visible::after { outline: 2px solid var(--accent-text); outline-offset: -2px; }
+    .g-ds { margin-top: 14px; font-size: 14.5px; line-height: 1.55; color: var(--muted); }
+    .g-ft { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 8px; margin-top: auto; padding-top: 18px; }
+    .st { display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 11px; border-radius: 999px; font-size: 12.5px; font-weight: 650; white-space: nowrap;
+      color: var(--muted); border: 1px solid var(--border); }
+    .st.on { position: relative; z-index: 5; color: #6ee7b7; background: rgba(52,211,153,.14); border-color: rgba(52,211,153,.18); transition: background .15s, border-color .15s; }
+    a.st.on:hover { text-decoration: none; background: rgba(52,211,153,.24); border-color: rgba(52,211,153,.45); }
+    a.st.on:focus-visible { outline: 2px solid #6ee7b7; outline-offset: 2px; }
+    .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .st .play { width: 10px; height: 10px; fill: currentColor; }
+    .more { font-size: 13px; font-weight: 600; color: var(--muted); white-space: nowrap; transition: color .2s; }
+    .bcard:hover .more, .scard:hover .more { color: var(--ink); }
+    .pv { position: relative; overflow: hidden;
+      background: radial-gradient(80% 60% at 60% 0%, rgba(255,255,255,.08), transparent 70%),
+        linear-gradient(165deg, color-mix(in srgb, var(--c) 26%, transparent), color-mix(in srgb, var(--c) 5%, transparent) 75%), var(--card); }
+    .pv .phone { position: absolute; padding: 6px; box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset, 0 0 0 1px rgba(0,0,0,.5), 0 30px 50px -24px rgba(0,0,0,.85); }
+    .pv .pv-b { z-index: 1; opacity: .92; filter: brightness(.78); }
+    .pv .pv-f { z-index: 2; }
+    .bcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .bcard { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); min-height: 320px; }
+    .bc-txt { display: flex; flex-direction: column; padding: 26px 20px 24px 26px; }
+    .bc-for { margin-top: 10px; font-size: 13.5px; line-height: 1.5; color: #c3c8d8; }
+    .bc-for b { font-weight: 650; color: var(--ink); }
+    .bcard .pv { border-left: 1px solid rgba(255,255,255,.05); }
+    .bcard .pv-f { --pw: 160px; left: calc(50% - 42px); top: 68px; }
+    .bcard .pv-b { --pw: 132px; left: calc(50% - 120px); top: 28px; }
+    .scards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .scards.s4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .scard { display: flex; flex-direction: column; border-radius: 20px; }
+    .scard .pv { flex: none; height: 150px; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .scard .pv-f { --pw: 116px; left: calc(50% - var(--pw) / 2); top: 18px; }
+    .mbr { position: absolute; left: 8%; right: 8%; top: 20px; border-radius: 9px 9px 0 0; overflow: hidden; background: #0b0f17;
+      border: 1px solid rgba(255,255,255,.12); box-shadow: 0 26px 44px -22px rgba(0,0,0,.9); }
+    .mbr-bar { display: flex; align-items: center; gap: 4px; height: 15px; padding: 0 8px; background: #141925; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .mbr-bar i { width: 5px; height: 5px; border-radius: 50%; background: #3a4152; }
+    .mbr-bar i:nth-child(1) { background: #ff5f57; } .mbr-bar i:nth-child(2) { background: #febc2e; } .mbr-bar i:nth-child(3) { background: #28c840; }
+    .mbr img { display: block; width: 100%; height: auto; }
+    .sc-txt { display: flex; flex-direction: column; flex: 1; padding: 18px 18px 18px; }
+    .sc-txt .g-nm img { width: 36px; height: 36px; border-radius: 10px; }
+    .sc-txt .g-nm h4 { font-size: 16.5px; }
+    .sc-txt .g-nm small { font-size: 12.5px; }
+    .sc-txt .g-ds { margin-top: 10px; font-size: 14px; }
+    .sc-txt .g-ft { padding-top: 14px; }
+    .pp-strip { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); border-radius: 24px; overflow: hidden; border: 1px solid rgba(122,162,255,.22);
+      background: radial-gradient(90% 120% at 0% 0%, rgba(79,124,255,.13), transparent 60%), rgba(255,255,255,.02); }
+    .pp-main { display: flex; flex-direction: column; padding: 24px 24px 24px 24px; }
+    .pp-chips { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .pp-chip { --c: #4F7CFF; display: flex; align-items: center; gap: 10px; min-width: 0; padding: 8px 10px 8px 8px; border-radius: 14px; color: var(--ink);
+      background: rgba(255,255,255,.03); border: 1px solid var(--border); transition: border-color .15s, background .15s; }
+    .pp-chip:hover { text-decoration: none; border-color: color-mix(in oklab, var(--c) 55%, transparent); background: color-mix(in oklab, var(--c) 10%, transparent); }
+    .pp-chip img { flex: none; width: 32px; height: 32px; border-radius: 9px; }
+    .pp-chip span { min-width: 0; }
+    .pp-chip b { display: block; font-size: 14px; font-weight: 650; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pp-chip small { display: block; font-size: 12px; line-height: 1.3; color: var(--muted); }
+    .pp-txt { margin-top: 18px; font-size: 15px; color: #c3c8d8; }
+    .pp-links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 6px; }
+    .pp-link { font-size: 14.5px; font-weight: 600; }
+    .pp-strip .pv { --c: #7c6cff; border-left: 1px solid rgba(255,255,255,.05); }
+    .pp-strip .pv-f { --pw: 156px; left: calc(50% - 30px); top: 56px; }
+    .pp-strip .pv-b { --pw: 132px; left: calc(50% - 124px); top: 24px; }
+    @media (min-width: 900px) and (max-width: 1180px) { .bcard .pv-f { --pw: 148px; left: calc(50% - 38px); } .bcard .pv-b { --pw: 120px; left: calc(50% - 108px); } }
+    @media (max-width: 1079px) { .scards.s4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pp-strip { grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); } }
+    @media (max-width: 899px) { .bcards { grid-template-columns: 1fr; } }
+    @media (max-width: 719px) {
+      .ggrp + .ggrp { margin-top: 36px; }
+      .scards, .scards.s4 { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+      .scard { flex-direction: row; border-radius: 18px; }
+      .scard .pv { width: 108px; height: auto; min-height: 132px; border-bottom: 0; border-right: 1px solid rgba(255,255,255,.05); }
+      .scard .pv-f { --pw: 88px; top: 14px; }
+      .scard .mbr { left: 12px; right: auto; width: 230px; top: 16px; }
+      .sc-txt { padding: 14px 14px 14px 16px; }
+      .sc-txt .g-ds { margin-top: 8px; font-size: 13.5px; line-height: 1.5; }
+      .sc-txt .g-ft { padding-top: 10px; }
+      .pp-strip { grid-template-columns: minmax(0, 1fr); border-radius: 20px; }
+      .pp-strip .pv { display: none; }
+      .pp-main { padding: 16px 14px 18px; }
+      .pp-chips { gap: 6px; }
+      .pp-chip { flex-direction: column; gap: 6px; padding: 10px 4px 9px; text-align: center; }
+      .pp-chip span { width: 100%; }
+      .pp-chip b { font-size: 13px; }
+      .pp-chip small { display: none; }
+      .pp-txt { margin-top: 14px; font-size: 14.5px; }
     }
-    @keyframes rows-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-    @keyframes row-lit { from { opacity: 0; scale: .78; } 55% { opacity: 1; scale: 1.1; } to { opacity: .5; scale: 1; } }
-    .own { margin-top: 72px; }
-    .own-head { max-width: 680px; }
-    .own-head h3 { font-size: 24px; font-weight: 700; letter-spacing: -.02em; margin-top: 12px; }
-    .own-head p { color: var(--muted); font-size: 15px; margin-top: 6px; }
-    .own-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
-    .own-card { --c: #4F7CFF; position: relative; display: flex; gap: 16px; align-items: flex-start; padding: 18px 18px 18px 20px; border-radius: 20px; color: var(--ink); overflow: hidden;
-      border: 1px solid color-mix(in oklab, var(--c) 30%, rgba(255,255,255,.06));
-      background: radial-gradient(130% 90% at 0% 0%, color-mix(in oklab, var(--c) 17%, transparent), transparent 62%), rgba(255,255,255,.02);
-      transition: transform .25s, box-shadow .25s, border-color .25s; }
-    .own-card:hover { text-decoration: none; transform: translateY(-2px); border-color: color-mix(in oklab, var(--c) 60%, transparent); box-shadow: 0 30px 60px -36px color-mix(in oklab, var(--c) 70%, transparent); }
-    .own-card > img { flex: none; width: 48px; height: 48px; border-radius: 13px; box-shadow: 0 12px 26px -12px color-mix(in oklab, var(--c) 85%, transparent), 0 0 0 1px rgba(255,255,255,.1); }
-    .oc-txt { flex: 1; min-width: 0; }
-    .oc-nm { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
-    .oc-nm b { font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
-    .oc-nm em { font-style: normal; font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 99px; color: color-mix(in oklab, var(--c) 40%, #fff); background: color-mix(in oklab, var(--c) 16%, transparent); white-space: nowrap; }
-    .own-card small { display: block; margin-top: 2px; font-size: 13px; font-weight: 600; color: color-mix(in oklab, var(--c) 62%, #fff); }
-    .own-card p { margin-top: 6px; font-size: 14px; color: var(--muted); line-height: 1.5; }
-    .own-card > .i { flex: none; align-self: center; width: 18px; height: 18px; color: var(--muted); transition: transform .2s, color .2s; }
-    .own-card:hover > .i { transform: translateX(3px); color: var(--ink); }
-    .own-card[aria-disabled] { cursor: default; } .own-card[aria-disabled]:hover { transform: none; box-shadow: none; } .own-card[aria-disabled] > .i { visibility: hidden; }
-    @media (max-width: 1080px) {
-      .row { grid-template-columns: 40px minmax(0, 1fr) 18px; grid-template-areas: "ic nm go" "ic ds go"; row-gap: 3px; align-items: start; }
-      .row-ic { grid-area: ic; } .row-nm { grid-area: nm; } .row-ds { grid-area: ds; font-size: 13.5px; } .row > .i { grid-area: go; align-self: center; }
+    @media (max-width: 559px) {
+      .bcard { grid-template-columns: minmax(0, 1fr) 122px; min-height: 0; border-radius: 20px; }
+      .bc-txt { padding: 18px 12px 16px 16px; }
+      .bc-for { display: none; }
+      .bcard .pv { min-height: 214px; }
+      .bcard .pv-b { display: none; }
+      .bcard .pv-f { --pw: 116px; left: 3px; top: 20px; }
+      .g-nm { gap: 10px; }
+      .g-nm img { width: 38px; height: 38px; border-radius: 10px; }
+      .g-nm h4 { font-size: 17px; }
+      .g-ds { margin-top: 10px; font-size: 14px; line-height: 1.5; }
+      .g-ft { padding-top: 12px; gap: 8px 12px; }
     }
-    @media (max-width: 900px) { .lib { grid-template-columns: 1fr; gap: 28px; } .lib-panel { position: relative; top: 0; } .own-cards { grid-template-columns: 1fr; } .own { margin-top: 52px; } }
-    @media (max-width: 560px) { .lib-panel { padding: 22px 18px 20px; border-radius: 20px; } .lib-panel h3 { font-size: 21px; } .lib-cloud { gap: 5px; }
-      .row { padding: 10px 8px; gap: 12px; } .rows-box .rl { left: 28px; } .lib-group h3 { margin-left: 8px; }
-      .row-ds { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; } .own-card { padding: 16px 14px; gap: 12px; } .own-card > img { width: 42px; height: 42px; }
-      .own-card p { font-size: 13.5px; } .own-card > .i { display: none; } }
-    /* Karten erscheinen nacheinander, sobald ihr Bereich ins Bild kommt. */
     @media (prefers-reduced-motion: no-preference) {
-      .js .rv:not(.in) .card { opacity: 0; }
-      .js .rv.in .card { animation: card-in .55s cubic-bezier(.2,.7,.2,1) both; animation-delay: calc(var(--i, 0) * 45ms); }
+      .bcard, .scard { transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .25s, box-shadow .25s; }
+      .bcard:hover, .scard:hover { transform: translateY(-3px); }
+      .pv .phone, .mbr { transition: translate .4s cubic-bezier(.2,.7,.2,1); }
+      .bcard:hover .pv-f { translate: 0 -6px; } .bcard:hover .pv-b { translate: 0 -3px; }
+      .scard:hover .pv-f, .scard:hover .mbr { translate: 0 -4px; }
+      .js .rv.in :is(.bcard, .scard) { animation: tile-in .55s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 70ms + 90ms) backwards; }
+      .js .rv.in .pp-chip { animation: tile-in .45s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 30ms + 120ms) backwards; }
     }
-    @keyframes card-in { from { opacity: 0; translate: 0 30px; scale: .95; } to { opacity: 1; translate: 0 0; scale: 1; } }
-
-    /* Abschnitte: Lichter statt Flächen-Schwarz */
     section { position: relative; isolation: isolate; }
     section.soft { background: linear-gradient(180deg, #070b16, #0a0f1f 18%, #090d1b 82%, #070b16); }
     .lights::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
     #apps::before { background: radial-gradient(50% 40% at 85% 0%, rgba(139,92,246,.16), transparent 70%), radial-gradient(40% 35% at 0% 40%, rgba(59,130,246,.12), transparent 70%),
       radial-gradient(rgba(255,255,255,.055) 1px, transparent 1.4px) 0 0 / 24px 24px;
       -webkit-mask-image: linear-gradient(180deg, #000, rgba(0,0,0,.35)); mask-image: linear-gradient(180deg, #000, rgba(0,0,0,.35)); }
-
-    .group { margin-top: 36px; }
-    .group:first-of-type { margin-top: 0; }
-    .group h3 { font-size: 14px; font-weight: 600; color: var(--muted); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-    .group h3::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .card { --c: #4F7CFF; position: relative; display: grid; grid-template-columns: 44px 1fr 18px; gap: 14px; align-items: start; padding: 18px; border-radius: var(--radius);
-      background: radial-gradient(120% 120% at 0% 0%, color-mix(in oklab, var(--c) 7%, transparent), transparent 55%), rgba(255,255,255,.028);
-      border: 1px solid var(--border); color: var(--ink); transition: border-color .2s, transform .2s, background .2s, box-shadow .2s; }
-    .card:hover { text-decoration: none; transform: translateY(-2px); border-color: color-mix(in oklab, var(--c) 55%, transparent);
-      background: radial-gradient(120% 120% at 0% 0%, color-mix(in oklab, var(--c) 18%, transparent), transparent 60%), rgba(255,255,255,.035);
-      box-shadow: 0 20px 40px -24px color-mix(in oklab, var(--c) 60%, transparent); }
-    .card[aria-disabled] { cursor: default; } .card[aria-disabled]:hover { transform: none; border-color: var(--border); box-shadow: none; } .card[aria-disabled] > .i { visibility: hidden; }
-    .card img { width: 44px; height: 44px; border-radius: 11px; box-shadow: 0 8px 18px -8px color-mix(in oklab, var(--c) 75%, transparent); }
-    .card b { display: block; font-size: 15.5px; font-weight: 640; }
-    .card small { display: block; font-size: 12.5px; color: color-mix(in oklab, var(--c) 62%, #fff); font-weight: 600; margin-top: 1px; }
-    .card p { font-size: 14px; color: var(--muted); line-height: 1.5; margin-top: 6px; }
-    .card .i { width: 18px; height: 18px; color: var(--muted); margin-top: 3px; transition: transform .2s, color .2s; }
-    .card:hover .i { transform: translateX(3px); color: var(--ink); }
-    @media (max-width: 960px) { .cards { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 620px) { .cards { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .card { grid-template-columns: 1fr; gap: 8px; padding: 14px; } .card img { width: 38px; height: 38px; }
-      .card p, .card > .i { display: none; } .card b { font-size: 14.5px; } .group { margin-top: 26px; } }
-
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
     @media (max-width: 900px) { .split { grid-template-columns: 1fr; gap: 28px; } }
     .bul { list-style: none; display: grid; gap: 10px; margin-top: 24px; }
     .bul li { display: flex; gap: 10px; font-size: 15.5px; }
     .bul .i { width: 19px; height: 19px; margin-top: 2px; color: var(--accent-text); }
-
-    /* Suite-Finder */
+    .pp-finder { margin-top: 96px; }
+    .pp-finder .head h3 { font-size: clamp(24px, 2.8vw, 32px); line-height: 1.15; font-weight: 720; letter-spacing: -.028em; max-width: 760px; }
+    @media (max-width: 720px) { .pp-finder { margin-top: 64px; } }
     .finder { display: grid; grid-template-columns: 1.25fr .75fr; gap: 28px; align-items: start; margin-top: 34px; }
     .fd-opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .fd-opt { display: flex; align-items: center; gap: 11px; padding: 12px 13px; min-height: 64px; border-radius: 14px; border: 1px solid var(--border);
@@ -762,20 +720,15 @@
     .fd-prices > div > span { display: block; font-size: 12.5px; color: var(--muted); font-weight: 600; }
     .fd-prices b { display: block; font-size: 24px; font-weight: 750; letter-spacing: -.02em; margin-top: 2px; font-variant-numeric: tabular-nums; }
     .fd-prices small { font-size: 12px; color: var(--muted); }
+    .fd-prices > div > small { display: block; line-height: 1.4; margin-top: 2px; }
     .fd-hint { margin: 14px 0 16px; font-size: 14.5px; line-height: 1.5; }
     .fd-res .btn { width: 100%; justify-content: center; }
     @media (max-width: 980px) { .finder { grid-template-columns: 1fr; } .fd-res { position: static; } }
     @media (max-width: 700px) { .fd-opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fd-opt { padding: 10px; min-height: 58px; gap: 9px; min-width: 0; } .fd-opt span { min-width: 0; } .fd-opt b { overflow-wrap: anywhere; hyphens: auto; } .fd-opt img { width: 28px; height: 28px; } .fd-opt small { display: none; } }
-
-    /* Suite: Preis-Karte vor schwebenden Handys */
-    #suite::before { background: radial-gradient(45% 60% at 80% 50%, rgba(139,92,246,.22), transparent 70%), radial-gradient(35% 50% at 10% 80%, rgba(59,130,246,.12), transparent 70%); }
-    #suite { overflow-x: clip; } /* das gedrehte Handy rechts ragt sonst ein paar Pixel über den Seitenrand (Querscrollen bei 900–1100 px) */
-    .stage { position: relative; padding: 70px 0; }
-    .stage .phone { position: absolute; --pw: 190px; z-index: 0; opacity: .9; }
-    .stage .phone .screen img { aspect-ratio: 600 / 1090; object-fit: cover; object-position: top; }
-    .stage .phone.sa { right: -4%; top: -6%; transform: rotate(9deg); }
-    .stage .phone.sb { left: -6%; bottom: -10%; transform: rotate(-8deg); }
-    .stage .phone::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(7,11,22,.15), rgba(7,11,22,.55)); }
+    #suite::before { background: radial-gradient(45% 40% at 80% 18%, rgba(139,92,246,.22), transparent 70%), radial-gradient(35% 40% at 10% 30%, rgba(59,130,246,.12), transparent 70%); }
+    .stage { position: relative; }
+    .offer-lbl { margin-bottom: 18px; font-size: 16px; font-weight: 700; letter-spacing: -.01em; }
+    .offer-lbl small { margin-left: 4px; font-size: 13.5px; font-weight: 500; color: var(--muted); }
     .offer { position: relative; z-index: 1; padding: 30px; border-radius: 22px; border: 1px solid transparent;
       background: linear-gradient(180deg, rgba(20,24,40,.92), rgba(11,14,24,.95)) padding-box, linear-gradient(140deg, #3b82f6, #8b5cf6 60%, #f0abfc) border-box;
       -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 40px 80px -40px rgba(80,60,200,.6); }
@@ -795,10 +748,9 @@
     .offer .icons { padding-top: 22px; gap: 5px; }
     .offer .icons img { width: 23px; height: 23px; border-radius: 6px; }
     .offer .fine { margin-top: 14px; }
-    @media (max-width: 900px) { .stage { padding: 0; } .stage .phone { display: none; } }
+    .offer .pp-incl { margin-top: 10px; font-size: 13.5px; line-height: 1.5; color: #c3c8d8; }
+    .offer .pp-incl b { font-weight: 650; color: var(--ink); }
     @media (max-width: 480px) { .offer { padding: 20px; } .offer .row { grid-template-columns: 1fr; } }
-
-    /* Dashboard: echtes Bild im Browserrahmen + Handy */
     #dashboard::before { background: radial-gradient(50% 60% at 75% 40%, rgba(236,107,86,.13), transparent 70%), radial-gradient(40% 50% at 15% 10%, rgba(20,184,166,.12), transparent 70%); }
     .dash { display: grid; grid-template-columns: .82fr 1.18fr; gap: 56px; align-items: center; }
     .urls { margin-top: 26px; display: grid; gap: 10px; }
@@ -821,9 +773,6 @@
     .duo .sync .dot { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 4px rgba(52,211,153,.18); }
     @media (max-width: 960px) { .dash { grid-template-columns: 1fr; gap: 36px; } .browser { transform: none; } }
     @media (max-width: 560px) { .duo { padding-bottom: 80px; } .duo .phone { --pw: 124px; right: 0; } .duo .sync { left: 0; bottom: 0; } }
-
-
-    /* Warum */
     #warum::before { background: radial-gradient(40% 60% at 50% 0%, rgba(59,130,246,.12), transparent 70%); }
     .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .why .feature { background: rgba(255,255,255,.03); }
@@ -837,7 +786,6 @@
     .band h3 { font-size: 20px; font-weight: 680; letter-spacing: -.02em; }
     .band p { color: var(--muted); font-size: 15px; margin-top: 4px; max-width: 560px; }
     @media (max-width: 600px) { .band { padding: 22px; } .band .btn { width: 100%; justify-content: center; } }
-    /* Bewegung beim Scrollen (kräftiger als die Grundvorlage) */
     @media (prefers-reduced-motion: no-preference) {
       .js .rv { transform: translateY(40px) scale(.98); transition: opacity .8s ease, transform .9s cubic-bezier(.16,.84,.24,1); }
       h1 em, .grad { background-size: 220% 100%; animation: grad-move 7s ease-in-out infinite alternate; }
@@ -848,17 +796,12 @@
       .js .duo.rv .sync { scale: .6; opacity: 0; transition: scale .5s cubic-bezier(.3,1.5,.5,1) 1.1s, opacity .4s ease 1.1s; }
       .js .duo.rv.in .sync { scale: 1; opacity: 1; }
       .duo .sync .dot { animation: ping 2.2s ease-out infinite; }
-      .stage .phone.sa { animation: drift 8s ease-in-out infinite; } .stage .phone.sb { animation: drift 9.5s ease-in-out -4s infinite; }
       .why .feature:nth-child(2) { transition-delay: .12s; } .why .feature:nth-child(3) { transition-delay: .24s; }
     }
     @keyframes grad-move { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
     @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.55); } 100% { box-shadow: 0 0 0 12px rgba(52,211,153,0); } }
-    /* Endlos-Animationen, die nur der Hauptthread rechnen kann (Rahmen-Drehung --ang, Puls box-shadow): außerhalb des Bildes
-       angehalten (Skript unten) — sonst kosteten sie auch oben im Kopf jedes Bild Stil, Malen und Commit für die ganze Seite. */
     .offer.ruht, .duo .sync .dot.ruht { animation-play-state: paused; }
     @media (max-width: 960px) { .js .duo.rv .browser, .js .duo.rv.in .browser { transform: none; } }
-
-    /* Feinschliff Texte 25.11.2026 — Erklärung im Baukasten (landing-system/hub.js) */
     .kicker .ka { display: inline-block; }
     @media (hover: hover) and (pointer: fine) {
       .hero .kicker { position: relative; overflow: hidden; }
@@ -870,18 +813,16 @@
       .url { transition: border-color .15s, transform .2s; } .url:hover { transform: translateY(-1px); }
       .fd-opt:active { transform: scale(.97); }
       .js .hero .wrap > div > :not(.ticks), .js .hero .ticks li { animation: hx-in .62s cubic-bezier(.2,.7,.2,1) var(--hd, 0s) backwards; }
-      .hero h1 { --hd: .07s; } .hero .sub { --hd: .14s; } .hero .cta { --hd: .21s; }
+      .hero h1 { --hd: .07s; } .hero .happs { --hd: .1s; } .hero .sub { --hd: .14s; } .hero .cta { --hd: .21s; }
       .hero .ticks li { --hd: .28s; } .hero .ticks li + li { --hd: .34s; } .hero .ticks li + li + li { --hd: .4s; }
       .hero .kicker.pop .pill { animation: pill-pop .5s ease-in-out .12s; }
-      .js .rv.in :is(.eyebrow, .tag-in, .tag-own, .dxa-brand, h2, .lead, .bul > li, .cta, .urls, .sa-note, .fine, .lib-panel h3, .lib-panel > p, .lib-price, .lib-cta,
-        .own-head h3, .own-head p, .band h3, .band p, .iph-steps > li) { animation: tx-in .55s cubic-bezier(.2,.7,.2,1) calc(var(--td, 0) * 70ms + 60ms) backwards; }
-      :is(h2, .lib-panel h3, .own-head h3, .band h3) { --td: 1; } :is(.lead, .lib-panel > p, .own-head p, .band p) { --td: 2; }
+      .js .rv.in :is(.eyebrow, .dxa-brand, h2, .lead, .bul > li, .cta, .urls, .sa-note, .fine, .ggrp-h h3, .ggrp-h p, .ggrp-link, .pp-finder .head h3,
+        .band h3, .band p, .iph-steps > li) { animation: tx-in .55s cubic-bezier(.2,.7,.2,1) calc(var(--td, 0) * 70ms + 60ms) backwards; }
+      :is(h2, .pp-finder .head h3, .band h3, .ggrp-h p, .ggrp-link) { --td: 1; } :is(.lead, .band p) { --td: 2; }
       .bul > li { --td: 3; } .bul > li + li { --td: 4; } .bul > li + li + li { --td: 5; }
       .iph-steps > li + li { --td: 1; } .iph-steps > li + li + li { --td: 2; }
-      .lib-price { --td: 4; } .lib-cta { --td: 5; } :is(.cta, .urls, .fine) { --td: 6; } .sa-note { --td: 7; }
-      .js .rv.in :is(.iph-app, .fd-opt, .own-card) { animation: tile-in .5s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 35ms + 120ms) backwards; }
-      .own-card:nth-child(2) { --i: 1; } .own-card:nth-child(3) { --i: 2; } .own-card:nth-child(4) { --i: 3; }
-      .js .lib.rv.in .lib-cloud img { animation: cloud-in .45s cubic-bezier(.3,1.4,.5,1) calc(var(--i, 0) * 28ms + 260ms) backwards; }
+      :is(.cta, .urls, .fine) { --td: 6; } .sa-note { --td: 7; }
+      .js .rv.in :is(.iph-app, .fd-opt) { animation: tile-in .5s cubic-bezier(.2,.7,.2,1) calc(var(--i, 0) * 35ms + 120ms) backwards; }
     }
     @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
       .hero .kicker.pop::after { animation: kick-shine 8s cubic-bezier(.45,0,.25,1) infinite; }
@@ -896,9 +837,8 @@
     @keyframes kick-shine { from { translate: -101% 0; } 15%, to { translate: 101% 0; } }
     @keyframes tx-in { from { opacity: 0; translate: 0 10px; } }
     @keyframes tile-in { from { opacity: 0; translate: 0 14px; scale: .97; } }
-    @keyframes cloud-in { from { opacity: 0; scale: .55; } }
     footer { background: #060913; }
-  </style>
+</style>
   <script>document.documentElement.classList.add('js');(function(){var l;try{l=localStorage.getItem('dexware-lang')}catch(e){}if(l!=='de'&&l!=='en')l=(navigator.language||'de').toLowerCase().indexOf('de')===0?'de':'en';document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 </head>
 <body>
@@ -906,7 +846,7 @@
     <div class="wrap">
       <a class="brand" href="/" aria-label="Dexware"><img src="assets/hub/dexware.webp" alt="" width="32" height="32" /><span class="wm">Dex<span>ware</span></span></a>
       <nav aria-label="Navigation">
-        <a href="#dexware-app"><span data-l="de">Dexware-App</span><span data-l="en">Dexware app</span></a><a href="#apps">Apps</a><a href="#iphone">iPhone</a><a href="#suite">Suite</a><a href="https://dashboard.dexware.app">Dashboard</a><a href="ratgeber.html"><span data-l="de">Ratgeber</span><span data-l="en">Guides</span></a><a href="#kontakt"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
+        <a href="#apps">Apps</a><a href="#dexware-app"><span data-l="de">Dexware-App</span><span data-l="en">Dexware app</span></a><a href="#iphone">iPhone</a><a href="#suite"><span data-l="de"><span class="nw">Prüf-Paket</span></span><span data-l="en"><span class="nl">Inspection package</span><span class="ns">Package</span></span></a><a href="https://dashboard.dexware.app">Dashboard</a><a href="ratgeber.html"><span data-l="de">Ratgeber</span><span data-l="en">Guides</span></a><a href="#kontakt"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
       </nav>
       <div class="lang" role="group" aria-label="Sprache / Language"><button type="button" data-set="de">DE</button><button type="button" data-set="en">EN</button></div>
       <a class="btn sm" href="https://dashboard.dexware.app">Dashboard</a>
@@ -918,44 +858,188 @@
       <div class="wrap">
         <div>
           <a class="kicker" href="#iphone"><span class="pill">iPhone</span><span data-l="de">Läuft schon jetzt im Browser — so geht’s</span><span data-l="en">Already runs in your browser — here’s how</span> <span class="ka">→</span></a>
-          <h1><span data-l="de">Eine App pro Pflicht. <em>Sauber dokumentiert.</em></span><span data-l="en">One app per obligation. <em>Clear records.</em></span></h1>
-          <p class="sub"><span data-l="de">Dexware baut schlanke Apps für Prüfungen und Nachweise im Betrieb — von der Leiterprüfung bis zum Winterdienst. <strong>Mobil, nachweisbar, ohne Papierkram.</strong></span><span data-l="en">Dexware builds focused apps for inspections and records at work — from ladder checks to winter service. <strong>Mobile, traceable, paper-free.</strong></span></p>
+          <h1><span data-l="de">Eine App für jede Aufgabe. <em>Alle unter einem Dach.</em></span><span data-l="en">One app for every job. <em>All under one roof.</em></span></h1>
+          <div class="happs" aria-hidden="true"><img src="assets/hub/winterdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/pruefdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/spieldex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/leiterdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/baumdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/feuerdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/kfzdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/toredex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/tourdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/regaldex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/craftdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/gurtdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/dokudex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/geruestdex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/hebedex.webp" alt="" width="34" height="34" decoding="async" /><img src="assets/hub/schutzdex.webp" alt="" width="34" height="34" decoding="async" /></div>
+          <p class="sub"><span data-l="de">Dexware ist das App-Zentrum für alles, was belegt sein muss — vom Winterdienst über Spielplätze, Bäume und Fuhrpark bis zu den Prüfpflichten im Betrieb. Bald auch ganzjährig für die Hausbetreuung, für Hausbesitzer und für Mieter. <strong>Mobil, nachweisbar, ohne Papierkram.</strong></span><span data-l="en">Dexware is the app hub for everything that needs a record — from winter service, playgrounds, trees and fleets to workplace inspections. Soon also year-round for caretaking, for homeowners and for tenants. <strong>Mobile, traceable, paper-free.</strong></span></p>
           <div class="cta">
-            <a class="btn" href="#apps"><span data-l="de">Apps ansehen</span><span data-l="en">See the apps</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+            <a class="btn" href="#apps"><span data-l="de">Apps entdecken</span><span data-l="en">Explore the apps</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
             <a class="btn ghost" href="https://dashboard.dexware.app"><span data-l="de">Zum Dashboard</span><span data-l="en">Go to dashboard</span></a>
           </div>
           <ul class="ticks">
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">16 Apps, ein Stil</span><span data-l="en">16 apps, one style</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">16 Apps bei Google Play, 4 weitere bald</span><span data-l="en">16 apps on Google Play, 4 more coming soon</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Für Deutschland, Österreich und die Schweiz</span><span data-l="en">Built for Germany, Austria and Switzerland</span></li>
             <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Web-Dashboard inklusive</span><span data-l="en">Web dashboard included</span></li>
           </ul>
         </div>
       </div>
-      <div class="bstage" aria-label="9 Dexware-Apps">
+      <div class="bstage" aria-label="16 Dexware-Apps">
       <div class="board bd"><div class="bpan">
         <i class="bd-floor"></i>
-        <i class="sb" style="--cx:1;--cy:0;--n:4;rotate:0deg"></i><i class="sb" style="--cx:5;--cy:0;--n:1;rotate:90deg"></i><i class="sb" style="--cx:5;--cy:1;--n:5;rotate:180deg"></i><i class="sb" style="--cx:0;--cy:1;--n:1;rotate:90deg"></i><i class="sb" style="--cx:0;--cy:2;--n:5;rotate:0deg"></i><i class="sg s0" style="--cx:1;--cy:0;--n:4;rotate:0deg;background:linear-gradient(90deg,#7aa2ff,#8e98fd)"></i><i class="sg s1" style="--cx:5;--cy:0;--n:1;rotate:90deg;background:linear-gradient(90deg,#8e98fd,#9495fc)"></i><i class="sg s2" style="--cx:5;--cy:1;--n:5;rotate:180deg;background:linear-gradient(90deg,#9495fc,#b390fa)"></i><i class="sg s3" style="--cx:0;--cy:1;--n:1;rotate:90deg;background:linear-gradient(90deg,#b390fa,#bd95fb)"></i><i class="sg s4" style="--cx:0;--cy:2;--n:5;rotate:0deg;background:linear-gradient(90deg,#bd95fb,#f0abfc)"></i><i class="hd"></i>
-        <a class="bt" href="https://gurtdex.dexware.app" style="--cx:1;--cy:0;--c:#DB2777;--t:-0.30s"><i class="br"></i><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="124" height="124" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://toredex.dexware.app" style="--cx:2;--cy:0;--c:#7C3AED;--t:0.41s"><i class="br"></i><img src="assets/hub/toredex.webp" alt="ToreDex" width="124" height="124" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="--cx:4;--cy:0;--c:#14B8A6;--t:1.84s"><i class="br"></i><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="124" height="124" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="--cx:4;--cy:1;--c:#DC2626;--t:3.99s"><i class="br"></i><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="124" height="124" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="--cx:2;--cy:1;--c:#2563EB;--t:5.42s"><i class="br"></i><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="124" height="124" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="--cx:0;--cy:1;--c:#F59E0B;--t:6.85s"><i class="br"></i><img src="assets/hub/regaldex.webp" alt="RegalDex" width="124" height="124" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="--cx:1;--cy:2;--c:#2F6BF2;--t:8.28s"><i class="br"></i><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="124" height="124" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="--cx:3;--cy:2;--c:#3B82F6;--t:9.71s"><i class="br"></i><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="124" height="124" decoding="async" /><small>SchutzDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="--cx:5;--cy:2;--c:#84CC16;--t:11.14s"><i class="br"></i><img src="assets/hub/hebedex.webp" alt="HebeDex" width="124" height="124" decoding="async" /><small>HebeDex</small></a>
+        <i class="sb" style="--cx:1;--cy:0;--n:4;rotate:0deg"></i><i class="sb" style="--cx:5;--cy:0;--n:1;rotate:90deg"></i><i class="sb" style="--cx:5;--cy:1;--n:5;rotate:180deg"></i><i class="sb" style="--cx:0;--cy:1;--n:1;rotate:90deg"></i><i class="sb" style="--cx:0;--cy:2;--n:5;rotate:0deg"></i><i class="sb" style="--cx:5;--cy:2;--n:1;rotate:90deg"></i><i class="sb" style="--cx:5;--cy:3;--n:5;rotate:180deg"></i><i class="sb" style="--cx:0;--cy:3;--n:1;rotate:90deg"></i><i class="sb" style="--cx:0;--cy:4;--n:3;rotate:0deg"></i><i class="sg s0" style="--cx:1;--cy:0;--n:4;rotate:0deg;background:linear-gradient(90deg,#7aa2ff,#879cfe)"></i><i class="sg s1" style="--cx:5;--cy:0;--n:1;rotate:90deg;background:linear-gradient(90deg,#879cfe,#8a9afd)"></i><i class="sg s2" style="--cx:5;--cy:1;--n:5;rotate:180deg;background:linear-gradient(90deg,#8a9afd,#9992fc)"></i><i class="sg s3" style="--cx:0;--cy:1;--n:1;rotate:90deg;background:linear-gradient(90deg,#9992fc,#9d90fb)"></i><i class="sg s4" style="--cx:0;--cy:2;--n:5;rotate:0deg;background:linear-gradient(90deg,#9d90fb,#b290fa)"></i><i class="sg s5" style="--cx:5;--cy:2;--n:1;rotate:90deg;background:linear-gradient(90deg,#b290fa,#b892fa)"></i><i class="sg s6" style="--cx:5;--cy:3;--n:5;rotate:180deg;background:linear-gradient(90deg,#b892fa,#d7a0fb)"></i><i class="sg s7" style="--cx:0;--cy:3;--n:1;rotate:90deg;background:linear-gradient(90deg,#d7a0fb,#dda3fb)"></i><i class="sg s8" style="--cx:0;--cy:4;--n:3;rotate:0deg;background:linear-gradient(90deg,#dda3fb,#f0abfc)"></i><i class="hd"></i>
+        <a class="bt" href="https://winterdex.dexware.app" style="z-index:5;--cx:1;--cy:0;--c:#0EA5E9;--t:-0.30s"><i class="br"></i><img src="assets/hub/winterdex.webp" alt="WinterDex" width="124" height="124" decoding="async" /><small>WinterDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="z-index:5;--cx:2;--cy:0;--c:#2F6BF2;--t:0.14s"><i class="br"></i><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="124" height="124" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://spieldex.dexware.app" style="z-index:5;--cx:4;--cy:0;--c:#EA5A47;--t:1.02s"><i class="br"></i><img src="assets/hub/spieldex.webp" alt="SpielDex" width="124" height="124" decoding="async" /><small>SpielDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="z-index:4;--cx:5;--cy:1;--c:#2563EB;--t:1.90s"><i class="br"></i><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="124" height="124" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://baumdex.dexware.app" style="z-index:4;--cx:3;--cy:1;--c:#4ADE80;--t:2.78s"><i class="br"></i><img src="assets/hub/baumdex.webp" alt="BaumDex" width="124" height="124" decoding="async" /><small>BaumDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="z-index:4;--cx:2;--cy:1;--c:#DC2626;--t:3.22s"><i class="br"></i><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="124" height="124" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://kfzdex.dexware.app" style="z-index:4;--cx:0;--cy:1;--c:#F97316;--t:4.10s"><i class="br"></i><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="124" height="124" decoding="async" /><small>KfzDex</small></a><a class="bt" href="https://toredex.dexware.app" style="z-index:3;--cx:1;--cy:2;--c:#7C3AED;--t:4.98s"><i class="br"></i><img src="assets/hub/toredex.webp" alt="ToreDex" width="124" height="124" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://tourdex.dexware.app" style="z-index:3;--cx:3;--cy:2;--c:#3B82F6;--t:5.86s"><i class="br"></i><img src="assets/hub/tourdex.webp" alt="TourDex" width="124" height="124" decoding="async" /><small>TourDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="z-index:3;--cx:4;--cy:2;--c:#F59E0B;--t:6.30s"><i class="br"></i><img src="assets/hub/regaldex.webp" alt="RegalDex" width="124" height="124" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://craftdex.dexware.app" style="z-index:2;--cx:4;--cy:3;--c:#E8C97A;--t:7.62s"><i class="br"></i><img src="assets/hub/craftdex.webp" alt="CraftDex" width="124" height="124" decoding="async" /><small>CraftDex</small></a><a class="bt" href="https://gurtdex.dexware.app" style="z-index:2;--cx:3;--cy:3;--c:#DB2777;--t:8.06s"><i class="br"></i><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="124" height="124" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://dokudex.dexware.app" style="z-index:2;--cx:1;--cy:3;--c:#4F9EF8;--t:8.94s"><i class="br"></i><img src="assets/hub/dokudex.webp" alt="DokuDex" width="124" height="124" decoding="async" /><small>DokuDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="z-index:2;--cx:0;--cy:3;--c:#14B8A6;--t:9.38s"><i class="br"></i><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="124" height="124" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="z-index:1;--cx:1;--cy:4;--c:#84CC16;--t:10.26s"><i class="br"></i><img src="assets/hub/hebedex.webp" alt="HebeDex" width="124" height="124" decoding="async" /><small>HebeDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="z-index:1;--cx:3;--cy:4;--c:#3B82F6;--t:11.14s"><i class="br"></i><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="124" height="124" decoding="async" /><small>SchutzDex</small></a>
       </div></div>
       <div class="board bm"><div class="bpan">
         <i class="bd-floor"></i>
-        <i class="sb" style="--cx:0;--cy:0;--n:2;rotate:0deg"></i><i class="sb" style="--cx:2;--cy:0;--n:1;rotate:90deg"></i><i class="sb" style="--cx:2;--cy:1;--n:2;rotate:180deg"></i><i class="sb" style="--cx:0;--cy:1;--n:1;rotate:90deg"></i><i class="sb" style="--cx:0;--cy:2;--n:2;rotate:0deg"></i><i class="sg s0" style="--cx:0;--cy:0;--n:2;rotate:0deg;background:linear-gradient(90deg,#7aa2ff,#8e98fd)"></i><i class="sg s1" style="--cx:2;--cy:0;--n:1;rotate:90deg;background:linear-gradient(90deg,#8e98fd,#9992fc)"></i><i class="sg s2" style="--cx:2;--cy:1;--n:2;rotate:180deg;background:linear-gradient(90deg,#9992fc,#b390fa)"></i><i class="sg s3" style="--cx:0;--cy:1;--n:1;rotate:90deg;background:linear-gradient(90deg,#b390fa,#c799fb)"></i><i class="sg s4" style="--cx:0;--cy:2;--n:2;rotate:0deg;background:linear-gradient(90deg,#c799fb,#f0abfc)"></i><i class="hd"></i>
-        <a class="bt" href="https://gurtdex.dexware.app" style="--cx:0;--cy:0;--c:#DB2777;--t:-0.30s"><i class="br"></i><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="100" height="100" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://toredex.dexware.app" style="--cx:1;--cy:0;--c:#7C3AED;--t:1.13s"><i class="br"></i><img src="assets/hub/toredex.webp" alt="ToreDex" width="100" height="100" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="--cx:2;--cy:0;--c:#14B8A6;--t:2.56s"><i class="br"></i><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="100" height="100" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="--cx:2;--cy:1;--c:#DC2626;--t:3.99s"><i class="br"></i><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="100" height="100" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="--cx:1;--cy:1;--c:#2563EB;--t:5.42s"><i class="br"></i><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="100" height="100" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="--cx:0;--cy:1;--c:#F59E0B;--t:6.85s"><i class="br"></i><img src="assets/hub/regaldex.webp" alt="RegalDex" width="100" height="100" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="--cx:0;--cy:2;--c:#2F6BF2;--t:8.28s"><i class="br"></i><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="100" height="100" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="--cx:1;--cy:2;--c:#3B82F6;--t:9.71s"><i class="br"></i><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="100" height="100" decoding="async" /><small>SchutzDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="--cx:2;--cy:2;--c:#84CC16;--t:11.14s"><i class="br"></i><img src="assets/hub/hebedex.webp" alt="HebeDex" width="100" height="100" decoding="async" /><small>HebeDex</small></a>
+        <i class="sb" style="--cx:0;--cy:0;--n:3;rotate:0deg"></i><i class="sb" style="--cx:3;--cy:0;--n:1;rotate:90deg"></i><i class="sb" style="--cx:3;--cy:1;--n:3;rotate:180deg"></i><i class="sb" style="--cx:0;--cy:1;--n:1;rotate:90deg"></i><i class="sb" style="--cx:0;--cy:2;--n:3;rotate:0deg"></i><i class="sb" style="--cx:3;--cy:2;--n:1;rotate:90deg"></i><i class="sb" style="--cx:3;--cy:3;--n:3;rotate:180deg"></i><i class="sg s0" style="--cx:0;--cy:0;--n:3;rotate:0deg;background:linear-gradient(90deg,#7aa2ff,#8a9afd)"></i><i class="sg s1" style="--cx:3;--cy:0;--n:1;rotate:90deg;background:linear-gradient(90deg,#8a9afd,#9097fd)"></i><i class="sg s2" style="--cx:3;--cy:1;--n:3;rotate:180deg;background:linear-gradient(90deg,#9097fd,#a08efb)"></i><i class="sg s3" style="--cx:0;--cy:1;--n:1;rotate:90deg;background:linear-gradient(90deg,#a08efb,#a68cfa)"></i><i class="sg s4" style="--cx:0;--cy:2;--n:3;rotate:0deg;background:linear-gradient(90deg,#a68cfa,#c598fb)"></i><i class="sg s5" style="--cx:3;--cy:2;--n:1;rotate:90deg;background:linear-gradient(90deg,#c598fb,#d09dfb)"></i><i class="sg s6" style="--cx:3;--cy:3;--n:3;rotate:180deg;background:linear-gradient(90deg,#d09dfb,#f0abfc)"></i><i class="hd"></i>
+        <a class="bt" href="https://winterdex.dexware.app" style="z-index:4;--cx:0;--cy:0;--c:#0EA5E9;--t:-0.30s"><i class="br"></i><img src="assets/hub/winterdex.webp" alt="WinterDex" width="100" height="100" decoding="async" /><small>WinterDex</small></a><a class="bt" href="https://pruefdex.dexware.app" style="z-index:4;--cx:1;--cy:0;--c:#2F6BF2;--t:0.46s"><i class="br"></i><img src="assets/hub/pruefdex.webp" alt="PrüfDex" width="100" height="100" decoding="async" /><small>PrüfDex</small></a><a class="bt" href="https://spieldex.dexware.app" style="z-index:4;--cx:2;--cy:0;--c:#EA5A47;--t:1.23s"><i class="br"></i><img src="assets/hub/spieldex.webp" alt="SpielDex" width="100" height="100" decoding="async" /><small>SpielDex</small></a><a class="bt" href="https://leiterdex.dexware.app" style="z-index:4;--cx:3;--cy:0;--c:#2563EB;--t:1.99s"><i class="br"></i><img src="assets/hub/leiterdex.webp" alt="LeiterDex" width="100" height="100" decoding="async" /><small>LeiterDex</small></a><a class="bt" href="https://baumdex.dexware.app" style="z-index:3;--cx:3;--cy:1;--c:#4ADE80;--t:2.75s"><i class="br"></i><img src="assets/hub/baumdex.webp" alt="BaumDex" width="100" height="100" decoding="async" /><small>BaumDex</small></a><a class="bt" href="https://feuerdex.dexware.app" style="z-index:3;--cx:2;--cy:1;--c:#DC2626;--t:3.51s"><i class="br"></i><img src="assets/hub/feuerdex.webp" alt="FeuerDex" width="100" height="100" decoding="async" /><small>FeuerDex</small></a><a class="bt" href="https://kfzdex.dexware.app" style="z-index:3;--cx:1;--cy:1;--c:#F97316;--t:4.28s"><i class="br"></i><img src="assets/hub/kfzdex.webp" alt="KfzDex" width="100" height="100" decoding="async" /><small>KfzDex</small></a><a class="bt" href="https://toredex.dexware.app" style="z-index:3;--cx:0;--cy:1;--c:#7C3AED;--t:5.04s"><i class="br"></i><img src="assets/hub/toredex.webp" alt="ToreDex" width="100" height="100" decoding="async" /><small>ToreDex</small></a><a class="bt" href="https://tourdex.dexware.app" style="z-index:2;--cx:0;--cy:2;--c:#3B82F6;--t:5.80s"><i class="br"></i><img src="assets/hub/tourdex.webp" alt="TourDex" width="100" height="100" decoding="async" /><small>TourDex</small></a><a class="bt" href="https://regaldex.dexware.app" style="z-index:2;--cx:1;--cy:2;--c:#F59E0B;--t:6.56s"><i class="br"></i><img src="assets/hub/regaldex.webp" alt="RegalDex" width="100" height="100" decoding="async" /><small>RegalDex</small></a><a class="bt" href="https://craftdex.dexware.app" style="z-index:2;--cx:2;--cy:2;--c:#E8C97A;--t:7.33s"><i class="br"></i><img src="assets/hub/craftdex.webp" alt="CraftDex" width="100" height="100" decoding="async" /><small>CraftDex</small></a><a class="bt" href="https://gurtdex.dexware.app" style="z-index:2;--cx:3;--cy:2;--c:#DB2777;--t:8.09s"><i class="br"></i><img src="assets/hub/gurtdex.webp" alt="GurtDex" width="100" height="100" decoding="async" /><small>GurtDex</small></a><a class="bt" href="https://dokudex.dexware.app" style="z-index:1;--cx:3;--cy:3;--c:#4F9EF8;--t:8.85s"><i class="br"></i><img src="assets/hub/dokudex.webp" alt="DokuDex" width="100" height="100" decoding="async" /><small>DokuDex</small></a><a class="bt" href="https://geruestdex.dexware.app" style="z-index:1;--cx:2;--cy:3;--c:#14B8A6;--t:9.61s"><i class="br"></i><img src="assets/hub/geruestdex.webp" alt="GerüstDex" width="100" height="100" decoding="async" /><small>GerüstDex</small></a><a class="bt" href="https://hebedex.dexware.app" style="z-index:1;--cx:1;--cy:3;--c:#84CC16;--t:10.38s"><i class="br"></i><img src="assets/hub/hebedex.webp" alt="HebeDex" width="100" height="100" decoding="async" /><small>HebeDex</small></a><a class="bt" href="https://schutzdex.dexware.app" style="z-index:1;--cx:0;--cy:3;--c:#3B82F6;--t:11.14s"><i class="br"></i><img src="assets/hub/schutzdex.webp" alt="SchutzDex" width="100" height="100" decoding="async" /><small>SchutzDex</small></a>
       </div></div>
       </div>
     </div>
 
-    <section class="lights" id="dexware-app"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#DB2777"><img src="assets/hub/gurtdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#7C3AED"><img src="assets/hub/toredex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#14B8A6"><img src="assets/hub/geruestdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+    <section class="soft lights" id="apps"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#0EA5E9"><img src="assets/hub/winterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#2F6BF2"><img src="assets/hub/pruefdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#EA5A47"><img src="assets/hub/spieldex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+      <div class="wrap">
+        <div class="head rv">
+          <p class="eyebrow"><span data-l="de">Unsere Apps</span><span data-l="en">Our apps</span></p>
+          <h2><span data-l="de">Alle Apps auf einen Blick</span><span data-l="en">Every app at a glance</span></h2>
+          <p class="lead"><span data-l="de">Jede App macht eine Sache richtig — draußen, im Betrieb und zu Hause. Alle Bilder sind echte Bildschirme aus den Apps und dem Web-Dashboard, mit Beispieldaten.</span><span data-l="en">Each app does one thing right — outdoors, at work and at home. All pictures are real screens from the apps and the web dashboard, with sample data.</span></p>
+        </div>
+        <div class="ggrp rv" id="winterdienst">
+          <div class="ggrp-h"><div><h3><span data-l="de">Winterdienst &amp; Hausbetreuung</span><span data-l="en">Winter service &amp; caretaking</span></h3><p><span data-l="de">Räumen, streuen, Objekte betreuen — jeder Einsatz belegt.</span><span data-l="en">Clearing, gritting, looking after sites — every job on record.</span></p></div></div>
+          <div class="bcards">
+            <article class="bcard" style="--c:#0EA5E9;--i:0">
+              <div class="bc-txt">
+                <div class="g-nm"><img src="assets/hub/winterdex.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://winterdex.dexware.app">WinterDex</a></h4><small><span data-l="de">Winterdienst</span><span data-l="en">Winter service</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Räum- und Streueinsätze mit GPS, Foto und Wetter nachvollziehbar belegt.</span><span data-l="en">Snow clearing and gritting with GPS, photo and weather on record.</span></p>
+                <p class="bc-for"><span data-l="de"><b>Für:</b> Bauhof und Gemeinde, Hausbetreuung, Hausverwaltung und Winterdienst-Betriebe</span><span data-l="en"><b>For:</b> Depots and municipalities, caretaking, property management and winter service companies</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.winterdex.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – WinterDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+              <div class="pv"><div class="phone pv-b"><div class="screen" style="--bar:#085984"><img src="assets/hub/pv/winterdex-hero-1.webp" width="320" height="588" alt="WinterDex: Einsatz dokumentieren mit GPS-Stempel, Streumittel und Beweisfotos" loading="lazy" decoding="async" /></div></div><div class="phone pv-f"><div class="screen" style="--bar:#085984"><img src="assets/hub/pv/winterdex-hero-2.webp" width="320" height="588" alt="WinterDex: Fahrt „Gehwege Ortsmitte“ auf der Karte – 3,3 km in 42 Minuten" loading="lazy" decoding="async" /></div></div></div>
+            </article>
+            <article class="bcard" style="--c:#34D8A6;--i:1">
+              <div class="bc-txt">
+                <div class="g-nm"><img src="assets/hub/objektdex.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://objektdex.dexware.app">ObjektDex</a></h4><small><span data-l="de">Hausbetreuung</span><span data-l="en">Property services</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Hausbetreuung, Grünpflege und Reinigung belegen — Einsatz mit Zeit, Ort und Fotos, PDF mit Soll/Ist für die Hausverwaltung.</span><span data-l="en">Proof of work for caretaking, grounds and cleaning — visits with time, place and photos, a PDF with target vs. actual for the property manager.</span></p>
+                <p class="bc-for"><span data-l="de"><b>Für:</b> Hausbetreuung, Hausmeisterdienste, Reinigung und Grünpflege — das ganze Jahr</span><span data-l="en"><b>For:</b> Caretaking, janitorial services, cleaning and grounds care — all year round</span></p>
+                <div class="g-ft"><span class="st"><span data-l="de">Bald bei Google Play</span><span data-l="en">Coming soon to Google Play</span></span><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+              <div class="pv"><div class="phone pv-b"><div class="screen" style="--bar:#071f1b"><img src="assets/hub/pv/objektdex-ablauf.webp" width="320" height="569" alt="ObjektDex: Objekt mit Leistungen Soll/Ist" loading="lazy" decoding="async" /></div></div><div class="phone pv-f"><div class="screen" style="--bar:#071f1b"><img src="assets/hub/pv/objektdex-hero-1.webp" width="320" height="569" alt="ObjektDex: Tagesansicht „Heute“ mit 4 offenen Objekten" loading="lazy" decoding="async" /></div></div></div>
+            </article>
+          </div>
+        </div>
+        <div class="ggrp rv" id="gemeinde">
+          <div class="ggrp-h"><div><h3><span data-l="de">Gemeinde &amp; Bauhof</span><span data-l="en">Municipality &amp; depot</span></h3><p><span data-l="de">Spielplätze, Bäume und Fahrzeuge kontrollieren — mit Nachweis.</span><span data-l="en">Inspect playgrounds, trees and vehicles — on record.</span></p></div><a class="ggrp-link" href="/kommunal/"><span data-l="de">Dexware für Gemeinden</span><span data-l="en">Dexware for municipalities (German)</span> <span aria-hidden="true">→</span></a></div>
+          <div class="scards s3">
+            <article class="scard" style="--c:#EA5A47;--i:0">
+              <div class="pv"><div class="phone pv-f"><div class="screen" style="--bar:#11393e"><img src="assets/hub/pv/spieldex-hero-2.webp" width="320" height="599" alt="SpielDex: Kontrolle mit Checkliste nach DIN EN 1176-7" loading="lazy" decoding="async" /></div></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/spieldex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://spieldex.dexware.app">SpielDex</a></h4><small><span data-l="de">Spielplatzkontrolle</span><span data-l="en">Playgrounds</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Spielplatzkontrolle nach DIN EN 1176 mit PDF-Kontrollbuch.</span><span data-l="en">Playground inspections per DIN EN 1176 with a PDF logbook.</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.spieldex.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – SpielDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+            <article class="scard" style="--c:#4ADE80;--i:1">
+              <div class="pv"><div class="phone pv-f"><div class="screen" style="--bar:#0d1712"><img src="assets/hub/pv/baumdex-aussendienst.webp" width="320" height="615" alt="BaumDex: Baumliste im Außendienst mit Fälligkeiten (Beispieldaten)" loading="lazy" decoding="async" /></div></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/baumdex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://baumdex.dexware.app">BaumDex</a></h4><small><span data-l="de">Baumkataster</span><span data-l="en">Tree register</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Baumkataster und Verkehrssicherung — Kontrollen nachvollziehbar belegt.</span><span data-l="en">Tree register and safety checks — every inspection on record.</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.baumdex.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – BaumDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+            <article class="scard" style="--c:#F97316;--i:2">
+              <div class="pv"><div class="mbr"><div class="mbr-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/hub/pv/kfzdex-dash.webp" width="480" height="300" alt="KfzDex im Web-Dashboard: Fahrzeuge, fällige UVV-Prüfungen und Führerscheinkontrollen (Beispieldaten)" loading="lazy" decoding="async" /></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/kfzdex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://kfzdex.dexware.app">KfzDex</a></h4><small><span data-l="de">Fuhrpark & UVV</span><span data-l="en">Fleet & vehicle checks</span></small></div></div>
+                <p class="g-ds"><span data-l="de">UVV-Prüfung und Führerscheinkontrolle mit Fristen-Ampel.</span><span data-l="en">Vehicle inspections and licence checks with deadline alerts.</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.kfzdex.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – KfzDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="ggrp rv" id="pruefen">
+          <div class="ggrp-h"><div><h3><span data-l="de">Prüfpflichten im Betrieb</span><span data-l="en">Workplace inspections</span></h3><p><span data-l="de">9 <span class="nw">Prüf-Apps</span> — einzeln oder zusammen im <span class="nw">Prüf-Paket</span>.</span><span data-l="en">9 inspection apps — individually or together in the inspection package.</span></p></div></div>
+          <div class="pp-strip">
+            <div class="pp-main">
+              <div class="pp-chips">
+                <a class="pp-chip" href="https://pruefdex.dexware.app" style="--c:#2F6BF2;--i:0"><img src="assets/hub/pruefdex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>PrüfDex</b><small><span data-l="de">DGUV V3</span><span data-l="en">Electrical testing</span></small></span></a>
+                <a class="pp-chip" href="https://leiterdex.dexware.app" style="--c:#2563EB;--i:1"><img src="assets/hub/leiterdex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>LeiterDex</b><small><span data-l="de">Leitern</span><span data-l="en">Ladders</span></small></span></a>
+                <a class="pp-chip" href="https://feuerdex.dexware.app" style="--c:#DC2626;--i:2"><img src="assets/hub/feuerdex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>FeuerDex</b><small><span data-l="de">Feuerlöscher</span><span data-l="en">Fire extinguishers</span></small></span></a>
+                <a class="pp-chip" href="https://regaldex.dexware.app" style="--c:#F59E0B;--i:3"><img src="assets/hub/regaldex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>RegalDex</b><small><span data-l="de">Regalinspektion</span><span data-l="en">Racking</span></small></span></a>
+                <a class="pp-chip" href="https://toredex.dexware.app" style="--c:#7C3AED;--i:4"><img src="assets/hub/toredex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>ToreDex</b><small><span data-l="de">Tore & Türen</span><span data-l="en">Doors & gates</span></small></span></a>
+                <a class="pp-chip" href="https://schutzdex.dexware.app" style="--c:#3B82F6;--i:5"><img src="assets/hub/schutzdex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>SchutzDex</b><small><span data-l="de">Unterweisungen</span><span data-l="en">Safety briefings</span></small></span></a>
+                <a class="pp-chip" href="https://gurtdex.dexware.app" style="--c:#DB2777;--i:6"><img src="assets/hub/gurtdex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>GurtDex</b><small><span data-l="de">PSA gegen Absturz</span><span data-l="en">Fall protection</span></small></span></a>
+                <a class="pp-chip" href="https://geruestdex.dexware.app" style="--c:#14B8A6;--i:7"><img src="assets/hub/geruestdex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>GerüstDex</b><small><span data-l="de">Gerüstprüfung</span><span data-l="en">Scaffolding</span></small></span></a>
+                <a class="pp-chip" href="https://hebedex.dexware.app" style="--c:#84CC16;--i:8"><img src="assets/hub/hebedex.webp" alt="" width="32" height="32" loading="lazy" decoding="async" /><span><b>HebeDex</b><small><span data-l="de">Anschlag- & Zurrmittel</span><span data-l="en">Lifting & lashing gear</span></small></span></a>
+              </div>
+              <p class="pp-txt"><span data-l="de">Jede Prüf-App gibt es einzeln — oder alle 9 zusammen im <span class="nw">Prüf-Paket</span>, mit einem Abo.</span><span data-l="en">Every inspection app is available on its own — or all 9 together in the inspection package, with one subscription.</span></p>
+              <p class="pp-links"><a class="pp-link" href="#preis"><span data-l="de"><span class="nw">Prüf-Paket</span> &amp; Preis</span><span data-l="en">Inspection package &amp; price</span> <span aria-hidden="true">↓</span></a><a class="pp-link" href="#finder"><span data-l="de">Prüfhelfer: Was brauchst du?</span><span data-l="en">Helper: what do you need?</span> <span aria-hidden="true">↓</span></a></p>
+            </div>
+            <div class="pv"><div class="phone pv-b"><div class="screen" style="--bar:#27201e"><img src="assets/hub/ph/feuerdex-hero-2.webp" width="540" height="1011" alt="FeuerDex: Prüf-Checkliste" loading="lazy" decoding="async" /></div></div><div class="phone pv-f"><div class="screen" style="--bar:#231e30"><img src="assets/hub/ph/toredex-hero-1.webp" width="540" height="1011" alt="ToreDex: Objekt mit Toren" loading="lazy" decoding="async" /></div></div></div>
+          </div>
+        </div>
+        <div class="ggrp rv" id="zuhause">
+          <div class="ggrp-h"><div><h3><span data-l="de">Haus &amp; Wohnung</span><span data-l="en">Home &amp; flat</span></h3><p><span data-l="de">Für Hausbesitzer und Mieter — bald bei Google Play.</span><span data-l="en">For homeowners and tenants — coming soon to Google Play.</span></p></div></div>
+          <div class="bcards">
+            <article class="bcard" style="--c:#818CF8;--i:0">
+              <div class="bc-txt">
+                <div class="g-nm"><img src="assets/hub/hausdex.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://hausdex.dexware.app">HausDex</a></h4><small><span data-l="de">Hausakte</span><span data-l="en">Home logbook</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Das Scheckheft fürs Haus — merkt sich jede Arbeit, jede Rechnung und jede Garantie und erinnert an die nächste Wartung.</span><span data-l="en">The service log for your home — keeps every job, invoice and warranty and reminds you of the next maintenance.</span></p>
+                <p class="bc-for"><span data-l="de"><b>Für:</b> Hausbesitzer und Eigentümer</span><span data-l="en"><b>For:</b> Homeowners and property owners</span></p>
+                <div class="g-ft"><span class="st"><span data-l="de">Bald bei Google Play</span><span data-l="en">Coming soon to Google Play</span></span><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+              <div class="pv"><div class="phone pv-b"><div class="screen" style="--bar:#0b0d1a"><img src="assets/hub/pv/hausdex-hero-2.webp" width="320" height="599" alt="HausDex: Die Akte – Arbeiten und Rechnungen nach Jahr" loading="lazy" decoding="async" /></div></div><div class="phone pv-f"><div class="screen" style="--bar:#f4f5fc"><img src="assets/hub/pv/hausdex-hero-1.webp" width="320" height="599" alt="HausDex: Startseite mit Beispielhaus und Haus-Gesundheit" loading="lazy" decoding="async" /></div></div></div>
+            </article>
+            <article class="bcard" style="--c:#2DD4BF;--i:1">
+              <div class="bc-txt">
+                <div class="g-nm"><img src="assets/hub/mietzeuge.webp" alt="" width="44" height="44" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://mietzeuge.dexware.app">Mietzeuge</a></h4><small><span data-l="de">Wohnungsübergabe</span><span data-l="en">Move-in & move-out</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Übergabe-Protokoll für Mieter — Fotos mit Fingerabdruck, Unterschriften und Prüfcode, damit du bei der Kaution Beweise hast.</span><span data-l="en">Move-in and move-out records for tenants — fingerprinted photos, signatures and a verification code, so you have proof when it comes to your deposit.</span></p>
+                <p class="bc-for"><span data-l="de"><b>Für:</b> Mieterinnen und Mieter bei Ein- und Auszug</span><span data-l="en"><b>For:</b> Tenants moving in and out</span></p>
+                <div class="g-ft"><span class="st"><span data-l="de">Bald bei Google Play</span><span data-l="en">Coming soon to Google Play</span></span><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+              <div class="pv"><div class="phone pv-b"><div class="screen" style="--bar:#030c0d"><img src="assets/hub/pv/mietzeuge-02-raum.webp" width="320" height="599" alt="Mietzeuge: Raum-Checkliste mit Mangel und Foto" loading="lazy" decoding="async" /></div></div><div class="phone pv-f"><div class="screen" style="--bar:#030c0d"><img src="assets/hub/pv/mietzeuge-05-vergleich.webp" width="320" height="599" alt="Mietzeuge: Vorher-Nachher-Vergleich von Einzug und Auszug" loading="lazy" decoding="async" /></div></div></div>
+            </article>
+          </div>
+        </div>
+        <div class="ggrp rv" id="buero">
+          <div class="ggrp-h"><div><h3><span data-l="de">Handwerk &amp; Büro</span><span data-l="en">Trades &amp; office</span></h3><p><span data-l="de">Angebote, Projekte, Fahrtenbuch und Dokumente.</span><span data-l="en">Quotes, projects, mileage log and documents.</span></p></div></div>
+          <div class="scards s4">
+            <article class="scard" style="--c:#3B82F6;--i:0">
+              <div class="pv"><div class="mbr"><div class="mbr-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/hub/pv/tourdex-dash.webp" width="480" height="300" alt="TourDex im Web-Dashboard: Fahrten mit Strecke, Kategorie und Kilometern (Beispieldaten)" loading="lazy" decoding="async" /></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/tourdex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://tourdex.dexware.app">TourDex</a></h4><small><span data-l="de">Fahrtenbuch</span><span data-l="en">Mileage log</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt.</span><span data-l="en">Automatic mileage log with AI categorisation and a tax-ready PDF.</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.routelog.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – TourDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+            <article class="scard" style="--c:#4F9EF8;--i:1">
+              <div class="pv"><div class="mbr"><div class="mbr-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/hub/pv/dokudex-dash.webp" width="480" height="300" alt="DokuDex im Web-Dashboard: Schreiben mit Zusammenfassung und Fristen (Beispieldaten)" loading="lazy" decoding="async" /></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/dokudex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://dokudex.dexware.app">DokuDex</a></h4><small><span data-l="de">Dokumente & KI</span><span data-l="en">Documents & AI</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung.</span><span data-l="en">Scan documents and understand them with AI — with deadline reminders.</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.archio.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – DokuDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+            <article class="scard" style="--c:#E8C97A;--i:2">
+              <div class="pv"><div class="mbr"><div class="mbr-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="assets/hub/pv/craftdex-dash.webp" width="480" height="300" alt="CraftDex im Web-Dashboard: Aufträge, Termine und erfasste Stunden (Beispieldaten)" loading="lazy" decoding="async" /></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/craftdex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://craftdex.dexware.app">CraftDex</a></h4><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p>
+                <div class="g-ft"><a class="st on" href="https://play.google.com/store/apps/details?id=com.craftlog.app" target="_blank" rel="noopener"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bei Google Play</span><span data-l="en">On Google Play</span><span class="vh"> – CraftDex</span></a><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+            <article class="scard" style="--c:#E39A54;--i:3">
+              <div class="pv"><div class="phone pv-f"><div class="screen" style="--bar:#0a0c10"><img src="assets/hub/pv/installateurdex-hero-1.webp" width="320" height="599" alt="AngebotDex: Übersicht mit Kundenanfragen, Terminen und Wartungspotenzial (Beispieldaten)" loading="lazy" decoding="async" /></div></div></div>
+              <div class="sc-txt">
+                <div class="g-nm"><img src="assets/hub/installateurdex.webp" alt="" width="36" height="36" loading="lazy" decoding="async" /><div><h4><a class="stretch" href="https://installateurdex.dexware.app">AngebotDex</a></h4><small><span data-l="de">KI-Angebote</span><span data-l="en">AI quotes</span></small></div></div>
+                <p class="g-ds"><span data-l="de">Angebot einsprechen – mit deinen Preisen und deinem Logo. Dazu Wartungsprotokoll per Diktat und QR-Anlagenpass.</span><span data-l="en">Speak your quote – with your own prices and logo. Plus service reports by dictation and a QR system pass.</span></p>
+                <div class="g-ft"><span class="st"><span data-l="de">Bald bei Google Play</span><span data-l="en">Coming soon to Google Play</span></span><span class="more" aria-hidden="true"><span data-l="de">Mehr erfahren</span><span data-l="en">Learn more</span> →</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lights" id="dexware-app"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#2563EB"><img src="assets/hub/leiterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#4ADE80"><img src="assets/hub/baumdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#DC2626"><img src="assets/hub/feuerdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
       <div class="wrap">
         <div class="dxa rv">
           <div class="dxa-text">
             <p class="dxa-brand"><img src="assets/hub/dexware.webp" alt="" width="34" height="34" /><b>Dexware</b><small><span data-l="de">Die Dexware-App</span><span data-l="en">The Dexware app</span></small></p>
-            <h2><span data-l="de">Alle Prüf-Apps <span class="grad">in einer App.</span></span><span data-l="en">Every inspection app <span class="grad">in one app.</span></span></h2>
-            <p class="lead"><span data-l="de">Statt vieler einzelner Apps: In „Dexware“ wählst du die Bereiche, die dein Betrieb braucht — Leitern, Feuerlöscher, Regale, Tore und mehr. Eine Startseite mit allen Fristen, Erinnerungen je Bereich.</span><span data-l="en">Instead of many separate apps: in “Dexware” you pick the areas your business needs — ladders, fire extinguishers, racking, doors and more. One home screen with every deadline, reminders per area.</span></p>
+            <h2><span data-l="de">Deine Apps <span class="grad">in einer App.</span></span><span data-l="en">Your apps <span class="grad">in one app.</span></span></h2>
+            <p class="lead"><span data-l="de">In der Dexware-App wählst du die Apps, die du brauchst — vom Winterdienst über den Fuhrpark bis zu den <span class="nw">Prüf-Apps</span>. Eine Startseite mit allen Fristen, Erinnerungen je Bereich.</span><span data-l="en">In the Dexware app you pick the apps you need — from winter service and fleet to the inspection apps. One home screen with every deadline, reminders per area.</span></p>
             <ul class="bul">
-              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Nur die Bereiche, die du brauchst — jederzeit erweiterbar</span><span data-l="en">Only the areas you need — add more anytime</span></li>
-              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">„Demnächst“: fällige Fristen aller Bereiche auf einen Blick</span><span data-l="en">“Upcoming”: deadlines from every area at a glance</span></li>
-              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Mit dem Suite-Abo alle Prüf-Apps freigeschaltet</span><span data-l="en">Every inspection app unlocked with the Suite subscription</span></li>
+              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Nur die Apps, die du brauchst — jederzeit erweiterbar</span><span data-l="en">Only the apps you need — add more anytime</span></li>
+              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">„Demnächst“: fällige Fristen aller Apps auf einen Blick</span><span data-l="en">“Upcoming”: deadlines from every app at a glance</span></li>
+              <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Mit dem <span class="nw">Prüf-Paket</span> alle <span class="nw">Prüf-Apps</span> freigeschaltet</span><span data-l="en">Every inspection app unlocked with the inspection package</span></li>
             </ul>
             <div class="cta"><a class="btn" href="mailto:support@dexware.app?subject=Dexware-App%20%E2%80%93%20bitte%20Bescheid%20geben%2C%20sobald%20verf%C3%BCgbar"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg><span data-l="de">Bald bei Google Play – Bescheid geben</span><span data-l="en">Coming to Google Play – notify me</span></a>
             </div>
@@ -970,64 +1054,7 @@
       </div>
     </section>
 
-    <section class="soft lights" id="apps"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#DC2626"><img src="assets/hub/feuerdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#2563EB"><img src="assets/hub/leiterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#F59E0B"><img src="assets/hub/regaldex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
-      <div class="wrap">
-        <div class="head rv">
-          <p class="eyebrow"><span data-l="de">Unsere Apps</span><span data-l="en">Our apps</span></p>
-          <h2><span data-l="de">Für jede Pflicht die passende App</span><span data-l="en">The right app for every obligation</span></h2>
-          <p class="lead"><span data-l="de">Jede App löst genau eine Aufgabe — sauber, mobil und nachweisbar. Die Prüf-Apps gibt es zusammen im Suite-Abo; die weiteren Apps von Dexware haben jeweils einen eigenen Tarif.</span><span data-l="en">Each app solves exactly one task — clean, mobile and compliant. The inspection apps come together in the Suite subscription; the other Dexware apps each have their own plan.</span></p>
-        </div>
-        <div class="lib rv">
-          <aside class="lib-panel">
-            <span class="tag-in"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Im Suite-Abo</span><span data-l="en">In the Suite</span></span>
-            <h3><span data-l="de">Dexware Suite <span class="grad">– ein Abo, alle Prüf-Apps</span></span><span data-l="en">Dexware Suite <span class="grad">– one subscription, all inspection apps</span></span></h3>
-            <p><span data-l="de">9 Apps für Prüfungen und Nachweise im Betrieb. Ein Abo schaltet Pro in allen frei.</span><span data-l="en">9 apps for inspections and records at work. One subscription unlocks Pro in all of them.</span></p>
-            <div class="lib-cloud" aria-hidden="true"><img src="assets/hub/gurtdex.webp" alt="" width="34" height="34" loading="lazy" style="--i:0" /><img src="assets/hub/toredex.webp" alt="" width="34" height="34" loading="lazy" style="--i:1" /><img src="assets/hub/geruestdex.webp" alt="" width="34" height="34" loading="lazy" style="--i:2" /><img src="assets/hub/feuerdex.webp" alt="" width="34" height="34" loading="lazy" style="--i:3" /><img src="assets/hub/leiterdex.webp" alt="" width="34" height="34" loading="lazy" style="--i:4" /><img src="assets/hub/regaldex.webp" alt="" width="34" height="34" loading="lazy" style="--i:5" /><img src="assets/hub/pruefdex.webp" alt="" width="34" height="34" loading="lazy" style="--i:6" /><img src="assets/hub/schutzdex.webp" alt="" width="34" height="34" loading="lazy" style="--i:7" /><img src="assets/hub/hebedex.webp" alt="" width="34" height="34" loading="lazy" style="--i:8" /></div>
-            <div class="lib-price"><b><span data-l="de">24,99 €</span><span data-l="en">€24.99</span></b><span><span data-l="de">pro Monat · alle 9 Apps</span><span data-l="en">per month · all 9 apps</span></span><small><span data-l="de">Jahresabo 199,99 € — entspricht 16,67 € im Monat</span><span data-l="en">Yearly €199.99 — that is €16.67 per month</span></small></div>
-            <div class="lib-cta"><a class="btn" href="#suite"><span data-l="de">Zum Suite-Abo</span><span data-l="en">About the Suite</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a><a class="lib-finder" href="#finder"><span data-l="de">Suite-Finder: Welche Apps passen?</span><span data-l="en">Suite finder: which apps fit?</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></div>
-          </aside>
-          <div class="lib-list">
-            <div class="lib-group">
-              <h3><span data-l="de">Prüfpflichten & Arbeitsschutz im Betrieb</span><span data-l="en">Workplace inspections & safety</span><span>9</span></h3>
-              <div class="rows-box"><i class="rl rl-b" aria-hidden="true"></i><i class="rl rl-l" aria-hidden="true"></i>
-                <ol class="rows">
-                  <li><a class="row" style="--c:#2F6BF2" href="https://pruefdex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/pruefdex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>PrüfDex</b><small><span data-l="de">DGUV V3</span><span data-l="en">Electrical testing</span></small></span><span class="row-ds"><span data-l="de">DGUV-V3-Geräteprüfung per QR — Protokoll und Prüfplakette automatisch.</span><span data-l="en">DGUV V3 appliance testing via QR — report and test label generated automatically.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#DB2777" href="https://gurtdex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/gurtdex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>GurtDex</b><small><span data-l="de">PSA gegen Absturz</span><span data-l="en">Fall protection</span></small></span><span class="row-ds"><span data-l="de">PSA gegen Absturz nach DGUV 312-906 und EN 365 — mit Ablegereife-Wächter.</span><span data-l="en">Fall-protection equipment per DGUV 312-906 and EN 365 — with retirement tracking.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#84CC16" href="https://hebedex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/hebedex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>HebeDex</b><small><span data-l="de">Anschlag- & Zurrmittel</span><span data-l="en">Lifting & lashing gear</span></small></span><span class="row-ds"><span data-l="de">Anschlag-, Hebe- und Zurrmittel nach DGUV Regel 109-017 — QR-Etiketten und Ablegereife-Rechner.</span><span data-l="en">Lifting slings, hoists and lashing gear per DGUV Rule 109-017 — QR labels and discard calculator.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#7C3AED" href="https://toredex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/toredex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>ToreDex</b><small><span data-l="de">Tore & Türen</span><span data-l="en">Doors & gates</span></small></span><span class="row-ds"><span data-l="de">Kraftbetätigte Tore und Türen nach ASR A1.7 prüfen, Stilllegungen belegen.</span><span data-l="en">Inspect powered doors and gates per ASR A1.7 and document shutdowns.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#14B8A6" href="https://geruestdex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/geruestdex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>GerüstDex</b><small><span data-l="de">Gerüstprüfung</span><span data-l="en">Scaffolding</span></small></span><span class="row-ds"><span data-l="de">Gerüstprüfung nach TRBS 2121-1 mit Sperr-Dokumentation per Ampel.</span><span data-l="en">Scaffold inspections per TRBS 2121-1 with traffic-light lockouts.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#DC2626" href="https://feuerdex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/feuerdex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>FeuerDex</b><small><span data-l="de">Feuerlöscher</span><span data-l="en">Fire extinguishers</span></small></span><span class="row-ds"><span data-l="de">Feuerlöscher nach ASR A2.2 und DIN 14406-4 — Inventar, Fristen, Bericht.</span><span data-l="en">Fire extinguishers per ASR A2.2 and DIN 14406-4 — inventory, deadlines, reports.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#2563EB" href="https://leiterdex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/leiterdex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>LeiterDex</b><small><span data-l="de">Leitern</span><span data-l="en">Ladders</span></small></span><span class="row-ds"><span data-l="de">Leitern und Tritte nach BetrSichV und DGUV 208-016 prüfen und belegen.</span><span data-l="en">Inspect and document ladders and steps per BetrSichV and DGUV 208-016.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#F59E0B" href="https://regaldex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/regaldex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>RegalDex</b><small><span data-l="de">Regalinspektion</span><span data-l="en">Racking</span></small></span><span class="row-ds"><span data-l="de">Regalinspektion nach DIN EN 15635 — Schäden einstufen, Felder sperren.</span><span data-l="en">Racking inspections per DIN EN 15635 — rate damage, lock bays.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                  <li><a class="row" style="--c:#3B82F6" href="https://schutzdex.dexware.app"><span class="row-ic"><i class="rg" aria-hidden="true"></i><img src="assets/hub/schutzdex.webp" alt="" width="40" height="40" loading="lazy" /></span><span class="row-nm"><b>SchutzDex</b><small><span data-l="de">Unterweisungen</span><span data-l="en">Safety briefings</span></small></span><span class="row-ds"><span data-l="de">KI-Unterweisungen mit Verständnis-Check und Gefährdungsbeurteilung.</span><span data-l="en">AI safety briefings with comprehension check and risk assessment.</span></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a></li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="own rv">
-          <div class="own-head">
-            <span class="tag-own"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg><span data-l="de">Eigener Tarif · nicht im Suite-Abo</span><span data-l="en">Own plan · not in the Suite</span></span>
-            <h3><span data-l="de">Weitere Apps von Dexware</span><span data-l="en">More apps from Dexware</span></h3>
-            <p><span data-l="de">Winterdienst, Spielplätze, Bäume und Fuhrpark, Fahrtenbuch, Dokumente und Projekte, dazu Apps für Handwerksbetriebe, Hausbesitzer und Mieter. Jede dieser Apps hat ihren eigenen Tarif — das Suite-Abo schaltet sie nicht frei. Suite-Abos, die bis einschließlich 26.11.2026 abgeschlossen wurden, behalten WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex und CraftDex, solange sie ununterbrochen laufen.</span><span data-l="en">Winter service, playgrounds, trees and fleet, mileage log, documents and projects, plus apps for trade businesses, homeowners and tenants. Each of these apps has its own plan — the Suite subscription does not unlock them. Suite subscriptions taken out on or before 26 Nov 2026 keep WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex and CraftDex as long as they run without interruption.</span></p>
-          </div>
-          <div class="own-cards">
-            <a class="own-card" style="--c:#0EA5E9" href="https://winterdex.dexware.app"><img src="assets/hub/winterdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>WinterDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Winterdienst</span><span data-l="en">Winter service</span></small><p><span data-l="de">Räum- und Streueinsätze mit GPS, Foto und Wetter nachvollziehbar belegt.</span><span data-l="en">Snow clearing and gritting with GPS, photo and weather on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#EA5A47" href="https://spieldex.dexware.app"><img src="assets/hub/spieldex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>SpielDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Spielplatzkontrolle</span><span data-l="en">Playgrounds</span></small><p><span data-l="de">Spielplatzkontrolle nach DIN EN 1176 mit PDF-Kontrollbuch.</span><span data-l="en">Playground inspections per DIN EN 1176 with a PDF logbook.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#4ADE80" href="https://baumdex.dexware.app"><img src="assets/hub/baumdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>BaumDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Baumkataster</span><span data-l="en">Tree register</span></small><p><span data-l="de">Baumkataster und Verkehrssicherung — Kontrollen nachvollziehbar belegt.</span><span data-l="en">Tree register and safety checks — every inspection on record.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#F97316" href="https://kfzdex.dexware.app"><img src="assets/hub/kfzdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>KfzDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Fuhrpark & UVV</span><span data-l="en">Fleet & vehicle checks</span></small><p><span data-l="de">UVV-Prüfung und Führerscheinkontrolle mit Fristen-Ampel.</span><span data-l="en">Vehicle inspections and licence checks with deadline alerts.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#3B82F6" href="https://tourdex.dexware.app"><img src="assets/hub/tourdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>TourDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Fahrtenbuch</span><span data-l="en">Mileage log</span></small><p><span data-l="de">Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt.</span><span data-l="en">Automatic mileage log with AI categorisation and a tax-ready PDF.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#4F9EF8" href="https://dokudex.dexware.app"><img src="assets/hub/dokudex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>DokuDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Dokumente & KI</span><span data-l="en">Documents & AI</span></small><p><span data-l="de">Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung.</span><span data-l="en">Scan documents and understand them with AI — with deadline reminders.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#E8C97A" href="https://craftdex.dexware.app"><img src="assets/hub/craftdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>CraftDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Projekt-Doku</span><span data-l="en">Project log</span></small><p><span data-l="de">Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten.</span><span data-l="en">Project journal for trades and hobbies — steps, photos, hours, costs.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#818CF8" href="https://hausdex.dexware.app"><img src="assets/hub/hausdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>HausDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">Hausakte · bald</span><span data-l="en">Home logbook · soon</span></small><p><span data-l="de">Das Scheckheft fürs Haus — merkt sich jede Arbeit, jede Rechnung und jede Garantie und erinnert an die nächste Wartung.</span><span data-l="en">The service log for your home — keeps every job, invoice and warranty and reminds you of the next maintenance.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#E39A54" href="https://installateurdex.dexware.app"><img src="assets/hub/installateurdex.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>AngebotDex</b><em><span data-l="de">Eigenes Abo</span><span data-l="en">Own subscription</span></em></span><small><span data-l="de">KI-Angebote · bald</span><span data-l="en">AI quotes · soon</span></small><p><span data-l="de">Wartung diktieren, Protokoll im Firmen-Look, QR-Anlagenpass für deine Kunden.</span><span data-l="en">Dictate service reports in your branding, with a QR system pass for your customers.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-            <a class="own-card" style="--c:#2DD4BF" href="https://mietzeuge.dexware.app"><img src="assets/hub/mietzeuge.webp" alt="" width="48" height="48" loading="lazy" /><span class="oc-txt"><span class="oc-nm"><b>Mietzeuge</b><em><span data-l="de">Einmalkauf je Wohnung</span><span data-l="en">One-time purchase per flat</span></em></span><small><span data-l="de">Wohnungsübergabe · bald</span><span data-l="en">Move-in & move-out · soon</span></small><p><span data-l="de">Übergabe-Protokoll für Mieter — Fotos mit Fingerabdruck, Unterschriften und Prüfcode, damit die Kaution zurückkommt.</span><span data-l="en">Move-in and move-out records for tenants — fingerprinted photos, signatures and a verification code to get your deposit back.</span></p></span><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="lights" id="iphone"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#2F6BF2"><img src="assets/hub/pruefdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#3B82F6"><img src="assets/hub/schutzdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#84CC16"><img src="assets/hub/hebedex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+    <section class="soft lights" id="iphone"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#F97316"><img src="assets/hub/kfzdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#7C3AED"><img src="assets/hub/toredex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#3B82F6"><img src="assets/hub/tourdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
       <div class="wrap">
         <div class="head rv">
           <p class="eyebrow">iPhone &amp; iPad</p>
@@ -1057,15 +1084,41 @@
       </div>
     </section>
 
-    <section class="lights" id="finder"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#DB2777"><img src="assets/hub/gurtdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#7C3AED"><img src="assets/hub/toredex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#14B8A6"><img src="assets/hub/geruestdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
-      <div class="wrap">
+    <section class="lights" id="suite"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#F59E0B"><img src="assets/hub/regaldex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#E8C97A"><img src="assets/hub/craftdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#DB2777"><img src="assets/hub/gurtdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+      <div class="wrap split">
+        <div class="rv">
+          <p class="eyebrow"><span data-l="de"><span class="nw">Prüf-Paket</span></span><span data-l="en">Inspection package</span></p>
+          <h2><span data-l="de">Das <span class="nw">Prüf-Paket</span>: <span class="grad">alle 9 <span class="nw">Prüf-Apps</span>, ein Abo.</span></span><span data-l="en">The inspection package: <span class="grad">all 9 inspection apps, one subscription.</span></span></h2>
+          <p class="lead"><span data-l="de">Ein Abo schaltet Pro in allen 9 <span class="nw">Prüf-Apps</span> frei — auf allen deinen Geräten, neue <span class="nw">Prüf-Apps</span> inklusive. In den Apps heißt das Paket „Dexware Suite“.</span><span data-l="en">One subscription unlocks Pro in all 9 inspection apps — on all your devices, new inspection apps included. In the apps the package is called “Dexware Suite”.</span></p>
+          <ul class="bul">
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Neue <span class="nw">Prüf-Apps</span> automatisch dabei, ohne Aufpreis</span><span data-l="en">New inspection apps included automatically, at no extra cost</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Einmal abschließen — in jeder Prüf-App freigeschaltet, bald auch in der Dexware-App</span><span data-l="en">Subscribe once — unlocked in every inspection app, soon in the Dexware app too</span></li>
+            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Erhältlich in jeder Prüf-App unter „Pro werden“</span><span data-l="en">Available in every inspection app under “Go Pro”</span></li>
+          </ul>
+          <p class="fine"><span data-l="de">Nicht im <span class="nw">Prüf-Paket</span>: alle anderen Dexware-Apps — sie haben einen eigenen Tarif. Für Suite-Abos, die bis einschließlich 26.11.2026 abgeschlossen wurden, bleiben WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex und CraftDex enthalten, solange das Abo ununterbrochen läuft.</span><span data-l="en">Not in the inspection package: all other Dexware apps — they have their own pricing. Suite subscriptions taken out on or before 26 Nov 2026 keep WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex and CraftDex as long as they run without interruption.</span></p>
+        </div>
+        <div class="stage rv" id="preis">
+          <div class="offer">
+            <p class="offer-lbl"><span data-l="de"><span class="nw">Prüf-Paket</span> <small>(Dexware Suite)</small></span><span data-l="en">Inspection package <small>(Dexware Suite)</small></span></p>
+            <div class="row">
+              <div class="opt"><span class="lbl"><span data-l="de">Monatlich</span><span data-l="en">Monthly</span></span><p><span data-l="de">24,99 €</span><span data-l="en">€24.99</span> <small><span data-l="de">/ Monat</span><span data-l="en">/ month</span></small></p><em><span data-l="de">jederzeit kündbar</span><span data-l="en">cancel anytime</span></em></div>
+              <div class="opt best"><span class="tag"><span data-l="de">33 % gespart</span><span data-l="en">Save 33%</span></span><span class="lbl"><span data-l="de">Jährlich</span><span data-l="en">Yearly</span></span><p><span data-l="de">199,99 €</span><span data-l="en">€199.99</span> <small><span data-l="de">/ Jahr</span><span data-l="en">/ year</span></small></p><em><span data-l="de">entspricht 16,67 € im Monat</span><span data-l="en">that is €16.67 per month</span></em></div>
+            </div>
+            <div class="icons" aria-hidden="true"><img src="assets/hub/gurtdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/toredex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/geruestdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/feuerdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/leiterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/regaldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/pruefdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/schutzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/hebedex.webp" alt="" width="26" height="26" loading="lazy" /></div>
+            <p class="pp-incl"><span data-l="de"><b>Enthalten:</b> GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex und HebeDex</span><span data-l="en"><b>Included:</b> GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex and HebeDex</span></p>
+            <p class="fine"><span data-l="de">Abschluss in der App über Google Play · Preise inkl. MwSt.</span><span data-l="en">Subscribe in the app via Google Play · prices incl. VAT</span></p>
+            <p class="fine"><span data-l="de">Für Betriebe und Gemeinden auch auf Jahresrechnung direkt von Dexware (199,99 € Endbetrag – als Kleinunternehmer gem. § 6 Abs. 1 Z 27 UStG berechnen wir keine Umsatzsteuer; für Kunden in Deutschland und der Schweiz nennen wir die steuerliche Behandlung im Angebot): <a href="mailto:support@dexware.app?subject=Dexware%20Suite%20auf%20Jahresrechnung">support@dexware.app</a> · <a href="/kommunal/">Dexware für Gemeinden</a></span><span data-l="en">For businesses and municipalities also by annual invoice directly from Dexware (€199.99 total – small business, no Austrian VAT charged; for customers in Germany and Switzerland we state the tax treatment in the quote): <a href="mailto:support@dexware.app?subject=Dexware%20Suite%20annual%20invoice">support@dexware.app</a> · <a href="/kommunal/">Dexware for municipalities (German)</a></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="wrap pp-finder" id="finder">
         <div class="head rv">
-          <p class="eyebrow"><span data-l="de">Suite-Finder</span><span data-l="en">Suite finder</span></p>
-          <h2><span data-l="de">Was gibt es in deinem Betrieb?</span><span data-l="en">What does your business have?</span></h2>
-          <p class="lead"><span data-l="de">Tippe an, was auf euch zutrifft. Du siehst sofort, welche Apps passen und was sie kosten — einzeln und in der Suite.</span><span data-l="en">Tap what applies to you. You will see right away which apps fit and what they cost — individually and in the Suite.</span></p>
+          <p class="eyebrow"><span data-l="de">Prüfhelfer</span><span data-l="en">Inspection helper</span></p>
+          <h3><span data-l="de">Was gibt es in deinem Betrieb?</span><span data-l="en">What does your business have?</span></h3>
+          <p class="lead"><span data-l="de">Tippe an, was auf euch zutrifft. Du siehst sofort, welche <span class="nw">Prüf-Apps</span> passen und was sie kosten — einzeln und im <span class="nw">Prüf-Paket</span>.</span><span data-l="en">Tap what applies to you. You will see right away which inspection apps fit and what they cost — individually and in the inspection package.</span></p>
         </div>
         <div class="finder rv">
-          <div class="fd-opts" role="group" aria-label="Suite-Finder">
+          <div class="fd-opts" role="group" aria-label="Prüfhelfer">
             <button type="button" class="fd-opt" style="--i:0" aria-pressed="false" data-app="pruefdex" data-name="PrüfDex" data-src="assets/hub/pruefdex.webp" data-eur="14.99"><img src="assets/hub/pruefdex.webp" alt="" width="34" height="34" loading="lazy" /><span><b><span data-l="de">Elektrogeräte</span><span data-l="en">Electrical equipment</span></b><small><span data-l="de">von der Bohrmaschine bis zur Kaffeemaschine</span><span data-l="en">from drills to the coffee machine</span></small></span></button>
             <button type="button" class="fd-opt" style="--i:1" aria-pressed="false" data-app="leiterdex" data-name="LeiterDex" data-src="assets/hub/leiterdex.webp" data-eur="9.99"><img src="assets/hub/leiterdex.webp" alt="" width="34" height="34" loading="lazy" /><span><b><span data-l="de">Leitern</span><span data-l="en">Ladders</span></b><small><span data-l="de">im Lager, in der Werkstatt, im Büro</span><span data-l="en">in storage, workshop and office</span></small></span></button>
             <button type="button" class="fd-opt" style="--i:2" aria-pressed="false" data-app="feuerdex" data-name="FeuerDex" data-src="assets/hub/feuerdex.webp" data-eur="9.99"><img src="assets/hub/feuerdex.webp" alt="" width="34" height="34" loading="lazy" /><span><b><span data-l="de">Feuerlöscher</span><span data-l="en">Fire extinguishers</span></b><small><span data-l="de">Sichtkontrolle und Prüffristen</span><span data-l="en">visual checks and service dates</span></small></span></button>
@@ -1077,52 +1130,23 @@
             <button type="button" class="fd-opt" style="--i:8" aria-pressed="false" data-app="hebedex" data-name="HebeDex" data-src="assets/hub/hebedex.webp" data-eur="9.99"><img src="assets/hub/hebedex.webp" alt="" width="34" height="34" loading="lazy" /><span><b><span data-l="de">Hebe- & Zurrmittel</span><span data-l="en">Lifting & lashing gear</span></b><small><span data-l="de">Ketten, Hebebänder, Zurrgurte</span><span data-l="en">chains, slings, lashing straps</span></small></span></button>
           </div>
           <div class="fd-res" aria-live="polite" data-suite="24.99" data-year="16,67" data-n="9">
-            <p class="fd-empty"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg><span data-l="de">Noch nichts gewählt. Tippe links an, was es bei euch gibt.</span><span data-l="en">Nothing selected yet. Tap what applies to you.</span></p>
+            <p class="fd-empty"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg><span data-l="de">Noch nichts gewählt. Tippe an, was es bei euch gibt.</span><span data-l="en">Nothing selected yet. Tap what applies to you.</span></p>
             <div class="fd-out" hidden>
               <p class="fd-n"><b data-fd="n">0</b> <span data-l="de">passende Apps</span><span data-l="en">matching apps</span></p>
               <div class="fd-apps" data-fd="apps"></div>
               <div class="fd-prices">
                 <div><span><span data-l="de">Einzeln gebucht</span><span data-l="en">Booked individually</span></span><b data-fd="single"></b><small><span data-l="de">pro Monat</span><span data-l="en">per month</span></small></div>
-                <div class="best"><span>Dexware Suite</span><b><span data-l="de">24,99 €</span><span data-l="en">€24.99</span></b><small><span data-l="de">pro Monat · alle 9 Apps</span><span data-l="en">per month · all 9 apps</span></small></div>
+                <div class="best"><span><span data-l="de"><span class="nw">Prüf-Paket</span></span><span data-l="en">Inspection package</span></span><b><span data-l="de">24,99 €</span><span data-l="en">€24.99</span></b><small><span data-l="de">pro Monat · alle 9 <span class="nw">Prüf-Apps</span></span><span data-l="en">per month · all 9 inspection apps</span></small></div>
               </div>
               <p class="fd-hint" data-fd="hint"></p>
-              <a class="btn" href="#suite"><span data-l="de">Zum Suite-Abo</span><span data-l="en">About the Suite</span> <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg></a>
+              <a class="btn" href="#preis"><span data-l="de">Zum <span class="nw">Prüf-Paket</span> ↑</span><span data-l="en">To the inspection package ↑</span></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="lights" id="suite"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#DC2626"><img src="assets/hub/feuerdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#2563EB"><img src="assets/hub/leiterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#F59E0B"><img src="assets/hub/regaldex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
-      <div class="wrap split">
-        <div class="rv">
-          <p class="eyebrow">Dexware Suite</p>
-          <h2><span data-l="de">Alle 9 Prüf-Apps. <span class="grad">Ein Abo.</span></span><span data-l="en">All 9 inspection apps. <span class="grad">One subscription.</span></span></h2>
-          <p class="lead"><span data-l="de">Ein Abo schaltet Pro in allen Prüf-Apps frei — auf allen deinen Geräten, neue Prüf-Apps inklusive.</span><span data-l="en">One subscription unlocks Pro in every inspection app — on all your devices, new inspection apps included.</span></p>
-          <ul class="bul">
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Neue Prüf-Apps automatisch dabei, ohne Aufpreis</span><span data-l="en">New inspection apps included automatically, at no extra cost</span></li>
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Einmal kaufen — in jeder Suite-App und in der Dexware-App freigeschaltet</span><span data-l="en">Buy once — unlocked in every Suite app and in the Dexware app</span></li>
-            <li><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg><span data-l="de">Erhältlich in jeder Suite-App unter „Pro werden"</span><span data-l="en">Available in every Suite app under "Go Pro"</span></li>
-          </ul>
-          <p class="fine"><span data-l="de">Nicht enthalten: WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex, CraftDex, HausDex, AngebotDex und Mietzeuge — diese Apps haben einen eigenen Tarif. Für Suite-Abos, die bis einschließlich 26.11.2026 abgeschlossen wurden, bleiben WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex und CraftDex enthalten, solange das Abo ununterbrochen läuft.</span><span data-l="en">Not included: WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex, CraftDex, HausDex, AngebotDex and Mietzeuge — these apps have their own plan. Suite subscriptions taken out on or before 26 Nov 2026 keep WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex and CraftDex as long as they run without interruption.</span></p>
-        </div>
-        <div class="stage rv">
-          <div class="phone sa"><div class="screen" style="--bar:#231e30"><img src="assets/hub/ph/toredex-hero-1.webp" width="540" height="1011" alt="ToreDex: Objekt mit Toren" loading="lazy" decoding="async" /></div></div>
-          <div class="phone sb"><div class="screen" style="--bar:#27201e"><img src="assets/hub/ph/feuerdex-hero-2.webp" width="540" height="1011" alt="FeuerDex: Prüf-Checkliste" loading="lazy" decoding="async" /></div></div>
-          <div class="offer">
-            <div class="row">
-              <div class="opt"><span class="lbl"><span data-l="de">Monatlich</span><span data-l="en">Monthly</span></span><p><span data-l="de">24,99 €</span><span data-l="en">€24.99</span> <small><span data-l="de">/ Monat</span><span data-l="en">/ month</span></small></p><em><span data-l="de">jederzeit kündbar</span><span data-l="en">cancel anytime</span></em></div>
-              <div class="opt best"><span class="tag"><span data-l="de">4 Monate geschenkt</span><span data-l="en">4 months free</span></span><span class="lbl"><span data-l="de">Jährlich</span><span data-l="en">Yearly</span></span><p><span data-l="de">199,99 €</span><span data-l="en">€199.99</span> <small><span data-l="de">/ Jahr</span><span data-l="en">/ year</span></small></p><em><span data-l="de">entspricht 16,67 € im Monat</span><span data-l="en">that is €16.67 per month</span></em></div>
-            </div>
-            <div class="icons" aria-hidden="true"><img src="assets/hub/gurtdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/toredex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/geruestdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/feuerdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/leiterdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/regaldex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/pruefdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/schutzdex.webp" alt="" width="26" height="26" loading="lazy" /><img src="assets/hub/hebedex.webp" alt="" width="26" height="26" loading="lazy" /></div>
-            <p class="fine"><span data-l="de">Abschluss in der App über Google Play · Preise inkl. MwSt.</span><span data-l="en">Subscribe in the app via Google Play · prices incl. VAT</span></p>
-            <p class="fine"><span data-l="de">Für Betriebe und Gemeinden auch auf Jahresrechnung direkt von Dexware (199,99 € Endbetrag – als Kleinunternehmer gem. § 6 Abs. 1 Z 27 UStG berechnen wir keine Umsatzsteuer): <a href="mailto:support@dexware.app?subject=Dexware%20Suite%20auf%20Jahresrechnung">support@dexware.app</a> · <a href="/kommunal/">Dexware für Gemeinden</a></span><span data-l="en">For businesses and municipalities also by annual invoice directly from Dexware (€199.99 total – small business, no VAT charged): <a href="mailto:support@dexware.app?subject=Dexware%20Suite%20annual%20invoice">support@dexware.app</a> · <a href="/kommunal/">Dexware for municipalities (German)</a></span></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft lights" id="dashboard"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#2F6BF2"><img src="assets/hub/pruefdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#3B82F6"><img src="assets/hub/schutzdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#84CC16"><img src="assets/hub/hebedex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+    <section class="soft lights" id="dashboard"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#4F9EF8"><img src="assets/hub/dokudex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#14B8A6"><img src="assets/hub/geruestdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#84CC16"><img src="assets/hub/hebedex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
       <div class="wrap dash">
         <div class="rv">
           <p class="eyebrow">Web-Dashboard</p>
@@ -1148,27 +1172,27 @@
     </section>
 
 
-    <section class="soft lights" id="warum"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#DB2777"><img src="assets/hub/gurtdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#7C3AED"><img src="assets/hub/toredex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#14B8A6"><img src="assets/hub/geruestdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+    <section class="lights" id="warum"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#3B82F6"><img src="assets/hub/schutzdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#0EA5E9"><img src="assets/hub/winterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#2F6BF2"><img src="assets/hub/pruefdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
       <div class="wrap">
         <div class="head rv">
           <p class="eyebrow"><span data-l="de">Warum Dexware</span><span data-l="en">Why Dexware</span></p>
-          <h2><span data-l="de">Immer wissen, was als Nächstes geprüft werden muss</span><span data-l="en">Always know what needs inspecting next</span></h2>
-          <p class="lead"><span data-l="de">Leitern, Feuerlöscher, Regale, Fahrzeuge, Spielplätze: Jede Prüfung hat ihre eigene Frist. Dexware behält sie für dich im Blick – und hält fest, dass geprüft wurde.</span><span data-l="en">Ladders, fire extinguishers, racks, vehicles, playgrounds: every inspection has its own deadline. Dexware keeps track of them for you – and records that the inspection was done.</span></p>
+          <h2><span data-l="de">Immer wissen, was als Nächstes dran ist</span><span data-l="en">Always know what’s next</span></h2>
+          <p class="lead"><span data-l="de">Räumen und streuen, prüfen, kontrollieren, übergeben: Jede Aufgabe hat ihre Frist oder ihren Nachweis. Dexware behält sie für dich im Blick – und hält fest, dass sie erledigt ist.</span><span data-l="en">Clearing and gritting, inspecting, checking, handing over: every task has its deadline or its record. Dexware keeps track of them for you – and records that the job was done.</span></p>
         </div>
         <div class="why">
-          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></svg></span><h3><span data-l="de">Alle Prüfungen im Blick</span><span data-l="en">Every inspection in view</span></h3><p><span data-l="de">Die App zeigt dir, was heute fällig ist, was bald ansteht und was überfällig ist — für jedes Gerät, jedes Objekt, jeden Standort.</span><span data-l="en">The app shows what is due today, what is coming up and what is overdue — for every device, site and location.</span></p></article>
-          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span><h3><span data-l="de">Nachvollziehbar dokumentiert</span><span data-l="en">Traceable records</span></h3><p><span data-l="de">GPS, Zeitstempel, Fotos und Einträge, die nachträglich nur als gekennzeichnetes Storno geändert werden können – nachvollziehbar für BG und Versicherung.</span><span data-l="en">GPS, timestamps, photos and entries that can only be changed afterwards as a marked cancellation – records that are easy to follow for insurers and auditors.</span></p></article>
-          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg></span><h3><span data-l="de">Eine Pflicht, eine App</span><span data-l="en">One obligation, one app</span></h3><p><span data-l="de">Keine überladene Software: Jede App macht eine Sache richtig, in unter einer Minute pro Vorgang. Mit der Suite gibt es alle Prüf-Apps in einem Abo.</span><span data-l="en">No bloated software: each app does one thing right, in under a minute per task. The suite bundles every inspection app in one subscription.</span></p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></svg></span><h3><span data-l="de">Alles Fällige im Blick</span><span data-l="en">Everything due in view</span></h3><p><span data-l="de">Die App zeigt dir, was heute fällig ist, was bald ansteht und was überfällig ist — für jedes Gerät, jedes Objekt, jeden Standort.</span><span data-l="en">The app shows what is due today, what is coming up and what is overdue — for every device, site and location.</span></p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></svg></span><h3><span data-l="de">Nachvollziehbar dokumentiert</span><span data-l="en">Traceable records</span></h3><p><span data-l="de">GPS, Zeitstempel und Fotos. In WinterDex, SpielDex und vielen <span class="nw">Prüf-Apps</span> lassen sich gespeicherte Einträge nur noch als begründetes Storno ändern – nachvollziehbar für BG und Versicherung.</span><span data-l="en">GPS, timestamps and photos. In WinterDex, SpielDex and many inspection apps, saved entries can only be changed afterwards as a justified cancellation – records that are easy to follow for insurers and auditors.</span></p></article>
+          <article class="feature rv"><span class="ic"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" /></svg></span><h3><span data-l="de">Eine Aufgabe, eine App</span><span data-l="en">One job, one app</span></h3><p><span data-l="de">Keine überladene Software: Jede App macht eine Sache richtig, in unter einer Minute pro Vorgang. Wer mehrere Prüfpflichten hat, nimmt das <span class="nw">Prüf-Paket</span>.</span><span data-l="en">No bloated software: each app does one thing right, in under a minute per task. If you have several inspection duties, take the inspection package.</span></p></article>
         </div>
       </div>
     </section>
 
-    <section id="kontakt"><div class="trail" aria-hidden="true" style="--xa:var(--tl);--xb:var(--tr)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#DC2626"><img src="assets/hub/feuerdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#2563EB"><img src="assets/hub/leiterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#F59E0B"><img src="assets/hub/regaldex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
+    <section id="kontakt"><div class="trail rl" aria-hidden="true" style="--xa:var(--tr);--xb:var(--tl)"><i class="tb b1"></i><i class="tb b2"></i><i class="tb b3"></i><i class="tl l1"></i><i class="tl l2"></i><i class="tl l3"></i><i class="tt ta" style="--c:#EA5A47"><img src="assets/hub/spieldex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt tc" style="--c:#2563EB"><img src="assets/hub/leiterdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="tt td" style="--c:#4ADE80"><img src="assets/hub/baumdex.webp" alt="" width="40" height="40" loading="lazy" decoding="async" /></i><i class="th"></i></div>
       <div class="wrap">
         <div class="band rv">
           <div>
-            <h3><span data-l="de">Sag uns, welche Pflicht dich nervt.</span><span data-l="en">Tell us which obligation bugs you.</span></h3>
-            <p><span data-l="de">Wir bauen die App, die sie dir abnimmt. Feedback, Bundle-Anfragen und Partnerschaften willkommen.</span><span data-l="en">We build the app that takes it off your plate. Feedback, bundle requests and partnerships welcome.</span></p>
+            <h3><span data-l="de">Sag uns, welche Aufgabe dich nervt.</span><span data-l="en">Tell us which task bugs you.</span></h3>
+            <p><span data-l="de">Wir bauen die App, die sie dir abnimmt. Feedback, Anfragen von Betrieben und Gemeinden sowie Partnerschaften willkommen.</span><span data-l="en">We build the app that takes it off your plate. Feedback, requests from businesses and municipalities, and partnerships welcome.</span></p>
           </div>
           <a class="btn" href="mailto:support@dexware.app?subject=Dexware%20Anfrage"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>support@dexware.app</a>
         </div>
@@ -1208,19 +1232,12 @@
         new IntersectionObserver(function (es) { bst.classList.toggle('paused', !es[0].isIntersecting); }).observe(bst);
       }
       if ('IntersectionObserver' in window) {
-        // Rahmen-Drehung und Puls nur im Bild laufen lassen (.ruht hält sie an; bei „weniger Bewegung“ gibt es nichts anzuhalten).
         var rio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('ruht', !e.isIntersecting); }); });
         document.querySelectorAll('.offer, .duo .sync .dot, .hero .kicker').forEach(function (e) { rio.observe(e); });
-        // Verlaufsschrift (h1 em, .grad): background-position kann nur der Hauptthread bewegen — als laufende CSS-Animation hieß das
-        // in jedem Bild (60–120×/s) Stil, Malen und Commit für die ganze Seite. grad-move bleibt die Vorlage (Dauer, Kurve, Richtung),
-        // wird aber angehalten und nur 20× pro Sekunde weitergestellt, solange das Element im Bild ist (gemessen: je Schritt höchstens
-        // 2–3 Farbstufen — nicht zu sehen). Ohne getAnimations (alte Browser) läuft die CSS-Animation einfach normal weiter.
         var g0 = performance.now(), gsicht = [], guhr = 0;
         var ganim = function (el) { var l = el.getAnimations ? el.getAnimations() : []; for (var i = 0; i < l.length; i++) if (l[i].animationName === 'grad-move') return l[i]; return null; };
         var gschritt = function () {
           var t = performance.now() - g0;
-          // Animation inzwischen entfernt (Sprache gewechselt, „weniger Bewegung“ eingeschaltet)? Dann nicht mehr anfassen —
-          // ein gesetztes currentTime würde sie sonst als Skript-Animation wiederbeleben. Erst alle lesen, dann alle setzen.
           gsicht = gsicht.filter(function (s) { return s.a.playState !== 'idle'; });
           gsicht.forEach(function (s) { s.a.currentTime = t; });
           if (!gsicht.length) { clearInterval(guhr); guhr = 0; }
@@ -1238,13 +1255,10 @@
         var gels = document.querySelectorAll('h1 em, .grad');
         var gneu = function () { gels.forEach(function (e) { gio.unobserve(e); gio.observe(e); }); };
         gneu();
-        // Sprachwechsel (die andere Sprache bekommt eine neue CSS-Animation) und „weniger Bewegung“ zur Laufzeit: alle neu anmelden.
-        // Der Beobachter meldet sonst nur Elemente, deren Sichtbarkeit sich ändert — außerhalb des Bildes liefe grad-move wieder ungedrosselt.
         document.querySelectorAll('.lang [data-set]').forEach(function (b) { b.addEventListener('click', gneu); });
         var gmq = matchMedia('(prefers-reduced-motion: reduce)');
         if (gmq.addEventListener) gmq.addEventListener('change', gneu);
       }
-      // iPhone-Etikett: Aufspringen (am PC auch Schimmer) erst nach dem Laden — Begründung im Baukasten („Feinschliff Texte“).
       var kick = document.querySelector('.hero .kicker');
       if (kick) {
         var kpop = function () { setTimeout(function () { kick.classList.add('pop'); }, 600); };
@@ -1281,10 +1295,10 @@
         q('single').innerHTML = two(eur(sum), eur(sum, true)) + (noPrice.length ? '<small> ' + two('+ ' + noPrice.join(', '), '+ ' + noPrice.join(', ')) + '</small>' : '');
         var diff = sum - suite;
         q('hint').innerHTML = diff > 0.005
-          ? two('Mit der Suite sparst du <b>' + eur(diff) + ' im Monat</b>' + extra + ' — und alle ' + total + ' Apps sind dabei. Im Jahresabo kostet sie ' + year + ' € im Monat.',
-                'The Suite saves you <b>' + eur(diff, true) + ' a month</b>' + extra + ' — and all ' + total + ' apps are included. On the yearly plan it is €' + year.replace(',', '.') + ' a month.')
-          : two('Für diese Auswahl bist du einzeln günstiger. Die Suite lohnt sich, sobald weitere Apps dazukommen — im Jahresabo kostet sie ' + year + ' € im Monat, alle ' + total + ' Apps inklusive.',
-                'For this selection, booking individually is cheaper. The Suite pays off once you add more apps — on the yearly plan it is €' + year.replace(',', '.') + ' a month, all ' + total + ' apps included.');
+          ? two('Mit dem Prüf-Paket sparst du <b>' + eur(diff) + ' im Monat</b>' + extra + ' — und alle ' + total + ' Prüf-Apps sind dabei. Im Jahresabo kostet es ' + year + ' € im Monat.',
+                'The inspection package saves you <b>' + eur(diff, true) + ' a month</b>' + extra + ' — and all ' + total + ' inspection apps are included. On the yearly plan it is €' + year.replace(',', '.') + ' a month.')
+          : two('Für diese Auswahl bist du einzeln günstiger. Das Prüf-Paket lohnt sich, sobald weitere Apps dazukommen — im Jahresabo kostet es ' + year + ' € im Monat, alle ' + total + ' Prüf-Apps inklusive.',
+                'For this selection, booking individually is cheaper. The inspection package pays off once you add more apps — on the yearly plan it is €' + year.replace(',', '.') + ' a month, all ' + total + ' inspection apps included.');
       };
       document.querySelectorAll('.fd-opt').forEach(function (b) {
         b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); });
