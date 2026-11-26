@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": "2026-11-23",
+ "updated": "2026-11-26",
  "apps": [
   {
    "id": "gurtdex",
@@ -69,39 +69,6 @@
    "en": "Racking inspections"
   },
   {
-   "id": "spieldex",
-   "name": "SpielDex",
-   "pkg": "com.spieldex.app",
-   "icon": "https://dexware.app/assets/spieldex-icon.png",
-   "color": "#EA5A47",
-   "url": "https://spieldex.dexware.app",
-   "play": false,
-   "de": "Spielplatzkontrolle nach DIN EN 1176",
-   "en": "Playground inspections"
-  },
-  {
-   "id": "winterdex",
-   "name": "WinterDex",
-   "pkg": "com.winterdex.app",
-   "icon": "https://dexware.app/assets/winterdex-icon.png",
-   "color": "#0EA5E9",
-   "url": "https://winterdex.dexware.app",
-   "play": false,
-   "de": "Räum- & Streueinsätze dokumentieren",
-   "en": "Winter service records"
-  },
-  {
-   "id": "kfzdex",
-   "name": "KfzDex",
-   "pkg": "com.kfzdex.app",
-   "icon": "https://dexware.app/assets/kfzdex-icon.png",
-   "color": "#F97316",
-   "url": "https://kfzdex.dexware.app",
-   "play": false,
-   "de": "Fuhrpark, UVV-Prüfung & Fristen",
-   "en": "Fleet, vehicle checks & deadlines"
-  },
-  {
    "id": "pruefdex",
    "name": "PrüfDex",
    "pkg": "de.pruefdex.app",
@@ -124,6 +91,41 @@
    "en": "AI safety briefings & risk assessments"
   },
   {
+   "id": "hebedex",
+   "name": "HebeDex",
+   "pkg": "com.hebedex.app",
+   "icon": "https://dexware.app/assets/hebedex-icon.png",
+   "color": "#84CC16",
+   "url": "https://hebedex.dexware.app",
+   "play": false,
+   "de": "Anschlag-, Hebe- & Zurrmittel prüfen",
+   "en": "Lifting & lashing gear inspections"
+  }
+ ],
+ "extern": [
+  {
+   "id": "winterdex",
+   "name": "WinterDex",
+   "pkg": "com.winterdex.app",
+   "icon": "https://dexware.app/assets/winterdex-icon.png",
+   "color": "#0EA5E9",
+   "url": "https://winterdex.dexware.app",
+   "play": false,
+   "de": "Räum- & Streueinsätze dokumentieren",
+   "en": "Winter service records"
+  },
+  {
+   "id": "spieldex",
+   "name": "SpielDex",
+   "pkg": "com.spieldex.app",
+   "icon": "https://dexware.app/assets/spieldex-icon.png",
+   "color": "#EA5A47",
+   "url": "https://spieldex.dexware.app",
+   "play": false,
+   "de": "Spielplatzkontrolle nach DIN EN 1176",
+   "en": "Playground inspections"
+  },
+  {
    "id": "baumdex",
    "name": "BaumDex",
    "pkg": "com.baumdex.app",
@@ -135,15 +137,15 @@
    "en": "Tree register & tree inspections"
   },
   {
-   "id": "hebedex",
-   "name": "HebeDex",
-   "pkg": "com.hebedex.app",
-   "icon": "https://dexware.app/assets/hebedex-icon.png",
-   "color": "#84CC16",
-   "url": "https://hebedex.dexware.app",
+   "id": "kfzdex",
+   "name": "KfzDex",
+   "pkg": "com.kfzdex.app",
+   "icon": "https://dexware.app/assets/kfzdex-icon.png",
+   "color": "#F97316",
+   "url": "https://kfzdex.dexware.app",
    "play": false,
-   "de": "Anschlag-, Hebe- & Zurrmittel prüfen",
-   "en": "Lifting & lashing gear inspections"
+   "de": "Fuhrpark, UVV-Prüfung & Fristen",
+   "en": "Fleet, vehicle checks & deadlines"
   },
   {
    "id": "tourdex",
@@ -157,6 +159,17 @@
    "en": "Automatic mileage log"
   },
   {
+   "id": "dokudex",
+   "name": "DokuDex",
+   "pkg": "com.archio.app",
+   "icon": "https://dexware.app/assets/archio-icon.png",
+   "color": "#4F9EF8",
+   "url": "https://dokudex.dexware.app",
+   "play": true,
+   "de": "Dokumente scannen & per KI verstehen",
+   "en": "Scan documents, understand them with AI"
+  },
+  {
    "id": "craftdex",
    "name": "CraftDex",
    "pkg": "com.craftlog.app",
@@ -167,19 +180,6 @@
    "de": "Projekte, Material & Stunden festhalten",
    "en": "Log projects, materials & hours"
   },
-  {
-   "id": "dokudex",
-   "name": "DokuDex",
-   "pkg": "com.archio.app",
-   "icon": "https://dexware.app/assets/archio-icon.png",
-   "color": "#4F9EF8",
-   "url": "https://dokudex.dexware.app",
-   "play": true,
-   "de": "Dokumente scannen & per KI verstehen",
-   "en": "Scan documents, understand them with AI"
-  }
- ],
- "extern": [
   {
    "id": "hausdex",
    "name": "HausDex",
