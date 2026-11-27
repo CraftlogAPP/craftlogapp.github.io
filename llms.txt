@@ -1,0 +1,114 @@
+# Dexware
+
+> Dexware ist das App-Zentrum für alles, was belegt sein muss — vom Winterdienst über Spielplätze, Bäume und Fuhrpark bis zu den Prüfpflichten im Betrieb. 16 Apps bei Google Play, 4 weitere bald, für Deutschland, Österreich und die Schweiz, Web-Dashboard inklusive. Die 9 Prüf-Apps gibt es einzeln oder zusammen im Prüf-Paket für 24,99 € im Monat oder 199,99 € im Jahr; WinterDex und alle übrigen Apps haben einen eigenen Tarif.
+
+Sachliche Kurzinfo für Sprachmodelle und Suchdienste. Maßgeblich sind die Angaben auf https://dexware.app/ und auf den Seiten der einzelnen Apps. Anbieter: Dexware, Kontakt: support@dexware.app.
+
+## Prüf-Paket: 9 Prüf-Apps für Prüfpflichten im Betrieb
+
+Jede Prüf-App gibt es einzeln — oder alle 9 zusammen im Prüf-Paket, mit einem Abo. In den Apps heißt das Paket „Dexware Suite“.
+
+- Preis: 24,99 € im Monat, jederzeit kündbar, oder 199,99 € im Jahr (entspricht 16,67 € im Monat). Preise inkl. MwSt., Abschluss in der App über Google Play, in jeder Prüf-App unter „Pro werden“.
+- Ein Abo schaltet Pro in allen 9 Prüf-Apps frei, auf allen Geräten; neue Prüf-Apps sind ohne Aufpreis dabei.
+- Ab 3 Prüf-Apps günstiger als einzeln.
+- Für Betriebe und Gemeinden auch auf Jahresrechnung direkt von Dexware: support@dexware.app.
+- Nicht im Prüf-Paket: alle anderen Dexware-Apps, sie haben einen eigenen Tarif. Für Suite-Abos, die bis einschließlich 26.11.2026 abgeschlossen wurden, bleiben WinterDex, SpielDex, BaumDex, KfzDex, TourDex, DokuDex und CraftDex enthalten, solange das Abo ununterbrochen läuft.
+
+### Die 9 Prüf-Apps
+
+- [PrüfDex](https://pruefdex.dexware.app/): DGUV V3: DGUV-V3-Geräteprüfung per QR — Protokoll und Prüfplakette automatisch. Bei Google Play, am iPhone im Browser. Pro einzeln 14,99 € im Monat oder 119,99 € im Jahr.
+- [LeiterDex](https://leiterdex.dexware.app/): Leitern und Tritte nach BetrSichV und DGUV 208-016 prüfen und belegen. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+- [FeuerDex](https://feuerdex.dexware.app/): Feuerlöscher nach ASR A2.2 und DIN 14406-4 — Inventar, Fristen, Bericht. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+- [RegalDex](https://regaldex.dexware.app/): Regalinspektion nach DIN EN 15635 — Schäden einstufen, Felder sperren. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+- [ToreDex](https://toredex.dexware.app/): Tore & Türen: Kraftbetätigte Tore und Türen nach ASR A1.7 prüfen, Stilllegungen belegen. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+- [SchutzDex](https://schutzdex.dexware.app/): KI-Unterweisungen mit Verständnis-Check und Gefährdungsbeurteilung. Bei Google Play, am iPhone im Browser. Pro einzeln 14,99 € im Monat oder 119,99 € im Jahr.
+- [GurtDex](https://gurtdex.dexware.app/): PSA gegen Absturz nach DGUV 312-906 und EN 365 — mit Ablegereife-Wächter. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+- [GerüstDex](https://geruestdex.dexware.app/): Gerüstprüfung nach TRBS 2121-1 mit Sperr-Dokumentation per Ampel. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+- [HebeDex](https://hebedex.dexware.app/): Anschlag- & Zurrmittel: Anschlag-, Hebe- und Zurrmittel nach DGUV Regel 109-017 — QR-Etiketten und Ablegereife-Rechner. Bei Google Play, am iPhone im Browser. Pro einzeln 9,99 € im Monat oder 79,99 € im Jahr.
+
+## WinterDex: Winterdienst (eigener Tarif, nicht im Prüf-Paket)
+
+- [WinterDex](https://winterdex.dexware.app/): Winterdienst: Räum- und Streueinsätze mit GPS, Foto und Wetter belegt – dazu die Karte „Heute Nacht“ und die Glätte-Frühwarnung. Für: Bauhof und Gemeinde, Hausbetreuung, Hausverwaltung und Winterdienst-Betriebe. Bei Google Play, am iPhone im Browser.
+- Preise für Neukunden inkl. MwSt., Abo jederzeit kündbar: Gratis 2 Objekte, Einsätze unbegrenzt sowie 1 Strecke mit GPS-Nachweis; Pro (bis 20 Mitarbeiter) 19,99 € im Monat oder 69,99 € im Jahr; Team (bis 50 Mitarbeiter) 29,99 € im Monat oder 99,99 € im Jahr; Team XL (bis 100 Mitarbeiter) 39,99 € im Monat oder 129,99 € im Jahr.
+- [WinterDex-Pauschale für Gemeinden](https://dexware.app/kommunal/#winterdex-pauschale): 149 € je Saison für die Leitung und beliebig viele Mitarbeiter, mit Angebot, Rechnung und Auftragsverarbeitungsvertrag.
+
+## Weitere Apps von Dexware (eigener Tarif, nicht im Prüf-Paket)
+
+### Winterdienst & Hausbetreuung
+
+Räumen, streuen, Objekte betreuen — jeder Einsatz belegt.
+
+- [ObjektDex](https://objektdex.dexware.app/): Hausbetreuung, Grünpflege und Reinigung belegen — Einsatz mit Zeit, Ort und Fotos, PDF mit Soll/Ist für die Hausverwaltung. Für: Hausbetreuung, Hausmeisterdienste, Reinigung und Grünpflege — das ganze Jahr. Bald bei Google Play.
+
+### Gemeinde & Bauhof
+
+Spielplätze, Bäume und Fahrzeuge kontrollieren — mit Nachweis.
+
+- [SpielDex](https://spieldex.dexware.app/): Spielplatzkontrolle nach DIN EN 1176 mit PDF-Kontrollbuch. Bei Google Play, am iPhone im Browser. Pro 9,99 € im Monat oder 79,99 € im Jahr.
+- [BaumDex](https://baumdex.dexware.app/): Baumkataster und Verkehrssicherung — Kontrollen nachvollziehbar belegt. Bei Google Play.
+- [KfzDex](https://kfzdex.dexware.app/): Fuhrpark & UVV: UVV-Prüfung und Führerscheinkontrolle mit Fristen-Ampel. Bei Google Play, am iPhone im Browser. Pro 9,99 € im Monat oder 79,99 € im Jahr.
+- [Dexware für Gemeinden](https://dexware.app/kommunal/)
+
+### Haus & Wohnung
+
+Für Hausbesitzer und Mieter — bald bei Google Play.
+
+- [HausDex](https://hausdex.dexware.app/): Hausakte: Das Scheckheft fürs Haus — merkt sich jede Arbeit, jede Rechnung und jede Garantie und erinnert an die nächste Wartung. Für: Hausbesitzer und Eigentümer. Bald bei Google Play. Pro 4,99 € im Monat oder 39,99 € im Jahr.
+- [Mietzeuge](https://mietzeuge.dexware.app/): Wohnungsübergabe: Übergabe-Protokoll für Mieter — Fotos mit Fingerabdruck, Unterschriften und Prüfcode, damit du bei der Kaution Beweise hast. Für: Mieterinnen und Mieter bei Ein- und Auszug. Bald bei Google Play.
+
+### Handwerk & Büro
+
+Angebote, Projekte, Fahrtenbuch und Dokumente.
+
+- [TourDex](https://tourdex.dexware.app/): Automatisches Fahrtenbuch mit KI-Kategorisierung und PDF fürs Finanzamt. Bei Google Play. Pro 4,99 € im Monat oder 49,99 € im Jahr.
+- [DokuDex](https://dokudex.dexware.app/): Dokumente & KI: Dokumente scannen und per KI verstehen — mit Fristen-Erinnerung. Bei Google Play. Pro 3,99 € im Monat oder 29,99 € im Jahr.
+- [CraftDex](https://craftdex.dexware.app/): Projekt-Doku: Projekt-Tagebuch für Handwerk und Hobby — Schritte, Fotos, Stunden, Kosten. Bei Google Play. Pro 4,99 € im Monat oder 49,99 € im Jahr.
+- [AngebotDex](https://installateurdex.dexware.app/): KI-Angebote: Angebot einsprechen – mit deinen Preisen und deinem Logo. Dazu Wartungsprotokoll per Diktat und QR-Anlagenpass. Bald bei Google Play. Pro 29,99 € im Monat oder 299 € im Jahr.
+
+## Die Dexware-App
+
+Deine Apps in einer App: In der Dexware-App wählst du die Apps, die du brauchst — vom Winterdienst über den Fuhrpark bis zu den Prüf-Apps. Eine Startseite mit allen Fristen, Erinnerungen je Bereich; mit dem Prüf-Paket sind alle Prüf-Apps freigeschaltet. Bald bei Google Play. Die einzelnen Apps gibt es weiterhin — Konto und Daten sind dieselben.
+
+## iPhone und iPad
+
+Die iPhone-Apps sind noch in Arbeit. Bis dahin laufen diese Apps am iPhone und iPad im Browser (Safari) — wie eine App auf dem Home-Bildschirm, im selben Konto, mit denselben Nachweisen: GurtDex, ToreDex, GerüstDex, FeuerDex, LeiterDex, RegalDex, PrüfDex, SchutzDex, HebeDex, WinterDex, SpielDex und KfzDex.
+
+## Am PC: Dexware-Dashboard
+
+- [Dexware-Dashboard](https://dashboard.dexware.app): Einstieg zu allen App-Dashboards — App wählen, mit dem App-Konto anmelden (Google oder E-Mail). Objekte, Prüfungen und Fristen im Browser, gleiche Daten wie in der App, PDF-Berichte direkt herunterladen.
+
+## Seiten
+
+- [Startseite](https://dexware.app/): alle Apps, Prüf-Paket, Dexware-App, Dashboard
+- [Prüf-Paket](https://dexware.app/#suite): Preis und Prüfhelfer (welche Prüf-Apps passen, einzeln und im Paket)
+- [Dexware für Gemeinden](https://dexware.app/kommunal/): Winterdienst, Spielplätze, Bäume, Fahrzeuge und Prüfpflichten, jede App mit eigenem Preis, auch auf Rechnung
+- [Ratgeber](https://dexware.app/ratgeber.html): Prüfpflichten und Fristen im Betrieb
+- [Prüffristen im Betrieb: Übersicht als Tabelle (DE & AT)](https://dexware.app/ratgeber-prueffristen.html): Prüffristen im Betrieb auf einen Blick: Elektrogeräte, Feuerlöscher, Leitern, Regale, Tore, Anschlagmittel, PSA gegen Absturz, Fahrzeuge, Spielplätze, Unterweisung – mit Österreich.
+
+## Kurzinfo je App (llms.txt)
+
+- [PrüfDex](https://pruefdex.dexware.app/llms.txt)
+- [LeiterDex](https://leiterdex.dexware.app/llms.txt)
+- [FeuerDex](https://feuerdex.dexware.app/llms.txt)
+- [RegalDex](https://regaldex.dexware.app/llms.txt)
+- [ToreDex](https://toredex.dexware.app/llms.txt)
+- [SchutzDex](https://schutzdex.dexware.app/llms.txt)
+- [GurtDex](https://gurtdex.dexware.app/llms.txt)
+- [GerüstDex](https://geruestdex.dexware.app/llms.txt)
+- [HebeDex](https://hebedex.dexware.app/llms.txt)
+- [WinterDex](https://winterdex.dexware.app/llms.txt)
+- [ObjektDex](https://objektdex.dexware.app/llms.txt)
+- [SpielDex](https://spieldex.dexware.app/llms.txt)
+- [KfzDex](https://kfzdex.dexware.app/llms.txt)
+- [HausDex](https://hausdex.dexware.app/llms.txt)
+- [TourDex](https://tourdex.dexware.app/llms.txt)
+- [DokuDex](https://dokudex.dexware.app/llms.txt)
+- [CraftDex](https://craftdex.dexware.app/llms.txt)
+- [AngebotDex](https://installateurdex.dexware.app/llms.txt)
+
+## Rechtliches
+
+- [Impressum](https://dexware.app/impressum.html)
+- [Datenschutz](https://dexware.app/datenschutz.html)
+- [AGB](https://dexware.app/agb.html)
+- [Widerruf und Erstattung](https://dexware.app/erstattung.html)
