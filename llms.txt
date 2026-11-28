@@ -83,7 +83,7 @@ Die iPhone-Apps sind noch in Arbeit. Bis dahin laufen diese Apps am iPhone und i
 - [Prüf-Paket](https://dexware.app/#suite): Preis und Prüfhelfer (welche Prüf-Apps passen, einzeln und im Paket)
 - [Dexware für Gemeinden](https://dexware.app/kommunal/): Winterdienst, Spielplätze, Bäume, Fahrzeuge und Prüfpflichten, jede App mit eigenem Preis, auch auf Rechnung
 - [Ratgeber](https://dexware.app/ratgeber.html): Prüfpflichten und Fristen im Betrieb
-- [Prüffristen im Betrieb: Übersicht als Tabelle (DE & AT)](https://dexware.app/ratgeber-prueffristen.html): Prüffristen im Betrieb auf einen Blick: Elektrogeräte, Feuerlöscher, Leitern, Regale, Tore, Anschlagmittel, PSA gegen Absturz, Fahrzeuge, Spielplätze, Unterweisung – mit Österreich.
+- [Prüffristen im Betrieb: Übersicht als Tabelle (DE & AT)](https://dexware.app/ratgeber-prueffristen.html): Prüffristen im Betrieb auf einen Blick: Elektrogeräte, Feuerlöscher, Leitern, Regale, Tore, Anschlagmittel, PSA, Fahrzeuge, Spielplätze – mit Österreich.
 
 ## Kurzinfo je App (llms.txt)
 
