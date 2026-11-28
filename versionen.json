@@ -92,9 +92,9 @@
  },
  "com.routelog.app": {
   "android": {
-   "code": 58,
-   "name": "1.1.12",
-   "ab": "2026-11-27"
+   "code": 59,
+   "name": "1.1.13",
+   "ab": "2026-12-01"
   }
  },
  "com.hebedex.app": {
@@ -106,9 +106,9 @@
  },
  "com.installateurdex.app": {
   "android": {
-   "code": 20,
-   "name": "1.0.19",
-   "ab": "2026-11-28"
+   "code": 21,
+   "name": "1.0.20",
+   "ab": "2026-12-01"
   }
  },
  "com.mietzeuge.app": {
@@ -127,23 +127,23 @@
  },
  "com.objektdex.app": {
   "android": {
-   "code": 12,
-   "name": "1.0.11",
-   "ab": "2026-11-28"
+   "code": 14,
+   "name": "1.0.13",
+   "ab": "2026-12-01"
   }
  },
  "com.laufzettel.app": {
   "android": {
-   "code": 10,
-   "name": "1.0.9",
-   "ab": "2026-11-28"
+   "code": 11,
+   "name": "1.0.10",
+   "ab": "2026-12-01"
   }
  },
  "com.wechselzeit.app": {
   "android": {
-   "code": 10,
-   "name": "1.0.9",
-   "ab": "2026-11-26"
+   "code": 11,
+   "name": "1.0.10",
+   "ab": "2026-12-01"
   }
  }
 }
